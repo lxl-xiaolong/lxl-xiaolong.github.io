@@ -167,7 +167,7 @@ strong {
 			text-align: center;
 			background: #F5F5F5;
 			color: #000000;
-			font-family: "Arial";
+			font-family: Arial;
 			font-size: 1.1rem;
 			font-weight: bold;
 			letter-spacing: 0.3rem;
@@ -575,25 +575,539 @@ strong {
 	
 <div id="footer"><p>本人在本站发布的windows系统工具箱仅作为个人使用，未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，否则后果自负！<br/>本站为个人网站，本站所发布的一切资源均来自于互联网,并由本人整理，仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负，如侵犯到您的权益，请及时通知我(2539223617@qq.com),我会及时处理。<br/>访问和下载本站内容，表明您已知晓并同意上述条款。<br/>本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。<br/>请您支持购买正版软件!</p>&copy 2022 刘小龙&emsp;|&emsp;<a href="https://www.12377.cn/" title="举报" target="_blank" rel="noopener nofollow">网站有害信息举报</a><br/><span id="time"></span>&emsp;<br/><h2><span id="momk"></span><span id="momk" style="color: #ff0000;"></span></h2></div>
 
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/baidufenxi.js"></script>  <!-- 百度分析 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/script.js"></script>      <!-- 鼠标跟随特效 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/up.js"></script>          <!-- 回到顶部 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/time.js"></script>        <!-- 实时时间日期 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/mouse.js"></script>       <!-- 鼠标点击特效 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/key.js"></script>         <!-- 键盘事件 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/nocopy.js"></script>      <!-- 复制 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/nocut.js"></script>       <!-- 剪切 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/nof12.js"></script>       <!-- F12 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/nopaste.js"></script>     <!-- 粘贴 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/noselect.js"></script>    <!-- 选取 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/Date.js"></script>        <!-- 网站底部运行时间统计 -->
-<script type="text/javascript" src="https://gitee.com/lxl-xiaolong/lxl-xiaolong/raw/master/JS/No.js"></script>          <!-- no -->
+
+<!-- 百度分析 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?85bf60a6550ebbfae001c334b99a7554";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- 鼠标跟随特效 -->
+<script>
+        (function fairyDustCursor() {
+
+            var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            var cursor = { x: width / 2, y: width / 2 };
+            var particles = [];
+
+            function init() {
+                bindEvents();
+                loop();
+            }
+
+            // Bind events that are needed
+            function bindEvents() {
+                document.addEventListener('mousemove', onMouseMove);
+                window.addEventListener('resize', onWindowResize);
+            }
+
+            function onWindowResize(e) {
+                width = window.innerWidth;
+                height = window.innerHeight;
+            }
+
+            function onMouseMove(e) {
+                cursor.x = e.clientX;
+                cursor.y = e.clientY;
+
+                addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+            }
+
+            function addParticle(x, y, color) {
+                var particle = new Particle();
+                particle.init(x, y, color);
+                particles.push(particle);
+            }
+
+            function updateParticles() {
+
+                // Updated
+                for (var i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+
+                // Remove dead particles
+                for (var i = particles.length - 1; i >= 0; i--) {
+                    if (particles[i].lifeSpan < 0) {
+                        particles[i].die();
+                        particles.splice(i, 1);
+                    }
+                }
+
+            }
+
+            function loop() {
+                requestAnimationFrame(loop);
+                updateParticles();
+            }
+
+            /**
+             * Particles
+             */
+
+            function Particle() {
+
+                this.character = "*";
+                this.lifeSpan = 120; //ms
+                this.initialStyles = {
+                    "position": "fixed",
+                    "display": "inline-block",
+                    "top": "0px",
+                    "left": "0px",
+                    "pointerEvents": "none",
+                    "touch-action": "none",
+                    "z-index": "10000000",
+                    "fontSize": "25px",
+                    "will-change": "transform"
+                };
+
+                // Init, and set properties
+                this.init = function (x, y, color) {
+
+                    this.velocity = {
+                        x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                        y: 1
+                    };
+
+                    this.position = { x: x + 10, y: y + 10 };
+                    this.initialStyles.color = color;
+
+                    this.element = document.createElement('span');
+                    this.element.innerHTML = this.character;
+                    applyProperties(this.element, this.initialStyles);
+                    this.update();
+
+                    document.querySelector('.js-cursor-container').appendChild(this.element);
+                };
+
+                this.update = function () {
+                    this.position.x += this.velocity.x;
+                    this.position.y += this.velocity.y;
+                    this.lifeSpan--;
+
+                    this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+                }
+
+                this.die = function () {
+                    this.element.parentNode.removeChild(this.element);
+                }
+
+            }
+
+            /**
+             * Utils
+             */
+
+            // Applies css `properties` to an element.
+            function applyProperties(target, properties) {
+                for (var key in properties) {
+                    target.style[key] = properties[key];
+                }
+            }
+
+            if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+        })();    
+</script>
+
+
+<!-- 回到顶部 -->
+<script>
+	var timer  = null;
+	box.onclick = function(){
+    	cancelAnimationFrame(timer);
+    	//获取当前毫秒数
+    	var startTime = +new Date();     
+    	//获取当前页面的滚动高度
+    	var b = document.body.scrollTop || document.documentElement.scrollTop;
+    	var d = 500;
+    	var c = b;
+    	timer = requestAnimationFrame(function func(){
+        var t = d - Math.max(0,startTime - (+new Date()) + d);
+        document.documentElement.scrollTop = document.body.scrollTop = t * (-c) / d + b;
+        timer = requestAnimationFrame(func);
+        if(t == d){
+          cancelAnimationFrame(timer);
+        	}
+    	});
+	}
+</script>
+
+
+<!-- 实时时间日期 -->
+<script>
+            function time(){
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth()+1;
+                var day = date.getDate();
+                var week = date.getDay();
+                week="星期"+"日一二三四五六".charAt(week);
+                /*switch(week){
+                    case 1:
+                        week="星期一";
+                        break;
+                    case 2:
+                        week="星期二";
+                        break;
+                    case 3:
+                        week="星期三";
+                        break;
+                    case 4:
+                        week="星期四";
+                        break;
+                    case 5:
+                        week="星期五";
+                        break;
+                    case 6:
+                        week="星期六";
+                        break;
+                    case 0:
+                        week="星期日";
+                        break;
+                }*/
+                var hour =date.getHours();
+                hour=hour<10?"0"+hour:hour;
+                var minute =date.getMinutes();
+                minute=minute<10?"0"+minute:minute;
+                var second = date.getSeconds();
+                second=second<10?"0"+second:second;
+                var currentTime = year+"-"+month+"-"+day+"  "+week+"   "+hour+":"+minute+":"+second;
+                document.getElementById("time").innerHTML=currentTime;
+            }
+            setInterval("time()",1000);
+</script>
+
+
+<!-- 鼠标点击特效 -->
+<script>
+    var a_idx = 0;
+    jQuery(document).ready(function($) {
+    //将打赏附到指定位置
+    $("#page_begin_html").insertAfter('#cnblogs_post_body');
+    
+    //鼠标点击特效
+        $("body").click(function(e) {
+            var a = new Array("❤富强❤","❤民主❤","❤文明❤","❤和谐❤","❤自由❤","❤平等❤","❤公正❤","❤法治❤","❤爱国❤","❤敬业❤","❤诚信❤","❤友善❤");
+            var $i = $("<span></span>").text(a[a_idx]);
+            a_idx = (a_idx + 1) % a.length;
+            var x = e.pageX,
+            y = e.pageY;
+            $i.css({
+                "z-index": 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999,
+                "top": y - 20,
+                "left": x,
+                "position": "absolute",
+                "font-weight": "bold",
+		"font-size": "1.7rem",
+                "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+            });
+            $("body").append($i);
+            $i.animate({
+                "top": y - 180,
+                "opacity": 0
+            },
+            1500,
+            function() {
+                $i.remove();
+            });
+        });
+    });
+</script> 
+
+  
+<!-- 键盘事件 -->    
+<script>
+        window.onload = function(){
+            //屏蔽键盘事件
+             document.onkeydown = function (){
+                var e = window.event || arguments[0];
+                //F12
+                 if(e.keyCode == 123){
+                   return false;
+               //Ctrl+Shift+I
+                }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
+                    return false;
+                //Shift+F10
+               }else if((e.shiftKey) && (e.keyCode == 121)){
+                     return false;
+                 //Ctrl+U
+               }else if((e.ctrlKey) && (e.keyCode == 85)){
+                    return false;
+                }
+            };
+        }
+</script>
+
+
+<!-- 复制 -->       
+<script>
+document.oncopy = function (event){
+    if(window.event){
+    event = window.event;
+    }
+    try{
+        var the = event.srcElement;
+        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+        return false;
+        }
+        return true;
+        }
+    catch (e){
+        return false;
+    }
+}
+</script> 
+
+
+<!-- 剪切 -->  
+<script>
+document.oncut = function (event){
+    if(window.event){
+    event = window.event;
+    }
+    try{
+        var the = event.srcElement;
+        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+        return false;
+        }
+        return true;
+        }
+    catch (e){
+        return false;
+    }
+}
+</script>
+
+
+<!-- F12 -->    
+<script>
+window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+    // 判断是否按下F12，F12键码为123
+    if (event.keyCode == 123) {
+    event.preventDefault(); // 阻止默认事件行为
+    window.event.returnValue = false;
+    }
+}
+</script> 
+
+
+<!-- 粘贴 -->    
+<script>
+document.onpaste = function (event){
+    if(window.event){
+        event = window.event;
+        }
+    try{
+        var the = event.srcElement;
+        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+        return false;
+        }
+        return true;
+        }
+    catch (e){
+        return false;
+    }
+}
+</script>
+
+     
+<!-- 选取 -->
+<script>
+document.onselectstart = function (event){
+    if(window.event){
+        event = window.event;
+        }
+    try{
+        var the = event.srcElement;
+        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+        return false;
+        }
+        return true;
+        } 
+    catch (e) {
+        return false;
+    }
+}
+</script> 
+
+   
+<!-- 网站底部运行时间统计 -->
+<script>
+    function NewDate(str) {
+        str = str.split('-');
+        var date = new Date();
+        date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+        date.setUTCHours(0, 0, 0, 0);
+        return date;
+    }
+    function momxc() {
+        var birthDay = NewDate("2022-08-09");//设置建站时间
+        var today = new Date();
+        var timeold = today.getTime() - birthDay.getTime();
+        var sectimeold = timeold / 1000
+        var secondsold = Math.floor(sectimeold);
+        var msPerDay = 24 * 60 * 60 * 1000; var e_daysold = timeold / msPerDay;
+        var daysold = Math.floor(e_daysold);
+        var e_hrsold = (daysold - e_daysold) * -24;
+        var hrsold = Math.floor(e_hrsold);
+        var e_minsold = (hrsold - e_hrsold) * -60;
+        var minsold = Math.floor((hrsold - e_hrsold) * -60); var seconds = Math.floor((minsold - e_minsold) * -60).toString();
+        document.getElementById("momk").innerHTML = "本站已安全运行" + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+        setTimeout(momxc, 1000);
+    } momxc();
+</script>
+
+
+<!-- no -->     
+<script>
+        //禁止ctrl+s保存
+        window.addEventListener("keydown", function (e) {
+            if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                e.preventDefault();
+            }
+        }, false);
+ 
+        //禁止F12键盘
+        window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+            if (event.keyCode == 123) {
+                event.preventDefault();
+                window.event.returnValue = false;
+            }
+        }
+ 
+        //禁用backspace键
+        document.onkeydown = function (e) {
+ 
+            var e = e || window.event;
+ 
+            var key = e.keyCode || e.which;
+ 
+            var srcEle = e.srcElement ? e.srcElement : e.target;
+ 
+            //禁用   Alt+   方向键   →和禁用   Alt+   方向键   ←
+            if ((e.altKey) && ((key == 37) || (key == 39))) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    event.keyCode = 0;
+                    e.returnValue = false;
+                }
+            }
+ 
+            //禁用退格删除键   ，   F5   刷新键，Ctrl   +   R
+            if ((key == 116) || (e.ctrlKey && key == 82)) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    event.keyCode = 0;
+                    e.returnValue = false;
+                }
+            }
+ 
+            //禁用   Ctrl+n
+            if ((e.ctrlKey) && (key == 78)) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    event.keyCode = 0;
+                    e.returnValue = false;
+                }
+            }
+            //禁用   shift
+            if (e.shiftKey) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    event.keyCode = 0;
+                    e.returnValue = false;
+                }
+            }
+            //禁用：ctrl
+            if (e.ctrlKey) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    event.keyCode = 0;
+                    e.returnValue = false;
+                }
+            }
+ 
+            //禁用   shift+F10
+            if ((e.shiftKey) && (key == 121)) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    event.keyCode = 0;
+                    e.returnValue = false;
+                }
+            }
+            //禁用：ctrl+F10
+            if ((e.ctrlKey) && (key == 121)) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    event.keyCode = 0;
+                    e.returnValue = false;
+                }
+            }
+ 
+            //禁用   shift   加鼠标左键新开一网页
+            if (srcEle.tagName == "A" && e.shiftKey) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    event.keyCode = 0;
+                    e.returnValue = false;
+                }
+            }
+ 
+            //禁用Alt+F4
+            if ((e.altKey) && (key == 115)) {
+                window.showModelessDialog("about:blank ", " ", "dialogWidth:1px;dialogheight:1px ");
+                return false;
+            }
+ 
+            //如果是退格键且不是文本框的，则禁用退格的效果
+            if (key == 8 && srcEle.tagName != 'INPUT' && srcEle.tagName != 'BUTTON') {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    event.keyCode = 0;
+                    e.returnValue = false;
+                }
+            } else {
+                if (key == 8 && srcEle.tagName == 'INPUT') {
+                    var ele = $(srcEle);
+                    if (ele.attr('type') == 'button' || ele.attr('type') == 'submit' || ele.attr('readonly') || ele.attr('disabled')) {
+                        if (e.preventDefault) {
+                            e.preventDefault();
+                        } else {
+                            event.keyCode = 0;
+                            e.returnValue = false;
+                        }
+                        return false;
+                    }
+                }
+            }
+            //Enter键 转换成 Tab键的效果
+            if (key == 13) {
+                e.keyCode = 9;
+            }
+        }
+</script>         
 
 
 <a name="bottom"></a>				<!-- 返回顶部 -->
 <span class="js-cursor-container"></span>	<!-- 鼠标跟随特效 -->
 
-<!-- 君子需取有之道,尊重原作者的劳动成果,既是对作者的尊重也是对您的尊重 -->
-<!-- 即日起,未经本人许可，同意或者允许，将本程序网站进行传播，搬运，倒卖，盗用者,我随即会直接将你本人的所有私人信息公开到网络上！2022.09.20 刘小龙宣 -->
+
 </body>
 </html>
