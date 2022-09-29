@@ -20,7 +20,7 @@
 
 <style>
 
-.rules{
+* {
 
 -moz-user-select: none;
 
@@ -46,13 +46,13 @@ html {
 
 body { 
 
-	margin：0;
+	margin：0rem;
 
-	padding：0;
+	padding：0rem;
 
 	font-family: "Microsoft YaHei";
 
-	background-color: #F5F5F5;/* 网页背景属性 */
+	background-color: transparent;/* 网页背景属性 */
 	
 } 
 
@@ -121,7 +121,7 @@ strong {
     width: 5rem;    
     text-align: center;
     padding-top: 1.7rem;    
-    background-color: #F5F5F5;  <!-- 按钮背景色 -->
+    background-color: transparent;  <!-- 按钮背景色 -->
     border-radius: 20%;
     overflow: hidden;
 }
@@ -144,8 +144,8 @@ strong {
 
 }    
 .box-in {
-    width: 0;
-    height: 0;
+    width: 0rem;
+    height: 0rem;
     border-bottom: 2.5rem solid #FF7F50;
     border-left: 2.5rem solid transparent;
     border-right: 2.5rem solid transparent;
@@ -156,8 +156,8 @@ strong {
 <!-- 页面添加版权信息 -->	
 <style>
 		body {
-			padding: 0;
-			margin: 0;
+			padding: 0rem;
+			margin: 0rem;
 		}
 		#footer {
 			height: auto;
@@ -165,10 +165,10 @@ strong {
 			bottom: 0;
 			width: 100%;
 			text-align: center;
-			background: #F5F5F5;
+			background: transparent;
 			color: #000000;
 			font-family: Arial;
-			font-size: 1.1rem;
+			font-size: 1rem;
 			font-weight: bold;
 			letter-spacing: 0.3rem;
 			padding: 0;
@@ -194,6 +194,11 @@ strong {
         animation: change 10s infinite;
 
         font-weight: bold;
+
+        font-size: 1rem;
+
+        font-family: "Microsoft YaHei";
+
     }
 
     @keyframes change {
@@ -286,7 +291,7 @@ strong {
 <style type="text/css">
 	*{
             margin: 0 auto;
-            padding: 0;
+            padding: 0rem;
 	}
         #dao_hang {
             width: 20%; 
@@ -312,7 +317,7 @@ strong {
 	    height: 4.2rem;
 	    line-height: 4.2rem;/* 行高等于高,使文字垂直居中 */
 	    text-align: center;
-	    background: #F5F5F5;/* 菜单背景色 */
+	    background: transparent;/* 菜单背景色 */
             font-size: 1.7rem;/*字体大小*/
             font-family: "Microsoft YaHei";/*字体样式*/
 	}
@@ -960,7 +965,7 @@ document.onselectstart = function (event){
         var hrsold = Math.floor(e_hrsold);
         var e_minsold = (hrsold - e_hrsold) * -60;
         var minsold = Math.floor((hrsold - e_hrsold) * -60); var seconds = Math.floor((minsold - e_minsold) * -60).toString();
-        document.getElementById("momk").innerHTML = "本站已安全运行" + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+        document.getElementById("momk").innerHTML = "本站自建成至今已运行：" + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
         setTimeout(momxc, 1000);
     } momxc();
 </script>
