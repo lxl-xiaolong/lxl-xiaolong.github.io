@@ -20,7 +20,11 @@
 
 <style>
 
-* {
+*{
+
+margin：0rem;
+
+padding：0rem;
 
 -moz-user-select: none;
 
@@ -59,7 +63,7 @@ body {
 </style>
 
 
-<!-- li,strong标签上下间距 -->
+<!-- li，strong标签上下间距 -->
 <style> 
 
 li { 
@@ -83,8 +87,9 @@ strong {
 </style>
 
 
-<!-- p，h2,strong标签属性设置 -->
+<!-- p，h2，strong属性设置 -->
 <style>
+
 .contain p { 
 
 	font-family: "Microsoft YaHei";
@@ -113,6 +118,7 @@ strong {
 
 <!-- 以下是回到顶部部分 -->
 <style>
+
 .box {
     position: fixed;
     right: 4%;
@@ -179,6 +185,7 @@ strong {
 			color: #000000; 
 			font-size: 1.1rem; 
 			font-weight: bold;
+			font-family: "Microsoft YaHei";
                 }
 		.content {
 			height: 150rem;
@@ -281,53 +288,14 @@ strong {
 
 	a:visited { color: #000000;}                                                                                       /* 已访问链接 */
 
-	a:hover { background: #EE82EE; color: #000000; font-size: 1.7rem; font-weight: bold; text-decoration: underline;}  /* 鼠标移动到链接上 */
+	a:hover { background: transparent; color: #FF1493; font-size: 1.7rem; font-weight: bold; text-decoration: underline;}  /* 鼠标移动到链接上 */
 
 	a:active { color: #00FFFF; text-decoration: underline;}                                                            /* 鼠标点击时 */
 </style>
 
 
-<!-- 导航栏 -->
-<style type="text/css">
-	*{
-            margin: 0 auto;
-            padding: 0rem;
-	}
-        #dao_hang {
-            width: 20%; 
-            height: 6.8rem; 
-            position: fixed; 
-            top: 0rem; 
-            left: 0rem;	
-	}
-	#dao_hang {
-	    width: auto;
-	    height: 4.2rem;
-	}
-	#dao_hang ul li {
-	    list-style: none;/* 去掉小圆点 */
-	}
-	#dao_hang ul a {
-	    text-decoration: none;/* 去掉下划线 */
-            font-weight: bold;
-	}
-	#dao_hang ul li { /* 菜单的样式 */
-	    float: left;
-	    width: 8.3rem;
-	    height: 4.2rem;
-	    line-height: 4.2rem;/* 行高等于高,使文字垂直居中 */
-	    text-align: center;
-	    background: transparent;/* 菜单背景色 */
-            font-size: 1.7rem;/*字体大小*/
-            font-family: "Microsoft YaHei";/*字体样式*/
-	}
-	#dao_hang ul li:hover {
-	    background: #EE82EE;/* 鼠标经过时显示的背景颜色 */
-	}
-</style>
-
-
 </head>
+
 <body oncontextmenu='return false'
 
       ondragstart='return false'
@@ -342,29 +310,24 @@ strong {
 
       οnmοuseup='document.selection.empty()'
 
-      oncontextmenu=self.event.returnvalue=false>
+      oncontextmenu=self.event.returnvalue='false'>
 
-<div class="contain">	<!-- 回到顶部 -->
+
+<div class="contain">					<!-- 回到顶部 -->
 		<div id="box" class="box">
     			<div class="box-in"></div>
 		</div> 
 
-	<div id="dao_hang">	<!-- 导航栏 -->
-		<nav>
-		<ul>
-			<li><a href="#bottom">转到底部</a></li>
-			<li><input type="button" onclick="javascript:location.reload();" value="刷新当前页面"></li>
-		</ul>
-		</nav>
-	</div>
 
-<div style="max-width: 50%; margin: 0 auto; margin-left: auto; margin-right: auto"><!-- 页面整体居中开始 -->
+<div style="max-width: 50%; margin: 0 auto; margin-left: auto; margin-right: auto">	<!-- 页面整体居中开始 -->
+
 
 <center>
 	<font color='#0000FF'>
-		<h1><b>百站汇</b></h1>
+		<h1><b><a href="#bottom">转到底部</a>&emsp;|&emsp;百站汇&emsp;|&emsp;<input type="button" onclick="javascript:location.reload();" value="刷新当前页面"></b></h1>
 	</font>
 </center>
+
 		
 		<strong>目录：<strong><br/>
 
@@ -573,8 +536,8 @@ strong {
 
 <span><p>注：由于本人工作原因，此工具箱将暂时停更，不再添加新功能，后续主要以修复bug为主，请各位小伙伴知晓与理解。如需下载使用本系统工具箱，<a href="https://lxldwp.lanzoum.com/b01vrjped" target="_blank" rel="noopener nofollow">请点我(访问密码：2001)</a></p></span>
 
-</div><!-- 回到顶部结束 -->
 </div><!-- 页面整体居中结束 -->
+</div><!-- 回到顶部结束 -->
 
 <br/><hr color="#00FFFF" size="5"/><br/>
 	
@@ -583,13 +546,13 @@ strong {
 
 <!-- 百度分析 -->
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?85bf60a6550ebbfae001c334b99a7554";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+	var _hmt = _hmt || [];
+	(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?85bf60a6550ebbfae001c334b99a7554";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+	})();
 </script>
 
 
