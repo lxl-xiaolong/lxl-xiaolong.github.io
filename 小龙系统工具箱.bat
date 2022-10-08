@@ -1,24 +1,24 @@
 ::[Bat To Exe Converter]
 ::
-::fBE1pAF6MU+EWHreyHcjLQlHcCWGMWK0OpEZ++Pv4Pq7JKTE0Sbb/389XEJppDvFb4E9PRPxNv+1aYIwPBRPewCYZgo4pVJBrG6GedeP4m8=
-::fBE1pAF6MU+EWHreyHcjLQlHcCWGMWK0OpEZ++Pv4Pq7JKTE0Sbb/389XEJppDvFb4E9PRPxNv+1aYIwPBRPewCYZgo4pVJVpSqVJJb8
-::fBE1pAF6MU+EWHreyHcjLQlHcCWGMWK0OpEZ++Pv4Pq7JKTE0Sbb/389XEJppDvFb4E9PRPxNv+1aYIwPBRPewCYZgo4pVJbtX6BedeP4m8=
+::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugsBXrSQaZ9RpQ
+::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugpByvWlvYhg==
+::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugqgz7TgaZ9RpQ
 ::YAwzoRdxOk+EWAjk
-::fBw5plQjdCyDJGyX8VAjFDpQQQ2MAE+/Fb4I5/jHx96qjsvrs2bkrsdeBlQLzxFa1sIwtRDQJkZWl8wDQhJbcXI=
+::fBw5plQjdCyDJGyX8VAjFBpQQQ2MAE+/Fb4I5/jHajZnJ6LsaMoLVaNdLFMK+zZbb5kE8Hncn0bdTAuK8etkch2sYUE9qmEi
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
 ::Yhs/ulQjdF+5
 ::cxAkpRVqdFKZSjk=
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSTk=
-::eBoioBt6dFKZSDk=
+::eBoioBt6dFKZSTk=
 ::cRo6pxp7LAbNWATEpSI=
 ::egkzugNsPRvcWATEpSI=
 ::dAsiuh18IRvcCxnZtBNQ
 ::cRYluBh/LU+EWAjk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZksaGkraXA==
-::ZQ05rAF9IBncCkqN+0xwdVsHAlTMaiXiZg==
+::cxY6rQJ7JhzQF1fEqQJjZksaG0rSXA==
+::ZQ05rAF9IBncCkqN+0xwdVsHAlTMayXqZg==
 ::ZQ05rAF9IAHYFVzEqQK1+PTdkv2VNWW+CaIPbzsgaDF4J5rY0Qfo/0EKug==
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
@@ -29,7 +29,7 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFDpQQQ2MAE+/Fb4I5/jHaQNeJ4n50xLZ/nk8Xm9YpSTKosA4lRPCJzNmHRvjhcWhaRulagAjuumRbeNeyEJLdooEnc9HN3e1y4r9WZrHhSU/b8R7HRDYVPtBeZo6GkDHVrYuEKwWEAM=
+::Zh4grVQjdCyDJGyX8VAjFBpQQQ2MAE+/Fb4I5/jHajZnJ6LsaGTWoQofPjN+xmblDcE/oxPpDzLfRCuJ4+oRQpd7gYbqUHlLuGCKINQbYNRmkbcMMY61/rLzSbLsCsLI5T+NHDXkV/towMgvcCzOKG/2UK0BAnBmEnfv4zaFKs8xjZ5PVGIbT+7rCw==
 ::YB416Ek+ZW8=
 ::
 ::
@@ -42,8 +42,8 @@ CHCP 936
 timeout /nobreak /t 1 > nul
 
 
-rem ------------------------------------分割线-----------------------------------------
-rem ---------------------------------下面是主程序--------------------------------------
+:: ------------------------------------分割线-----------------------------------------
+:: ---------------------------------下面是主程序--------------------------------------
 
 
 :kaishi
@@ -75,7 +75,7 @@ echo.
 echo.                                           同意请按 Y              不同意请按 N
 echo.
 set sm=
-set /p sm=【请直接输入对应字母回车( Y / N )】
+set /p sm=【请直接输入对应字母回车( Y / N )】：
 if not "%sm%"=="" set sm=%sm:~0,1%
 if /i "%sm%"=="Y" goto next
 if /i "%sm%"=="N" goto END
@@ -136,17 +136,17 @@ goto menu
 :menu
 cls
 echo.
-echo. ///////////////////////////////////////////////////////////////////////////////////////////// 
+echo. *******************************************************************************************************
 echo.                                    
-echo. 时间：%time:~0,2%时%time:~3,2%分%time:~6,2%秒  
+echo. 当前时间：%time:~0,2%时%time:~3,2%分%time:~6,2%秒  
 echo.
-echo. 日期：%date% 
+echo. 当前日期：%date% 
 echo.
-echo. 工具箱版本：2022-09-17 15:24版 
+echo. 当前工具箱版本：2022-10-08 17:02版 
 echo.
 echo. windows系统工具箱运行路径：%~dp0
 echo.                                                                                                             
-echo. /////////////////////////////////////////////////////////////////////////////////////////////
+echo. *******************************************************************************************************
 echo.
 echo.******************************    请您输入要执行操作前的数字或字母序号,再按回车键    ************************************
 echo.
@@ -180,7 +180,7 @@ echo.
 echo.***********************************************************************************************************************
 echo.
 set id=
-set /p id=【请你输入并回车】
+set /p id=【请你输入并回车】：
 if not "%id%"=="" set id=%id:~0,1%
 if /i "%id%"=="0" goto 0
 if /i "%id%"=="1" goto 1
@@ -298,7 +298,7 @@ echo.
 echo.**********************************************************************************************
 echo.
 set shijian=
-set /p shijian=【请直接输入功能对应数字，并回车( 1 - 3 )】 
+set /p shijian=【请直接输入功能对应数字，并回车( 1 - 3 )】： 
 if not "%shijian%"=="" set shijian=%shijian:~0,1%
 if /i "%shijian%"=="1" goto xs
 if /i "%shijian%"=="2" goto bxs
@@ -390,7 +390,7 @@ echo.准备中......
 timeout /nobreak /t 1 > nul
 echo.
 set a=
-set /p a=【请输入关键字】
+set /p a=【请输入关键字】：
 timeout /nobreak /t 1 > nul
 start https://www.baidu.com/s?wd=%a%
 echo.
@@ -414,23 +414,23 @@ cls
 
 sfc /SCANNOW
 
-rem 检查修复系统
+:: 检查修复系统
 
 Dism /Online /Cleanup-Image /ScanHealth
 
-rem 扫描全部系统文件和系统映像文件是否与官方版一致
+:: 扫描全部系统文件和系统映像文件是否与官方版一致
 
 Dism /Online /Cleanup-Image /CheckHealth
 
-rem 检查文件的损坏程度，结果一般有两种：一般性损坏可以修复和情况严重完全无法修复
+:: 检查文件的损坏程度，结果一般有两种：一般性损坏可以修复和情况严重完全无法修复
 
 DISM /Online /Cleanup-image /RestoreHealth
 
-rem 联网将系统映像文件中与官方文件不相同的文件还原成官方系统的源文件
+:: 联网将系统映像文件中与官方文件不相同的文件还原成官方系统的源文件
 
 sfc /SCANNOW
 
-rem 再次检查
+:: 再次检查
 echo.
 echo.按键盘任意键继续...
 pause>nul
@@ -455,7 +455,7 @@ echo.
 echo.
 echo 是否继续此操作? 
 set put=
-set /p put=【Y / N】
+set /p put=【Y / N】：
 
 if not "%put%"=="" set put=%put:~0,1%
 if /i "%put%"=="Y" goto T
@@ -473,8 +473,8 @@ echo.继续操作...
 echo.
 echo 本功能可以移除windows系统内置应用来精简系统，需要输入路径/位置。例如 ：D:\桌面\yczd.ps1
 echo.
-set /p yichu=【请输入工具脚本运行路径/位置，并回车】
-powershell.exe -executionpolicy remotesigned -File "%yichu%"
+set /p yichu=【请输入工具脚本运行路径/位置，并回车】：
+powershell.exe -executionpolicy ::otesigned -File "%yichu%"
 echo.
 echo.按键盘任意键继续...
 pause>nul
@@ -518,10 +518,10 @@ cls
 echo.
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons" /v 29 /d "%systemroot%\system32\imageres.dll,197" /t reg_sz /f
 echo.
-rem 关闭Windows外壳程序explorer
+:: 关闭Windows外壳程序explorer
 taskkill /f /im explorer.exe
 echo.
-rem 清理系统图标缓存数据库
+:: 清理系统图标缓存数据库
 attrib -h -s -r "%userprofile%\AppData\Local\iconcache.db" 
 attrib /s /d -h -s -r "%userprofile%\AppData\Local\Microsoft\Windows\Explorer\*"
 del "%userprofile%\AppData\Local\iconcache.db" /f /q
@@ -533,10 +533,10 @@ del /f "%userprofile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_256.db
 del /f "%userprofile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_1024.db"
 del /f "%userprofile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_idx.db"
 del /f "%userprofile%\AppData\Local\Microsoft\Windows\Explorer\thumbcache_sr.db"
-rem 清理 系统托盘记忆的图标
+:: 清理 系统托盘记忆的图标
 echo Y|reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v IconStreams
 echo Y|reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v PastIconsStream
-rem 重启Windows外壳程序explorer
+:: 重启Windows外壳程序explorer
 start explorer.exe
 echo.
 echo.OK!
@@ -661,7 +661,7 @@ echo.**********************************ping本机IP地址***************************
 echo.
 
 set ip=
-set /p ip=【请直接输入本机IP地址回车】 
+set /p ip=【请直接输入本机IP地址回车】：
 echo.
 if /i "%ip%"=="" (goto inputting) else (goto pingIP)
 
@@ -723,7 +723,7 @@ echo.
 echo.***************************ping网关或局域网内其他IP********************************
 echo.
 set wgip=
-set /p wgip=【请输入网关或局域网内其他IP】 
+set /p wgip=【请输入网关或局域网内其他IP】： 
 if /i "%wgip%"=="" (goto wg) else (goto ipwg)
 echo.
 
@@ -742,7 +742,7 @@ echo.
 echo.您输入了 %wgip% ,开始执行操作...
 echo.
 echo.
-ping -n 20 -l 1500 "%wgip%"|findstr /I "TTL" 
+ping -n 15 -l 1500 "%wgip%"|findstr /I "TTL" 
 echo.
 echo.
 echo.
@@ -785,7 +785,7 @@ echo.************************************ping远程IP或域名***********************
 echo.
 echo.
 set waiwang=
-set /p waiwang=【请输入需要Ping的远程IP或域名  ( 如  : www.baidu.com  或者 36.152.44.95 )】 
+set /p waiwang=【请输入需要Ping的远程IP或域名( 如  : www.baidu.com  或者 36.152.44.95 )】： 
 if /i "%waiwang%"=="" (goto ww) else (goto wang)
 echo.
 
@@ -805,7 +805,7 @@ echo.您输入了 %waiwang% ,开始执行操作...
 timeout /nobreak /t 1 > nul
 echo.
 echo.
-ping /n 20 /l 1400 "%waiwang%"|findstr /I "TTL"
+ping /n 15 /l 1400 "%waiwang%"|findstr /I "TTL"
 echo.
 echo.
 echo.
@@ -825,9 +825,9 @@ echo.
 echo.开始测量路由情况...
 timeout /nobreak /t 1 > nul
 echo.
-rem 六. 测量路由情况，显示数据包到达目的主机所经过的路径.traceroute命令的基本用法是，在命令提示符后键入“tracert host_name”或“tracert ip_address”，其中，tracert是traceroute在Windows操作系统上的称呼。
+:: 六. 测量路由情况，显示数据包到达目的主机所经过的路径.traceroute命令的基本用法是，在命令提示符后键入“tracert host_name”或“tracert ip_address”，其中，tracert是traceroute在Windows操作系统上的称呼。
 set tracert=
-set /p tracert=【请输入 host_name (如 : www.baidu.com ) 或者 IP_address ( 如 : 36.152.44.95 ) 回车】  
+set /p tracert=【请输入 host_name (如 : www.baidu.com ) 或者 IP_address ( 如 : 36.152.44.95 ) 回车】：  
 if /i "%tracert%"=="" (goto host) else (goto address)
 
 :host
@@ -949,40 +949,40 @@ echo.
 echo.获取已连接WIFI名称及密码中...
 timeout /nobreak /t 1 > nul
 cls
-rem 使用两个嵌套的for，第一个for获取所有已连接的wifi，第二个for遍历获取每一个wifi并取得密码
+:: 使用两个嵌套的for，第一个for获取所有已连接的wifi，第二个for遍历获取每一个wifi并取得密码
  
-rem 需要使用for中的变量，需要使用如下setlocal及延迟环境变量扩展，否则%%a的变量无法使用
+:: 需要使用for中的变量，需要使用如下setlocal及延迟环境变量扩展，否则%%a的变量无法使用
  
 setlocal enableextensions enabledelayedexpansion  
 echo 系统已连接wifi列表
  
-rem wifi的递增编号
+:: wifi的递增编号
 set count=0
 echo        wifi序号                    wifi名称                     wifi密码
 echo        --------------------------------------------------------------------
  
-rem 获取所有已连wifi的列表，并用冒号：过滤“所有用户配置文件”的前后
+:: 获取所有已连wifi的列表，并用冒号：过滤“所有用户配置文件”的前后
  
 for /f "usebackq delims=: tokens=1-2" %%a in (`netsh wlan show profiles ^| findstr "所有用户配置文件"`) do (
  
-rem %%b为查询出来的解析后的第二个值：wifi ssid，赋值给临时变量wifiname
+:: %%b为查询出来的解析后的第二个值：wifi ssid，赋值给临时变量wifiname
     set "wifiname=%%b"
  
-rem 初始化wifi 密码为空
+:: 初始化wifi 密码为空
     set wifikey=
  
-rem wifi列表的序号自增1
+:: wifi列表的序号自增1
     set /a count+=1
     for /f "usebackq delims=: tokens=1-2" %%m in (`netsh wlan show profile name^=%%b key^=clear ^| findstr "关键内容"`) do (
  
-rem 用冒号隔开解析后的第二个值是密码，赋值给临时变量wifikey
+:: 用冒号隔开解析后的第二个值是密码，赋值给临时变量wifikey
         set "wifikey=%%n"
     )
  
-rem 打印出来       序号                     wifi名称                  wifi密码
+:: 打印出来       序号                     wifi名称                  wifi密码
 echo              !count!                  !wifiname!                 !wifikey!
 )
-rem 核心是通过外层for循环遍历出每一个wifi名称，内层for循环遍历每一个wifi名称的密码
+:: 核心是通过外层for循环遍历出每一个wifi名称，内层for循环遍历每一个wifi名称的密码
 echo.已完成
 timeout /nobreak /t 1 > nul
 echo.
@@ -1013,7 +1013,7 @@ echo.
 echo.已阅读并同意请按 ( "   Y   " );  不同意则按 ( "   N   " ).
 echo.
 set a=
-set /p a=【请你输入对应序号  (  Y  /  N  )】 
+set /p a=【请你输入对应序号  (  Y  /  N  )】： 
 if not "%a%"=="" set a=%a:~0,1%
 if /i "%a%"=="Y" goto open
 if /i "%a%"=="N" goto menu
@@ -1026,11 +1026,11 @@ goto M
 
 :open
 cls
-rem 列出所有进程
+:: 列出所有进程
 tasklist
 echo.
 set tk=
-set /p tk=【请输入要删除的进程名或PID , 然后回车】 
+set /p tk=【请输入要删除的进程名或PID , 然后回车】： 
 echo.
 taskkill /f /im %tk%
 echo.
@@ -1045,7 +1045,7 @@ echo.
 echo              Y 继续		N 退出 
 echo. 
 set id=
-set /p id=【请输入（ 输入 Y / N ）】
+set /p id=【请输入（ 输入 Y / N ）】：
 if not "%id%"=="" set id=%id:~0,1%
 if /i "%id%"=="Y" goto open
 if /i "%id%"=="N" goto menu 
@@ -1059,12 +1059,12 @@ goto false
 :N
 cls
 echo.
-rem 所有使用电源方案
+:: 所有使用电源方案
 powercfg L
 echo.
 echo.
 set pc=
-set /p pc=【请输入要删除电源方案的  "   GUID  " , 然后回车】 
+set /p pc=【请输入要删除电源方案的  "   GUID  " , 然后回车】： 
 echo.
 powercfg D %pc%
 if %errorlevel%==0 (goto N) else (goto fs)
@@ -1078,7 +1078,7 @@ echo.
 echo              Y 继续		N 退出 
 echo. 
 set id=
-set /p id=【请输入（ 输入 Y / N ）】
+set /p id=【请输入（ 输入 Y / N ）】：
 if not "%id%"=="" set id=%id:~0,1%
 if /i "%id%"=="Y" goto N
 if /i "%id%"=="N" goto menu       
@@ -1104,7 +1104,7 @@ echo.
 echo.***************************************************************************************
 echo.
 set input=
-set /p input=【请直接输入功能对应数字，并回车(1-4)】 
+set /p input=【请直接输入功能对应数字，并回车(1-4)】： 
 if not "%input%"=="" set input=%input:~0,1%
 if /i "%input%"=="1" goto HD
 if /i "%input%"=="2" goto HF
@@ -1125,7 +1125,7 @@ reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\Inpr
 echo OK!
 echo.按键盘任意键继续...
 pause>nul
-GOTO RUNNING
+goto P
 
 :HF
 cls
@@ -1136,7 +1136,7 @@ reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\I
 echo OK!
 echo.按键盘任意键继续...
 pause>nul
-GOTO RUNNING
+goto P
 
 :MENU
 cls
@@ -1153,7 +1153,7 @@ timeout /nobreak /t 1 > nul
 start explorer.exe
 ECHO OK!
 timeout /nobreak /t 1 > nul
-GOTO RUNNING
+goto P
 
 
 
@@ -1177,7 +1177,7 @@ echo.
 echo./////////////////////////////////////////////////////////////////////
 echo.
 set rw=
-set /p rw=【请直接输入功能对应数字，并回车 ( 1 - 4 )】 
+set /p rw=【请直接输入功能对应数字，并回车 ( 1 - 4 )】： 
 if not "%rw%"=="" set rw=%rw:~0,1%
 if /i "%rw%"=="1" goto oe
 if /i "%rw%"=="2" goto wo
@@ -1222,9 +1222,9 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.本功能可以重新部署WindowsStore，需要输入路径/位置，例如 ：D:\桌面\ws.ps1
 echo.
-set /p wse=【请输入工具脚本执行路径/位置，并回车】
+set /p wse=【请输入工具脚本执行路径/位置，并回车】：
 echo.
-powershell.exe -executionpolicy remotesigned -File "%wse%"
+powershell.exe -executionpolicy ::otesigned -File "%wse%"
 echo.按键盘任意键继续...
 pause>nul
 goto Q
@@ -1274,7 +1274,7 @@ echo.
 echo.---------------------------------------------------------------------------------------------------------------------
 echo.
 set rwl=
-set /p rwl=【请直接输入功能对应数字，并回车 ( 1 - 4 )】 
+set /p rwl=【请直接输入功能对应数字，并回车 ( 1 - 4 )】： 
 if not "%rwl%"=="" set rwl=%rwl:~0,1%
 if /i "%rwl%"=="1" goto one
 if /i "%rwl%"=="2" goto two
@@ -1306,9 +1306,9 @@ echo.
 echo.本功能可以重新部署windows系统操作进程，需要输入路径/位置，例如 ：D:\桌面\czjc.ps1
 echo.
 set bushu=
-set /p bushu=【请输入工具脚本执行路径/位置，并回车】
+set /p bushu=【请输入工具脚本执行路径/位置，并回车】：
 echo.
-powershell.exe -executionpolicy remotesigned -File "%bushu%"
+powershell.exe -executionpolicy ::otesigned -File "%bushu%"
 echo.按键盘任意键继续...
 pause>nul
 goto Y
@@ -1332,6 +1332,7 @@ timeout /nobreak /t 1 > nul
 goto menu
 
 
+::退出程序
 :END
 cls
 echo.
