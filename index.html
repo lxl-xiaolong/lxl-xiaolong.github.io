@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
+<html lang="zh-cmn-Hans" dir="ltr">
 <head>
 
 
 <meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-
+<meta name="renderer" content="webkit" />
+<meta name="force-rendering" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=9, IE=8, IE=11, IE=Edge" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1" />
+<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" />
+<meta name="applicable-device"content="pc,mobile" />
+<meta name="HandheldFriendly" content="true" />
+<base href="/" />
+<base href="_blank" />
 
 <title>百站汇</title>
 
@@ -50,10 +56,6 @@ html {
 
 body { 
 
-	margin：0rem;
-
-	padding：0rem;
-
 	font-family: "Microsoft YaHei";
 
 	background-color: transparent;/* 网页背景属性 */
@@ -63,25 +65,22 @@ body {
 </style>
 
 
-<!-- li，strong标签上下间距 -->
+<!-- li，strong，p标签上下间距 -->
 <style> 
 
 li { 
 
-	width: auto; 
-
-	margin-bottom: 5rem;
-
-	margin: 1.5rem 0;
+	line-height: 1.6em;
 
 } 
 strong { 
 
-	width: auto; 
+	line-height: 0.4em;
 
-	margin-bottom: 5rem;
-	
-	margin: 1.5rem 0;
+} 
+p { 
+
+	line-height: 1.6em;
 
 } 
 </style>
@@ -167,7 +166,7 @@ strong {
 		}
 		#footer {
 			height: auto;
-			line-height: auto;
+			line-height: 1.8rem;	/* 文本每行间距 */
 			bottom: 0;
 			width: 100%;
 			text-align: center;
@@ -284,13 +283,13 @@ strong {
 <style>
 	a { text-decoration: none;}
  
-	a:link { color: #000000; font-size: 1.7rem; font-weight: 400;}                                                     /* 未访问链接*/
+	a:link { color: #000000; font-size: 1.7rem; font-weight: 400;}                                                         /* 未访问链接*/
 
-	a:visited { color: #000000;}                                                                                       /* 已访问链接 */
+	a:visited { color: #000000;}                                                                                           /* 已访问链接 */
 
 	a:hover { background: transparent; color: #FF1493; font-size: 1.7rem; font-weight: bold; text-decoration: underline;}  /* 鼠标移动到链接上 */
 
-	a:active { color: #00FFFF; text-decoration: underline;}                                                            /* 鼠标点击时 */
+	a:active { color: #00FFFF; text-decoration: underline;}                                                                /* 鼠标点击时 */
 </style>
 
 
@@ -314,7 +313,7 @@ strong {
 
       onUnload="opener.location.reload()">
 
-<div class="contain">					<!-- 回到顶部 -->
+<div class="contain">	<!-- 回到顶部 -->
 		<div id="box" class="box">
     			<div class="box-in"></div>
 		</div> 
@@ -323,19 +322,23 @@ strong {
 
 <center>
 	<font color='#0000FF'>
-		<h1><b><a href="#bottom">转到底部</a>&emsp;|&emsp;百站汇&emsp;|&emsp;<a href="javascript:document.location.reload()" target="_self" rel="external noopener noreferrer nofollow">刷新当前页面</a></b></h1>
+		<h1><b><a href="#bottom">转到底部</a>&emsp;|&emsp;百站汇&emsp;|&emsp;<a href="javascript:document.location.reload()" target="_self" rel="external noopener noreferrer nofollow">刷新页面</a></b></h1>
 	</font>
-</center>		
+</center>
+<hr width='100%'/>		
 		<strong>目录：<strong><br/>
-		<a href="#1">一、磁盘管理软件</a><br/>
-		<a href="#2">二、系统镜像</a><br/>
-		<a href="#3">三、解压缩软件</a><br/>
-		<a href="#4">四、AMD | Inter | NVIDIA相关驱动下载</a><br/>
-		<a href="#5">五、在线学习</a><br/>
-		<a href="#6">六、系统启动U盘制作工具</a><br/>
-		<a href="#7">七、各品牌电脑服务与支持</a><br/>
-		<a href="#8">八、在线便捷工具</a><br/>
-		<a href="#9">九、实用网站及软件工具</a><br/><br/>
+<ul>
+		<li><a href="#1">一、磁盘管理软件</a></li><br/>
+		<li><a href="#2">二、系统镜像</a></li><br/>
+		<li><a href="#3">三、解压缩软件</a></li><br/>
+		<li><a href="#4">四、AMD | Inter | NVIDIA相关驱动下载</a></li><br/>
+		<li><a href="#5">五、在线学习</a></li><br/>
+		<li><a href="#6">六、系统启动U盘制作工具</a></li><br/>
+		<li><a href="#7">七、各品牌电脑服务与支持</a></li><br/>
+		<li><a href="#8">八、在线便捷工具</a></li><br/>
+		<li><a href="#9">九、实用网站及软件工具</a></li>
+</ul>
+<hr width='100%'/>
 <!-- 网页内容 -->
 <div>
 		<b><h2 id="1">一、磁盘管理软件</h2></b>
@@ -507,7 +510,7 @@ strong {
 		<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5" target="_blank" rel="noopener external noreferrer nofollow">wikiHow（可信赖的万事指南）</a></li>
 		<li><a href="https://www.lzpan.com/" target="_blank" rel="noopener external noreferrer nofollow">懒盘搜索</a></li>
 		<li><a href="https://cp.anyknew.com/" target="_blank" rel="noopener external noreferrer nofollow">拷贝兔</a></li>
-		<li><a href="http://www.musictool.top/" target="_blank" rel="noopener external noreferrer nofollow">音乐搜索器</a></li>
+		<li><del><a href="http://www.musictool.top/" target="_blank" rel="noopener external noreferrer nofollow">音乐搜索器</a></del></li>
 		<li><a href="http://www.nlc.cn/" target="_blank" rel="noopener external noreferrer nofollow">中国国家图书馆</a></li>
 		<li><a href="https://hao.uisdc.com/" target="_blank" rel="noopener external noreferrer nofollow">优设导航</a></li>
 		<li><a href="https://tupian.sioe.cn/b/bing-home-image/" target="_blank" rel="noopener external noreferrer nofollow">Windows开机照片</a></li>
@@ -539,7 +542,7 @@ strong {
 
 <hr color="#00FFFF" size="5"/>
 	
-<div id="footer"><p>本人在本站发布的windows系统工具箱仅作为个人使用，未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，否则后果自负！<br/>本站为个人网站，本站所发布的一切资源均来自于互联网,并由本人整理，仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负，如侵犯到您的权益，请及时通知我(2539223617@qq.com),我会及时处理。<br/>访问和下载本站内容，表明您已知晓并同意上述条款。<br/>本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。<br/>请您支持购买正版软件!</p>&copy 2022 刘小龙&emsp;|&emsp;<a href="https://www.12377.cn/" title="举报" target="_blank" rel="noopener external noreferrer nofollow">网站有害信息举报</a><br/><span id="time"></span>&emsp;<br/><span id="momk"></span><span id="momk" style="color: #ff0000;"></span></div>
+<div id="footer"><p>本人在本站发布的windows系统工具箱仅作为个人使用，未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，否则后果自负！<br/>本站为个人网站，本站所发布的一切资源均来自于互联网,并由本人整理，仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负，如侵犯到您的权益，请及时通知我(2539223617@qq.com),我会及时处理。<br/>访问和下载本站内容，表明您已知晓并同意上述条款。<br/>本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。<br/>请您支持购买正版软件!</p>&copy 2022 刘小龙&emsp;|&emsp;<a href="https://www.12377.cn/" title="举报" target="_blank" rel="noopener external noreferrer nofollow">网站有害信息举报</a><br/><span id="time"></span>&emsp;<br/><span id="momk"></span><span id="momk" style="color: #ff0000;"></span></p></div>
 
 
 <!-- 百度分析 -->
@@ -1069,6 +1072,29 @@ document.onselectstart = function (event){
             }
         }
 </script>         
+
+
+<script>
+// 禁用双指缩放
+document.documentElement.addEventListener('touchstart', function (event) {
+  if (event.touches.length > 1) {
+    event.preventDefault();
+  }
+}, false);
+</script>
+
+
+<script>
+// 禁止双击缩放
+var lastTouch = 0;
+document.documentElement.addEventListener('touchend', function (event) {
+  var now = Date.now();
+  if (now - lastTouch <= 300) {
+    event.preventDefault();
+  }
+  lastTouch = now;
+}, false);
+</script>
 
 
 <a name="bottom"></a>				<!-- 返回顶部 -->
