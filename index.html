@@ -6,13 +6,12 @@
 <meta charset="UTF-8"/>
 <meta name="renderer" content="webkit"/>
 <meta name="force-rendering" content="webkit"/>
-<meta http-equiv="X-UA-Compatible" content="IE=9, IE=8, IE=11, IE=Edge"/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1"/>
+<meta http-equiv="X-UA-Compatible" content="IE=8,IE=9,IE=11,IE=Edge,Chrome=1"/>
 <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover"/>
 <meta name="applicable-device"content="pc,mobile"/>
 <meta name="HandheldFriendly" content="true"/>
 <base href="/"/>
-<base href="_blank"/>
+<base href="_blank">
 
 
 <title>百站汇</title>
@@ -1109,9 +1108,20 @@ document.documentElement.addEventListener('touchend', function (event) {
 </script>
 
 
+<script>
+var threshold = 160; // 打开控制台的宽或高阈值
+// 每秒检查一次
+var check = setInterval(function() {
+    if (window.outerWidth - window.innerWidth > threshold || 
+        window.outerHeight - window.innerHeight > threshold) {
+        // 如果打开控制台，则刷新页面
+        window.location.reload();
+    }
+}, 1000);
+</script>
+
 <a name="bottom"></a>				<!-- 返回顶部 -->
 <span class="js-cursor-container"></span>	<!-- 鼠标跟随特效 -->
-
 
 </body>
 </html>
