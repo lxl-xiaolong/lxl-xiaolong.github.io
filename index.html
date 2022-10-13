@@ -1123,20 +1123,8 @@ document.documentElement.addEventListener('touchend', function (event) {
 </script>
 
 
-<script>
-var threshold = 160; // 打开控制台的宽或高阈值
-// 每秒检查一次
-var check = setInterval(function() {
-    if (window.outerWidth - window.innerWidth > threshold || 
-        window.outerHeight - window.innerHeight > threshold) {
-        // 如果打开控制台，则刷新页面
-        window.location.reload();
-    }
-}, 1000);
-</script>
-
-<a name="bottom"></a><!-- 返回顶部 -->
-<span class="js-cursor-container"></span><!-- 鼠标跟随特效 -->
+<a name="bottom"></a>	<!-- 返回顶部 -->
+<span class="js-cursor-container"></span>	<!-- 鼠标跟随特效 -->
 
 </body>
 </html>
