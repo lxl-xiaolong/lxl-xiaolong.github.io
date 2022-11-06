@@ -1,40 +1,37 @@
 <!DOCTYPE html>
-<html> 
+<html lang="zh_cmn_Hans_CN"> 
 <head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="x-dns-prefetch-control" content="on">
-  <link rel="dns-prefetch" href="//github.com">
-  <link rel="dns-prefetch" href="//github.io">
-  <link rel="dns-prefetch" href="//github.githubassets.com">
-  <link rel="dns-prefetch" href="//github.global.ssl.fastly.net">
-  <link rel="dns-prefetch" href="//api.github.com">
-  <link rel="dns-prefetch" href="//avatars.githubusercontent.com">
-  <link rel="dns-prefetch" href="//github-cloud.s3.amazonaws.com">
-  <link rel="dns-prefetch" href="//user-images.githubusercontent.com/">
-  <link rel="dns-prefetch" href="//github.map.fastly.net">
-  <link rel="dns-prefetch" href="//raw.githubusercontent.com">
-  <link rel="dns-prefetch" href="//assets-cdn.github.com">
-  <link rel="dns-prefetch" href="//gist.github.com">
-  <link rel="dns-prefetch" href="//favicons.githubusercontent.com">
-  <link rel="dns-prefetch" href="//github-com.s3.amazonaws.com">
-  <link rel="dns-prefetch" href="//githubstatus.com">
-  <link rel="dns-prefetch" href="//github.community">
-  <link rel="dns-prefetch" href="//media.githubusercontent.com">
-  <title>百站汇</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+     <meta charset="UTF-8">
+     <meta http-equiv="x-dns-prefetch-control" content="on">
+     <link rel="dns-prefetch" href="//github.com">
+     <link rel="dns-prefetch" href="//github.io">
+     <link rel="dns-prefetch" href="//github.githubassets.com">
+     <link rel="dns-prefetch" href="//github.global.ssl.fastly.net">
+     <link rel="dns-prefetch" href="//api.github.com">
+     <link rel="dns-prefetch" href="//avatars.githubusercontent.com">
+     <link rel="dns-prefetch" href="//github-cloud.s3.amazonaws.com">
+     <link rel="dns-prefetch" href="//user-images.githubusercontent.com">
+     <link rel="dns-prefetch" href="//github.map.fastly.net">
+     <link rel="dns-prefetch" href="//raw.githubusercontent.com">
+     <link rel="dns-prefetch" href="//assets-cdn.github.com">
+     <link rel="dns-prefetch" href="//gist.github.com">
+     <link rel="dns-prefetch" href="//favicons.githubusercontent.com">
+     <link rel="dns-prefetch" href="//github-com.s3.amazonaws.com">
+     <link rel="dns-prefetch" href="//githubstatus.com">
+     <link rel="dns-prefetch" href="//github.community">
+     <link rel="dns-prefetch" href="//media.githubusercontent.com">
+     <link rel="dns-prefetch" href="//microsoft.com">
+     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+     <meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>百站汇</title>
+
+
 <!--css样式表开始-->
 
 <style>
 * {
-	margin：0 auto;
+	margin：0;
 	padding：0;
-	font-family: Tahoma,Verdana,Arial,sans-serif;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	-khtml-user-select: none;
-	user-select: none;
 }
 </style>
 
@@ -42,7 +39,7 @@
 <style> 
 html { font-size: 12px;}
  
-body { margin：0 auto;
+body { 
        font-family: Tahoma,Verdana,Arial,sans-serif;
        background-color: transparent; /*网页背景*/
 } 
@@ -51,49 +48,16 @@ body { margin：0 auto;
 
 <style>
 /*回到顶部部分*/
-.box {
-    position: fixed;
-    right: 1%;
-    bottom: 4rem;
-    height: 3.3rem;
-    width: 5rem;    
-    text-align: center;
-    padding-top: 1.7rem;    
-    background-color: transparent;  /*按钮背景色*/
-    border-radius: 20%;
-    overflow: hidden;
-}
-.box:hover:before { top: 50%;}
-
-.box:hover .box-in { visibility: hidden;}
-
-.box:before {
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    content: "回到顶部";
-    width: 3.3rem;
-    color: #000000;  /*按钮字体颜色*/
-    font-weight: bold;
-    font-size: 1.5rem;
-    font-family: Tahoma,Verdana,Arial,sans-serif;
-} 
-   
-.box-in {
-    width: 0;
-    height: 0;
-    border-bottom: 2.5rem solid #FFB6C1; /*指示箭头颜色*/
-    border-left: 2.5rem solid transparent;
-    border-right: 2.5rem solid transparent;
-}
+p#back-to-top{
+            position: fixed;
+            display: none;
+            bottom: 8.3rem;
+            right: 6.7rem;
 </style>
 
 
 <style>
 /*页面添加版权信息*/
-		body { padding: 0; margin: 0;}
-
 		#footer {
 			height: auto;
 			line-height: 1.9rem; /*文本每行间距*/
@@ -106,8 +70,6 @@ body { margin：0 auto;
 			font-size: 1.1rem;
 			font-weight: bold;
 			letter-spacing: 0.4rem;
-			padding: 0 auto;
-			margin: 0;
 }
 
 		#footer a:link { 
@@ -261,47 +223,10 @@ body { margin：0 auto;
 </style>
 
 <!--css样式表结束-->
+
+
 </head>
-<body oncontextmenu="return false"
-      ondragstart="return false"
-      onselectstart="return false"
-      onselect="document.selection.empty()"
-      oncopy="document.selection.empty()"
-      onbeforecopy="return false"
-      οnmοuseup="document.selection.empty()"
-      onload="opener.location.reload()"
-      onUnload="opener.location.reload()">
-      <!--键盘行为-->
-
-
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
-<script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
-<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.0.0/jquery.min.js"></script>
-<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-<script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-<script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-<!--引用jquery-->
-
-
-		<div class="contain">
-				<div id="box" class="box">
-					<div class="box-in"></div>
-				</div>
-				<!--回到顶部-->
+<body>
 
 <br>
 
@@ -311,9 +236,12 @@ body { margin：0 auto;
 
 </div><!--标题-->
 
-			<div style="margin: 0 auto; max-width: 50%;"><!--内容居中开始-->
+
+<div style="margin: 0 auto; max-width: 50%;"><!--内容居中开始-->
+
 
 <br>
+
 
 <div id="tishi"><!--提示开始-->
 
@@ -323,13 +251,15 @@ body { margin：0 auto;
 <p>1、建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本网站。</p>
 <p>2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击 “ 翻译为 中文（简体）” 即可将非中文页面显示为中文页面。（ 不同浏览器表述略有出入，但表达意思一致 ）</p>
 <p>3、点击目录中的标题（标题一至标题十），可以直接跳转，浏览你所点击标题下的具体内容。</p>
-<p>4、点击本站右下角的小三角，可以随时回到页面顶部。</p>
+<p>4、鼠标滚动本站页面一段时间，右下角会出现一个按钮，点击它可以返回页面顶部。</p>
 
 </details>
 
 </div><!--提示结束-->
 
+
 <br>
+
 
 <div id="mulu"><!--目录-->
 
@@ -350,7 +280,9 @@ body { margin：0 auto;
 </div><!--目录-->
 
 
+
 <div id="web_contents"><!--网页内容开始-->
+
 
 
 <div>
@@ -625,11 +557,15 @@ body { margin：0 auto;
 
 </div><!--网页内容结束-->
 
+
 <span><p style="font-size: 1.8rem; font-weight: bold; line-height: 3rem;">注：由于本人工作原因，此工具箱将暂时停更，不再添加新功能，后续主要以修复bug为主，请各位小伙伴知晓与理解。如需下载使用本系统工具箱，<a href="https://lxldwp.lanzoum.com/b01vrjped" target="_blank" rel="noopener external noreferrer nofollow">请点我(访问密码：2001)</a></p></span>
 
-			</div><!--内容居中结束-->
 
-				</div><!--回到顶部结束-->
+</div><!--内容居中结束-->
+
+
+</div><!--回到顶部结束-->
+
 
 <div id="footer"><!--版权信息开始-->
 
@@ -646,8 +582,34 @@ Powered By Github lxl-xiaolong<br>
 <span>本站特别鸣谢<a href="https://github.com/" title="Github" target="_blank" rel="noopener external noreferrer nofollow" style="background-color: transparent; color: #000000;">Github</a>提供技术支持</span><br>
 <span id="momk"></span><span id="momk" style="color: #ff0000;"></span>
 
+
 </div><!--版权信息结束-->
+
+
 <!--js脚本开始-->
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+<script src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<!--引用jquery-->
+
 
 <script>
 //百度分析
@@ -1001,25 +963,30 @@ var _hmt = _hmt || [];
 
 
 <script>
-//回到顶部
-	var timer  = null;
-	box.onclick = function(){
-    	cancelAnimationFrame(timer);
-    	//获取当前毫秒数
-    	var startTime = +new Date();     
-    	//获取当前页面的滚动高度
-    	var b = document.body.scrollTop || document.documentElement.scrollTop;
-    	var d = 500;
-    	var c = b;
-    	timer = requestAnimationFrame(function func(){
-        var t = d - Math.max(0,startTime - (+new Date()) + d);
-        document.documentElement.scrollTop = document.body.scrollTop = t * (-c) / d + b;
-        timer = requestAnimationFrame(func);
-        if(t == d){
-          cancelAnimationFrame(timer);
-        	}
-    	});
-	}
+ $(function(){
+        //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+        $(function () {
+            $(window).scroll(function(){
+                if ($(window).scrollTop()>100){
+                    $("#back-to-top").fadeIn(1500);
+                }
+                else
+                {
+                    $("#back-to-top").fadeOut(1500);
+                }
+            });
+ 
+            //当点击跳转链接后，回到页面顶部位置
+            $("#back-to-top").click(function(){
+                if ($('html').scrollTop()) {
+                    $('html').animate({ scrollTop: 0 }, 100);//动画效果
+                    return false;
+                }
+                $('body').animate({ scrollTop: 0 }, 100);
+                return false;
+            });
+        });
+    });
 </script>
 
 
@@ -1256,118 +1223,7 @@ clickEffect();//调用特效函数
 
 
 <script>
-        window.onload = function(){
-            //屏蔽键盘事件
-             document.onkeydown = function (){
-                var e = window.event || arguments[0];
-                //F12
-                 if(e.keyCode == 123){
-                   return false;
-               //Ctrl+Shift+I
-                }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){
-                    return false;
-                //Shift+F10
-               }else if((e.shiftKey) && (e.keyCode == 121)){
-                     return false;
-                 //Ctrl+U
-               }else if((e.ctrlKey) && (e.keyCode == 85)){
-                    return false;
-                }
-            };
-        }
-</script>
-
-
-<script>
-//复制
-document.oncopy = function (event){
-    if(window.event){
-    event = window.event;
-    }
-    try{
-        var the = event.srcElement;
-        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
-        return false;
-        }
-        return true;
-        }
-    catch (e){
-        return false;
-    }
-}
-</script>
-
-
-<script>
-//剪切
-document.oncut = function (event){
-    if(window.event){
-    event = window.event;
-    }
-    try{
-        var the = event.srcElement;
-        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
-        return false;
-        }
-        return true;
-        }
-    catch (e){
-        return false;
-    }
-}
-</script>
-
-
-<script>
-window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
-    // 判断是否按下F12，F12键码为123
-    if (event.keyCode == 123) {
-    event.preventDefault(); // 阻止默认事件行为
-    window.event.returnValue = false;
-    }
-}
-</script>
-
-
-<script>
-document.onpaste = function (event){
-    if(window.event){
-        event = window.event;
-        }
-    try{
-        var the = event.srcElement;
-        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
-        return false;
-        }
-        return true;
-        }
-    catch (e){
-        return false;
-    }
-}
-</script>
-
-
-<script>
-document.onselectstart = function (event){
-    if(window.event){
-        event = window.event;
-        }
-    try{
-        var the = event.srcElement;
-        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
-        return false;
-        }
-        return true;
-        } 
-    catch (e) {
-        return false;
-    }
-}
-</script>
-
-
-<script>
+//本站自建成至今已运行时间
     function NewDate(str) {
         str = str.split('-');
         var date = new Date();
@@ -1393,166 +1249,10 @@ document.onselectstart = function (event){
 </script>
 
 
-<script>
-        //禁止ctrl+s保存
-        window.addEventListener("keydown", function (e) {
-            if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-                e.preventDefault();
-            }
-        }, false);
- 
-        //禁止F12键盘
-        window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
-            if (event.keyCode == 123) {
-                event.preventDefault();
-                window.event.returnValue = false;
-            }
-        }
- 
-        //禁用backspace键
-        document.onkeydown = function (e) {
- 
-            var e = e || window.event;
- 
-            var key = e.keyCode || e.which;
- 
-            var srcEle = e.srcElement ? e.srcElement : e.target;
- 
-            //禁用Alt+方向键→和禁用Alt+方向键←
-            if ((e.altKey) && ((key == 37) || (key == 39))) {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                } else {
-                    event.keyCode = 0;
-                    e.returnValue = false;
-                }
-            }
- 
-            //禁用退格删除键,F5刷新键，Ctrl+R
-            if ((key == 116) || (e.ctrlKey && key == 82)) {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                } else {
-                    event.keyCode = 0;
-                    e.returnValue = false;
-                }
-            }
- 
-            //禁用Ctrl+n
-            if ((e.ctrlKey) && (key == 78)) {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                } else {
-                    event.keyCode = 0;
-                    e.returnValue = false;
-                }
-            }
-            //禁用shift
-            if (e.shiftKey) {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                } else {
-                    event.keyCode = 0;
-                    e.returnValue = false;
-                }
-            }
-            //禁用ctrl
-            if (e.ctrlKey) {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                } else {
-                    event.keyCode = 0;
-                    e.returnValue = false;
-                }
-            }
- 
-            //禁用shift+F10
-            if ((e.shiftKey) && (key == 121)) {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                } else {
-                    event.keyCode = 0;
-                    e.returnValue = false;
-                }
-            }
-            //禁用ctrl+F10
-            if ((e.ctrlKey) && (key == 121)) {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                } else {
-                    event.keyCode = 0;
-                    e.returnValue = false;
-                }
-            }
- 
-            //禁用shift加鼠标左键新开一网页
-            if (srcEle.tagName == "A" && e.shiftKey) {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                } else {
-                    event.keyCode = 0;
-                    e.returnValue = false;
-                }
-            }
- 
-            //禁用Alt+F4
-            if ((e.altKey) && (key == 115)) {
-                window.showModelessDialog("about:blank ", " ", "dialogWidth:1px;dialogheight:1px ");
-                return false;
-            }
- 
-            //如果是退格键且不是文本框的，则禁用退格的效果
-            if (key == 8 && srcEle.tagName != 'INPUT' && srcEle.tagName != 'BUTTON') {
-                if (e.preventDefault) {
-                    e.preventDefault();
-                } else {
-                    event.keyCode = 0;
-                    e.returnValue = false;
-                }
-            } else {
-                if (key == 8 && srcEle.tagName == 'INPUT') {
-                    var ele = $(srcEle);
-                    if (ele.attr('type') == 'button' || ele.attr('type') == 'submit' || ele.attr('readonly') || ele.attr('disabled')) {
-                        if (e.preventDefault) {
-                            e.preventDefault();
-                        } else {
-                            event.keyCode = 0;
-                            e.returnValue = false;
-                        }
-                        return false;
-                    }
-                }
-            }
-            //Enter键转换成Tab键的效果
-            if (key == 13) {
-                e.keyCode = 9;
-            }
-        }
-</script>
-
-
-<script>
-// 禁用双指缩放
-document.documentElement.addEventListener('touchstart', function (event) {
-  if (event.touches.length > 1) {
-    event.preventDefault();
-  }
-}, false);
-</script>
-<script>
-// 禁止双击缩放
-var lastTouch = 0;
-document.documentElement.addEventListener('touchend', function (event) {
-  var now = Date.now();
-  if (now - lastTouch <= 300) {
-    event.preventDefault();
-  }
-  lastTouch = now;
-}, false);
-</script>
-
 <!--js脚本结束-->
-<a name="bottom"></a><!--返回顶部-->
+
+<p id="back-to-top"><a href="#top">返回顶部</a></p>
+
 <span class="js-cursor-container"></span><!--鼠标跟随特效-->
 </body>
 </html>
