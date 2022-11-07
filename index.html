@@ -1,8 +1,10 @@
-<!doctype html>
+
+
+<!DOCTYPE html>
 
 
 
-<html lang="zh">
+<html lang="zh-hans">
 
 
 
@@ -35,8 +37,7 @@
     <meta name="force-rendering" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="applicable-device" content="pc,mobile">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 
 
@@ -82,7 +83,7 @@
 
 
      <meta http-equiv="Cache-Control" content="max-age=10800">
-     <meta http-equiv="Expires" content="Thu,31 Dec 2099 23:59:59 GMT">
+     <meta http-equiv="Expires" content="Thu, 31 Dec 2099 23:59:59 GMT">
      <meta http-equiv="Cache-Control" content="no-siteapp">
      <meta name="apple-mobile-web-app-capable" content="yes">
      <meta name="apple-touch-fullscreen" content="yes">
@@ -111,22 +112,52 @@
 
 
 <style>
-
-html { font-size: 12px;}
  
-body {
+html,body {
 
-       font-family: Tahoma,Verdana,Arial,sans-serif;
+       padding: 0;
+
+       margin: 0 auto;
+
+       font-size: 12px;
+
+       font-family: 微软雅黑, 黑体, Verdana, Arial, Helvetica, sans-serif, 宋体, tahoma, 'Hiragino Sans GB';
 
        background-color: transparent; /*网页背景*/
 
 }
 
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
 /*页面内容居中*/
 
-#juzhong { margin: 0 auto; max-width: 40%;}		
+#juzhong {
+
+            margin: 0 auto;
+
+            max-width: 40%;
+
+}		
 
 </style>
+
 
 
 
@@ -141,12 +172,33 @@ body {
 
                  position: fixed;
                  display: none;
-                 bottom: 4rem;
-                 right: 4rem;
+                 bottom: 8.2rem;
+                 right: 2.5rem;
+
+}
+
+#back-to-top a:link {
+
+			color: #D2691E; 
+			font-size: 2.2rem; 
+			font-weight: 700;
+			font-family: 微软雅黑, 黑体, Verdana, Arial, Helvetica, sans-serif, 宋体, tahoma, 'Hiragino Sans GB';
  
 }
 
+#back-to-top a:hover {
+
+                        background: transparent;
+                        color: #D2691E;
+                        font-size: 2.2rem;
+                        font-weight: 700;
+                        text-decoration: none;
+
+}
+
 </style>
+
+
 
 
 
@@ -166,9 +218,9 @@ body {
 			text-align: center;
 			background: transparent; /*版权信息背景*/
 			color: #000;      /*字体颜色*/
-			font-family: Tahoma,Verdana,Arial,sans-serif;
+			font-family: 微软雅黑, 黑体, Verdana, Arial, Helvetica, sans-serif, 宋体, tahoma, 'Hiragino Sans GB';
 			font-size: 1.1rem;
-			font-weight: bold;
+			font-weight: 600;
 			letter-spacing: 0.4rem;
 
 }
@@ -177,18 +229,29 @@ body {
 
 			color: #000; 
 			font-size: 1.1rem; 
-			font-weight: bold;
-			font-family: Tahoma,Verdana,Arial,sans-serif;
+			font-weight: 600;
+			font-family: 微软雅黑, 黑体, Verdana, Arial, Helvetica, sans-serif, 宋体, tahoma, 'Hiragino Sans GB';
 
 }
 
-		#footer.content {
+		#footer a:hover {
+
+                        background: transparent;
+                        color: #000;
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        text-decoration: none;
+
+}
+
+		.content {
 
 			height: 150rem;
 			width: 100%;
 			text-align: center;
 
 }
+
 		#hr-color {
 
                   width: 100%;
@@ -216,7 +279,7 @@ body {
         animation: change 10s infinite;
         font-weight: bold;
         font-size: 1.1rem;
-        font-family: Tahoma,Verdana,Arial,sans-serif;
+        font-family: 微软雅黑, 黑体, Verdana, Arial, Helvetica, sans-serif, 宋体, tahoma, 'Hiragino Sans GB';
 
 }
 
@@ -254,16 +317,16 @@ body {
 
 
 <style>
-/*超链接属性设置*/
+/*全局超链接设置*/
 	a { text-decoration: none;}
 
-	a:link { color: #000; font-size: 1.8rem; font-weight: normal;}                                           /* 未访问链接*/
+	a:link { color: #000; font-size: 1.8rem; font-weight: normal;}                                              /* 未访问链接*/
 
-	a:visited { color: #000;}                                                                                /* 已访问链接 */
+	a:visited { color: #000;}                                                                                   /* 已访问链接 */
 
-	a:hover { background: #FFEBCD; color: #FF1493; font-size: 1.8rem; font-weight: bold; text-decoration: none;}/* 鼠标移动到链接上 */
+	a:hover { background: #F5FFFA; color: #00BFFF; font-size: 1.8rem; font-weight: bold; text-decoration: none;}/* 鼠标移动到链接上 */
 
-	a:active { color: #00FFFF; text-decoration: none;}                                                          /* 鼠标点击时 */
+	a:active { color: #DC143C; text-decoration: none;}                                                          /* 鼠标点击时 */
 
 </style>
 
@@ -278,19 +341,20 @@ body {
         text-align: center;
         font-weight: bold;
         font-size: 2.2rem;
-        color: #000;
+        font-family: 微软雅黑, 黑体, Verdana, Arial, Helvetica, sans-serif, 宋体, tahoma, 'Hiragino Sans GB';
+        color: #DC143C;
 
 }
 
 #title a { text-decoration: none;}
 
-#title a:link { color: #000; font-size: 2.2rem; font-weight: bold; text-decoration: none;}
+#title a:link { color: #FF8C00; font-size: 2.2rem; font-weight: bold; text-decoration: none;}
 
-#title a:visited { color: #000;}
+#title a:visited { color: #FF8C00;}
 
-#title a:hover { background: transparent; color: #000; font-size: 2.2rem; font-weight: bold; text-decoration: none;}
+#title a:hover { background: transparent; color: #FF8C00; font-size: 2.2rem; font-weight: bold; text-decoration: none;}
 
-#title a:active { color: #000; text-decoration: none;}
+#title a:active { color: #FF8C00; text-decoration: none;}
  
 </style>
 
@@ -360,7 +424,7 @@ body {
 
 #tishi summary {
 
-                 color: #0000FF;
+                 color: #8A2BE2;
                  font-size: 1.5rem;
                  font-weight: bold;
                  line-height: 2.9rem;
@@ -370,7 +434,7 @@ body {
 
            font-size: 1.5rem;
            font-weight: normal;
-           color: #000;
+           color: #FF0000;
            line-height: 2.5rem;
 
 }
@@ -388,7 +452,7 @@ body {
 
             font-size: 1.5rem;
             font-weight: normal;
-            color: #000;
+            color: #A0522D;
             line-height: 2.5rem;
 
 }
@@ -478,7 +542,7 @@ body {
 <p>1、建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本网站。</p>
 <p>2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击 “ 翻译为 中文（简体）” 即可将非中文页面显示为中文页面。（ 不同浏览器表述略有出入，但表达意思一致 ）</p>
 <p>3、点击目录中的标题（标题一至标题十），可以直接跳转，浏览你所点击标题下的具体内容。</p>
-<p>4、鼠标滚动本站页面一段时间，右下角会出现一个按钮，点击它可以返回页面顶部。</p>
+<p>4、鼠标滚动本站页面一段时间，右下角会出现一个TOP按钮，点击它可以返回页面顶部。</p>
 
 </details>
 
@@ -908,7 +972,7 @@ body {
 访问浏览和下载本站内容，表明您已知晓并同意上述条款。<br>
 本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。<br>
 还请您支持并购买正版软件!</p>
-&copy 2022 All rights reserved.<br>
+CopyRight &copy 2022 All rights reserved.<br>
 <a href="https://www.12377.cn/" title="举报" target="_blank" rel="noopener external noreferrer nofollow" style="background-color: transparent;">网站有害信息举报</a><br>
 <span id="time"></span><br>
 <span>本站特别鸣谢<a href="https://github.com/" title="Github" target="_blank" rel="noopener external noreferrer nofollow" style="background-color: transparent; color: #000000;">Github</a>对本站提供支持</span><br>
