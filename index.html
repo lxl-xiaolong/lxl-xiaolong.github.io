@@ -36,8 +36,9 @@
 
 
 
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
 
 
 
@@ -47,11 +48,13 @@
 
 
 
-    <meta name="renderer" content="webkit"/>
-    <meta name="force-rendering" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	 <meta http-equiv="Cache-Control" content="no-transform" />
+	 <meta http-equiv="Cache-Control" content="no-siteapp" />
+	 <meta name="renderer" content="webkit"/>
+	 <meta name="force-rendering" content="webkit"/>
+	 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
     <meta name="applicable-device" content="pc,mobile">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 
 
 
@@ -101,7 +104,8 @@
      <meta http-equiv="Cache-Control" content="no-siteapp">
      <meta name="apple-mobile-web-app-capable" content="yes">
      <meta name="apple-touch-fullscreen" content="yes">
-     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
      <meta name="full-screen" content="yes"><!--UC强制全屏-->
      <meta name="browsermode" content="application"><!--UC应用模式-->
      <meta name="x5-fullscreen" content="true"><!--QQ强制全屏-->
@@ -134,9 +138,9 @@ html,body {
 
        font-size: 12px;
 
-       font-family: '微软雅黑', '黑体', Verdana, Arial, Helvetica, sans-serif, '宋体', tahoma, 'Hiragino Sans GB';
+       font-family:Arial,"Microsoft YaHei",黑体,宋体,sans-serif;
 
-       background-color: transparent; /*网页背景*/
+       background-color: #f2f2f2; /*网页背景*/
 
 }
 
@@ -194,17 +198,17 @@ html,body {
 
 			color: #D2691E; 
 			font-size: 2.2rem; 
-			font-weight: 700;
-			font-family: '微软雅黑', '黑体', Verdana, Arial, Helvetica, sans-serif, '宋体', tahoma, 'Hiragino Sans GB';
+			font-weight: 800;
+			font-family:Arial,"Microsoft YaHei",黑体,宋体,sans-serif;
  
 }
 
 #back-to-top a:hover {
 
-                        background: transparent;
+                        background-color: #f2f2f2;
                         color: #D2691E;
                         font-size: 2.2rem;
-                        font-weight: 700;
+                        font-weight: 800;
                         text-decoration: none;
 
 }
@@ -229,9 +233,9 @@ html,body {
 			bottom: 0;
 			width: 100%;
 			text-align: center;
-			background: transparent; /*版权信息背景*/
+			background-color: #f2f2f2; /*版权信息背景*/
 			color: #000;      /*字体颜色*/
-			font-family: '微软雅黑', '黑体', Verdana, Arial, Helvetica, sans-serif, '宋体', tahoma, 'Hiragino Sans GB';
+			font-family:Arial,"Microsoft YaHei",黑体,宋体,sans-serif;
 			font-size: 1.1rem;
 			font-weight: 600;
 			letter-spacing: 0.4rem;
@@ -243,13 +247,13 @@ html,body {
 			color: #000; 
 			font-size: 1.1rem; 
 			font-weight: 600;
-			font-family: '微软雅黑', '黑体', Verdana, Arial, Helvetica, sans-serif, '宋体', tahoma, 'Hiragino Sans GB';
+			font-family:Arial,"Microsoft YaHei",黑体,宋体,sans-serif;
 
 }
 
 		#footer a:hover {
 
-                        background: transparent;
+                        background-color: #f2f2f2;
                         color: #000;
                         font-size: 1.1rem;
                         font-weight: 600;
@@ -290,10 +294,10 @@ html,body {
 /*网站运行计时统计*/
     #momk {
 
-        animation: change 10s infinite;
+        animation: change 15s infinite;
         font-weight: bold;
         font-size: 1.1rem;
-        font-family: '微软雅黑', '黑体', Verdana, Arial, Helvetica, sans-serif, '宋体', tahoma, 'Hiragino Sans GB';
+        font-family:Arial,"Microsoft YaHei",黑体,宋体,sans-serif;
 
 }
 
@@ -355,7 +359,7 @@ html,body {
         text-align: center;
         font-weight: 600;
         font-size: 2.2rem;
-        font-family: '微软雅黑', '黑体', Verdana, Arial, Helvetica, sans-serif, '宋体', tahoma, 'Hiragino Sans GB';
+        font-family:Arial,"Microsoft YaHei",黑体,宋体,sans-serif;
         color: #DC143C;
 
 }
@@ -366,7 +370,7 @@ html,body {
 
 #title a:visited { color: #FF8C00;}
 
-#title a:hover { background: transparent; color: #FF8C00; font-size: 2.2rem; font-weight: 600; text-decoration: none;}
+#title a:hover { background-color: #f2f2f2; color: #FF8C00; font-size: 2.2rem; font-weight: 600; text-decoration: none;}
 
 #title a:active { color: #FF8C00; text-decoration: none;}
  
@@ -1082,6 +1086,10 @@ var _hmt = _hmt || [];
 
 
 
+
+
+
+
 <script>
 //鼠标跟随特效
         (function fairyDustCursor() {
@@ -1224,6 +1232,8 @@ var _hmt = _hmt || [];
 
 
 
+
+
 <script>
     //鼠标点击特效
     var a_idx = 0;
@@ -1274,7 +1284,10 @@ var _hmt = _hmt || [];
 
 
 
+
+
 <script>
+//返回顶部
  $(function(){
         //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
         $(function () {
@@ -1515,75 +1528,12 @@ function clickEffect() {
     }
   }
 }
-clickEffect();//调用特效函数
+//调用特效函数
+clickEffect();
 </script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-//蜘蛛网背景特效
-	!function () {
-    function n(n, e, t) {
-        return n.getAttribute(e) || t
-    }
- 
-    function e(n) {
-        return document.getElementsByTagName(n)
-    }
- 
-    function t() {
-        var t = e("script"), o = t.length, i = t[o - 1];
-        return {l: o, z: n(i, "zIndex", -1), o: n(i, "opacity", .5), c: n(i, "color", "0,0,0"), n: n(i, "count", 99)}
-    }
- 
-    function o() {
-        a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-    }
- 
-    function i() {
-        r.clearRect(0, 0, a, c);
-        var n, e, t, o, m, l;
-        s.forEach(function (i, x) {
-            for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e], null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
-        }), x(i)
-    }
- 
-    var a, c, u, m = document.createElement("canvas"), d = t(), l = "c_n" + d.l, r = m.getContext("2d"),
-        x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (n) {
-            window.setTimeout(n, 1e3 / 45)
-        }, w = Math.random, y = {x: null, y: null, max: 2e4};
-    m.id = l, m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o, e("body")[0].appendChild(m), o(), window.onresize = o, window.onmousemove = function (n) {
-        n = n || window.event, y.x = n.clientX, y.y = n.clientY
-    }, window.onmouseout = function () {
-        y.x = null, y.y = null
-    };
-    for (var s = [], f = 0; d.n > f; f++) {
-        var h = w() * a, g = w() * c, v = 2 * w() - 1, p = 2 * w() - 1;
-        s.push({x: h, y: g, xa: v, ya: p, max: 6e3})
-    }
-    u = s.concat([y]), setTimeout(function () {
-        i()
-    }, 100)
-}();
-</script>
 
 
 
