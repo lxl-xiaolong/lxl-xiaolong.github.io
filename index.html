@@ -4,7 +4,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 
 
 
@@ -48,18 +48,10 @@
 
 
 
-    <title>百站汇</title>
 
 
 
 
-	 <meta http-equiv="Cache-Control" content="no-transform" />
-	 <meta http-equiv="Cache-Control" content="no-siteapp" />
-	 <meta name="renderer" content="webkit"/>
-	 <meta name="force-rendering" content="webkit"/>
-	 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
-    <meta name="applicable-device" content="pc,mobile">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 
 
 
@@ -101,6 +93,7 @@
      <link rel="dns-prefetch" href="//microsoft.com">
      <link rel="dns-prefetch" href="//store.steampowered.com">
      <link rel="dns-prefetch" href="//baidu.com">
+     <link rel="dns-prefetch" href="//intel.cn">
 
 
 
@@ -111,17 +104,8 @@
 
 
 
-     <meta http-equiv="Cache-Control" content="max-age=10800">
-     <meta http-equiv="Expires" content="Thu,31 Dec 2099 23:59:59 GMT">
-     <meta http-equiv="Cache-Control" content="no-siteapp">
-     <meta name="apple-mobile-web-app-capable" content="yes">
-     <meta name="apple-touch-fullscreen" content="yes">
-     <meta name="apple-mobile-web-app-capable" content="yes" />
-     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-     <meta name="full-screen" content="yes"><!--UC强制全屏-->
-     <meta name="browsermode" content="application"><!--UC应用模式-->
-     <meta name="x5-fullscreen" content="true"><!--QQ强制全屏-->
-     <meta name="x5-page-mode" content="app"><!--QQ应用模式-->
+
+    <title>百站汇</title>
 
 
 
@@ -152,12 +136,18 @@
 
 
 <style>
+
+
+
 /*页面*/
+
 html,body {
 
        padding: 0;
 
        margin: 0 auto;
+
+       max-width: 80%;
 
        font-size: 12px;
 
@@ -206,15 +196,7 @@ html,body {
 
 
 
-/*页面内容居中*/
 
-#juzhong {
-
-            margin: 0 auto;
-
-            max-width: 58%;
-
-}		
 
 
 
@@ -251,6 +233,7 @@ html,body {
 
 
 /*返回顶部*/
+
 #back-to-top {
 
                  position: fixed;
@@ -324,6 +307,7 @@ html,body {
 
 
 /*页面添加版权信息*/
+
 		#footer {
 
 			height: auto;
@@ -368,12 +352,13 @@ html,body {
 }
 
 /*版权顶部横线*/
+
 		#hr-color {
 
                   width: 100%;
                   margin: 0 auto;
                   border: 0;
-                  height: 0.6rem;
+                  height: 0.4rem;
                   background: #333;
                   background-image: linear-gradient(to right, red, #333, rgb(9, 206, 91));
 
@@ -421,6 +406,7 @@ html,body {
 
 
 /*网站运行计时统计*/
+
     #momk {
 
         animation: change 15s infinite;
@@ -503,13 +489,14 @@ html,body {
 
 
 /*全局超链接设置*/
+
 	a { text-decoration: none;}
 
 	a:link { color: #000; font-size: 1.8rem; font-weight: normal;}                                              /* 未访问链接*/
 
 	a:visited { color: #000;}                                                                                   /* 已访问链接 */
 
-	a:hover { background: #F5FFFA; color: #00BFFF; font-size: 1.8rem; font-weight: 600; text-decoration: none;}/* 鼠标移动到链接上 */
+	a:hover { background: #F5FFFA; color: #00BFFF; font-size: 1.8rem; font-weight: 600; text-decoration: none;} /* 鼠标移动到链接上 */
 
 	a:active { color: #DC143C; text-decoration: none;}                                                          /* 鼠标点击时 */
 
@@ -557,6 +544,7 @@ html,body {
 
 
 /*标题*/
+
 #title {
 
         text-align: center;
@@ -619,6 +607,7 @@ html,body {
 
 
 /*目录*/
+
 #mulu strong {
 
                font-size: 2.1rem;
@@ -681,6 +670,7 @@ html,body {
 
 
 /*网页内容*/
+
 #web_contents li {
 
                    line-height: 3.9rem;
@@ -741,26 +731,11 @@ html,body {
 
 /*公告*/
 
-#gong-gao marquee {
+#gong-gao{border: 5px solid #EFEFEF;background-color: #F9F9F9;margin: 0 auto; width:960px;font-size:14px;font: 14px/1.5 "微软雅黑",Tahoma,"宋体",sans-serif; line-height: 40px;}
 
-				padding: 0rem 0.4rem;
-				letter-spacing: 0.3rem;
-				color: #ff1e77;
-				padding-top: 0.2rem;
-				width: 75rem;					/*这里可以设置滚动的宽度*/
-				height: 3.9rem;				/*这里可以设置滚动的高度*/
-				border: none;					/*这里可以设置边框的样式*/
-				margin-top: 0.8rem;
-				margin-left: -0.8rem;
-				background-color: #F5DEB3;
-				text-align: center;
-				font-size: 1.5rem;
-				color: #000;
-				font-weight: 500;
-				font-family: Arial,"Microsoft YaHei","黑体","宋体",sans-serif;
-				line-height: 2.2rem;
+#gong-gao span{ float:left;padding:10px 10px; margin-right:10px; background-color:#6CCF0A; font-size:14px;font: 12px/1.5 "微软雅黑",Tahoma,"宋体",sans-serif; color:#FFF;line-height: 20px;}
 
-}
+#gong-gao marquee{width:888px;}
 
 
 /*工具使用方法*/
@@ -782,6 +757,8 @@ html,body {
             line-height: 2.5rem;
 
 }
+
+
 
 </style>
 
@@ -892,7 +869,7 @@ html,body {
 
 
 
-<div id="juzhong"><!--内容居中开始-->
+
 
 
 
@@ -907,18 +884,41 @@ html,body {
 
 <div id="gong-gao"><!--公告开始-->
 
-<span style="float: left; background-color: #98FB98; height: 45px; font-weight: bold; font-size: 1.6rem;">公告：&emsp;</span>
+<span>公告：</span>
 
-<marquee direction=left onmouseout=start(); onmouseover=stop(); scrollAmount=5 scrollDelay=10;>
+<marquee direction=left onmouseout=start(); onmouseover=stop(); scrollAmount=2 scrollDelay=15;>
 
-              1、欢迎您访问和浏览本站，建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本站。
-              2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击 “ 翻译为 中文（简体）” 即可将非中文页面显示为中文页面。（ 不同浏览器表述略有出入，但表达意思一致 ）
+              1、欢迎您访问和浏览本站，建议您使用 IE11、Edge、Chrome、Firefox、360 等主流浏览器浏览本站。
+              2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击 “ 翻译为 中文（简体）” 即可将非中文页面显示为中文页面。
               3、点击目录中的标题（标题一至标题十），可以直接跳转，浏览你所点击标题下的具体内容。
               4、鼠标滚动本站页面一段时间，右下角会出现TOP按钮，点击它可以返回页面顶部。
 
 </marquee>
 
 </div><!--公告结束--><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1334,7 +1334,7 @@ html,body {
 
 
 
-</div><!--内容居中结束-->
+
 
 
 
