@@ -3,8 +3,9 @@
 ::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugsBXrSQaZ9RpQ
 ::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugpByvWlvYhg==
 ::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugqgz7TgaZ9RpQ
+::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugoxyvWlvYhg==
 ::YAwzoRdxOk+EWAjk
-::fBw5plQjdCyDJGyX8VAjFBpQQQ2MAE+/Fb4I5/jHajZnJ6LsaMoLVaNdLFMK+zZbb5kE8Hncn0bdTAuK8etkch2sYUE9qmEi
+::fBw5plQjdCyDJGyX8VAjFBpQQQ2MAE+/Fb4I5/jHajZnJ6LsaGTWoQofPjN+xmblDcE/oxPpDzLfRCuJ4+oRQpd7gYbqUHlLuGCKINQbYNRmkbcMMY61/rLzSbLsgCQ8b51hmcxj
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
 ::Yhs/ulQjdF+5
@@ -37,15 +38,11 @@
 @echo off
 color 1F
 title 小龙windows系统工具箱
-mode con cols=180 lines=50
 CHCP 936
-timeout /nobreak /t 1 > nul
-
-
+CHCP 936
+timeout /nobreak /t 2 > nul
 :: ------------------------------------分割线-----------------------------------------
 :: ---------------------------------下面是主程序--------------------------------------
-
-
 :kaishi
 cls
 echo.
@@ -128,7 +125,7 @@ echo.
 echo.
 echo.                                           Copyright (C) 2022 刘小龙 
 echo.
-echo.按键盘任意键继续...                                                                                                                                 
+echo.请您按下键盘任意键继续...                                                                                                                                 
 pause>nul
 goto menu
 
@@ -168,9 +165,9 @@ echo 		5 清空回收站			F 检查网络连通性			Q 解决微软商店打不开的问题
 echo.
 echo 		6 任务栏时间显示/不显示到秒	G 尝试解决网络无法连接的问题		R win家庭版添加组策略组件
 echo.
-echo 		7 计算机管理			H 设备管理器				Y 解决任务栏无响应的问题		
+echo 		7 计算机管理			H 设备管理器				S 解决无法运行powershell脚本问题		
 echo.
-echo 		8 打开组策略			I 命令提示符		
+echo 		8 打开组策略			I 命令提示符				Y 解决任务栏无响应的问题		
 echo.
 echo 		9 刷新组策略			J 控制面板				/ 退出程序	
 echo.
@@ -209,6 +206,7 @@ if /i "%id%"=="N" goto N
 if /i "%id%"=="P" goto P
 if /i "%id%"=="Q" goto Q
 if /i "%id%"=="R" goto R
+if /i "%id%"=="S" goto S
 if /i "%id%"=="Y" goto Y
 if /i "%id%"=="/" goto END
 echo.
@@ -432,7 +430,7 @@ sfc /SCANNOW
 
 :: 再次检查
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 
 cls
@@ -450,16 +448,17 @@ cls
 echo.
 echo.准备中......
 timeout /nobreak /t 1 > nul
+cls
 echo.
 echo.
 echo.
 echo 是否继续此操作? 
 set put=
-set /p put=【Y / N】：
+set /p put=【Y ( 是 ) / N ( 否 )】：
 
 if not "%put%"=="" set put=%put:~0,1%
 if /i "%put%"=="Y" goto T
-if /i "%put%"=="N" goto S
+if /i "%put%"=="N" goto SS
 echo.
 echo.输入无效，请重新输入...
 timeout /nobreak /t 1 > nul
@@ -470,17 +469,19 @@ goto C
 cls
 echo.
 echo.继续操作...
+CLS
 echo.
 echo 本功能可以移除windows系统内置应用来精简系统，需要输入路径/位置。例如 ：D:\桌面\yczd.ps1
 echo.
 set /p yichu=【请输入工具脚本运行路径/位置，并回车】：
-powershell.exe -executionpolicy ::otesigned -File "%yichu%"
+powershell -ExecutionPolicy bypass -File "%yichu%"
+powershell -ExecutionPolicy unrestricted -File "%yichu%"
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 goto menu
  
-:S
+:SS
 echo. 
 echo.您选择了不继续操作，将返回主页面！
 timeout /nobreak /t 1 > nul
@@ -497,12 +498,8 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.开始执行
 timeout /nobreak /t 1 > nul
-ipconfig /renew
-ipconfig /release
 ipconfig /flushdns
 echo.
-echo. 已完成，建议重启你的电脑。
-timeout /nobreak /t 1 > nul
 echo.
 echo.执行完毕,自动返回主菜单...
 timeout /nobreak /t 1 > nul
@@ -542,7 +539,7 @@ echo.
 echo.OK!
 timeout /nobreak /t 1 > nul
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 goto menu
 
@@ -557,7 +554,7 @@ echo.
 echo.
 echo.使用由近及远的原则意味着先要确认本机协议栈有没有问题，所以可以用「ping 127.0.0.1」来检查本机 TCP/IP 协议。
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 echo.
 echo.准备中...
@@ -587,7 +584,7 @@ echo.
 ipconfig /all
 echo.
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 
 cls
@@ -599,7 +596,7 @@ echo.
 echo.
 echo.二. ping 127.0.0.1.如果测试成功，表明网卡、TCP/IP协议的安装、IP地址、子网掩码的设置正常。如果测试不成功，就表示TCP/IP的安装或设置存在有问题。
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 cls
 echo.
@@ -627,7 +624,7 @@ echo.
 echo.
 echo.
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 
 
@@ -640,7 +637,7 @@ echo.
 echo.
 echo.三. 如果测试不成功，则表示本地配置或安装存在问题，应当对网络设备和通讯介质进行测试、检查并排除。
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 
 :ip
@@ -691,7 +688,7 @@ echo.
 echo.
 echo.
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 
 cls
@@ -703,7 +700,7 @@ echo.
 echo.
 echo.四. ping网关或局域网内其他IP,如果测试成功，表明本地网络中的网卡和载体运行正确。但如果收到0个回送应答，那么表示子网掩码不正确或网卡配置错误或电缆系统有问题;或者局域网中的网关路由器正在运行并能够做出应答。
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 
 :wgip
@@ -752,7 +749,7 @@ echo.
 echo.
 echo.
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 
 
@@ -765,7 +762,7 @@ echo.
 echo.
 echo.五. ping远程IP或域名.如果收到正确应答，表示成功的使用了缺省网关。对于拨号上网用户则表示能够成功的访问Internet（但不排除ISP的DNS会有问题）。对域名执行Ping命令，计算机必须先将域名转换成IP地址，通常是通过DNS服务器。如果这里出现故障，则表示本机DNS服务器的IP地址配置不正确，或它所访问的DNS服务器有故障。
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 
 :waiwang
@@ -815,7 +812,7 @@ echo.
 echo.
 echo.
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 
 
@@ -867,7 +864,7 @@ echo.
 echo.        会在该路由器号码后面放一个星号，并报告到达那台路由器的少于3次的往返时间。
 echo.
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 goto menu
 
@@ -910,7 +907,7 @@ echo.
 cls
 %windir%\system32\cmd.exe
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 goto menu
 
@@ -983,10 +980,12 @@ for /f "usebackq delims=: tokens=1-2" %%a in (`netsh wlan show profiles ^| finds
 echo              !count!                  !wifiname!                 !wifikey!
 )
 :: 核心是通过外层for循环遍历出每一个wifi名称，内层for循环遍历每一个wifi名称的密码
+echo        --------------------------------------------------------------------
+echo.
 echo.已完成
 timeout /nobreak /t 1 > nul
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 goto menu
 
@@ -994,11 +993,11 @@ goto menu
 :M
 CLS
 echo.
-echo.警告：由于此功能操作具有一定的未知危险性,若要继续,请阅读并同意使用须知:
+echo.警告：由于此功能操作具有一定的未知危险性，若要继续，请阅读并同意使用须知:
 echo.
 echo.                                     使用须知
 echo.
-echo.************************************************************************************
+echo.*******************************************************************************************
 echo.1. 使用此功能要求使用者了解或掌握一定的计算机基础知识和技能
 echo.
 echo.2. 因为使用此功能误操作,导致无法使用,有能力给电脑重新安装系统的伙伴可以使用
@@ -1006,7 +1005,7 @@ echo.
 echo.3. 既没有基本计算机知识和技能,又不会给电脑装系统,也没有其他方面的技能,若执意要使用
 echo.
 echo.   出现的一切问题及后果,由你自行承担，均与与本人无关，且本人概不负责
-echo.************************************************************************************
+echo.*******************************************************************************************
 echo.
 echo.                          同意( Y )             不同意( N )
 echo.
@@ -1032,7 +1031,7 @@ echo.
 set tk=
 set /p tk=【请输入要删除的进程名或PID , 然后回车】： 
 echo.
-taskkill /f /im %tk%
+taskkill /f /im "%tk%"
 echo.
 if %errorlevel%==0 (goto open) else (goto false)
 timeout /nobreak /t 1 > nul
@@ -1066,7 +1065,7 @@ echo.
 set pc=
 set /p pc=【请输入要删除电源方案的  "   GUID  " , 然后回车】： 
 echo.
-powercfg D %pc%
+powercfg D "%pc%"
 if %errorlevel%==0 (goto N) else (goto fs)
 timeout /nobreak /t 1 > nul
 
@@ -1101,7 +1100,7 @@ echo			1. 回到win10菜单栏		2. 恢复win11菜单栏
 echo.
 echo			3. 返回主菜单			4. 重启资源管理器
 echo.
-echo.***************************************************************************************
+echo.*******************************************************************************************
 echo.
 set input=
 set /p input=【请直接输入功能对应数字，并回车(1-4)】： 
@@ -1123,7 +1122,7 @@ echo 正在执行操作...
 timeout /nobreak /t 1 > nul
 reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve 
 echo OK!
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 goto P
 
@@ -1134,7 +1133,7 @@ echo 正在执行操作...
 timeout /nobreak /t 1 > nul
 reg delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /va /f
 echo OK!
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 goto P
 
@@ -1194,7 +1193,7 @@ cls
 echo.
 echo.在打开的 “ Internet选项  ” 窗口，点击上方的“高级”一栏，勾选 “使用SSL 3.0”、”使用 TLS 1.0“、”使用 TLS 1.1“、”使用 TLS 1.2“，应用后关闭程序后，重启电脑，查看能否解决问题。
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
 pause>nul
 echo.
 start inetcpl.cpl
@@ -1224,8 +1223,9 @@ echo.本功能可以重新部署WindowsStore，需要输入路径/位置，例如 ：D:\桌面\ws.ps1
 echo.
 set /p wse=【请输入工具脚本执行路径/位置，并回车】：
 echo.
-powershell.exe -executionpolicy ::otesigned -File "%wse%"
-echo.按键盘任意键继续...
+powershell -ExecutionPolicy bypass -File "%wse%"
+powershell -ExecutionPolicy unrestricted -File "%wse%"
+echo.请您按下键盘任意键继续...
 pause>nul
 goto Q
 
@@ -1250,7 +1250,28 @@ for /f %%i in ('findstr /i . List.txt 2^>nul') do dism /online /norestart /add-p
 
 echo.已添加。
 echo.
-echo.按键盘任意键继续...
+echo.请您按下键盘任意键继续...
+pause>nul
+goto menu
+
+
+
+:S
+cls
+echo.
+echo. 准备中...
+timeout /nobreak /t 1 > nul
+CLS
+echo.
+echo.
+echo.本功能需要输入路径/位置，例如 ：D:\桌面\ps.ps1
+echo.
+set /p jiaoben=【请输入工具脚本执行路径/位置，并回车】：
+echo.
+powershell -ExecutionPolicy bypass -File "%jiaoben%"
+powershell -ExecutionPolicy unrestricted -File "%jiaoben%"
+echo.
+echo.请您按下键盘任意键继续...
 pause>nul
 goto menu
 
@@ -1308,8 +1329,9 @@ echo.
 set bushu=
 set /p bushu=【请输入工具脚本执行路径/位置，并回车】：
 echo.
-powershell.exe -executionpolicy ::otesigned -File "%bushu%"
-echo.按键盘任意键继续...
+powershell -ExecutionPolicy bypass -File "%bushu%"
+powershell -ExecutionPolicy unrestricted -File "%bushu%"
+echo.请您按下键盘任意键继续...
 pause>nul
 goto Y
 
