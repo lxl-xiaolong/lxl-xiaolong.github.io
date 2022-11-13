@@ -4,6 +4,8 @@
 ::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugpByvWlvYhg==
 ::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugqgz7TgaZ9RpQ
 ::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugoxyvWlvYhg==
+::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugkgvla1iZqFsjSgU=
+::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugoQrsRV6MqFsjSgU=
 ::YAwzoRdxOk+EWAjk
 ::fBw5plQjdCyDJGyX8VAjFBpQQQ2MAE+/Fb4I5/jHajZnJ6LsaGTWoQofPjN+xmblDcE/oxPpDzLfRCuJ4+oRQpd7gYbqUHlLuGCKINQbYNRmkbcMMY61/rLzSbLsgCQ8b51hmcxj
 ::YAwzuBVtJxjWCl3EqQJgSA==
@@ -67,7 +69,7 @@ echo.7. ÎÂÜ°ÌáÊ¾ : ÔÚÏÂÔØËùÐèÈí¼þ£¬¹¤¾ß£¬ÎÄµµ£¨ÎÄ¼þ£©Ê±£¬ÇëÇ°Íù¹ÙÍø£¬Ô­×÷Õß£¬»òÕ
 echo.
 echo.********************************************************************************************************************************
 echo.
-echo.                                    Ê¹ÓÃ±¾¹¤¾ßÇ°,ÐèÒªÍ¬ÒâÖØÒªËµÃ÷,·ñÔòÎÞ·¨¼ÌÐøÈÎºÎ²Ù×÷
+echo.                                    Ê¹ÓÃ±¾¹¤¾ßÇ°£¬ÐèÒªÍ¬ÒâÖØÒªËµÃ÷£¬·ñÔòÎÞ·¨¼ÌÐøÈÎºÎ²Ù×÷
 echo.
 echo.                                           Í¬ÒâÇë°´ Y              ²»Í¬ÒâÇë°´ N
 echo.
@@ -97,7 +99,7 @@ echo. ¶þ ÔËÐÐ±¾³ÌÐò»á¶ÔÏµÍ³ÓÐÓ°ÏìÂð£¿
 echo.
 echo. »Ø´ð£º±¾³ÌÐòËùÓÐ¹¦ÄÜ¶ÔÏµÍ³µÄÓ°Ïì»ù±¾¿ÉÒÔºöÂÔ²»¼Æ£¬±¾ÈËÖ»ÊÇ°ÑÒ»Ð©¹¦ÄÜ¾­¹ýÕûºÏ×ö³É¹¤¾ßÏäµÄ£¬
 echo.
-echo.       ÕâÐ©¹¦ÄÜ»ù±¾²»»áÐÞ¸Ä,¸Ä±äÏµÍ³ÉèÖÃºÍÏµÍ³ÎÄ¼þ,ËùÒÔ¶ÔÏµÍ³Ôì³ÉÓ°Ïì¼«µÍ,Íû¸÷Î»ÖÜÖª¡£
+echo.       ÕâÐ©¹¦ÄÜ»ù±¾²»»áÐÞ¸Ä£¬¸Ä±äÏµÍ³ÉèÖÃºÍÏµÍ³ÎÄ¼þ£¬ËùÒÔ¶ÔÏµÍ³Ôì³ÉÓ°Ïì¼«µÍ£¬Íû¸÷Î»ÖÜÖª¡£
 echo.
 echo. Èý Ê¹ÓÃ±¾³ÌÐòÐèÒª×¢ÒâÊ²Ã´£¿
 echo.    
@@ -105,11 +107,11 @@ echo.    1. ÔËÐÐ±¾³ÌÐòÊ±£¬³ÌÐòÊ×ÏÈ»á½øÈëµ½¹ØÓÚ±¾³ÌÐòµÄËµÃ÷£¬½Ó×Å×Ô¶¯½øÈëµ½±¾Ãæ£¬
 echo.
 echo.       ÊÂÏîºó£¬·½¿É½øÈë³ÌÐòÖ÷²Ëµ¥¡£
 echo.
-echo.    2. ÓÉÓÚ±¾³ÌÐò²¿·Ö¹¦ÄÜÐèÒª¹ÜÀíÔ±È¨ÏÞ²ÅÄÜÔËÐÐ,ËùÒÔ±¾³ÌÐò¿ªÊ¼»á³¢ÊÔ×Ô¶¯»ñÈ¡¹ÜÀíÔ±È¨ÏÞ.¾­±¾ÈË²âÊÔ
+echo.    2. ÓÉÓÚ±¾³ÌÐò²¿·Ö¹¦ÄÜÐèÒª¹ÜÀíÔ±È¨ÏÞ²ÅÄÜÔËÐÐ£¬ËùÒÔ±¾³ÌÐò¿ªÊ¼»á³¢ÊÔ×Ô¶¯»ñÈ¡¹ÜÀíÔ±È¨ÏÞ¡£¾­±¾ÈË²âÊÔ
 echo.
-echo.       »ù±¾¶¼ÄÜ³É¹¦»ñÈ¡(×¢ÒâÊÇ»ù±¾¶¼ÄÜ,²¢²»±£Ö¤ÊÇÒ»¶¨¿ÉÒÔ),ËùÒÔÔËÐÐ±¾¹¤¾ßÇ°,ÇëÊó±êÓÒ¼ü±¾¹¤¾ß,Ñ¡Ôñ
+echo.       »ù±¾¶¼ÄÜ³É¹¦»ñÈ¡(×¢ÒâÊÇ»ù±¾¶¼ÄÜ£¬²¢²»±£Ö¤ÊÇÒ»¶¨¿ÉÒÔ)£¬ËùÒÔÔËÐÐ±¾¹¤¾ßÇ°£¬ÇëÊó±êÓÒ¼ü±¾¹¤¾ß£¬Ñ¡Ôñ
 echo.
-echo.       ÒÔ¹ÜÀíÔ±Éí·ÝÔËÐÐ¡£µ±È»£¬Èç¹û²»ÓÃ±¾¹¤¾ß,ÇëºöÂÔ±¾Ìõ¡£
+echo.       ÒÔ¹ÜÀíÔ±Éí·ÝÔËÐÐ¡£µ±È»£¬Èç¹û²»ÓÃ±¾¹¤¾ß£¬ÇëºöÂÔ±¾Ìõ¡£
 echo.
 echo.    3. ÔÚÑ¡ÔñÖ´ÐÐ¹¦ÄÜÊ±£¬ÇëÉ÷ÖØÑ¡Ôñ²¢ÊäÈë¹¦ÄÜ¶ÔÓ¦Êý×Ö£¬×ÖÄ¸£¬Ê±Ê±¿Ì¿ÌÖªµÀÄãÔÚ¸ÉÂï£¬²»ÒªÒòÎª×Ô¼ºµÄÎÊÌâ
 echo.
@@ -135,44 +137,48 @@ cls
 echo.
 echo. *******************************************************************************************************
 echo.                                    
-echo. µ±Ç°Ê±¼ä£º%time:~0,2%Ê±%time:~3,2%·Ö%time:~6,2%Ãë  
+echo. µ±Ç°Ê±¼ä£º%time:~0,2%:%time:~3,2%:%time:~6,2%  
 echo.
 echo. µ±Ç°ÈÕÆÚ£º%date% 
 echo.
-echo. µ±Ç°¹¤¾ßÏä°æ±¾£º2022-10-08 17:02°æ 
+echo. µ±Ç°¹¤¾ßÏä°æ±¾£º2022-11-13 12:00°æ 
 echo.
 echo. windowsÏµÍ³¹¤¾ßÏäÔËÐÐÂ·¾¶£º%~dp0
 echo.                                                                                                             
 echo. *******************************************************************************************************
 echo.
-echo.******************************    ÇëÄúÊäÈëÒªÖ´ÐÐ²Ù×÷Ç°µÄÊý×Ö»ò×ÖÄ¸ÐòºÅ,ÔÙ°´»Ø³µ¼ü    ************************************
+echo.******************************    ÇëÄúÊäÈëÒªÖ´ÐÐ²Ù×÷Ç°µÄÊý×Ö»ò×ÖÄ¸ÐòºÅ£¬²¢»Ø³µ    ************************************
 echo.
-echo.*********************************************** ÈôÒªÍË³ö,Çë¼üÈë" / " ****************************************************
+echo.*********************************************** ÈôÒªÍË³ö£¬Çë¼üÈë" / "£¬²¢»Ø³µ ****************************************************
 echo.
 echo. ³ÌÐò¹¦ÄÜ:
 echo.
-echo 		0 ÈÎÎñ¹ÜÀíÆ÷			A °Ù¶È¹Ø¼ü´ÊËÑË÷			K ÍøÂçÁ¬½Ó									
+echo            0 ÈÎÎñ¹ÜÀíÆ÷			A °Ù¶È¹Ø¼ü´ÊËÑË÷			K ÍøÂçÁ¬½Ó									
 echo.           
-echo 		1 ´ÅÅÌÇåÀí			B ¼ì²éÏµÍ³ÍêÕûÐÔ			L »ñÈ¡¹ýÈ¥ÒÑÁ¬½ÓWIFIÃû³Æ¼°ÃÜÂë
+echo            1 ´ÅÅÌÇåÀí			B ¼ì²éÏµÍ³ÍêÕûÐÔ			L »ñÈ¡¹ýÈ¥ÒÑÁ¬½ÓWIFIÃû³Æ¼°ÃÜÂë
 echo.											
-echo 		2 ÏµÍ³ÐÅÏ¢			C ÒÆ³ýÏµÍ³×Ô´øÓ¦ÓÃ(½÷É÷Ñ¡Ôñ)		M ÖÕÖ¹½ø³Ì(Î£ÏÕ¹¦ÄÜ)									
+echo            2 ÏµÍ³ÐÅÏ¢			C ÒÆ³ýÏµÍ³×Ô´øÓ¦ÓÃ(½÷É÷Ñ¡Ôñ)		M ÖÕÖ¹½ø³Ì(Î£ÏÕ¹¦ÄÜ)									
 echo.
-echo 		3 windowsÄÚ´æÕï¶Ï		D ÇåÀíDNS»º´æ				N É¾³ýµçÄÔ²»ÐèÒªµÄµçÔ´·½°¸   								
+echo            3 windowsÄÚ´æÕï¶Ï		D ÇåÀíDNS»º´æ				N É¾³ýµçÄÔ²»ÐèÒªµÄµçÔ´·½°¸   								
 echo.
-echo 		4 ÖØÆô×ÊÔ´¹ÜÀíÆ÷		E ÇåÀíÍ¼±êÊý¾Ý¿â»º´æ			P win10/win11ÓÒ¼ü²Ëµ¥À¸ÇÐ»»									
+echo            4 ÖØÆô×ÊÔ´¹ÜÀíÆ÷		E ÇåÀíÍ¼±êÊý¾Ý¿â»º´æ			P ÐÂ°æ/¾­µäÓÒ¼ü²Ëµ¥À¸ÇÐ»»									
 echo.	
-echo 		5 Çå¿Õ»ØÊÕÕ¾			F ¼ì²éÍøÂçÁ¬Í¨ÐÔ			Q ½â¾öÎ¢ÈíÉÌµê´ò²»¿ªµÄÎÊÌâ									
+echo            5 Çå¿Õ»ØÊÕÕ¾			F ¼ì²éÍøÂçÁ¬Í¨ÐÔ			Q ½â¾öÎ¢ÈíÉÌµê´ò²»¿ªµÄÎÊÌâ									
 echo.
-echo 		6 ÈÎÎñÀ¸Ê±¼äÏÔÊ¾/²»ÏÔÊ¾µ½Ãë	G ³¢ÊÔ½â¾öÍøÂçÎÞ·¨Á¬½ÓµÄÎÊÌâ		R win¼ÒÍ¥°æÌí¼Ó×é²ßÂÔ×é¼þ
+echo            6 ÈÎÎñÀ¸Ê±¼äÏÔÊ¾/²»ÏÔÊ¾µ½Ãë	G ³¢ÊÔ½â¾öÍøÂçÎÞ·¨Á¬½ÓµÄÎÊÌâ		R win¼ÒÍ¥°æÌí¼Ó×é²ßÂÔ×é¼þ
 echo.
-echo 		7 ¼ÆËã»ú¹ÜÀí			H Éè±¸¹ÜÀíÆ÷				S ½â¾öÎÞ·¨ÔËÐÐpowershell½Å±¾ÎÊÌâ		
+echo            7 ¼ÆËã»ú¹ÜÀí			H Éè±¸¹ÜÀíÆ÷				S ½â¾öÎÞ·¨ÔËÐÐpowershell½Å±¾ÎÊÌâ		
 echo.
-echo 		8 ´ò¿ª×é²ßÂÔ			I ÃüÁîÌáÊ¾·û				Y ½â¾öÈÎÎñÀ¸ÎÞÏìÓ¦µÄÎÊÌâ		
+echo            8 ´ò¿ª×é²ßÂÔ			I ÃüÁîÌáÊ¾·û				T Ð¶ÔØ/ÖØ×°Î¢ÈíÉÌµê		
 echo.
-echo 		9 Ë¢ÐÂ×é²ßÂÔ			J ¿ØÖÆÃæ°å				/ ÍË³ö³ÌÐò	
+echo            9 Ë¢ÐÂ×é²ßÂÔ			J ¿ØÖÆÃæ°å				Y ½â¾öÈÎÎñÀ¸ÎÞÏìÓ¦µÄÎÊÌâ
+echo.
+echo            / ÍË³ö³ÌÐò	
 echo.
 echo.
-echo. ×¢Òâ £º¹¦ÄÜ ¡° P ¡± win10 / win11 ÓÒ¼ü²Ëµ¥À¸ÇÐ»»½öÊÊÓÃÓÚ windows 11 ÏµÍ³ £¡
+echo. ×¢Òâ £º¹¦ÄÜ ¡° P ¡± ÐÂ°æ/¾­µäÓÒ¼ü²Ëµ¥À¸ÇÐ»»½öÊÊÓÃÓÚwin 11ÏµÍ³£¡
+echo.
+echo         ¹¦ÄÜ ¡° 6 ¡± ÈÎÎñÀ¸Ê±¼äÏÔÊ¾/²»ÏÔÊ¾µ½Ãë½öÊÊÓÃÓÚ³ýwin 11ÒÔÍâµÄwindowsÏµÍ³£¡
 echo.
 echo.***********************************************************************************************************************
 echo.
@@ -207,6 +213,7 @@ if /i "%id%"=="P" goto P
 if /i "%id%"=="Q" goto Q
 if /i "%id%"=="R" goto R
 if /i "%id%"=="S" goto S
+if /i "%id%"=="T" goto T
 if /i "%id%"=="Y" goto Y
 if /i "%id%"=="/" goto END
 echo.
@@ -244,7 +251,7 @@ echo.´ò¿ªÏµÍ³ÐÅÏ¢ÖÐ...
 timeout /nobreak /t 1 > nul
 start /max %windir%\system32\msinfo32.exe
 echo.
-echo.Ö´ÐÐÍê±Ï,×Ô¶¯·µ»ØÖ÷²Ëµ¥...
+echo.Ö´ÐÐÍê±Ï£¬×Ô¶¯·µ»ØÖ÷²Ëµ¥...
 timeout /nobreak /t 1 > nul
 goto menu
 
@@ -255,7 +262,7 @@ echo.´ò¿ªÄÚ´æÕï¶ÏÖÐ...
 timeout /nobreak /t 1 > nul
 %windir%\system32\MdSched.exe
 echo.
-echo.Ö´ÐÐÍê±Ï,×Ô¶¯·µ»ØÖ÷²Ëµ¥...
+echo.Ö´ÐÐÍê±Ï£¬×Ô¶¯·µ»ØÖ÷²Ëµ¥...
 timeout /nobreak /t 1 > nul
 goto menu
 
@@ -267,7 +274,7 @@ timeout /nobreak /t 1 > nul
 taskkill /f /IM explorer.exe
 start explorer.exe
 echo.
-echo.Ö´ÐÐÍê±Ï,×Ô¶¯·µ»ØÖ÷²Ëµ¥...
+echo.Ö´ÐÐÍê±Ï£¬×Ô¶¯·µ»ØÖ÷²Ëµ¥...
 timeout /nobreak /t 1 > nul
 goto menu
 
@@ -279,7 +286,7 @@ cmd.exe /c "echo A|PowerShell.exe -NoProfile -Command Clear-RecycleBin"
 echo. ÒÑÇå¿Õ
 timeout /nobreak /t 1 > nul
 echo.
-echo. Ö´ÐÐÍê±Ï,×Ô¶¯·µ»ØÖ÷²Ëµ¥...
+echo. Ö´ÐÐÍê±Ï£¬×Ô¶¯·µ»ØÖ÷²Ëµ¥...
 timeout /nobreak /t 1 > nul
 goto menu
 
@@ -349,7 +356,7 @@ echo.
 echo.ÒÑ´ò¿ª
 timeout /nobreak /t 1 > nul
 echo.
-echo.Ö´ÐÐÍê³É,ÕýÔÚ·µ»ØÖ÷²Ëµ¥£¬ÇëÉÔºó......
+echo.Ö´ÐÐÍê³É£¬ÕýÔÚ·µ»ØÖ÷²Ëµ¥£¬ÇëÉÔºó......
 timeout /nobreak /t 1 > nul
 goto menu
 
@@ -363,7 +370,7 @@ echo.
 echo.ÒÑ´ò¿ª
 timeout /nobreak /t 1 > nul
 echo.
-echo.Ö´ÐÐÍê³É,ÕýÔÚ·µ»ØÖ÷²Ëµ¥£¬ÇëÉÔºó......
+echo.Ö´ÐÐÍê³É£¬ÕýÔÚ·µ»ØÖ÷²Ëµ¥£¬ÇëÉÔºó......
 timeout /nobreak /t 1 > nul
 goto menu
 
@@ -377,7 +384,7 @@ echo.
 echo.ÒÑË¢ÐÂ
 timeout /nobreak /t 1 > nul
 echo.
-echo.Ö´ÐÐÍê±Ï,ÕýÔÚ·µ»ØÖ÷²Ëµ¥......
+echo.Ö´ÐÐÍê±Ï£¬ÕýÔÚ·µ»ØÖ÷²Ëµ¥......
 timeout /nobreak /t 1 > nul
 goto menu
 
@@ -398,7 +405,7 @@ echo.
 echo.ÒÑÍê³É
 timeout /t 1 /nobreak >nul
 echo.
-echo.Ö´ÐÐÍê±Ï,×Ô¶¯·µ»ØÖ÷²Ëµ¥...
+echo.Ö´ÐÐÍê±Ï£¬×Ô¶¯·µ»ØÖ÷²Ëµ¥...
 echo.
 goto menu
 
@@ -457,7 +464,7 @@ set put=
 set /p put=¡¾Y ( ÊÇ ) / N ( ·ñ )¡¿£º
 
 if not "%put%"=="" set put=%put:~0,1%
-if /i "%put%"=="Y" goto T
+if /i "%put%"=="Y" goto TT
 if /i "%put%"=="N" goto SS
 echo.
 echo.ÊäÈëÎÞÐ§£¬ÇëÖØÐÂÊäÈë...
@@ -465,7 +472,7 @@ timeout /nobreak /t 1 > nul
 echo.
 goto C
 
-:T 
+:TT 
 cls
 echo.
 echo.¼ÌÐø²Ù×÷...
@@ -474,8 +481,8 @@ echo.
 echo ±¾¹¦ÄÜ¿ÉÒÔÒÆ³ýwindowsÏµÍ³ÄÚÖÃÓ¦ÓÃÀ´¾«¼òÏµÍ³£¬ÐèÒªÊäÈëÂ·¾¶/Î»ÖÃ¡£ÀýÈç £ºD:\×ÀÃæ\yczd.ps1
 echo.
 set /p yichu=¡¾ÇëÊäÈë¹¤¾ß½Å±¾ÔËÐÐÂ·¾¶/Î»ÖÃ£¬²¢»Ø³µ¡¿£º
-powershell -ExecutionPolicy bypass -File "%yichu%"
-powershell -ExecutionPolicy unrestricted -File "%yichu%"
+PowerShell.exe -ExecutionPolicy Bypass -File "%yichu%"
+PowerShell.exe -ExecutionPolicy UnRestricted -File "%yichu%"
 echo.
 echo.ÇëÄú°´ÏÂ¼üÅÌÈÎÒâ¼ü¼ÌÐø...
 pause>nul
@@ -501,7 +508,7 @@ timeout /nobreak /t 1 > nul
 ipconfig /flushdns
 echo.
 echo.
-echo.Ö´ÐÐÍê±Ï,×Ô¶¯·µ»ØÖ÷²Ëµ¥...
+echo.Ö´ÐÐÍê±Ï£¬×Ô¶¯·µ»ØÖ÷²Ëµ¥...
 timeout /nobreak /t 1 > nul
 echo.
 goto menu
@@ -1223,8 +1230,8 @@ echo.±¾¹¦ÄÜ¿ÉÒÔÖØÐÂ²¿ÊðWindowsStore£¬ÐèÒªÊäÈëÂ·¾¶/Î»ÖÃ£¬ÀýÈç £ºD:\×ÀÃæ\ws.ps1
 echo.
 set /p wse=¡¾ÇëÊäÈë¹¤¾ß½Å±¾Ö´ÐÐÂ·¾¶/Î»ÖÃ£¬²¢»Ø³µ¡¿£º
 echo.
-powershell -ExecutionPolicy bypass -File "%wse%"
-powershell -ExecutionPolicy unrestricted -File "%wse%"
+PowerShell.exe -ExecutionPolicy Bypass -File "%wse%"
+PowerShell.exe -ExecutionPolicy UnRestricted -File "%wse%"
 echo.ÇëÄú°´ÏÂ¼üÅÌÈÎÒâ¼ü¼ÌÐø...
 pause>nul
 goto Q
@@ -1268,11 +1275,80 @@ echo.±¾¹¦ÄÜÐèÒªÊäÈëÂ·¾¶/Î»ÖÃ£¬ÀýÈç £ºD:\×ÀÃæ\ps.ps1
 echo.
 set /p jiaoben=¡¾ÇëÊäÈë¹¤¾ß½Å±¾Ö´ÐÐÂ·¾¶/Î»ÖÃ£¬²¢»Ø³µ¡¿£º
 echo.
-powershell -ExecutionPolicy bypass -File "%jiaoben%"
-powershell -ExecutionPolicy unrestricted -File "%jiaoben%"
+PowerShell.exe -ExecutionPolicy Bypass -File "%jiaoben%"
+PowerShell.exe -ExecutionPolicy UnRestricted -File "%jiaoben%"
 echo.
 echo.ÇëÄú°´ÏÂ¼üÅÌÈÎÒâ¼ü¼ÌÐø...
 pause>nul
+goto menu
+
+
+
+:T
+cls
+echo.
+echo.¸Ã¹¦ÄÜ¿ÉÒÔÐ¶ÔØ/ÖØ×°Î¢ÈíÓ¦ÓÃÉÌµê¡£
+echo.
+echo.------------------------------------------------------ ¹¦ÄÜÇø -------------------------------------------------------
+echo.
+echo.						      1. Ð¶ÔØÉÌµê
+echo.
+echo.						      2. ÖØ×°ÉÌµê
+echo.
+echo.						      3. ÍË³ö²¢·µ»ØÖ÷²Ëµ¥
+echo.
+echo.---------------------------------------------------------------------------------------------------------------------
+echo.
+set remove=
+set /p remove=¡¾ÇëÖ±½ÓÊäÈë¹¦ÄÜ¶ÔÓ¦Êý×Ö£¬²¢»Ø³µ ( 1 - 3 )¡¿£º 
+if not "%remove%"=="" set remove=%remove:~0,1%
+if /i "%remove%"=="1" goto remove1
+if /i "%remove%"=="2" goto remove2
+if /i "%remove%"=="3" goto remove3
+echo.
+echo.ÊäÈëÎÞÐ§£¬ÇëÖØÐÂÊäÈë...
+timeout /nobreak /t 1 > nul
+echo.
+goto T
+
+:remove1
+cls
+echo.
+echo. ¿ªÊ¼Ð¶ÔØ...
+timeout /nobreak /t 1 > nul
+echo.
+echo.±¾¹¦ÄÜ¿ÉÒÔÐ¶ÔØÉÌµê£¬ÐèÒªÊäÈëÂ·¾¶/Î»ÖÃ£¬ÀýÈç £ºD:\×ÀÃæ\remove.ps1
+echo.
+set remove1=
+set /p remove1=¡¾ÇëÊäÈë¹¤¾ß½Å±¾Ö´ÐÐÂ·¾¶/Î»ÖÃ£¬²¢»Ø³µ¡¿£º
+echo.
+PowerShell.exe -ExecutionPolicy Bypass -File "%remove1%"
+PowerShell.exe -ExecutionPolicy UnRestricted -File "%remove1%"
+echo.ÇëÄú°´ÏÂ¼üÅÌÈÎÒâ¼ü¼ÌÐø...
+pause>nul
+goto T
+
+:remove2
+cls
+echo.
+echo.¿ªÊ¼ÖØ×°...
+echo.
+echo.±¾¹¦ÄÜ¿ÉÒÔÖØ×°ÉÌµê£¬ÐèÒªÊäÈëÂ·¾¶/Î»ÖÃ£¬ÀýÈç £ºD:\×ÀÃæ\AddApp.ps1
+echo.
+set AddApp=
+set /p AddApp=¡¾ÇëÊäÈë¹¤¾ß½Å±¾Ö´ÐÐÂ·¾¶/Î»ÖÃ£¬²¢»Ø³µ¡¿£º
+echo.
+PowerShell.exe -ExecutionPolicy Bypass -File "%AddApp%"
+PowerShell.exe -ExecutionPolicy UnRestricted -File "%AddApp%"
+echo.ÇëÄú°´ÏÂ¼üÅÌÈÎÒâ¼ü¼ÌÐø...
+pause>nul
+goto T
+
+:remove3
+cls
+echo.
+echo.ÍË³ö²¢·µ»ØÖ÷²Ëµ¥...
+timeout /nobreak /t 1 > nul
 goto menu
 
 
@@ -1329,8 +1405,8 @@ echo.
 set bushu=
 set /p bushu=¡¾ÇëÊäÈë¹¤¾ß½Å±¾Ö´ÐÐÂ·¾¶/Î»ÖÃ£¬²¢»Ø³µ¡¿£º
 echo.
-powershell -ExecutionPolicy bypass -File "%bushu%"
-powershell -ExecutionPolicy unrestricted -File "%bushu%"
+PowerShell.exe -ExecutionPolicy Bypass -File "%bushu%"
+PowerShell.exe -ExecutionPolicy UnRestricted -File "%bushu%"
 echo.ÇëÄú°´ÏÂ¼üÅÌÈÎÒâ¼ü¼ÌÐø...
 pause>nul
 goto Y
