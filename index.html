@@ -53,20 +53,27 @@
 <script src="https://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<!-- 强制Chromium内核，作用于360浏览器、QQ浏览器等国产双核浏览器 -->
+<meta name="renderer" content="webkit"/>
+
+<!-- 强制Chromium内核，作用于其他双核浏览器 -->
+<meta name="force-rendering" content="webkit"/>
+
+<!-- 如果有安装 Google Chrome Frame 插件则强制为Chromium内核，否则强制本机支持的最高版本IE内核，作用于IE浏览器 -->
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
 <title>百站汇</title>
 <!--css start-->
 <style>
 /*页面*/
 
+* { margin: 0; padding: 0; }
+
 html,body {
-
-       margin: 0;
-
-       padding: 0;
 
        font-size: 12px;
 
@@ -121,7 +128,7 @@ html,body {
 		#footer {
 
 			height: auto;
-			line-height: 1.9rem; /*文本每行间距*/
+			line-height: 2.5rem; /*文本每行间距*/
 			bottom: 0;
 			width: 100%;
 			text-align: center;
@@ -234,7 +241,9 @@ html,body {
         color: #00FFFF;
 
 }
+
 /*标题链接属性设置*/
+
 #title a { text-decoration: none;}
 
 #title a:link { color: #9400D3; font-size: 2.3rem; font-weight: 600; text-decoration: none;}
@@ -250,13 +259,14 @@ html,body {
 #mulu strong {
 
                font-size: 2.1rem;
+               line-height: 5.8rem;
                color: #00008B;
 
 }
 
 #mulu li {
 
-           line-height: 2.5rem;
+           line-height: 2.9rem;
            list-style-type: none; /*去掉li标签前面圆点*/
            font-size: 1.9rem;
 
@@ -266,7 +276,7 @@ html,body {
 
 #web_contents li {
 
-                   line-height: 3.9rem;
+                   line-height: 4.5rem;
                    list-style-type: none; /*去掉li标签前面圆点*/
                    font-size: 1.9rem;
 
@@ -274,7 +284,7 @@ html,body {
 
 #web_contents h2 {
 
-                   line-height: 2.5rem;
+                   line-height: 7rem;
                    font-size: 2rem;
                    font-weight: bold;
 
@@ -282,7 +292,7 @@ html,body {
 
 #web_contents p {
 
-                  line-height: 2.5rem;
+                  line-height: 3.5rem;
                   font-size: 1.9rem;
                   font-weight: normal;
                   color: #FF0000;
@@ -302,7 +312,7 @@ html,body {
                   color: #000;
                   font-size: 1.5rem;
                   font-weight: 600;
-                  line-height: 2.9rem;
+                  line-height: 3rem;
 
 }
 
@@ -311,7 +321,7 @@ html,body {
             font-size: 1.5rem;
             font-weight: normal;
             color: #A0522D;
-            line-height: 2.5rem;
+            line-height: 3rem;
 
 }
 </style>
@@ -644,7 +654,9 @@ html,body {
 
 </div><!--网页内容居中结束-->
 
+<br>
 <hr id="hr-color">
+<br>
 
 <div id="footer"><!--版权信息开始-->
 
