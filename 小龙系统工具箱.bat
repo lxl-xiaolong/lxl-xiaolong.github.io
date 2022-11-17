@@ -20,15 +20,15 @@
 ::dAsiuh18IRvcCxnZtBNQ
 ::cRYluBh/LU+EWAjk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZksaG0rSXA==
-::ZQ05rAF9IBncCkqN+0xwdVsHAlTMayXqZg==
+::cxY6rQJ7JhzQF1fEqQJjZksaFErSXA==
+::ZQ05rAF9IBncCkqN+0xwdVsHAlTMZCXqZg==
 ::ZQ05rAF9IAHYFVzEqQK1+PTdkv2VNWW+CaIPbzsgaDF4J5rY0Qfo/0EKug==
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
 ::cRolqwZ3JBvQF1fEqQInIRVQQxORu7hhgW7jbT8+ag9QJYPMNA==
 ::dhA7uBVwLU+EWDk=
 ::YQ03rBFzNR3SWATElA==
-::dhAmsQZ3MwfNWATE5E0nLQlRSESAJSs/7k2ZOAdyMRPn
+::dhAmsQZ3MwfNWATExE0nLQlRSESAJSs/7k2ZOAdyMRPn
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
@@ -37,11 +37,10 @@
 ::
 ::
 ::978f952a14a936cc963da21a135fa983
-:: ------------------------------------分割线-----------------------------------------
-:: ---------------------------------下面是主程序--------------------------------------
+
+:: ------------------------------------    分割线：下面是主程序     -----------------------------------------
+
 @echo off
-::55行，180列
-mode con:cols=180 lines=55
 color 1F
 title 小龙windows系统工具箱
 CHCP 936
@@ -1035,33 +1034,20 @@ goto M
 :open
 cls
 :: 列出所有进程
-tasklist
+TASKLIST /V
 echo.
-set tk=
-set /p tk=【请输入要删除的进程名或PID , 然后回车】： 
+set TK=
+set /p TK=【请输入要结束的‘进程名’或‘PID’[进程码], 并按enter回车】：
+if not defined TK (goto open) else (goto zhixing) 
 echo.
-taskkill /f /im "%tk%"
+:zhixing
+TASKKILL /PID "%TK%" /T /F
+TASKKILL /F /IM "%TK%" /T
 echo.
-if %errorlevel%==0 (goto open) else (goto false)
-timeout /nobreak /t 1 > nul
-
-:false
-cls
+echo.请您按下键盘任意键继续...
+pause>nul
 echo.
-echo 执行失败！若继续，请在下面输入Y，退出请输入N
-echo.
-echo              Y 继续		N 退出 
-echo. 
-set id=
-set /p id=【请输入（ 输入 Y / N ）】：
-if not "%id%"=="" set id=%id:~0,1%
-if /i "%id%"=="Y" goto open
-if /i "%id%"=="N" goto menu 
-echo.
-echo.输入无效,请重新输入...
-timeout /nobreak /t 1 > nul
-echo.
-goto false       
+goto menu      
 
 
 :N
@@ -1071,29 +1057,19 @@ echo.
 powercfg L
 echo.
 echo.
-set pc=
-set /p pc=【请输入要删除电源方案的  "   GUID  " , 然后回车】： 
+set PC=
+set /p PC=【请输入要删除电源方案的  "   GUID  " , 然后回车】：
+if not defined PC (goto N) else (goto jixu) 
 echo.
-powercfg D "%pc%"
-if %errorlevel%==0 (goto N) else (goto fs)
-timeout /nobreak /t 1 > nul
+:jixu
+powercfg D "%PC%"
+echo.
+echo.请您按下键盘任意键继续...
+pause>nul
+echo.
+goto menu
 
-:fs
-cls
-echo.
-echo 执行失败！若继续，请在下面输入Y，退出请输入N
-echo.
-echo              Y 继续		N 退出 
-echo. 
-set id=
-set /p id=【请输入（ 输入 Y / N ）】：
-if not "%id%"=="" set id=%id:~0,1%
-if /i "%id%"=="Y" goto N
-if /i "%id%"=="N" goto menu       
-echo.
-echo.输入无效，请重新输入...
-timeout /nobreak /t 1 > nul
-goto fs
+
 
 
 :P
