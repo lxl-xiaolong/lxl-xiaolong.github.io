@@ -1,38 +1,38 @@
 ::[Bat To Exe Converter]
 ::
-::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugsBXrSQaZ9RpQ
-::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugpByvWlvYhg==
-::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugqgz7TgaZ9RpQ
-::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugoxyvWlvYhg==
-::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugkgvla1iZqFsjSgU=
-::fBE1pAF6MU+EWHreyHcjLQlHcAWGMWK0OpEZ++Pv4Pq7J5H90Q3ORAkyAzFKxGfjDMMSkhL2AP+eQYOJ0PvdkePiUj87vmtQhWyAO8ugoQrsRV6MqFsjSgU=
+::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5pWKJMED+gv0ZsdN
+::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5reUKuNd+la1FQ==
+::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5qSdbvAAuyU=
+::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5qaLLe8F7wv0ZsdN
+::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5qOdbvAAuyU=
+::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5q2NOuRd+la1FQ==
 ::YAwzoRdxOk+EWAjk
-::fBw5plQjdCyDJGyX8VAjFBpQQQ2MAE+/Fb4I5/jHajZnJ6LsaGTWoQofPjN+xmblDcE/oxPpDzLfRCuJ4+oRQpd7gYbqUHlLuGCKINQbYNRmkbcMMY61/rLzSbLsgCQ8b51hmcxj
+::fBw5plQjdCyDJGyX8VAjFDdbQgO+GG6pDaET+NT34O2I7EQeW4I=
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
 ::Yhs/ulQjdF+5
 ::cxAkpRVqdFKZSjk=
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSTk=
-::eBoioBt6dFKZSTk=
+::eBoioBt6dFKZSDk=
 ::cRo6pxp7LAbNWATEpSI=
 ::egkzugNsPRvcWATEpSI=
 ::dAsiuh18IRvcCxnZtBNQ
 ::cRYluBh/LU+EWAjk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZksaFErSXA==
-::ZQ05rAF9IBncCkqN+0xwdVsHAlTMZCXqZg==
+::cxY6rQJ7JhzQF1fEqQJjZksaFErQXA==
+::ZQ05rAF9IBncCkqN+0xwdVsHAlTMZCXoZg==
 ::ZQ05rAF9IAHYFVzEqQK1+PTdkv2VNWW+CaIPbzsgaDF4J5rY0Qfo/0EKug==
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
 ::cRolqwZ3JBvQF1fEqQInIRVQQxORu7hhgW7jbT8+ag9QJYPMNA==
 ::dhA7uBVwLU+EWDk=
 ::YQ03rBFzNR3SWATElA==
-::dhAmsQZ3MwfNWATExE0nLQlRSESAJSs/7k2ZOAdyMRPn
+::dhAmsQZ3MwfNWATExE0nLQlRSESgJSs/7k2ZOAdyMRPn
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFBpQQQ2MAE+/Fb4I5/jHajZnJ6LsaGTWoQofPjN+xmblDcE/oxPpDzLfRCuJ4+oRQpd7gYbqUHlLuGCKINQbYNRmkbcMMY61/rLzSbLsCsLI5T+NHDXkV/towMgvcCzOKG/2UK0BAnBmEnfv4zaFKs8xjZ5PVGIbT+7rCw==
+::Zh4grVQjdCyDJGyX8VAjFDdbQgO+GG6pDaET+NTL4P2CsH4VUe4zRAoLNT1Q2fca5EHrYoWqBaHdQzSJ297dm8UsoN56rHZH1g==
 ::YB416Ek+ZW8=
 ::
 ::
@@ -148,9 +148,11 @@ echo. windows系统工具箱运行路径：%~dp0
 echo.                                                                                                             
 echo. *******************************************************************************************************
 echo.
-echo.******************************    请您输入要执行操作前的数字或字母序号，并回车    ************************************
+echo.*************************************    请您输入要执行操作前的数字或字母序号，并回车    ************************************
 echo.
-echo.*********************************************** 若要退出，请键入" / "，并回车 ****************************************************
+echo.*********************************************** 若要退出，请键入" / "，并回车 *****************************************************
+echo.
+echo.-----------------------------------------------------------------------------------------------------------------------------------
 echo.
 echo. 程序功能:
 echo.
@@ -176,15 +178,16 @@ echo            9 刷新组策略			J 控制面板				Y 解决任务栏无响应的问题
 echo.
 echo            / 退出程序	
 echo.
+echo.-----------------------------------------------------------------------------------------------------------------------------------
 echo.
 echo. 注意 ：功能 “ P ” 新版/经典右键菜单栏切换仅适用于win 11系统！
 echo.
 echo         功能 “ 6 ” 任务栏时间显示/不显示到秒仅适用于除win 11以外的windows系统！
 echo.
-echo.***********************************************************************************************************************
+echo.***********************************************************************************************************************************
 echo.
 set id=
-set /p id=【请你输入并回车】：
+set /p id=【请您输入并回车】：
 if not "%id%"=="" set id=%id:~0,1%
 if /i "%id%"=="0" goto 0
 if /i "%id%"=="1" goto 1
@@ -909,14 +912,19 @@ goto menu
 :I
 cls
 echo.
-echo.Openning Cmd......
+echo. Openning Cmd......
 timeout /nobreak /t 1 > nul
+cls
+echo.
+echo. 使用结束后，键入 ' exit ' 即可退出cmd命令提示符！
+echo.
+echo.请您按下键盘任意键继续...
+pause>nul
 echo.
 cls
 %windir%\system32\cmd.exe
 echo.
-echo.请您按下键盘任意键继续...
-pause>nul
+timeout /nobreak /t 1 > nul
 goto menu
 
 
@@ -1063,6 +1071,8 @@ if not defined PC (goto N) else (goto jixu)
 echo.
 :jixu
 powercfg D "%PC%"
+echo.
+echo. 已删除电源方案：%PC%
 echo.
 echo.请您按下键盘任意键继续...
 pause>nul
