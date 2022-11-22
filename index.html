@@ -71,7 +71,297 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>百站汇</title>
-	<link rel="stylesheet" href="https://gitee.com/lxl-xiaolong/Liu-Xiaolong/raw/master/css/style.css" charset="utf-8"> </head>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	html,
+	body {
+		font-size: 12px;
+		font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif !important;
+		background-color: #f2f2f2;
+	}
+	
+	#ju-zhong {
+		margin: 0 auto;
+		max-width: 50%;
+	}
+	
+	#back-to-top {
+		position: fixed;
+		display: none;
+		bottom: 6.5rem;
+		right: 2.5rem;
+	}
+	
+	#back-to-top a:link {
+		color: #D2691E;
+		font-size: 2.5rem;
+		font-weight: 800;
+		font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif !important;
+	}
+	
+	#back-to-top a:hover {
+		background-color: #f2f2f2;
+		color: #D2691E;
+		font-size: 2.5rem;
+		font-weight: 800;
+		text-decoration: none;
+	}
+	
+	#footer {
+		height: auto;
+		line-height: 2.5rem;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+		background-color: #f2f2f2;
+		color: #000;
+		font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif !important;
+		font-size: 1.1rem;
+		font-weight: 600;
+		letter-spacing: 0.4rem;
+	}
+	
+	#footer a:link {
+		color: #000;
+		font-size: 1.1rem;
+		font-weight: 600;
+		font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif !important;
+	}
+	
+	#footer a:hover {
+		background-color: #f2f2f2;
+		color: #000;
+		font-size: 1.1rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	
+	.content {
+		height: 150rem;
+		width: 100%;
+		text-align: center;
+	}
+	
+	#hr-color {
+		width: 100%;
+		margin: 0 auto;
+		border: 0;
+		height: 0.4rem;
+		background: #333;
+		background-image: linear-gradient(to right, red, #333, rgb(9, 206, 91));
+	}
+	
+	#momk {
+		animation: change 15s infinite;
+		font-weight: bold;
+		font-size: 1.1rem;
+		font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif !important;
+	}
+	
+	@keyframes change {
+		0% {
+			color: #5cb85c;
+		}
+		5% {
+			color: #556bd8;
+		}
+		10% {
+			color: #e40707;
+		}
+		15% {
+			color: #66e616;
+		}
+		20% {
+			color: #67bd31;
+		}
+		25% {
+			color: #8A2BE2;
+		}
+		30% {
+			color: #DEB887;
+		}
+		35% {
+			color: #D2691E;
+		}
+		40% {
+			color: #00FFFF;
+		}
+		45% {
+			color: #B8860B;
+		}
+		50% {
+			color: #556B2F;
+		}
+		55% {
+			color: #9932CC;
+		}
+		60% {
+			color: #8FBC8F;
+		}
+		65% {
+			color: #696969;
+		}
+		70% {
+			color: #B22222;
+		}
+		75% {
+			color: #DAA520;
+		}
+		80% {
+			color: #808080;
+		}
+		85% {
+			color: #EE82EE;
+		}
+		90% {
+			color: #D2B48C;
+		}
+		95% {
+			color: #708090;
+		}
+		100% {
+			color: #A0522D;
+		}
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	
+	a:link {
+		color: #000;
+		font-size: 1.8rem;
+		font-weight: normal;
+	}
+	
+	a:visited {
+		color: #000;
+	}
+	
+	a:hover {
+		background: #F5FFFA;
+		color: #00BFFF;
+		font-size: 1.8rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	
+	a:active {
+		color: #DC143C;
+		text-decoration: none;
+	}
+	
+	#title {
+		text-align: center;
+		font-weight: 600;
+		font-size: 2.3rem;
+		font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif !important;
+		color: #00FFFF;
+	}
+	
+	#title a {
+		text-decoration: none;
+	}
+	
+	#title a:link {
+		color: #9400D3;
+		font-size: 2.3rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	
+	#title a:visited {
+		color: #9400D3;
+	}
+	
+	#title a:hover {
+		background-color: #f2f2f2;
+		color: #9400D3;
+		font-size: 2.3rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	
+	#title a:active {
+		color: #9400D3;
+		text-decoration: none;
+	}
+	
+	#mulu strong {
+		font-size: 2.1rem;
+		line-height: 5.8rem;
+		color: #00008B;
+	}
+	
+	#mulu li {
+		line-height: 2.9rem;
+		list-style-type: none;
+		font-size: 1.9rem;
+	}
+	
+	#web_contents li {
+		line-height: 4.5rem;
+		list-style-type: none;
+		font-size: 1.9rem;
+	}
+	
+	#web_contents h2 {
+		line-height: 7rem;
+		font-size: 2rem;
+		font-weight: bold;
+	}
+	
+	#web_contents p {
+		line-height: 3.5rem;
+		font-size: 1.9rem;
+		font-weight: normal;
+		color: #FF0000;
+	}
+	
+	#gong-gao {
+		border: 5px solid #EFEFEF;
+		background-color: #F9F9F9;
+		margin: 0 auto;
+		width: 960px;
+		font-size: 14px;
+		font: 14px/1.5 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei';
+		line-height: 40px;
+	}
+	
+	#gong-gao span {
+		float: left;
+		padding: 10px 10px;
+		margin-right: 10px;
+		background-color: #6CCF0A;
+		font-size: 14px;
+		font: 12px/1.5 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei';
+		color: #FFF;
+		line-height: 20px;
+	}
+	
+	#gong-gao marquee {
+		width: 888px;
+	}
+	
+	#fangfa summary {
+		color: #000;
+		font-size: 1.5rem;
+		font-weight: 600;
+		line-height: 3rem;
+	}
+	
+	#fangfa p {
+		font-size: 1.5rem;
+		font-weight: normal;
+		color: #A0522D;
+		line-height: 3rem;
+	}
+	</style>
+</head>
 
 <body>
 	<div id="title">
