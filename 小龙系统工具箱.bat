@@ -14,14 +14,14 @@
 ::cxAkpRVqdFKZSjk=
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSTk=
-::eBoioBt6dFKZSDk=
+::eBoioBt6dFKZSTk=
 ::cRo6pxp7LAbNWATEpSI=
 ::egkzugNsPRvcWATEpSI=
 ::dAsiuh18IRvcCxnZtBNQ
 ::cRYluBh/LU+EWAjk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZksaFErQXA==
-::ZQ05rAF9IBncCkqN+0xwdVsHAlTMZCXoZg==
+::cxY6rQJ7JhzQF1fEqQJjZksaFErRXA==
+::ZQ05rAF9IBncCkqN+0xwdVsHAlTMZCXpZg==
 ::ZQ05rAF9IAHYFVzEqQK1+PTdkv2VNWW+CaIPbzsgaDF4J5rY0Qfo/0EKug==
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
@@ -32,7 +32,7 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFDdbQgO+GG6pDaET+NTL4P2CsH4VUe4zRAoLNT1Q2fca5EHrYoWqBaHdQzSJ297dm8UsoN56rHZH1g==
+::Zh4grVQjdCyDJGyX8VAjFDdbQgO+GG6pDaET+NR+PwUOfLQKXew7d5jIXWdVpzvsb5Ih8HP6UbSL1s4UCXs=
 ::YB416Ek+ZW8=
 ::
 ::
@@ -1046,8 +1046,11 @@ TASKLIST /V
 echo.
 set TK=
 set /p TK=【请输入要结束的‘进程名’或‘PID’[进程码], 并按enter回车】：
-if not defined TK (goto open) else (goto zhixing) 
-echo.
+if errorlevel 1 (
+goto open
+) else (
+goto zhixing
+)
 :zhixing
 TASKKILL /PID "%TK%" /T /F
 TASKKILL /F /IM "%TK%" /T
@@ -1067,8 +1070,11 @@ echo.
 echo.
 set PC=
 set /p PC=【请输入要删除电源方案的  "   GUID  " , 然后回车】：
-if not defined PC (goto N) else (goto jixu) 
-echo.
+if errorlevel 1 (
+goto N
+) else (
+goto jixu
+)
 :jixu
 powercfg D "%PC%"
 echo.
