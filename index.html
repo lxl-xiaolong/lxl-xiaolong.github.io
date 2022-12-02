@@ -1,1508 +1,1056 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0"?>
-<!DOCTYPE html PUBLIC    “-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN”
-	“http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd”>
-<html xmlns=”http://www.w3.org/1999/xhtml” xml:lang=”en”>
-	<html xmlns=”http://www.w3.org/1999/xhtml” xmlns:svg=”http://www.w3.org/2000/svg” xmlns:xlink=”http://www.w3.org/1999/xlink” xmlns:mathml=”http://www.w3.org/1998/Math/MathML”> <head>
-		<script src="http://apps.bdimg.com/libs/jquery/1.4.4/jquery.min.js"></script>
-		<script src="http://apps.bdimg.com/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.12.4.min.js"></script>
-		<script src="http://lib.sinaapp.com/js/jquery/2.2.4/jquery-2.2.4.min.js"></script>
-		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
-		<script>
-			var _hmt = _hmt || [];
-						            				! function() {
-						            					var t = document.createElement("script");
-						            					t.src = "https://hm.baidu.com/hm.js?635582c6d82d9ba6aa8e49599de6d0bb";
-						            					var e = document.getElementsByTagName("script")[0];
-						            					e.parentNode.insertBefore(t, e)
-						            				}();
-		</script>
-		<meta charset="UTF-8" />
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="renderer" content="webkit" />
-		<meta name="force-rendering" content="webkit" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta name="language" content="zh" />
-		<meta name="location" content="cn" />
-		<meta name="emtcontenttype" content="Content Type;" />
-		<meta name="localecode" content="zh_CN" />
-		<meta name="apple-touch-fullscreen" content="yes" />
-		<meta name="full-screen" content="true" />
-		<meta name="x5-fullscreen" content="true" />
-		<meta name="360-fullscreen" content="true" />
-		<meta name="format-detection" content="telephone=no" />
-		<meta name="applicable-device" content="pc,mobile" />
-		<meta http-equiv="Cache-Control" content="no-transform" />
-		<meta http-equiv="Cache-Control" content="no-SiteAPP" />
-		<meta name="MobileOptimized" content="320" />
-		<meta name="HandheldFriendly" content="true" />
-		<title>百站汇</title>
-		<style>
-			* {
-						            					margin: 0;
-						            					padding: 0;
-						            					border: 0;
-						            				}
-						            				
-						            				html {
-						            					font-size: 12px;
-						            				}
-						            				
-						            				body {
-						            					font-family: "Microsoft YaHei", "Hiragino Sans GB", Arial, sans-serif;
-						            					background-color: #D3D3D3;
-						            				}
-						            				
-						            				#ju-zhong {
-						            					margin: 0 auto;
-						            					max-width: 50%;
-						            					background-color: rgba(220,220,220,0.8);
-						            				}
-						            				
-						            				#back-to-top {
-						            					position: fixed;
-						            					display: none;
-						            					bottom: 4.5rem;
-						            					right: 2.5rem;
-						            				}
-						            				
-						            				#back-to-top a:link {
-						            					color: #000000;
-						            					font-size: 2.5rem;
-						            					font-weight: 800;
-						            					font-family: "Microsoft YaHei", "Hiragino Sans GB", Arial, sans-serif;
-						            				}
-						            				
-						            				#back-to-top a:hover {
-						            					background-color: #EE82EE;
-						            					color: #FFFFFF;
-						            					font-size: 2.5rem;
-						            					font-weight: 800;
-						            					text-decoration: none;
-						            				}
-						            				
-						            				#footer {
-						            					height: auto;
-						            					line-height: 2.5rem;
-						            					bottom: 0;
-						            					width: 100%;
-						            					text-align: center;
-						            					background-color: #333;
-						            					color: #fff;
-						            					font-family: Arial;
-						            					font-size: 1.1rem;
-						            					font-weight: 600;
-						            					letter-spacing: 0.2rem;
-						            				}
-						            				
-						            				#footer a:link {
-						            					color: #fff;
-						            					background-color: #333;
-						            					font-size: 1.1rem;
-						            					font-weight: 600;
-						            					font-family: Arial;
-						            				}
-						            				
-						            				#footer a:hover {
-						            					background-color: #333;
-						            					color: #fff;
-						            					font-size: 1.1rem;
-						            					font-weight: 600;
-						            					text-decoration: none;
-						            				}
-						            				
-						            				.content {
-						            					height: 150rem;
-						            					width: 100%;
-						            					text-align: center;
-						            				}
-						            				
-						            				#momk {
-						            					animation: change 10s infinite;
-						            					font-weight: 700;
-						            					font-size: 1.1rem;
-						            					font-family: Arial;
-						            				}
-						            				
-						            				@keyframes change {
-						            					0% {
-						            						color: #5cb85c;
-						            					}
-						            					5% {
-						            						color: #556bd8;
-						            					}
-						            					10% {
-						            						color: #e40707;
-						            					}
-						            					15% {
-						            						color: #66e616;
-						            					}
-						            					20% {
-						            						color: #67bd31;
-						            					}
-						            					25% {
-						            						color: #8A2BE2;
-						            					}
-						            					30% {
-						            						color: #DEB887;
-						            					}
-						            					35% {
-						            						color: #D2691E;
-						            					}
-						            					40% {
-						            						color: #0FF;
-						            					}
-						            					45% {
-						            						color: #B8860B;
-						            					}
-						            					50% {
-						            						color: #556B2F;
-						            					}
-						            					55% {
-						            						color: #9932CC;
-						            					}
-						            					60% {
-						            						color: #8FBC8F;
-						            					}
-						            					65% {
-						            						color: #696969;
-						            					}
-						            					70% {
-						            						color: #B22222;
-						            					}
-						            					75% {
-						            						color: #DAA520;
-						            					}
-						            					80% {
-						            						color: grey;
-						            					}
-						            					85% {
-						            						color: violet;
-						            					}
-						            					90% {
-						            						color: tan;
-						            					}
-						            					95% {
-						            						color: #708090;
-						            					}
-						            					100% {
-						            						color: sienna;
-						            					}
-						            				}
-						            				
-						            				a {
-						            					text-decoration: none;
-						            				}
-						            				
-						            				a:link {
-						            					color: #000;
-						            					font-size: 1.8rem;
-						            					font-weight: 400;
-						            				}
-						            				
-						            				a:visited {
-						            					color: #000;
-						            				}
-						            				
-						            				a:hover {
-						            					background: #FFFFFF;
-						            					color: rgb(72,209,204);
-						            					font-size: 1.8rem;
-						            					font-weight: 600;
-						            					text-decoration: none;
-						            				}
-						            				
-						            				a:active {
-						            					color: #DC143C;
-						            					text-decoration: none;
-						            				}
-						            				
-						            				#title {
-						            					text-align: center;
-						            					font-weight: 600;
-						            					font-size: 2.3rem;
-						            					font-family: "Microsoft YaHei", "Hiragino Sans GB", Arial, sans-serif;
-						            					color: #000000;
-						            				}
-						            				
-						            				#title a {
-						            					text-decoration: none;
-						            				}
-						            				
-						            				#title a:link {
-						            					color: #000000;
-						            					font-size: 2.3rem;
-						            					font-weight: 600;
-						            					text-decoration: none;
-						            				}
-						            				
-						            				#title a:visited {
-						            					color: #000000;
-						            				}
-						            				
-						            				#title a:hover {
-						            					background-color: #FFB6C1;
-						            					color: #000000;
-						            					font-size: 2.3rem;
-						            					font-weight: 600;
-						            					text-decoration: none;
-						            				}
-						            				
-						            				#title a:active {
-						            					color: #000000;
-						            					text-decoration: none;
-						            				}
-						            				
-						            				#mulu strong {
-						            					font-size: 2.1rem;
-						            					line-height: 5.8rem;
-						            					color: #00008B;
-						            				}
-						            				
-						            				#mulu li {
-						            					line-height: 2.9rem;
-						            					list-style-type: none;
-						            					font-size: 1.9rem;
-						            				}
-						            				
-						            				#web_contents li {
-						            					line-height: 4.5rem;
-						            					list-style-type: none;
-						            					font-size: 1.9rem;
-						            				}
-						            				
-						            				#web_contents h2 {
-						            					line-height: 7rem;
-						            					font-size: 2rem;
-						            					font-weight: 700;
-						            				}
-						            				
-						            				#web_contents p {
-						            					line-height: 3.5rem;
-						            					font-size: 1.9rem;
-						            					font-weight: 400;
-						            					color: red;
-						            				}
-						            				
-						            				#gong-gao {
-						            					border: 5px solid #EFEFEF;
-						            					background-color: #FDF5E6;
-						            					margin: 0 auto;
-						            					width: 69%;
-						            					font-size: 14px;
-						            					font: 14px/1.5 "Microsoft YaHei", "Hiragino Sans GB", Arial, sans-serif;
-						            					line-height: 40px;
-						            				}
-						            				
-						            				#gong-gao span {
-						            					float: left;
-						            					padding: 10px 10px;
-						            					margin-right: 10px;
-						            					background-color: #696969;
-						            					font-size: 14px;
-						            					font: 13px/1.5 "Microsoft YaHei", "Hiragino Sans GB", Arial, sans-serif;
-						            					color: #fff;
-						            					line-height: 20px;
-						            				}
-						            				
-						            				#gong-gao marquee {
-						            					width: 94%;
-						            				}
-						            				
-						            				#fangfa summary {
-						            					color: #000000;
-						            					font-size: 1.5rem;
-						            					font-weight: 500;
-						            					line-height: 3rem;
-						            				}
-						            				
-						            				#fangfa p {
-						            					font-size: 1.5rem;
-						            					font-weight: 500;
-						            					color: rgb(30,144,255);
-						            					line-height: 3rem;
-						            				}
-		</style>
-		</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-		<body>
-			<div id="title">百站汇&emsp;<a href="javascript:window.parent.document.location.reload();">刷新页面</a>&emsp;<a href="#di_bu">转到底部</a>
-			</div>
-			<div id="gong-gao">
-				<span>公告：</span>
-				<marquee direction="left" onmouseout="start()" onmouseover="stop()" scrollamount="5" scrolldelay="15;">1、欢迎您访问和浏览本站，建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本站。2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。3、点击目录中的标题（标题一至标题十），可以直接跳转，浏览你所点击标题下的具体内容。4、滚动本站页面一段时间，右下角会出现TOP按钮，点击它可以返回页面顶部。5、所有站点均由本人亲自整理、甄别、添加，保证每个站点安全、无劫持、无病毒、可靠可用。6、由于本人能力，建站仓促等原因，本站难免会有不足的地方，请大家理解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！</marquee>
-			</div>
-			<div id="ju-zhong">
-				<!--内容居中开始-->
-				<div id="mulu">
-					<strong>目录：</strong>
-					<ul>
-						<li>
-							<a href="#1">一、磁盘管理软件</a>
-						</li>
-						<br />
-						<li>
-							<a href="#2">二、系统镜像</a>
-						</li>
-						<br />
-						<li>
-							<a href="#3">三、解压缩软件</a>
-						</li>
-						<br />
-						<li>
-							<a href="#4">四、AMD|Inter|NVIDIA相关驱动下载</a>
-						</li>
-						<br />
-						<li>
-							<a href="#5">五、在线学习</a>
-						</li>
-						<br />
-						<li>
-							<a href="#6">六、系统启动U盘制作工具</a>
-						</li>
-						<br />
-						<li>
-							<a href="#7">七、各品牌电脑服务与支持</a>
-						</li>
-						<br />
-						<li>
-							<a href="#8">八、在线便捷工具</a>
-						</li>
-						<br />
-						<li>
-							<a href="#9">九、杂项综合</a>
-						</li>
-						<br />
-						<li>
-							<a href="#10">十、常用软件官方下载</a>
-						</li>
-					</ul>
-				</div>
-				<div id="web_contents">
-					<!--正文内容开始-->
-					<div>
-						<b>
+<head>
+	<script src="http://apps.bdimg.com/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.12.4.min.js"></script>
+	<script src="http://lib.sinaapp.com/js/jquery/2.2.4/jquery-2.2.4.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
+	<script>
+	var _hmt = _hmt || [];
+	! function() {
+		var t = document.createElement("script");
+		t.src = "https://hm.baidu.com/hm.js?635582c6d82d9ba6aa8e49599de6d0bb";
+		var e = document.getElementsByTagName("script")[0];
+		e.parentNode.insertBefore(t, e)
+	}();
+	</script>
+	<meta charset="UTF-8" />
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="renderer" content="webkit" />
+	<meta name="force-rendering" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="language" content="zh" />
+	<meta name="location" content="cn" />
+	<meta name="emtcontenttype" content="Content Type;" />
+	<meta name="localecode" content="zh_CN" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="full-screen" content="true" />
+	<meta name="x5-fullscreen" content="true" />
+	<meta name="360-fullscreen" content="true" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="applicable-device" content="pc,mobile" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-SiteAPP" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="HandheldFriendly" content="true" />
+	<title>百站汇</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+	
+	html {
+		font-size: 12px;
+	}
+	
+	body {
+		font-family: "Microsoft YaHei", "Hiragino Sans GB", Arial, sans-serif;
+		background-color: #D3D3D3;
+	}
+	
+	#ju-zhong {
+		margin: 0 auto;
+		max-width: 50%;
+		background-color: rgba(220, 220, 220, 0.8);
+	}
+	
+	#back-to-top {
+		position: fixed;
+		display: none;
+		bottom: 4.5rem;
+		right: 2.5rem;
+	}
+	
+	#back-to-top a:link {
+		color: #000000;
+		font-size: 2.5rem;
+		font-weight: 800;
+		font-family: "Microsoft YaHei", "Hiragino Sans GB", Arial, sans-serif;
+	}
+	
+	#back-to-top a:hover {
+		background-color: #EE82EE;
+		color: #FFFFFF;
+		font-size: 2.5rem;
+		font-weight: 800;
+		text-decoration: none;
+	}
+	
+	#footer {
+		height: auto;
+		line-height: 2.5rem;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+		background-color: #333;
+		color: #fff;
+		font-family: Arial;
+		font-size: 1.1rem;
+		font-weight: 600;
+		letter-spacing: 0.2rem;
+	}
+	
+	#footer a:link {
+		color: #fff;
+		background-color: #333;
+		font-size: 1.1rem;
+		font-weight: 600;
+		font-family: Arial;
+	}
+	
+	#footer a:hover {
+		background-color: #333;
+		color: #fff;
+		font-size: 1.1rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	
+	.content {
+		height: 150rem;
+		width: 100%;
+		text-align: center;
+	}
+	
+	#momk {
+		animation: change 10s infinite;
+		font-weight: 700;
+		font-size: 1.1rem;
+		font-family: Arial;
+	}
+	
+	@keyframes change {
+		0% {
+			color: #5cb85c;
+		}
+		5% {
+			color: #556bd8;
+		}
+		10% {
+			color: #e40707;
+		}
+		15% {
+			color: #66e616;
+		}
+		20% {
+			color: #67bd31;
+		}
+		25% {
+			color: #8A2BE2;
+		}
+		30% {
+			color: #DEB887;
+		}
+		35% {
+			color: #D2691E;
+		}
+		40% {
+			color: #0FF;
+		}
+		45% {
+			color: #B8860B;
+		}
+		50% {
+			color: #556B2F;
+		}
+		55% {
+			color: #9932CC;
+		}
+		60% {
+			color: #8FBC8F;
+		}
+		65% {
+			color: #696969;
+		}
+		70% {
+			color: #B22222;
+		}
+		75% {
+			color: #DAA520;
+		}
+		80% {
+			color: grey;
+		}
+		85% {
+			color: violet;
+		}
+		90% {
+			color: tan;
+		}
+		95% {
+			color: #708090;
+		}
+		100% {
+			color: sienna;
+		}
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	
+	a:link {
+		color: #000;
+		font-size: 1.8rem;
+		font-weight: 400;
+	}
+	
+	a:visited {
+		color: #000;
+	}
+	
+	a:hover {
+		background: #FFFFFF;
+		color: rgb(72, 209, 204);
+		font-size: 1.8rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	
+	a:active {
+		color: #DC143C;
+		text-decoration: none;
+	}
+	
+	#title {
+		text-align: center;
+		font-weight: 600;
+		font-size: 2.3rem;
+		font-family: "Microsoft YaHei", "Hiragino Sans GB", Arial, sans-serif;
+		color: #000000;
+	}
+	
+	#title a {
+		text-decoration: none;
+	}
+	
+	#title a:link {
+		color: #000000;
+		font-size: 2.3rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	
+	#title a:visited {
+		color: #000000;
+	}
+	
+	#title a:hover {
+		background-color: #FFB6C1;
+		color: #000000;
+		font-size: 2.3rem;
+		font-weight: 600;
+		text-decoration: none;
+	}
+	
+	#title a:active {
+		color: #000000;
+		text-decoration: none;
+	}
+	
+	#mulu strong {
+		font-size: 2.1rem;
+		line-height: 5.8rem;
+		color: #00008B;
+	}
+	
+	#mulu li {
+		line-height: 2.9rem;
+		list-style-type: none;
+		font-size: 1.9rem;
+	}
+	
+	#web_contents li {
+		line-height: 4.5rem;
+		list-style-type: none;
+		font-size: 1.9rem;
+	}
+	
+	#web_contents h2 {
+		line-height: 7rem;
+		font-size: 2rem;
+		font-weight: 700;
+	}
+	
+	#web_contents p {
+		line-height: 3.5rem;
+		font-size: 1.9rem;
+		font-weight: 400;
+		color: red;
+	}
+	
+	#gong-gao {
+		border: 5px solid #EFEFEF;
+		background-color: #F9F9F9;
+		margin: 0 auto;
+		width: 960px;
+		font-size: 14px;
+		font: 14px/1.5 "微软雅黑", Tahoma, "宋体", sans-serif;
+		line-height: 40px;
+	}
+	
+	#gong-gao span {
+		float: left;
+		padding: 10px 10px;
+		margin-right: 10px;
+		background-color: #696969;
+		font-size: 14px;
+		font: 12px/1.5 "微软雅黑", Tahoma, "宋体", sans-serif;
+		color: #FFF;
+		line-height: 20px;
+	}
+	
+	#gong-gao marquee {
+		width: 888px;
+	}
+	
+	#fangfa summary {
+		color: #000000;
+		font-size: 1.5rem;
+		font-weight: 500;
+		line-height: 3rem;
+	}
+	
+	#fangfa p {
+		font-size: 1.5rem;
+		font-weight: 500;
+		color: rgb(30, 144, 255);
+		line-height: 3rem;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="title">百站汇&emsp;<a href="javascript:window.parent.document.location.reload();">刷新页面</a>&emsp;<a href="#di_bu">转到底部</a> </div>
+	<div id="gong-gao"> <span>公告：</span>
+		<marquee direction="left" onmouseout="start()" onmouseover="stop()" scrollamount="5" scrolldelay="15;">1、欢迎您访问和浏览本站，建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本站。2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。3、点击目录中的标题（标题一至标题十），可以直接跳转，浏览你所点击标题下的具体内容。4、滚动本站页面一段时间，右下角会出现TOP按钮，点击它可以返回页面顶部。5、所有站点均由本人亲自整理、甄别、添加，保证每个站点安全、无劫持、无病毒、可靠可用。6、由于本人能力，建站仓促等原因，本站难免会有不足的地方，请大家理解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！</marquee>
+	</div>
+	<div id="ju-zhong">
+		<!--内容居中开始-->
+		<div id="mulu"> <strong>目录：</strong>
+			<ul>
+				<li> <a href="#1">一、磁盘管理软件</a> </li> <br />
+				<li> <a href="#2">二、系统镜像</a> </li> <br />
+				<li> <a href="#3">三、解压缩软件</a> </li> <br />
+				<li> <a href="#4">四、AMD|Inter|NVIDIA相关驱动下载</a> </li> <br />
+				<li> <a href="#5">五、在线学习</a> </li> <br />
+				<li> <a href="#6">六、系统启动U盘制作工具</a> </li> <br />
+				<li> <a href="#7">七、各品牌电脑服务与支持</a> </li> <br />
+				<li> <a href="#8">八、在线便捷工具</a> </li> <br />
+				<li> <a href="#9">九、杂项综合</a> </li> <br />
+				<li> <a href="#10">十、常用软件官方下载</a> </li>
+			</ul>
+		</div>
+		<div id="web_contents">
+			<!--正文内容开始-->
+			<div> <b>
 							<h2 id="1">一、磁盘管理软件</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="https://www.disktool.cn/" target="_blank" rel="noopener external noreferrer nofollow">傲梅磁盘管理软件</a>
-							</li>
-							<li>
-								<a href="https://www.diskgenius.cn/" target="_blank" rel="noopener external noreferrer nofollow">DiskGenius磁盘管理</a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<b>
+				<ul>
+					<li> <a href="https://www.disktool.cn/" target="_blank" rel="noopener external noreferrer nofollow">傲梅磁盘管理软件</a> </li>
+					<li> <a href="https://www.diskgenius.cn/" target="_blank" rel="noopener external noreferrer nofollow">DiskGenius磁盘管理</a> </li>
+				</ul>
+			</div>
+			<div> <b>
 							<h2 id="2">二、系统镜像</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="https://www.microsoft.com/zh-cn/software-download/windows10" target="_blank" rel="noopener external noreferrer nofollow">前往Windows10官方下载页面</a>
-							</li>
-							<li>
-								<a href="https://www.microsoft.com/zh-cn/software-download/windows11" target="_blank" rel="noopener external noreferrer nofollow">前往Windows11官方下载页面</a>
-							</li>
-							<li>
-								<a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener external noreferrer nofollow">MSDN，我告诉你</a>
-							</li>
-							<li>
-								<a href="https://next.itellyou.cn/" target="_blank" rel="noopener external noreferrer nofollow">下一站，我告诉你</a>
-							</li>
-							<li>
-								<a href="http://www.aichunjing.com/" target="_blank" rel="noopener external noreferrer nofollow">爱纯净-纯净系统下载网站</a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<b>
+				<ul>
+					<li> <a href="https://www.microsoft.com/zh-cn/software-download/windows10" target="_blank" rel="noopener external noreferrer nofollow">前往Windows10官方下载页面</a> </li>
+					<li> <a href="https://www.microsoft.com/zh-cn/software-download/windows11" target="_blank" rel="noopener external noreferrer nofollow">前往Windows11官方下载页面</a> </li>
+					<li> <a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener external noreferrer nofollow">MSDN，我告诉你</a> </li>
+					<li> <a href="https://next.itellyou.cn/" target="_blank" rel="noopener external noreferrer nofollow">下一站，我告诉你</a> </li>
+					<li> <a href="http://www.aichunjing.com/" target="_blank" rel="noopener external noreferrer nofollow">爱纯净-纯净系统下载网站</a> </li>
+				</ul>
+			</div>
+			<div> <b>
 							<h2 id="3">三、解压缩软件</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="https://www.bandisoft.com/bandizip/" target="_blank" rel="noopener external noreferrer nofollow">Bandizip</a>
-							</li>
-							<li>
-								<a href="https://www.winrar.com.cn/download.htm" target="_blank" rel="noopener external noreferrer nofollow">WinRAR</a>
-							</li>
-							<li>
-								<a href="https://www.7-zip.org/" target="_blank" rel="noopener external noreferrer nofollow">7-Zip</a>
-							</li>
-							<li>
-								<a href="https://peazip.github.io/" target="_blank" rel="noopener external noreferrer nofollow">PeaZip</a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<b>
+				<ul>
+					<li> <a href="https://www.bandisoft.com/bandizip/" target="_blank" rel="noopener external noreferrer nofollow">Bandizip</a> </li>
+					<li> <a href="https://www.winrar.com.cn/download.htm" target="_blank" rel="noopener external noreferrer nofollow">WinRAR</a> </li>
+					<li> <a href="https://www.7-zip.org/" target="_blank" rel="noopener external noreferrer nofollow">7-Zip</a> </li>
+					<li> <a href="https://peazip.github.io/" target="_blank" rel="noopener external noreferrer nofollow">PeaZip</a> </li>
+				</ul>
+			</div>
+			<div> <b>
 							<h2 id="4">四、AMD|Inter|NVIDIA相关驱动下载</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="https://www.nvidia.cn/geforce/drivers/" target="_blank" rel="noopener external noreferrer nofollow">官方GeForce驱动程序|NVIDIA</a>
-							</li>
-							<li>
-								<a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener external noreferrer nofollow">官方驱动|NVIDIA</a>
-							</li>
-							<li>
-								<a href="https://www.intel.cn/content/www/cn/zh/support/detect.html" target="_blank" rel="noopener external noreferrer nofollow">英特尔®驱动程序和支持助理</a>
-							</li>
-							<li>
-								<a href="https://www.intel.cn/content/www/cn/zh/download-center/home.html" target="_blank" rel="noopener external noreferrer nofollow">下载英特尔®驱动程序和软件</a>
-							</li>
-							<li>
-								<a href="https://www.amd.com/zh-hans/support" target="_blank" rel="noopener external noreferrer nofollow">AMD驱动程序与支持|AMD</a>
-							</li>
-							<li>
-								<a href="https://www.amd.com/zh-hans" target="_blank" rel="noopener external noreferrer nofollow">AMD官网|AMD</a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<b>
+				<ul>
+					<li> <a href="https://www.nvidia.cn/geforce/drivers/" target="_blank" rel="noopener external noreferrer nofollow">官方GeForce驱动程序|NVIDIA</a> </li>
+					<li> <a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener external noreferrer nofollow">官方驱动|NVIDIA</a> </li>
+					<li> <a href="https://www.intel.cn/content/www/cn/zh/support/detect.html" target="_blank" rel="noopener external noreferrer nofollow">英特尔®驱动程序和支持助理</a> </li>
+					<li> <a href="https://www.intel.cn/content/www/cn/zh/download-center/home.html" target="_blank" rel="noopener external noreferrer nofollow">下载英特尔®驱动程序和软件</a> </li>
+					<li> <a href="https://www.amd.com/zh-hans/support" target="_blank" rel="noopener external noreferrer nofollow">AMD驱动程序与支持|AMD</a> </li>
+					<li> <a href="https://www.amd.com/zh-hans" target="_blank" rel="noopener external noreferrer nofollow">AMD官网|AMD</a> </li>
+				</ul>
+			</div>
+			<div> <b>
 							<h2 id="5">五、在线学习</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="https://le.ouchn.cn/home" target="_blank" rel="noopener external noreferrer nofollow">终身教育平台</a>
-							</li>
-							<li>
-								<a href="https://www.icourse163.org/" target="_blank" rel="noopener external noreferrer nofollow">中国大学MOOC(慕课)</a>
-							</li>
-							<li>
-								<a href="https://www.51zxw.net/" target="_blank" rel="noopener external noreferrer nofollow">我要自学网</a>
-							</li>
-							<li>
-								<a href="http://www.dxzy163.com/" target="_blank" rel="noopener external noreferrer nofollow">大学资源网</a>
-							</li>
-							<li>
-								<a href="https://www.bilibili.com/" target="_blank" rel="noopener external noreferrer nofollow">哔哩哔哩</a>
-							</li>
-							<li>
-								<a href="https://www.examcoo.com/index/ku" target="_blank" rel="noopener external noreferrer nofollow">考试酷</a>
-							</li>
-							<li>
-								<a href="https://dict.eudic.net/ting" target="_blank" rel="noopener external noreferrer nofollow">每日英语听力</a>
-							</li>
-							<li>
-								<a href="https://ebook.hep.com.cn/ebooks/index.html#/" target="_blank" rel="noopener external noreferrer nofollow">高教书苑</a>
-							</li>
-							<li>
-								<a href="https://open.163.com/" target="_blank" rel="noopener external noreferrer nofollow">网易公开课</a>
-							</li>
-							<li>
-								<a href="https://www.yxgapp.com/" target="_blank" rel="noopener external noreferrer nofollow">译学馆</a>
-							</li>
-							<li>
-								<a href="https://www.hjenglish.com/" target="_blank" rel="noopener external noreferrer nofollow">沪江英语网</a>
-							</li>
-							<li>
-								<a href="https://www.xuetangx.com/" target="_blank" rel="noopener external noreferrer nofollow">学堂在线</a>
-							</li>
-							<li>
-								<a href="https://www.cnki.net/" target="_blank" rel="noopener external noreferrer nofollow">中国知网</a>
-							</li>
-							<li>
-								<a href="https://ke.qq.com/" target="_blank" rel="noopener external noreferrer nofollow">腾讯课堂</a>
-							</li>
-							<li>
-								<a href="https://www.imooc.com/course/list" target="_blank" rel="noopener external noreferrer nofollow">慕课网</a>
-							</li>
-							<li>
-								<a href="http://v.dxsbb.com/" target="_blank" rel="noopener external noreferrer nofollow">大学生自学网</a>
-							</li>
-							<li>
-								<a href="http://www.howzhi.com/" target="_blank" rel="noopener external noreferrer nofollow">好知网</a>
-							</li>
-							<li>
-								<a href="https://www.coursera.org/" target="_blank" rel="noopener external noreferrer nofollow">Coursera--网络学习平台</a>
-							</li>
-							<li>
-								<a href="https://www.edx.org/" target="_blank" rel="noopener external noreferrer nofollow">edX--在线学习平台</a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<b>
+				<ul>
+					<li> <a href="https://le.ouchn.cn/home" target="_blank" rel="noopener external noreferrer nofollow">终身教育平台</a> </li>
+					<li> <a href="https://www.icourse163.org/" target="_blank" rel="noopener external noreferrer nofollow">中国大学MOOC(慕课)</a> </li>
+					<li> <a href="https://www.51zxw.net/" target="_blank" rel="noopener external noreferrer nofollow">我要自学网</a> </li>
+					<li> <a href="http://www.dxzy163.com/" target="_blank" rel="noopener external noreferrer nofollow">大学资源网</a> </li>
+					<li> <a href="https://www.bilibili.com/" target="_blank" rel="noopener external noreferrer nofollow">哔哩哔哩</a> </li>
+					<li> <a href="https://www.examcoo.com/index/ku" target="_blank" rel="noopener external noreferrer nofollow">考试酷</a> </li>
+					<li> <a href="https://dict.eudic.net/ting" target="_blank" rel="noopener external noreferrer nofollow">每日英语听力</a> </li>
+					<li> <a href="https://ebook.hep.com.cn/ebooks/index.html#/" target="_blank" rel="noopener external noreferrer nofollow">高教书苑</a> </li>
+					<li> <a href="https://open.163.com/" target="_blank" rel="noopener external noreferrer nofollow">网易公开课</a> </li>
+					<li> <a href="https://www.yxgapp.com/" target="_blank" rel="noopener external noreferrer nofollow">译学馆</a> </li>
+					<li> <a href="https://www.hjenglish.com/" target="_blank" rel="noopener external noreferrer nofollow">沪江英语网</a> </li>
+					<li> <a href="https://www.xuetangx.com/" target="_blank" rel="noopener external noreferrer nofollow">学堂在线</a> </li>
+					<li> <a href="https://www.cnki.net/" target="_blank" rel="noopener external noreferrer nofollow">中国知网</a> </li>
+					<li> <a href="https://ke.qq.com/" target="_blank" rel="noopener external noreferrer nofollow">腾讯课堂</a> </li>
+					<li> <a href="https://www.imooc.com/course/list" target="_blank" rel="noopener external noreferrer nofollow">慕课网</a> </li>
+					<li> <a href="http://v.dxsbb.com/" target="_blank" rel="noopener external noreferrer nofollow">大学生自学网</a> </li>
+					<li> <a href="http://www.howzhi.com/" target="_blank" rel="noopener external noreferrer nofollow">好知网</a> </li>
+					<li> <a href="https://www.coursera.org/" target="_blank" rel="noopener external noreferrer nofollow">Coursera--网络学习平台</a> </li>
+					<li> <a href="https://www.edx.org/" target="_blank" rel="noopener external noreferrer nofollow">edX--在线学习平台</a> </li>
+				</ul>
+			</div>
+			<div> <b>
 							<h2 id="6">六、系统启动U盘制作工具</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="http://www.udashi.com/download/" target="_blank" rel="noopener external noreferrer nofollow">U大师-启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="https://www.laomaotao.net/" target="_blank" rel="noopener external noreferrer nofollow">老毛桃-启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="http://www.winbaicai.com/" target="_blank" rel="noopener external noreferrer nofollow">大白菜-启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="https://u.diannaodian.com/" target="_blank" rel="noopener external noreferrer nofollow">电脑店-启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="http://www.xiaobingxitong.com/" target="_blank" rel="noopener external noreferrer nofollow">小兵U盘启动</a>
-							</li>
-							<li>
-								<a href="https://www.sysceo.com/usm.html" target="_blank" rel="noopener external noreferrer nofollow">U盘魔术师</a>
-							</li>
-							<li>
-								<a href="http://www.zhuangjiba.com/" target="_blank" rel="noopener external noreferrer nofollow">装机吧-启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="http://www.uqidong.com/" target="_blank" rel="noopener external noreferrer nofollow">u启动-启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="http://www.udaxia.com/index.html" target="_blank" rel="noopener external noreferrer nofollow">u大侠-启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="http://www.upanok.com/" target="_blank" rel="noopener external noreferrer nofollow">一键U盘-启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="https://www.wepe.com.cn/download.html" target="_blank" rel="noopener external noreferrer nofollow">微PE工具箱</a>
-							</li>
-							<li>
-								<a href="https://www.upe.net/" target="_blank" rel="noopener external noreferrer nofollow">优启通-启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="http://www.ujiaoshou.com/" target="_blank" rel="noopener external noreferrer nofollow">U教授-启动盘制作工具</a>
-							</li>
-							<span>
+				<ul>
+					<li> <a href="http://www.udashi.com/download/" target="_blank" rel="noopener external noreferrer nofollow">U大师-启动盘制作工具</a> </li>
+					<li> <a href="https://www.laomaotao.net/" target="_blank" rel="noopener external noreferrer nofollow">老毛桃-启动盘制作工具</a> </li>
+					<li> <a href="http://www.winbaicai.com/" target="_blank" rel="noopener external noreferrer nofollow">大白菜-启动盘制作工具</a> </li>
+					<li> <a href="https://u.diannaodian.com/" target="_blank" rel="noopener external noreferrer nofollow">电脑店-启动盘制作工具</a> </li>
+					<li> <a href="http://www.xiaobingxitong.com/" target="_blank" rel="noopener external noreferrer nofollow">小兵U盘启动</a> </li>
+					<li> <a href="https://www.sysceo.com/usm.html" target="_blank" rel="noopener external noreferrer nofollow">U盘魔术师</a> </li>
+					<li> <a href="http://www.zhuangjiba.com/" target="_blank" rel="noopener external noreferrer nofollow">装机吧-启动盘制作工具</a> </li>
+					<li> <a href="http://www.uqidong.com/" target="_blank" rel="noopener external noreferrer nofollow">u启动-启动盘制作工具</a> </li>
+					<li> <a href="http://www.udaxia.com/index.html" target="_blank" rel="noopener external noreferrer nofollow">u大侠-启动盘制作工具</a> </li>
+					<li> <a href="http://www.upanok.com/" target="_blank" rel="noopener external noreferrer nofollow">一键U盘-启动盘制作工具</a> </li>
+					<li> <a href="https://www.wepe.com.cn/download.html" target="_blank" rel="noopener external noreferrer nofollow">微PE工具箱</a> </li>
+					<li> <a href="https://www.upe.net/" target="_blank" rel="noopener external noreferrer nofollow">优启通-启动盘制作工具</a> </li>
+					<li> <a href="http://www.ujiaoshou.com/" target="_blank" rel="noopener external noreferrer nofollow">U教授-启动盘制作工具</a> </li> <span>
 								<li>Rufus-U盘启动系统制作工具：<a href="https://www.oschina.net/p/rufus?hmsr=aladdin1e1" target="_blank" rel="noopener external noreferrer nofollow">链接1</a>&emsp;<a href="https://gitee.com/mirrors/Rufus?utm_source=alading&utm_campaign=repo" target="_blank" rel="noopener external noreferrer nofollow">链接2</a>&emsp;<a href="https://rufus.ie/downloads/" target="_blank" rel="noopener external noreferrer nofollow">链接3</a>
 								</li>
 							</span>
-							<li>
-								<a href="http://www.uqb.cn/" target="_blank" rel="noopener external noreferrer nofollow">U启宝-u盘启动盘制作工具</a>
-							</li>
-							<li>
-								<a href="http://ushendu.dunjiab.cn/" target="_blank" rel="noopener external noreferrer nofollow">U深度-u盘启动盘制作工具</a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<b>
+					<li> <a href="http://www.uqb.cn/" target="_blank" rel="noopener external noreferrer nofollow">U启宝-u盘启动盘制作工具</a> </li>
+					<li> <a href="http://ushendu.dunjiab.cn/" target="_blank" rel="noopener external noreferrer nofollow">U深度-u盘启动盘制作工具</a> </li>
+				</ul>
+			</div>
+			<div> <b>
 							<h2 id="7">七、各品牌电脑服务与支持</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="https://newsupport.lenovo.com.cn/" target="_blank" rel="noopener external noreferrer nofollow">联想</a>
-							</li>
-							<li>
-								<a href="https://support.hp.com/cn-zh/drivers" target="_blank" rel="noopener external noreferrer nofollow">惠普</a>
-							</li>
-							<li>
-								<a href="https://consumer.huawei.com/cn/support/" target="_blank" rel="noopener external noreferrer nofollow">华为</a>
-							</li>
-							<li>
-								<a href="https://www.asus.com.cn/support/Download-Center/" target="_blank" rel="noopener external noreferrer nofollow">华硕</a>
-							</li>
-							<li>
-								<a href="https://www.dell.com/support/home/zh-cn?app=drivers" target="_blank" rel="noopener external noreferrer nofollow">戴尔</a>
-							</li>
-							<li>
-								<a href="https://www.dell.com/support/home/zh-cn" target="_blank" rel="noopener external noreferrer nofollow">戴尔</a>
-							</li>
-							<li>
-								<a href="https://newthink.lenovo.com.cn/" target="_blank" rel="noopener external noreferrer nofollow">Thinkpad</a>
-							</li>
-							<li>
-								<a href="https://support.apple.com/zh-cn" target="_blank" rel="noopener external noreferrer nofollow">苹果</a>
-							</li>
-							<li>
-								<a href="https://www.ipason.com/portal/download_center.html" target="_blank" rel="noopener external noreferrer nofollow">攀升</a>
-							</li>
-							<li>
-								<a href="https://www.acer.com.cn/support.html?type=1" target="_blank" rel="noopener external noreferrer nofollow">宏基</a>
-							</li>
-							<li>
-								<a href="https://www.colorful.cn/server.aspx?classid=2825" target="_blank" rel="noopener external noreferrer nofollow">七彩虹</a>
-							</li>
-							<li>
-								<a href="https://www.hihonor.com/cn/support/" target="_blank" rel="noopener external noreferrer nofollow">荣耀</a>
-							</li>
-							<li>
-								<a href="http://www.hasee.com/after/index" target="_blank" rel="noopener external noreferrer nofollow">神舟</a>
-							</li>
-							<li>
-								<a href="https://www.leishen.cn/service/download" target="_blank" rel="noopener external noreferrer nofollow">雷神</a>
-							</li>
-							<li>
-								<a href="https://www.mi.com/service/notebook/drivers" target="_blank" rel="noopener external noreferrer nofollow">小米</a>
-							</li>
-							<li>
-								<a href="https://www.mechrevo.com/service/" target="_blank" rel="noopener external noreferrer nofollow">机械革命</a>
-							</li>
-							<li>
-								<a href="https://official.tongfangpc.com/servicelink/driver_download.aspx" target="_blank" rel="noopener external noreferrer nofollow">清华同方</a>
-							</li>
-							<li>
-								<a href="https://cn.msi.com/support#support_download" target="_blank" rel="noopener external noreferrer nofollow">微星</a>
-							</li>
-							<li>
-								<a href="https://www.dell.com/support/home/zh-cn?app=drivers" target="_blank" rel="noopener external noreferrer nofollow">外星人（同戴尔）</a>
-							</li>
-							<li>
-								<a href="https://support.microsoft.com/zh-cn/surface" target="_blank" rel="noopener external noreferrer nofollow">微软</a>
-							</li>
-							<li>
-								<a href="https://support.wdc.com/downloads.aspx?lang=cn" target="_blank" rel="noopener external noreferrer nofollow">西部数据软件与下载</a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<b>
+				<ul>
+					<li> <a href="https://newsupport.lenovo.com.cn/" target="_blank" rel="noopener external noreferrer nofollow">联想</a> </li>
+					<li> <a href="https://support.hp.com/cn-zh/drivers" target="_blank" rel="noopener external noreferrer nofollow">惠普</a> </li>
+					<li> <a href="https://consumer.huawei.com/cn/support/" target="_blank" rel="noopener external noreferrer nofollow">华为</a> </li>
+					<li> <a href="https://www.asus.com.cn/support/Download-Center/" target="_blank" rel="noopener external noreferrer nofollow">华硕</a> </li>
+					<li> <a href="https://www.dell.com/support/home/zh-cn?app=drivers" target="_blank" rel="noopener external noreferrer nofollow">戴尔</a> </li>
+					<li> <a href="https://www.dell.com/support/home/zh-cn" target="_blank" rel="noopener external noreferrer nofollow">戴尔</a> </li>
+					<li> <a href="https://newthink.lenovo.com.cn/" target="_blank" rel="noopener external noreferrer nofollow">Thinkpad</a> </li>
+					<li> <a href="https://support.apple.com/zh-cn" target="_blank" rel="noopener external noreferrer nofollow">苹果</a> </li>
+					<li> <a href="https://www.ipason.com/portal/download_center.html" target="_blank" rel="noopener external noreferrer nofollow">攀升</a> </li>
+					<li> <a href="https://www.acer.com.cn/support.html?type=1" target="_blank" rel="noopener external noreferrer nofollow">宏基</a> </li>
+					<li> <a href="https://www.colorful.cn/server.aspx?classid=2825" target="_blank" rel="noopener external noreferrer nofollow">七彩虹</a> </li>
+					<li> <a href="https://www.hihonor.com/cn/support/" target="_blank" rel="noopener external noreferrer nofollow">荣耀</a> </li>
+					<li> <a href="http://www.hasee.com/after/index" target="_blank" rel="noopener external noreferrer nofollow">神舟</a> </li>
+					<li> <a href="https://www.leishen.cn/service/download" target="_blank" rel="noopener external noreferrer nofollow">雷神</a> </li>
+					<li> <a href="https://www.mi.com/service/notebook/drivers" target="_blank" rel="noopener external noreferrer nofollow">小米</a> </li>
+					<li> <a href="https://www.mechrevo.com/service/" target="_blank" rel="noopener external noreferrer nofollow">机械革命</a> </li>
+					<li> <a href="https://official.tongfangpc.com/servicelink/driver_download.aspx" target="_blank" rel="noopener external noreferrer nofollow">清华同方</a> </li>
+					<li> <a href="https://cn.msi.com/support#support_download" target="_blank" rel="noopener external noreferrer nofollow">微星</a> </li>
+					<li> <a href="https://www.dell.com/support/home/zh-cn?app=drivers" target="_blank" rel="noopener external noreferrer nofollow">外星人（同戴尔）</a> </li>
+					<li> <a href="https://support.microsoft.com/zh-cn/surface" target="_blank" rel="noopener external noreferrer nofollow">微软</a> </li>
+					<li> <a href="https://support.wdc.com/downloads.aspx?lang=cn" target="_blank" rel="noopener external noreferrer nofollow">西部数据软件与下载</a> </li>
+				</ul>
+			</div>
+			<div> <b>
 							<h2 id="8">八、在线便捷工具</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="https://www.omegaxyz.com/onlinetools/web-running/" target="_blank" rel="noopener external noreferrer nofollow">HTML/JS代码运行器</a>
-							</li>
-							<li>
-								<a href="https://www.hipdf.com/cn/" target="_blank" rel="noopener external noreferrer nofollow">HiPDF工具</a>
-							</li>
-							<li>
-								<a href="https://www.bmcx.com/" target="_blank" rel="noopener external noreferrer nofollow">便民查询网</a>
-							</li>
-							<li>
-								<a href="https://www.gaituya.com/?zhljj01" target="_blank" rel="noopener external noreferrer nofollow">改图鸭</a>
-							</li>
-							<li>
-								<a href="https://app.xunjiepdf.com/?zhljj01" target="_blank" rel="noopener external noreferrer nofollow">迅捷PDF转换器</a>
-							</li>
-							<li>
-								<a href="https://toolb.cn/textspeech" target="_blank" rel="noopener external noreferrer nofollow">在线文本转声音</a>
-							</li>
-							<li>
-								<a href="https://vocalremover.org/zh/" target="_blank" rel="noopener external noreferrer nofollow">在线音频处理</a>
-							</li>
-							<li>
-								<a href="https://www.pdfpai.com/" target="_blank" rel="noopener external noreferrer nofollow">PDF派</a>
-							</li>
-							<li>
-								<a href="https://cn.office-converter.com/" target="_blank" rel="noopener external noreferrer nofollow">格式转换大全</a>
-							</li>
-							<li>
-								<a href="https://gitmind.cn/app/template?lang=zh" target="_blank" rel="noopener external noreferrer nofollow">在线思维导图</a>
-							</li>
-							<li>
-								<a href="https://www.toolnb.com/" target="_blank" rel="noopener external noreferrer nofollow">小工具合集</a>
-							</li>
-							<li>
-								<a href="https://www.aconvert.com/cn/" target="_blank" rel="noopener external noreferrer nofollow">文件在线转换</a>
-							</li>
-							<li>
-								<a href="https://tools.pdf24.org/zh/" target="_blank" rel="noopener external noreferrer nofollow">PDF24 Tools</a>
-							</li>
-							<li>
-								<a href="https://www.remove.bg/zh" target="_blank" rel="noopener external noreferrer nofollow">一键抠图</a>
-							</li>
-							<li>
-								<a href="https://pdf.yozocloud.cn/p/home" target="_blank" rel="noopener external noreferrer nofollow">永中PDF工具集</a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<b>
+				<ul>
+					<li> <a href="https://www.omegaxyz.com/onlinetools/web-running/" target="_blank" rel="noopener external noreferrer nofollow">HTML/JS代码运行器</a> </li>
+					<li> <a href="https://www.hipdf.com/cn/" target="_blank" rel="noopener external noreferrer nofollow">HiPDF工具</a> </li>
+					<li> <a href="https://www.bmcx.com/" target="_blank" rel="noopener external noreferrer nofollow">便民查询网</a> </li>
+					<li> <a href="https://www.gaituya.com/?zhljj01" target="_blank" rel="noopener external noreferrer nofollow">改图鸭</a> </li>
+					<li> <a href="https://app.xunjiepdf.com/?zhljj01" target="_blank" rel="noopener external noreferrer nofollow">迅捷PDF转换器</a> </li>
+					<li> <a href="https://toolb.cn/textspeech" target="_blank" rel="noopener external noreferrer nofollow">在线文本转声音</a> </li>
+					<li> <a href="https://vocalremover.org/zh/" target="_blank" rel="noopener external noreferrer nofollow">在线音频处理</a> </li>
+					<li> <a href="https://www.pdfpai.com/" target="_blank" rel="noopener external noreferrer nofollow">PDF派</a> </li>
+					<li> <a href="https://cn.office-converter.com/" target="_blank" rel="noopener external noreferrer nofollow">格式转换大全</a> </li>
+					<li> <a href="https://gitmind.cn/app/template?lang=zh" target="_blank" rel="noopener external noreferrer nofollow">在线思维导图</a> </li>
+					<li> <a href="https://www.toolnb.com/" target="_blank" rel="noopener external noreferrer nofollow">小工具合集</a> </li>
+					<li> <a href="https://www.aconvert.com/cn/" target="_blank" rel="noopener external noreferrer nofollow">文件在线转换</a> </li>
+					<li> <a href="https://tools.pdf24.org/zh/" target="_blank" rel="noopener external noreferrer nofollow">PDF24 Tools</a> </li>
+					<li> <a href="https://www.remove.bg/zh" target="_blank" rel="noopener external noreferrer nofollow">一键抠图</a> </li>
+					<li> <a href="https://pdf.yozocloud.cn/p/home" target="_blank" rel="noopener external noreferrer nofollow">永中PDF工具集</a> </li>
+				</ul>
+			</div>
+			<div> <b>
 							<h2 id="9">九、杂项综合</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="http://www.jsousuo.com/?1000" target="_blank" rel="noopener external noreferrer nofollow">极简搜索</a>
-							</li>
-							<li>
-								<a href="https://otp.landian.vip/zh-cn/" target="_blank" rel="noopener external noreferrer nofollow">Office Tool Plus|Office部署工具</a>
-							</li>
-							<li>
-								<a href="https://iknow.lenovo.com.cn/tool/lists" target="_blank" rel="noopener external noreferrer nofollow">优化工具(部分工具windows系统通用)</a>
-							</li>
-							<li>
-								<a href="https://www.itsk.com/portal.php" target="_blank" rel="noopener external noreferrer nofollow">驱动，U启，软件</a>
-							</li>
-							<li>
-								<a href="https://mp.weixin.qq.com/s/XxgDOaGjt9dct2kLE136Ig" target="_blank" rel="noopener external noreferrer nofollow">软件仓库</a>
-							</li>
-							<li>
-								<a href="https://www.laomaotao.net/quickquery/" target="_blank" rel="noopener external noreferrer nofollow">U盘启动快捷键</a>
-							</li>
-							<li>
-								<a href="https://jingyan.baidu.com/article/a3aad71af1bf97f0fa00960e.html" target="_blank" rel="noopener external noreferrer nofollow">小白怎么选择台式机硬件（本人原创）</a>
-							</li>
-							<li>
-								<a href="https://jingyan.baidu.com/article/9113f81b1076f66a3314c726.html" target="_blank" rel="noopener external noreferrer nofollow">什么样的笔记本电脑好用（本人原创）</a>
-							</li>
-							<li>
-								<a href="https://jingyan.baidu.com/article/75ab0bcbbf373497864db2c9.html" target="_blank" rel="noopener external noreferrer nofollow">让windows 11的开始菜单不在卡（本人原创）</a>
-							</li>
-							<li>
-								<span>KMS激活工具（win系统，office）：<a href="https://aichunjing.lanzoui.com/b710887" target="_blank" rel="noopener external noreferrer nofollow">蓝秦云</a>
-								</span>
-							</li>
-							<li>
-								<a href="https://lxldwp.lanzoum.com/b01vrk4qf" target="_blank" rel="noopener external noreferrer nofollow">自用网盘资源（访问密码：2001）</a>
-							</li>
-							<li>
-								<a href="https://zhutix.com/" target="_blank" rel="noopener external noreferrer nofollow">致美化</a>
-							</li>
-							<li>
-								<a href="https://www.toolnb.com/" target="_blank" rel="noopener external noreferrer nofollow">爱资料工具</a>
-							</li>
-							<li>
-								<a href="https://www.yiihuu.com/" target="_blank" rel="noopener external noreferrer nofollow">翼狐网</a>
-							</li>
-							<li>
-								<a href="https://www.bangongziyuan.com/" target="_blank" rel="noopener external noreferrer nofollow">办公资源</a>
-							</li>
-							<li>
-								<a href="http://www.wofficebox.com/about.html" target="_blank" rel="noopener external noreferrer nofollow">万彩办公大师</a>
-							</li>
-							<li>
-								<a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5" target="_blank" rel="noopener external noreferrer nofollow">wikiHow（可信赖的万事指南）</a>
-							</li>
-							<li>
-								<a href="https://www.lzpan.com/" target="_blank" rel="noopener external noreferrer nofollow">懒盘搜索</a>
-							</li>
-							<li>
-								<a href="https://tools.liumingye.cn/" target="_blank" rel="noopener external noreferrer nofollow">刘明野的工具箱</a>
-							</li>
-							<li>
-								<a href="https://cp.anyknew.com/" target="_blank" rel="noopener external noreferrer nofollow">拷贝兔</a>
-							</li>
-							<li>
-								<a href="http://www.yt66.cn/" target="_blank" rel="noopener external noreferrer nofollow">乐团音乐网</a>
-							</li>
-							<li>
-								<a href="https://thewind.xyz/" target="_blank" rel="noopener external noreferrer nofollow">音乐搜索</a>
-							</li>
-							<li>
-								<a href="https://music.y444.cn/#/" target="_blank" rel="noopener external noreferrer nofollow">下歌吧</a>
-							</li>
-							<li>
-								<a href="https://www.dtshot.com/" target="_blank" rel="noopener external noreferrer nofollow">无损音乐吧</a>
-							</li>
-							<li>
-								<a href="https://www.xlebbs.com/" target="_blank" rel="noopener external noreferrer nofollow">xlebbs-音乐论坛</a>
-							</li>
-							<li>
-								<a href="https://www.cdbao.net/" target="_blank" rel="noopener external noreferrer nofollow">CD包音乐网（需要登陆才能下载）</a>
-							</li>
-							<li>
-								<a href="https://tools.liumingye.cn/music/#/" target="_blank" rel="noopener external noreferrer nofollow">My Free MP3</a>
-							</li>
-							<li>
-								<a href="http://www.nlc.cn/" target="_blank" rel="noopener external noreferrer nofollow">中国国家图书馆</a>
-							</li>
-							<li>
-								<a href="https://hao.uisdc.com/" target="_blank" rel="noopener external noreferrer nofollow">优设导航</a>
-							</li>
-							<li>
-								<a href="https://tupian.sioe.cn/b/bing-home-image/" target="_blank" rel="noopener external noreferrer nofollow">Windows开机照片</a>
-							</li>
-							<li>
-								<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener external noreferrer nofollow">VirtualBox虚拟机</a>
-							</li>
-							<li>
-								<a href="https://unsplash.com/" target="_blank" rel="noopener external noreferrer nofollow">Unsplash（图片素材）</a>
-							</li>
-							<li>
-								<a href="http://www.bewindoweb.com/dwg.php" target="_blank" rel="noopener external noreferrer nofollow">网站书签</a>
-							</li>
-							<li>
-								<a href="https://tanqingbo.cn/CSBook001/" target="_blank" rel="noopener external noreferrer nofollow">IT码农</a>
-							</li>
-							<li>
-								<a href="http://www.hippter.com/" target="_blank" rel="noopener external noreferrer nofollow">PPT导航网站</a>
-							</li>
-							<li>
-								<a href="https://huajiakeji.com/" target="_blank" rel="noopener external noreferrer nofollow">谷歌插件</a>
-							</li>
-							<li>
-								<a href="https://wallpapers.microsoft.design/" target="_blank" rel="noopener external noreferrer nofollow">微软设计-壁纸</a>
-							</li>
-							<li>
-								<a href="https://storyset.com/" target="_blank" rel="noopener external noreferrer nofollow">插画免费下载站</a>
-							</li>
-							<li>
-								<a href="https://www.sitapix.com/" target="_blank" rel="noopener external noreferrer nofollow">西田图像</a>
-							</li>
-							<li>
-								<a href="https://www.100font.com/" target="_blank" rel="noopener external noreferrer nofollow">免费字体</a>
-							</li>
-							<li>
-								<a href="http://www.pptkj.net/" target="_blank" rel="noopener external noreferrer nofollow">PPT课件网</a>
-							</li>
-							<li>
-								<a href="https://www.pptsupermarket.com/" target="_blank" rel="noopener external noreferrer nofollow">PPT超级市场</a>
-							</li>
-							<li>
-								<a href="https://search.chongbuluo.com/" target="_blank" rel="noopener external noreferrer nofollow">虫部落-搜索大杂烩</a>
-							</li>
-							<li>
-								<a href="https://aur.one/" target="_blank" rel="noopener external noreferrer nofollow">一个开始(从搜索开始)</a>
-							</li>
-							<li>
-								<a href="https://www.seeseed.com/" target="_blank" rel="noopener external noreferrer nofollow">SeeSeed（设计者的天堂）</a>
-							</li>
-							<li>
-								<a href="https://design.maliquankai.com/" target="_blank" rel="noopener external noreferrer nofollow">码力全开（设计师、开发者的资源库）</a>
-							</li>
-							<li>
-								<a href="https://www.aigei.com/" target="_blank" rel="noopener external noreferrer nofollow">爱给网（全能素材大师）</a>
-							</li>
-							<li>
-								<a href="https://www.chsi.com.cn/" target="_blank" rel="noopener external noreferrer nofollow">学信网</a>
-							</li>
-							<li>
-								<a href="https://www.12306.cn/index/" target="_blank" rel="noopener external noreferrer nofollow">12306</a>
-							</li>
-							<li>
-								<a href="http://www.szgalaxy.com/__ZH_GB__/Home5/service_download" target="_blank" rel="noopener external noreferrer nofollow">影驰驱动下载</a>
-							</li>
-							<li>
-								<a href="http://www.dataland.com.cn/drivedown.aspx?nid=8&typeid=185" target="_blank" rel="noopener external noreferrer nofollow">迪兰驱动下载</a>
-							</li>
-							<li>
-								<a href="https://www.book118.com/" target="_blank" rel="noopener external noreferrer nofollow">E书联盟</a>
-							</li>
-							<li>
-								<a href="https://www.moulem.com/" target="_blank" rel="noopener external noreferrer nofollow">某柠檬</a>
-							</li>
-							<li>
-								<a href="https://www.runoob.com/" target="_blank" rel="noopener external noreferrer nofollow">菜鸟教程</a>
-							</li>
-							<li>
-								<a href="https://www.ipaddress.com/" target="_blank" rel="noopener external noreferrer nofollow">域名解析（查询IP）</a>
-							</li>
-							<li>
-								<a href="https://www.huorong.cn/" target="_blank" rel="noopener external noreferrer nofollow">火绒安全</a>
-							</li>
-							<li>
-								<a href="https://www.voidtools.com/zh-cn/" target="_blank" rel="noopener external noreferrer nofollow">Everything-快速文件搜索神器</a>
-							</li>
-							<li>
-								<a href="https://geekuninstaller.com/download" target="_blank" rel="noopener external noreferrer nofollow">Geek Uninstall-程序卸载工具</a>
-							</li>
-							<li>
-								<a href="https://www.todesk.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">ToDesk-远程控制</a>
-							</li>
-							<li>
-								<a href="https://www.snipaste.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">Snipaste-截图工具</a>
-							</li>
-							<li>
-								<a href="https://winaero.com/download-universal-watermark-disabler/" target="_blank" rel="noopener external noreferrer nofollow">Universal Watermark Disabler-移除Windows桌面版本号水印</a>
-							</li>
-							<div id="fangfa">
-								<details>
-									<summary>点击此处展开/折叠Universal Watermark Disabler工具使用方法</summary>
-									<p>1、使用前必须先解压，然后鼠标右键选择点击以管理员身份运行；</p>
-									<p>2、打开Universal Watermark Disabler软件，显示出当前系统的版本与水印状态。Status中显示Ready for installation即已经可以去除水印了；</p>
-									<p>3、点击install，在弹出的窗口中点是，稍后桌面会出现黑屏，当提示you will be signed out时，点击确定，系统会自动注销，重新登录系统后就取消水印了。去除水印后，不会影响系统属性中系统版本的显示，即不会去修改系统文件。</p>
-								</details>
-							</div>
-							<li>
-								<a href="https://pcmanager.microsoft.com/?channel=10000" target="_blank" rel="noopener external noreferrer nofollow">微软电脑管家</a>
-							</li>
-							<li>
-								<a href="https://www.hwinfo.com/" target="_blank" rel="noopener external noreferrer nofollow">HWiNFO-硬件检测软件</a>
-							</li>
-							<li>
-								<a href="https://www.superpi.net/" target="_blank" rel="noopener external noreferrer nofollow">Super PI-cpu测试软件</a>
-							</li>
-							<li>
-								<a href="https://www.neea.edu.cn/" target="_blank" rel="noopener external noreferrer nofollow">中国教育考试网</a>
-							</li>
-							<li>
-								<a href="https://www.getitfree.cn/" target="_blank" rel="noopener external noreferrer nofollow">正版中国</a>
-							</li>
-							<li>
-								<a href="https://github.com/PeterStrick/ViVeTool-GUI" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool GUI-更直观的开启新功能(用于win11测试版)</a>
-							</li>
-							<li>
-								<a href="https://github.com/thebookisclosed/ViVe/releases" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool</a>
-							</li>
-							<li>
-								<a href="https://sspai.com/post/74286" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool工具的使用</a>
-							</li>
-							<li>
-								<a href="https://github.com/521xueweihan/GitHub520" target="_blank" rel="noopener external noreferrer nofollow">试图解决GitHub访问慢、图片加载不出来的问题</a>
-							</li>
-							<li>
-								<a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/" target="_blank" rel="noopener external noreferrer nofollow">疫情实时大数据报告</a>
-							</li>
-							<li>
-								<a href="https://github.com/microsoft/PowerToys/releases" target="_blank" rel="noopener external noreferrer nofollow">微软PowerToys</a>
-							</li>
-							<li>
-								<a href="https://bbs.pediy.com/thread-218986.htm" target="_blank" rel="noopener external noreferrer nofollow">绕过PowerShell执行策略的15种方法</a>
-							</li>
-							<li>
-								<a href="https://blog.csdn.net/qq_43843708/article/details/127138116" target="_blank" rel="noopener external noreferrer nofollow">Windows常用运行库合集（VC++、DirectX、.NET）</a>
-							</li>
-							<li>
-								<a href="https://www.ghxi.com/" target="_blank" rel="noopener external noreferrer nofollow">果核剥壳</a>
-							</li>
-							<li>
-								<a href="https://www.iobit.com/en/iobit-unlocker.php" target="_blank" rel="noopener external noreferrer nofollow">IObit Unlocker-帮助用户解锁无法删除文件的小工具</a>
-							</li>
-							<li>
-								<a href="https://toolgg.com/" target="_blank" rel="noopener external noreferrer nofollow">我的工具箱</a>
-							</li>
-							<li>
-								<a href="http://www.wetools.com/html-formatter" target="_blank" rel="noopener external noreferrer nofollow">微工具</a>
-							</li>
-							<li>
-								<a href="https://c.runoob.com/" target="_blank" rel="noopener external noreferrer nofollow">菜鸟工具</a>
-							</li>
-							<li>
-								<a href="http://www.webkaka.com/" target="_blank" rel="noopener external noreferrer nofollow">卡卡网</a>
-							</li>
-							<li>
-								<a href="https://www.oo-software.com/en/ooappbuster" target="_blank" rel="noopener external noreferrer nofollow">O&O App Buster-win删除己安装的应用程序</a>
-							</li>
-						</ul>
+				<ul>
+					<li> <a href="http://www.jsousuo.com/?1000" target="_blank" rel="noopener external noreferrer nofollow">极简搜索</a> </li>
+					<li> <a href="https://otp.landian.vip/zh-cn/" target="_blank" rel="noopener external noreferrer nofollow">Office Tool Plus|Office部署工具</a> </li>
+					<li> <a href="https://iknow.lenovo.com.cn/tool/lists" target="_blank" rel="noopener external noreferrer nofollow">优化工具(部分工具windows系统通用)</a> </li>
+					<li> <a href="https://www.itsk.com/portal.php" target="_blank" rel="noopener external noreferrer nofollow">驱动，U启，软件</a> </li>
+					<li> <a href="https://mp.weixin.qq.com/s/XxgDOaGjt9dct2kLE136Ig" target="_blank" rel="noopener external noreferrer nofollow">软件仓库</a> </li>
+					<li> <a href="https://www.laomaotao.net/quickquery/" target="_blank" rel="noopener external noreferrer nofollow">U盘启动快捷键</a> </li>
+					<li> <a href="https://jingyan.baidu.com/article/a3aad71af1bf97f0fa00960e.html" target="_blank" rel="noopener external noreferrer nofollow">小白怎么选择台式机硬件（本人原创）</a> </li>
+					<li> <a href="https://jingyan.baidu.com/article/9113f81b1076f66a3314c726.html" target="_blank" rel="noopener external noreferrer nofollow">什么样的笔记本电脑好用（本人原创）</a> </li>
+					<li> <a href="https://jingyan.baidu.com/article/75ab0bcbbf373497864db2c9.html" target="_blank" rel="noopener external noreferrer nofollow">让windows 11的开始菜单不在卡（本人原创）</a> </li>
+					<li> <span>KMS激活工具（win系统，office）：<a href="https://aichunjing.lanzoui.com/b710887" target="_blank" rel="noopener external noreferrer nofollow">蓝秦云</a>
+								</span> </li>
+					<li> <a href="https://lxldwp.lanzoum.com/b01vrk4qf" target="_blank" rel="noopener external noreferrer nofollow">自用网盘资源（访问密码：2001）</a> </li>
+					<li> <a href="https://zhutix.com/" target="_blank" rel="noopener external noreferrer nofollow">致美化</a> </li>
+					<li> <a href="https://www.toolnb.com/" target="_blank" rel="noopener external noreferrer nofollow">爱资料工具</a> </li>
+					<li> <a href="https://www.yiihuu.com/" target="_blank" rel="noopener external noreferrer nofollow">翼狐网</a> </li>
+					<li> <a href="https://www.bangongziyuan.com/" target="_blank" rel="noopener external noreferrer nofollow">办公资源</a> </li>
+					<li> <a href="http://www.wofficebox.com/about.html" target="_blank" rel="noopener external noreferrer nofollow">万彩办公大师</a> </li>
+					<li> <a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5" target="_blank" rel="noopener external noreferrer nofollow">wikiHow（可信赖的万事指南）</a> </li>
+					<li> <a href="https://www.lzpan.com/" target="_blank" rel="noopener external noreferrer nofollow">懒盘搜索</a> </li>
+					<li> <a href="https://tools.liumingye.cn/" target="_blank" rel="noopener external noreferrer nofollow">刘明野的工具箱</a> </li>
+					<li> <a href="https://cp.anyknew.com/" target="_blank" rel="noopener external noreferrer nofollow">拷贝兔</a> </li>
+					<li> <a href="http://www.yt66.cn/" target="_blank" rel="noopener external noreferrer nofollow">乐团音乐网</a> </li>
+					<li> <a href="https://thewind.xyz/" target="_blank" rel="noopener external noreferrer nofollow">音乐搜索</a> </li>
+					<li> <a href="https://music.y444.cn/#/" target="_blank" rel="noopener external noreferrer nofollow">下歌吧</a> </li>
+					<li> <a href="https://www.dtshot.com/" target="_blank" rel="noopener external noreferrer nofollow">无损音乐吧</a> </li>
+					<li> <a href="https://www.xlebbs.com/" target="_blank" rel="noopener external noreferrer nofollow">xlebbs-音乐论坛</a> </li>
+					<li> <a href="https://www.cdbao.net/" target="_blank" rel="noopener external noreferrer nofollow">CD包音乐网（需要登陆才能下载）</a> </li>
+					<li> <a href="https://tools.liumingye.cn/music/#/" target="_blank" rel="noopener external noreferrer nofollow">My Free MP3</a> </li>
+					<li> <a href="http://www.nlc.cn/" target="_blank" rel="noopener external noreferrer nofollow">中国国家图书馆</a> </li>
+					<li> <a href="https://hao.uisdc.com/" target="_blank" rel="noopener external noreferrer nofollow">优设导航</a> </li>
+					<li> <a href="https://tupian.sioe.cn/b/bing-home-image/" target="_blank" rel="noopener external noreferrer nofollow">Windows开机照片</a> </li>
+					<li> <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener external noreferrer nofollow">VirtualBox虚拟机</a> </li>
+					<li> <a href="https://unsplash.com/" target="_blank" rel="noopener external noreferrer nofollow">Unsplash（图片素材）</a> </li>
+					<li> <a href="http://www.bewindoweb.com/dwg.php" target="_blank" rel="noopener external noreferrer nofollow">网站书签</a> </li>
+					<li> <a href="https://tanqingbo.cn/CSBook001/" target="_blank" rel="noopener external noreferrer nofollow">IT码农</a> </li>
+					<li> <a href="http://www.hippter.com/" target="_blank" rel="noopener external noreferrer nofollow">PPT导航网站</a> </li>
+					<li> <a href="https://huajiakeji.com/" target="_blank" rel="noopener external noreferrer nofollow">谷歌插件</a> </li>
+					<li> <a href="https://wallpapers.microsoft.design/" target="_blank" rel="noopener external noreferrer nofollow">微软设计-壁纸</a> </li>
+					<li> <a href="https://storyset.com/" target="_blank" rel="noopener external noreferrer nofollow">插画免费下载站</a> </li>
+					<li> <a href="https://www.sitapix.com/" target="_blank" rel="noopener external noreferrer nofollow">西田图像</a> </li>
+					<li> <a href="https://www.100font.com/" target="_blank" rel="noopener external noreferrer nofollow">免费字体</a> </li>
+					<li> <a href="http://www.pptkj.net/" target="_blank" rel="noopener external noreferrer nofollow">PPT课件网</a> </li>
+					<li> <a href="https://www.pptsupermarket.com/" target="_blank" rel="noopener external noreferrer nofollow">PPT超级市场</a> </li>
+					<li> <a href="https://search.chongbuluo.com/" target="_blank" rel="noopener external noreferrer nofollow">虫部落-搜索大杂烩</a> </li>
+					<li> <a href="https://aur.one/" target="_blank" rel="noopener external noreferrer nofollow">一个开始(从搜索开始)</a> </li>
+					<li> <a href="https://www.seeseed.com/" target="_blank" rel="noopener external noreferrer nofollow">SeeSeed（设计者的天堂）</a> </li>
+					<li> <a href="https://design.maliquankai.com/" target="_blank" rel="noopener external noreferrer nofollow">码力全开（设计师、开发者的资源库）</a> </li>
+					<li> <a href="https://www.aigei.com/" target="_blank" rel="noopener external noreferrer nofollow">爱给网（全能素材大师）</a> </li>
+					<li> <a href="https://www.chsi.com.cn/" target="_blank" rel="noopener external noreferrer nofollow">学信网</a> </li>
+					<li> <a href="https://www.12306.cn/index/" target="_blank" rel="noopener external noreferrer nofollow">12306</a> </li>
+					<li> <a href="http://www.szgalaxy.com/__ZH_GB__/Home5/service_download" target="_blank" rel="noopener external noreferrer nofollow">影驰驱动下载</a> </li>
+					<li> <a href="http://www.dataland.com.cn/drivedown.aspx?nid=8&typeid=185" target="_blank" rel="noopener external noreferrer nofollow">迪兰驱动下载</a> </li>
+					<li> <a href="https://www.book118.com/" target="_blank" rel="noopener external noreferrer nofollow">E书联盟</a> </li>
+					<li> <a href="https://www.moulem.com/" target="_blank" rel="noopener external noreferrer nofollow">某柠檬</a> </li>
+					<li> <a href="https://www.runoob.com/" target="_blank" rel="noopener external noreferrer nofollow">菜鸟教程</a> </li>
+					<li> <a href="https://www.ipaddress.com/" target="_blank" rel="noopener external noreferrer nofollow">域名解析（查询IP）</a> </li>
+					<li> <a href="https://www.huorong.cn/" target="_blank" rel="noopener external noreferrer nofollow">火绒安全</a> </li>
+					<li> <a href="https://www.voidtools.com/zh-cn/" target="_blank" rel="noopener external noreferrer nofollow">Everything-快速文件搜索神器</a> </li>
+					<li> <a href="https://geekuninstaller.com/download" target="_blank" rel="noopener external noreferrer nofollow">Geek Uninstall-程序卸载工具</a> </li>
+					<li> <a href="https://www.todesk.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">ToDesk-远程控制</a> </li>
+					<li> <a href="https://www.snipaste.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">Snipaste-截图工具</a> </li>
+					<li> <a href="https://winaero.com/download-universal-watermark-disabler/" target="_blank" rel="noopener external noreferrer nofollow">Universal Watermark Disabler-移除Windows桌面版本号水印</a> </li>
+					<div id="fangfa">
+						<details>
+							<summary>点击此处展开/折叠Universal Watermark Disabler工具使用方法</summary>
+							<p>1、使用前必须先解压，然后鼠标右键选择点击以管理员身份运行；</p>
+							<p>2、打开Universal Watermark Disabler软件，显示出当前系统的版本与水印状态。Status中显示Ready for installation即已经可以去除水印了；</p>
+							<p>3、点击install，在弹出的窗口中点是，稍后桌面会出现黑屏，当提示you will be signed out时，点击确定，系统会自动注销，重新登录系统后就取消水印了。去除水印后，不会影响系统属性中系统版本的显示，即不会去修改系统文件。</p>
+						</details>
 					</div>
-					<div>
-						<b>
+					<li> <a href="https://pcmanager.microsoft.com/?channel=10000" target="_blank" rel="noopener external noreferrer nofollow">微软电脑管家</a> </li>
+					<li> <a href="https://www.hwinfo.com/" target="_blank" rel="noopener external noreferrer nofollow">HWiNFO-硬件检测软件</a> </li>
+					<li> <a href="https://www.superpi.net/" target="_blank" rel="noopener external noreferrer nofollow">Super PI-cpu测试软件</a> </li>
+					<li> <a href="https://www.neea.edu.cn/" target="_blank" rel="noopener external noreferrer nofollow">中国教育考试网</a> </li>
+					<li> <a href="https://www.getitfree.cn/" target="_blank" rel="noopener external noreferrer nofollow">正版中国</a> </li>
+					<li> <a href="https://github.com/PeterStrick/ViVeTool-GUI" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool GUI-更直观的开启新功能(用于win11测试版)</a> </li>
+					<li> <a href="https://github.com/thebookisclosed/ViVe/releases" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool</a> </li>
+					<li> <a href="https://sspai.com/post/74286" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool工具的使用</a> </li>
+					<li> <a href="https://github.com/521xueweihan/GitHub520" target="_blank" rel="noopener external noreferrer nofollow">试图解决GitHub访问慢、图片加载不出来的问题</a> </li>
+					<li> <a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/" target="_blank" rel="noopener external noreferrer nofollow">疫情实时大数据报告</a> </li>
+					<li> <a href="https://github.com/microsoft/PowerToys/releases" target="_blank" rel="noopener external noreferrer nofollow">微软PowerToys</a> </li>
+					<li> <a href="https://bbs.pediy.com/thread-218986.htm" target="_blank" rel="noopener external noreferrer nofollow">绕过PowerShell执行策略的15种方法</a> </li>
+					<li> <a href="https://blog.csdn.net/qq_43843708/article/details/127138116" target="_blank" rel="noopener external noreferrer nofollow">Windows常用运行库合集（VC++、DirectX、.NET）</a> </li>
+					<li> <a href="https://www.ghxi.com/" target="_blank" rel="noopener external noreferrer nofollow">果核剥壳</a> </li>
+					<li> <a href="https://www.iobit.com/en/iobit-unlocker.php" target="_blank" rel="noopener external noreferrer nofollow">IObit Unlocker-帮助用户解锁无法删除文件的小工具</a> </li>
+					<li> <a href="https://toolgg.com/" target="_blank" rel="noopener external noreferrer nofollow">我的工具箱</a> </li>
+					<li> <a href="http://www.wetools.com/html-formatter" target="_blank" rel="noopener external noreferrer nofollow">微工具</a> </li>
+					<li> <a href="https://c.runoob.com/" target="_blank" rel="noopener external noreferrer nofollow">菜鸟工具</a> </li>
+					<li> <a href="http://www.webkaka.com/" target="_blank" rel="noopener external noreferrer nofollow">卡卡网</a> </li>
+					<li> <a href="https://www.oo-software.com/en/ooappbuster" target="_blank" rel="noopener external noreferrer nofollow">O&O App Buster-win删除己安装的应用程序</a> </li>
+				</ul>
+			</div>
+			<div> <b>
 							<h2 id="10">十、常用软件官方下载</h2>
 						</b>
-						<ul>
-							<li>
-								<a href="https://im.qq.com/download" target="_blank" rel="noopener external noreferrer nofollow">QQ</a>
-							</li>
-							<li>
-								<a href="https://weixin.qq.com/" target="_blank" rel="noopener external noreferrer nofollow">微信</a>
-							</li>
-							<li>
-								<a href="https://office.qq.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">TIM</a>
-							</li>
-							<li>
-								<a href="https://v.qq.com/biu/download" target="_blank" rel="noopener external noreferrer nofollow">腾讯视频</a>
-							</li>
-							<li>
-								<a href="https://dl-static.iqiyi.com/hz/IQIYIsetup_z43@xt001.exe" target="_blank" rel="noopener external noreferrer nofollow">爱奇艺视频</a>
-							</li>
-							<li>
-								<a href="https://youku.com/product/index?spm=a2ha1.14919748_WEBHOME_GRAY.uerCenter.5!5~5~5~A" target="_blank" rel="noopener external noreferrer nofollow">优酷视频</a>
-							</li>
-							<li>
-								<a href="https://www.douyu.com/client?tab=client" target="_blank" rel="noopener external noreferrer nofollow">斗鱼直播</a>
-							</li>
-							<li>
-								<a href="https://www.huya.com/download/" target="_blank" rel="noopener external noreferrer nofollow">虎牙直播</a>
-							</li>
-							<li>
-								<a href="https://pcconf.api.mgtv.com/getPcDownloadUrl?lastp=ch_home" target="_blank" rel="noopener external noreferrer nofollow">芒果TV</a>
-							</li>
-							<li>
-								<a href="https://music.91q.com/download" target="_blank" rel="noopener external noreferrer nofollow">千千音乐</a>
-							</li>
-							<li>
-								<a href="https://download.kugou.com/" target="_blank" rel="noopener external noreferrer nofollow">酷狗音乐</a>
-							</li>
-							<li>
-								<a href="http://www.kuwo.cn/down" target="_blank" rel="noopener external noreferrer nofollow">酷我音乐</a>
-							</li>
-							<li>
-								<a href="https://y.qq.com/download/index.html" target="_blank" rel="noopener external noreferrer nofollow">QQ音乐</a>
-							</li>
-							<li>
-								<a href="https://music.163.com/#/download" target="_blank" rel="noopener external noreferrer nofollow">网易云音乐</a>
-							</li>
-							<li>
-								<a href="https://www.wegame.com.cn/client/" target="_blank" rel="noopener external noreferrer nofollow">Wegame</a>
-							</li>
-							<li>
-								<a href="https://store.steampowered.com/" target="_blank" rel="noopener external noreferrer nofollow">Steam</a>
-							</li>
-							<li>
-								<a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank" rel="noopener external noreferrer nofollow">谷歌浏览器</a>
-							</li>
-							<li>
-								<a href="https://browser.360.cn/se/" target="_blank" rel="noopener external noreferrer nofollow">360安全浏览器</a>
-							</li>
-							<li>
-								<a href="https://browser.qq.com/?adtag=SEM170314031" target="_blank" rel="noopener external noreferrer nofollow">QQ浏览器</a>
-							</li>
-							<li>
-								<a href="http://www.firefox.com.cn/" target="_blank" rel="noopener external noreferrer nofollow">火狐浏览器</a>
-							</li>
-							<li>
-								<a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ" target="_blank" rel="noopener external noreferrer nofollow">微软浏览器</a>
-							</li>
-							<li>
-								<a href="https://ie.sogou.com/" target="_blank" rel="noopener external noreferrer nofollow">搜狗高速浏览器</a>
-							</li>
-							<li>
-								<a href="https://browser.360.cn/ee/index.html" target="_blank" rel="noopener external noreferrer nofollow">360极速浏览器</a>
-							</li>
-							<li>
-								<a href="http://www.theworld.cn/" target="_blank" rel="noopener external noreferrer nofollow">世界之窗浏览器</a>
-							</li>
-							<li>
-								<a href="https://www.opera.com/" target="_blank" rel="noopener external noreferrer nofollow">Opera浏览器</a>
-							</li>
-						</ul>
-					</div>
-					<!--正文结束-->
-				</div>
-				<span>
+				<ul>
+					<li> <a href="https://im.qq.com/download" target="_blank" rel="noopener external noreferrer nofollow">QQ</a> </li>
+					<li> <a href="https://weixin.qq.com/" target="_blank" rel="noopener external noreferrer nofollow">微信</a> </li>
+					<li> <a href="https://office.qq.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">TIM</a> </li>
+					<li> <a href="https://v.qq.com/biu/download" target="_blank" rel="noopener external noreferrer nofollow">腾讯视频</a> </li>
+					<li> <a href="https://dl-static.iqiyi.com/hz/IQIYIsetup_z43@xt001.exe" target="_blank" rel="noopener external noreferrer nofollow">爱奇艺视频</a> </li>
+					<li> <a href="https://youku.com/product/index?spm=a2ha1.14919748_WEBHOME_GRAY.uerCenter.5!5~5~5~A" target="_blank" rel="noopener external noreferrer nofollow">优酷视频</a> </li>
+					<li> <a href="https://www.douyu.com/client?tab=client" target="_blank" rel="noopener external noreferrer nofollow">斗鱼直播</a> </li>
+					<li> <a href="https://www.huya.com/download/" target="_blank" rel="noopener external noreferrer nofollow">虎牙直播</a> </li>
+					<li> <a href="https://pcconf.api.mgtv.com/getPcDownloadUrl?lastp=ch_home" target="_blank" rel="noopener external noreferrer nofollow">芒果TV</a> </li>
+					<li> <a href="https://music.91q.com/download" target="_blank" rel="noopener external noreferrer nofollow">千千音乐</a> </li>
+					<li> <a href="https://download.kugou.com/" target="_blank" rel="noopener external noreferrer nofollow">酷狗音乐</a> </li>
+					<li> <a href="http://www.kuwo.cn/down" target="_blank" rel="noopener external noreferrer nofollow">酷我音乐</a> </li>
+					<li> <a href="https://y.qq.com/download/index.html" target="_blank" rel="noopener external noreferrer nofollow">QQ音乐</a> </li>
+					<li> <a href="https://music.163.com/#/download" target="_blank" rel="noopener external noreferrer nofollow">网易云音乐</a> </li>
+					<li> <a href="https://www.wegame.com.cn/client/" target="_blank" rel="noopener external noreferrer nofollow">Wegame</a> </li>
+					<li> <a href="https://store.steampowered.com/" target="_blank" rel="noopener external noreferrer nofollow">Steam</a> </li>
+					<li> <a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank" rel="noopener external noreferrer nofollow">谷歌浏览器</a> </li>
+					<li> <a href="https://browser.360.cn/se/" target="_blank" rel="noopener external noreferrer nofollow">360安全浏览器</a> </li>
+					<li> <a href="https://browser.qq.com/?adtag=SEM170314031" target="_blank" rel="noopener external noreferrer nofollow">QQ浏览器</a> </li>
+					<li> <a href="http://www.firefox.com.cn/" target="_blank" rel="noopener external noreferrer nofollow">火狐浏览器</a> </li>
+					<li> <a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ" target="_blank" rel="noopener external noreferrer nofollow">微软浏览器</a> </li>
+					<li> <a href="https://ie.sogou.com/" target="_blank" rel="noopener external noreferrer nofollow">搜狗高速浏览器</a> </li>
+					<li> <a href="https://browser.360.cn/ee/index.html" target="_blank" rel="noopener external noreferrer nofollow">360极速浏览器</a> </li>
+					<li> <a href="http://www.theworld.cn/" target="_blank" rel="noopener external noreferrer nofollow">世界之窗浏览器</a> </li>
+					<li> <a href="https://www.opera.com/" target="_blank" rel="noopener external noreferrer nofollow">Opera浏览器</a> </li>
+				</ul>
+			</div>
+			<!--正文结束-->
+		</div> <span>
 					<p style="font-size:1.8rem;font-weight:700;line-height:3.4rem">注：由于本人工作原因，此工具箱将暂时停更，不再添加新功能，后续主要以修复bug为主，请各位小伙伴知晓与理解。如需下载使用本系统工具箱，<a href="https://lxldwp.lanzoum.com/b01vrjped" target="_blank" rel="noopener external noreferrer nofollow">请点我(访问密码：2001)</a>
 					</p>
 				</span>
-				<!--内容居中结束-->
-			</div>
-			<div id="footer">
-				<p>本人在本站发布的windows系统工具箱仅作为个人使用，未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，否则后果自负！
-					<br />本站为个人网站，本站所发布的一切资源均来自与网络，并由本人整理，仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。
-					<br />如侵犯到您的权益，请您及时联系我(2539223617@qq.com)，我们会及时跟进，处理。
-					<br />访问浏览和下载本站内容，表明您已知晓并同意上述条款。
-					<br />本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。
-					<br />还请您支持并购买正版软件!</p>Copyright&copy 2022百站汇-刘小龙 All rights reserved.
-				<br />
-				<a href="https://www.12377.cn/" title="举报" target="_blank" rel="noopener external noreferrer nofollow" style="background-color:transparent">网站有害信息举报</a>
-				<br />
-				<span id="time"></span>
-				<br />
-				<span>本站特别鸣谢<a href="https://github.com/" title="Github" target="_blank" rel="noopener external noreferrer nofollow" style="background-color:#333;color:#fff">Github</a>对本站提供支持</span>
-				<br /> 本站建立运行时间：二零二二年八月九日&emsp;|&emsp;<span id="momk"></span>
-				<span id="momk" style="color:red"></span>
-				<br />
-				<br /> Welcome and thank you for visiting my website!
-			</div>
-			<script>
-				//鼠标跟随
-								                					! function() {
-								                						function t() {
-								                							e(), r()
-								                						}
-								                				
-								                						function e() {
-								                							document.addEventListener("mousemove", n), window.addEventListener("resize", i)
-								                						}
-								                				
-								                						function i(t) {
-								                							d = window.innerWidth, p = window.innerHeight
-								                						}
-								                				
-								                						function n(t) {
-								                							m.x = t.clientX, m.y = t.clientY, o(m.x, m.y, c[Math.floor(Math.random() * c.length)])
-								                						}
-								                				
-								                						function o(t, e, i) {
-								                							var n = new s;
-								                							n.init(t, e, i), h.push(n)
-								                						}
-								                				
-								                						function a() {
-								                							for(var t = 0; t < h.length; t++) h[t].update();
-								                							for(var t = h.length - 1; t >= 0; t--) h[t].lifeSpan < 0 && (h[t].die(), h.splice(t, 1))
-								                						}
-								                				
-								                						function r() {
-								                							requestAnimationFrame(r), a()
-								                						}
-								                				
-								                						function s() {
-								                							this.character = "*", this.lifeSpan = 120, this.initialStyles = {
-								                								position: "fixed",
-								                								display: "inline-block",
-								                								top: "0px",
-								                								left: "0px",
-								                								pointerEvents: "none",
-								                								"touch-action": "none",
-								                								"z-index": "10000000",
-								                								fontSize: "25px",
-								                								"will-change": "transform"
-								                							}, this.init = function(t, e, i) {
-								                								this.velocity = {
-								                									x: (Math.random() < .5 ? -1 : 1) * (Math.random() / 2),
-								                									y: 1
-								                								}, this.position = {
-								                									x: t + 10,
-								                									y: e + 10
-								                								}, this.initialStyles.color = i, this.element = document.createElement("span"), this.element.innerHTML = this.character, l(this.element, this.initialStyles), this.update(), document.querySelector(".js-cursor-container").appendChild(this.element)
-								                							}, this.update = function() {
-								                								this.position.x += this.velocity.x, this.position.y += this.velocity.y, this.lifeSpan--, this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + this.lifeSpan / 120 + ")"
-								                							}, this.die = function() {
-								                								this.element.parentNode.removeChild(this.element)
-								                							}
-								                						}
-								                				
-								                						function l(t, e) {
-								                							for(var i in e) t.style[i] = e[i]
-								                						}
-								                						var c = ["#D61C59", "#E7D84B", "#1B8798"],
-								                							d = window.innerWidth,
-								                							p = window.innerHeight,
-								                							m = {
-								                								x: d / 2,
-								                								y: d / 2
-								                							},
-								                							h = [];
-								                						"ontouchstart" in window || navigator.msMaxTouchPoints || t()
-								                					}();
-			</script>
-			<script>
-				//鼠标点击效果
-								                					var a_idx = 0;
-								                					jQuery(document).ready(function(t) {
-								                						t("#page_begin_html").insertAfter("#cnblogs_post_body"), t("body").click(function(e) {
-								                							var i = new Array("❤富强❤", "❤民主❤", "❤文明❤", "❤和谐❤", "❤自由❤", "❤平等❤", "❤公正❤", "❤法治❤", "❤爱国❤", "❤敬业❤", "❤诚信❤", "❤友善❤"),
-								                								n = t("<span></span>").text(i[a_idx]);
-								                							a_idx = (a_idx + 1) % i.length;
-								                							var o = e.pageX,
-								                								a = e.pageY;
-								                							n.css({
-								                								"z-index": 1e69,
-								                								top: a - 20,
-								                								left: o,
-								                								position: "absolute",
-								                								"font-weight": "bold",
-								                								"font-size": "1.6rem",
-								                								color: "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
-								                							}), t("body").append(n), n.animate({
-								                								top: a - 180,
-								                								opacity: 0
-								                							}, 1500, function() {
-								                								n.remove()
-								                							})
-								                						})
-								                					});
-			</script>
-			<script>
-				//返回顶部
-								                					$(function() {
-								                						$(function() {
-								                							$(window).scroll(function() {
-								                								$(window).scrollTop() > 100 ? $("#back-to-top").fadeIn(1500) : $("#back-to-top").fadeOut(1500)
-								                							}), $("#back-to-top").click(function() {
-								                								return $("html").scrollTop() ? ($("html").animate({
-								                									scrollTop: 0
-								                								}, 100), !1) : ($("body").animate({
-								                									scrollTop: 0
-								                								}, 100), !1)
-								                							})
-								                						})
-								                					});
-			</script>
-			<script>
-				//实时时间
-								                					function time() {
-								                						var date = new Date();
-								                						var year = date.getFullYear();
-								                						var month = date.getMonth() + 1;
-								                						var day = date.getDate();
-								                						var week = date.getDay();
-								                						week = "星期" + "日一二三四五六".charAt(week);
-								                						/*switch(week){
-								                						    case 1:
-								                						        week="星期一";
-								                						        break;
-								                						    case 2:
-								                						        week="星期二";
-								                						        break;
-								                						    case 3:
-								                						        week="星期三";
-								                						        break;
-								                						    case 4:
-								                						        week="星期四";
-								                						        break;
-								                						    case 5:
-								                						        week="星期五";
-								                						        break;
-								                						    case 6:
-								                						        week="星期六";
-								                						        break;
-								                						    case 0:
-								                						        week="星期日";
-								                						        break;
-								                						}*/
-								                						var hour = date.getHours();
-								                						hour = hour < 10 ? "0" + hour : hour;
-								                						var minute = date.getMinutes();
-								                						minute = minute < 10 ? "0" + minute : minute;
-								                						var second = date.getSeconds();
-								                						second = second < 10 ? "0" + second : second;
-								                						var currentTime = year + "-" + month + "-" + day + "  " + week + "   " + hour + ":" + minute + ":" + second;
-								                						document.getElementById("time").innerHTML = currentTime;
-								                					}
-								                					setInterval("time()", 1000);
-			</script>
-			<script>
-				//鼠标点击特效
-								                					function clickEffect() {
-								                						let balls = [];
-								                						let longPressed = false;
-								                						let longPress;
-								                						let multiplier = 0;
-								                						let width, height;
-								                						let origin;
-								                						let normal;
-								                						let ctx;
-								                						const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
-								                						const canvas = document.createElement("canvas");
-								                						document.body.appendChild(canvas);
-								                						canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
-								                						const pointer = document.createElement("span");
-								                						pointer.classList.add("pointer");
-								                						document.body.appendChild(pointer);
-								                						if(canvas.getContext && window.addEventListener) {
-								                							ctx = canvas.getContext("2d");
-								                							updateSize();
-								                							window.addEventListener('resize', updateSize, false);
-								                							loop();
-								                							window.addEventListener("mousedown", function(e) {
-								                								pushBalls(randBetween(10, 20), e.clientX, e.clientY);
-								                								document.body.classList.add("is-pressed");
-								                								longPress = setTimeout(function() {
-								                									document.body.classList.add("is-longpress");
-								                									longPressed = true
-								                								}, 500)
-								                							}, false);
-								                							window.addEventListener("mouseup", function(e) {
-								                								clearInterval(longPress);
-								                								if(longPressed == true) {
-								                									document.body.classList.remove("is-longpress");
-								                									pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
-								                									longPressed = false
-								                								}
-								                								document.body.classList.remove("is-pressed")
-								                							}, false);
-								                							window.addEventListener("mousemove", function(e) {
-								                								let x = e.clientX;
-								                								let y = e.clientY;
-								                								pointer.style.top = y + "px";
-								                								pointer.style.left = x + "px"
-								                							}, false)
-								                						} else {
-								                							console.log("canvas or addEventListener is unsupported!")
-								                						}
-								                				
-								                						function updateSize() {
-								                							canvas.width = window.innerWidth * 2;
-								                							canvas.height = window.innerHeight * 2;
-								                							canvas.style.width = window.innerWidth + 'px';
-								                							canvas.style.height = window.innerHeight + 'px';
-								                							ctx.scale(2, 2);
-								                							width = (canvas.width = window.innerWidth);
-								                							height = (canvas.height = window.innerHeight);
-								                							origin = {
-								                								x: width / 2,
-								                								y: height / 2
-								                							};
-								                							normal = {
-								                								x: width / 2,
-								                								y: height / 2
-								                							}
-								                						}
-								                						class Ball {
-								                							constructor(x = origin.x, y = origin.y) {
-								                								this.x = x;
-								                								this.y = y;
-								                								this.angle = Math.PI * 2 * Math.random();
-								                								if(longPressed == true) {
-								                									this.multiplier = randBetween(14 + multiplier, 15 + multiplier)
-								                								} else {
-								                									this.multiplier = randBetween(6, 12)
-								                								}
-								                								this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
-								                								this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
-								                								this.r = randBetween(8, 12) + 3 * Math.random();
-								                								this.color = colours[Math.floor(Math.random() * colours.length)]
-								                							}
-								                							update() {
-								                								this.x += this.vx - normal.x;
-								                								this.y += this.vy - normal.y;
-								                								normal.x = -2 / window.innerWidth * Math.sin(this.angle);
-								                								normal.y = -2 / window.innerHeight * Math.cos(this.angle);
-								                								this.r -= 0.3;
-								                								this.vx *= 0.9;
-								                								this.vy *= 0.9
-								                							}
-								                						}
-								                				
-								                						function pushBalls(count = 1, x = origin.x, y = origin.y) {
-								                							for(let i = 0; i < count; i++) {
-								                								balls.push(new Ball(x, y))
-								                							}
-								                						}
-								                				
-								                						function randBetween(min, max) {
-								                							return Math.floor(Math.random() * max) + min
-								                						}
-								                				
-								                						function loop() {
-								                							ctx.fillStyle = "rgba(255, 255, 255, 0)";
-								                							ctx.clearRect(0, 0, canvas.width, canvas.height);
-								                							for(let i = 0; i < balls.length; i++) {
-								                								let b = balls[i];
-								                								if(b.r < 0) continue;
-								                								ctx.fillStyle = b.color;
-								                								ctx.beginPath();
-								                								ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
-								                								ctx.fill();
-								                								b.update()
-								                							}
-								                							if(longPressed == true) {
-								                								multiplier += 0.2
-								                							} else if(!longPressed && multiplier >= 0) {
-								                								multiplier -= 0.4
-								                							}
-								                							removeBall();
-								                							requestAnimationFrame(loop)
-								                						}
-								                				
-								                						function removeBall() {
-								                							for(let i = 0; i < balls.length; i++) {
-								                								let b = balls[i];
-								                								if(b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
-								                									balls.splice(i, 1)
-								                								}
-								                							}
-								                						}
-								                					}
-								                					clickEffect();
-			</script>
-			<script>
-				//建站至今已运行时间
-								                					function NewDate(str) {
-								                						str = str.split('-');
-								                						var date = new Date();
-								                						date.setUTCFullYear(str[0], str[1] - 1, str[2]);
-								                						date.setUTCHours(0, 0, 0, 0);
-								                						return date;
-								                					}
-								                				
-								                					function momxc() {
-								                						var birthDay = NewDate("2022-08-09"); //设置建站时间
-								                						var today = new Date();
-								                						var timeold = today.getTime() - birthDay.getTime();
-								                						var sectimeold = timeold / 1000
-								                						var secondsold = Math.floor(sectimeold);
-								                						var msPerDay = 24 * 60 * 60 * 1000;
-								                						var e_daysold = timeold / msPerDay;
-								                						var daysold = Math.floor(e_daysold);
-								                						var e_hrsold = (daysold - e_daysold) * -24;
-								                						var hrsold = Math.floor(e_hrsold);
-								                						var e_minsold = (hrsold - e_hrsold) * -60;
-								                						var minsold = Math.floor((hrsold - e_hrsold) * -60);
-								                						var seconds = Math.floor((minsold - e_minsold) * -60).toString();
-								                						document.getElementById("momk").innerHTML = "本站已安全运行" + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
-								                						setTimeout(momxc, 1000);
-								                					}
-								                					momxc();
-			</script>
-			<script>
-				//蜘蛛网背景
-								                					! function() {
-								                						//封装方法，压缩之后减少文件大小
-								                						function get_attribute(node, attr, default_value) {
-								                							return node.getAttribute(attr) || default_value;
-								                						}
-								                						//封装方法，压缩之后减少文件大小
-								                						function get_by_tagname(name) {
-								                							return document.getElementsByTagName(name);
-								                						}
-								                						//获取配置参数
-								                						function get_config_option() {
-								                							var scripts = get_by_tagname("script"),
-								                								script_len = scripts.length,
-								                								script = scripts[script_len - 1]; //当前加载的script
-								                							return {
-								                								l: script_len, //长度，用于生成id用
-								                								z: get_attribute(script, "zIndex", -1), //z-index
-								                								o: get_attribute(script, "opacity", 0.5), //opacity
-								                								c: get_attribute(script, "color", "0,0,0"), //color
-								                								n: get_attribute(script, "count", 99) //count
-								                							};
-								                						}
-								                						//设置canvas的高宽
-								                						function set_canvas_size() {
-								                							canvas_width = the_canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
-								                								canvas_height = the_canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-								                						}
-								                						//绘制过程
-								                						function draw_canvas() {
-								                							context.clearRect(0, 0, canvas_width, canvas_height);
-								                							//随机的线条和当前位置联合数组
-								                							var e, i, d, x_dist, y_dist, dist; //临时节点
-								                							//遍历处理每一个点
-								                							random_lines.forEach(function(r, idx) {
-								                								r.x += r.xa,
-								                									r.y += r.ya, //移动
-								                									r.xa *= r.x > canvas_width || r.x < 0 ? -1 : 1,
-								                									r.ya *= r.y > canvas_height || r.y < 0 ? -1 : 1, //碰到边界，反向反弹
-								                									context.fillRect(r.x - 0.5, r.y - 0.5, 1, 1); //绘制一个宽高为1的点
-								                								//从下一个点开始
-								                								for(i = idx + 1; i < all_array.length; i++) {
-								                									e = all_array[i];
-								                									//不是当前点
-								                									if(null !== e.x && null !== e.y) {
-								                										x_dist = r.x - e.x, //x轴距离 l
-								                											y_dist = r.y - e.y, //y轴距离 n
-								                											dist = x_dist * x_dist + y_dist * y_dist; //总距离, m
-								                										dist < e.max && (e === current_point && dist >= e.max / 2 && (r.x -= 0.03 * x_dist, r.y -= 0.03 * y_dist), //靠近的时候加速
-								                											d = (e.max - dist) / e.max, context.beginPath(), context.lineWidth = d / 2, context.strokeStyle = "rgba(" + config.c + "," + (d + 0.2) + ")", context.moveTo(r.x, r.y), context.lineTo(e.x, e.y), context.stroke());
-								                									}
-								                								}
-								                							}), frame_func(draw_canvas);
-								                						}
-								                						//创建画布，并添加到body中
-								                						var the_canvas = document.createElement("canvas"), //画布
-								                							config = get_config_option(), //配置
-								                							canvas_id = "c_n" + config.l, //canvas id
-								                							context = the_canvas.getContext("2d"),
-								                							canvas_width, canvas_height,
-								                							frame_func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(func) {
-								                								window.setTimeout(func, 1000 / 45);
-								                							},
-								                							random = Math.random,
-								                							current_point = {
-								                								x: null, //当前鼠标x
-								                								y: null, //当前鼠标y
-								                								max: 20000
-								                							},
-								                							all_array;
-								                						the_canvas.id = canvas_id;
-								                						the_canvas.style.cssText = "position:fixed;top:0;left:0;z-index:" + config.z + ";opacity:" + config.o;
-								                						get_by_tagname("body")[0].appendChild(the_canvas);
-								                						//初始化画布大小
-								                						set_canvas_size(), window.onresize = set_canvas_size;
-								                						//当时鼠标位置存储，离开的时候，释放当前位置信息
-								                						window.onmousemove = function(e) {
-								                							e = e || window.event, current_point.x = e.clientX, current_point.y = e.clientY;
-								                						}, window.onmouseout = function() {
-								                							current_point.x = null, current_point.y = null;
-								                						};
-								                						//随机生成config.n条线位置信息
-								                						for(var random_lines = [], i = 0; config.n > i; i++) {
-								                							var x = random() * canvas_width, //随机位置
-								                								y = random() * canvas_height,
-								                								xa = 2 * random() - 1, //随机运动方向
-								                								ya = 2 * random() - 1;
-								                							random_lines.push({
-								                								x: x,
-								                								y: y,
-								                								xa: xa,
-								                								ya: ya,
-								                								max: 12000 //沾附距离
-								                							});
-								                						}
-								                						all_array = random_lines.concat([current_point]);
-								                						//0.1秒后绘制
-								                						setTimeout(function() {
-								                							draw_canvas();
-								                						}, 100);
-								                					}();
-			</script>
-			<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
-			<div id="back-to-top">
-				<a href="#top" title="去顶部">TOP</a>
-			</div>
-			<a id="di_bu"></a>
-			<span class="js-cursor-container"></span>
-		</body>
+		<!--内容居中结束-->
+	</div>
+	<div id="footer">
+		<p>本人在本站发布的windows系统工具箱仅作为个人使用，未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，否则后果自负！ <br />本站为个人网站，本站所发布的一切资源均来自与网络，并由本人整理，仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。 <br />如侵犯到您的权益，请您及时联系我(2539223617@qq.com)，我们会及时跟进，处理。 <br />访问浏览和下载本站内容，表明您已知晓并同意上述条款。 <br />本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。 <br />还请您支持并购买正版软件!</p>Copyright&copy 2022百站汇-刘小龙 All rights reserved. <br /> <a href="https://www.12377.cn/" title="举报" target="_blank" rel="noopener external noreferrer nofollow" style="background-color:transparent">网站有害信息举报</a> <br /> <span id="time"></span> <br /> <span>本站特别鸣谢<a href="https://github.com/" title="Github" target="_blank" rel="noopener external noreferrer nofollow" style="background-color:#333;color:#fff">Github</a>对本站提供支持</span> <br /> 本站建立运行时间：二零二二年八月九日&emsp;|&emsp;<span id="momk"></span> <span id="momk" style="color:red"></span> <br /> <br /> Welcome and thank you for visiting my website! </div>
+	<script>
+	//鼠标跟随
+	! function() {
+		function t() {
+			e(), r()
+		}
 
-	</html>
+		function e() {
+			document.addEventListener("mousemove", n), window.addEventListener("resize", i)
+		}
+
+		function i(t) {
+			d = window.innerWidth, p = window.innerHeight
+		}
+
+		function n(t) {
+			m.x = t.clientX, m.y = t.clientY, o(m.x, m.y, c[Math.floor(Math.random() * c.length)])
+		}
+
+		function o(t, e, i) {
+			var n = new s;
+			n.init(t, e, i), h.push(n)
+		}
+
+		function a() {
+			for(var t = 0; t < h.length; t++) h[t].update();
+			for(var t = h.length - 1; t >= 0; t--) h[t].lifeSpan < 0 && (h[t].die(), h.splice(t, 1))
+		}
+
+		function r() {
+			requestAnimationFrame(r), a()
+		}
+
+		function s() {
+			this.character = "*", this.lifeSpan = 120, this.initialStyles = {
+				position: "fixed",
+				display: "inline-block",
+				top: "0px",
+				left: "0px",
+				pointerEvents: "none",
+				"touch-action": "none",
+				"z-index": "10000000",
+				fontSize: "25px",
+				"will-change": "transform"
+			}, this.init = function(t, e, i) {
+				this.velocity = {
+					x: (Math.random() < .5 ? -1 : 1) * (Math.random() / 2),
+					y: 1
+				}, this.position = {
+					x: t + 10,
+					y: e + 10
+				}, this.initialStyles.color = i, this.element = document.createElement("span"), this.element.innerHTML = this.character, l(this.element, this.initialStyles), this.update(), document.querySelector(".js-cursor-container").appendChild(this.element)
+			}, this.update = function() {
+				this.position.x += this.velocity.x, this.position.y += this.velocity.y, this.lifeSpan--, this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + this.lifeSpan / 120 + ")"
+			}, this.die = function() {
+				this.element.parentNode.removeChild(this.element)
+			}
+		}
+
+		function l(t, e) {
+			for(var i in e) t.style[i] = e[i]
+		}
+		var c = ["#D61C59", "#E7D84B", "#1B8798"],
+			d = window.innerWidth,
+			p = window.innerHeight,
+			m = {
+				x: d / 2,
+				y: d / 2
+			},
+			h = [];
+		"ontouchstart" in window || navigator.msMaxTouchPoints || t()
+	}();
+	</script>
+	<script>
+	//鼠标点击效果
+	var a_idx = 0;
+	jQuery(document).ready(function(t) {
+		t("#page_begin_html").insertAfter("#cnblogs_post_body"), t("body").click(function(e) {
+			var i = new Array("❤富强❤", "❤民主❤", "❤文明❤", "❤和谐❤", "❤自由❤", "❤平等❤", "❤公正❤", "❤法治❤", "❤爱国❤", "❤敬业❤", "❤诚信❤", "❤友善❤"),
+				n = t("<span></span>").text(i[a_idx]);
+			a_idx = (a_idx + 1) % i.length;
+			var o = e.pageX,
+				a = e.pageY;
+			n.css({
+				"z-index": 1e69,
+				top: a - 20,
+				left: o,
+				position: "absolute",
+				"font-weight": "bold",
+				"font-size": "1.6rem",
+				color: "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+			}), t("body").append(n), n.animate({
+				top: a - 180,
+				opacity: 0
+			}, 1500, function() {
+				n.remove()
+			})
+		})
+	});
+	</script>
+	<script>
+	//返回顶部
+	$(function() {
+		$(function() {
+			$(window).scroll(function() {
+				$(window).scrollTop() > 100 ? $("#back-to-top").fadeIn(1500) : $("#back-to-top").fadeOut(1500)
+			}), $("#back-to-top").click(function() {
+				return $("html").scrollTop() ? ($("html").animate({
+					scrollTop: 0
+				}, 100), !1) : ($("body").animate({
+					scrollTop: 0
+				}, 100), !1)
+			})
+		})
+	});
+	</script>
+	<script>
+	//实时时间
+	function time() {
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth() + 1;
+		var day = date.getDate();
+		var week = date.getDay();
+		week = "星期" + "日一二三四五六".charAt(week);
+		/*switch(week){
+		    case 1:
+		        week="星期一";
+		        break;
+		    case 2:
+		        week="星期二";
+		        break;
+		    case 3:
+		        week="星期三";
+		        break;
+		    case 4:
+		        week="星期四";
+		        break;
+		    case 5:
+		        week="星期五";
+		        break;
+		    case 6:
+		        week="星期六";
+		        break;
+		    case 0:
+		        week="星期日";
+		        break;
+		}*/
+		var hour = date.getHours();
+		hour = hour < 10 ? "0" + hour : hour;
+		var minute = date.getMinutes();
+		minute = minute < 10 ? "0" + minute : minute;
+		var second = date.getSeconds();
+		second = second < 10 ? "0" + second : second;
+		var currentTime = year + "-" + month + "-" + day + "  " + week + "   " + hour + ":" + minute + ":" + second;
+		document.getElementById("time").innerHTML = currentTime;
+	}
+	setInterval("time()", 1000);
+	</script>
+	<script>
+	//鼠标点击特效
+	function clickEffect() {
+		let balls = [];
+		let longPressed = false;
+		let longPress;
+		let multiplier = 0;
+		let width, height;
+		let origin;
+		let normal;
+		let ctx;
+		const colours = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"];
+		const canvas = document.createElement("canvas");
+		document.documentElement.appendChild(canvas);
+		canvas.setAttribute("style", "width: 100%; height: 100%; top: 0; left: 0; z-index: 99999; position: fixed; pointer-events: none;");
+		const pointer = document.createElement("span");
+		pointer.classList.add("pointer");
+		document.documentElement.appendChild(pointer);
+		if(canvas.getContext && window.addEventListener) {
+			ctx = canvas.getContext("2d");
+			updateSize();
+			window.addEventListener('resize', updateSize, false);
+			loop();
+			window.addEventListener("mousedown", function(e) {
+				pushBalls(randBetween(10, 20), e.clientX, e.clientY);
+				document.documentElement.classList.add("is-pressed");
+				longPress = setTimeout(function() {
+					document.documentElement.classList.add("is-longpress");
+					longPressed = true
+				}, 500)
+			}, false);
+			window.addEventListener("mouseup", function(e) {
+				clearInterval(longPress);
+				if(longPressed == true) {
+					document.documentElement.classList.remove("is-longpress");
+					pushBalls(randBetween(50 + Math.ceil(multiplier), 100 + Math.ceil(multiplier)), e.clientX, e.clientY);
+					longPressed = false
+				}
+				document.documentElement.classList.remove("is-pressed")
+			}, false);
+			window.addEventListener("mousemove", function(e) {
+				let x = e.clientX;
+				let y = e.clientY;
+				pointer.style.top = y + "px";
+				pointer.style.left = x + "px"
+			}, false)
+		} else {
+			console.log("canvas or addEventListener is unsupported!")
+		}
+
+		function updateSize() {
+			canvas.width = window.innerWidth * 2;
+			canvas.height = window.innerHeight * 2;
+			canvas.style.width = window.innerWidth + 'px';
+			canvas.style.height = window.innerHeight + 'px';
+			ctx.scale(2, 2);
+			width = (canvas.width = window.innerWidth);
+			height = (canvas.height = window.innerHeight);
+			origin = {
+				x: width / 2,
+				y: height / 2
+			};
+			normal = {
+				x: width / 2,
+				y: height / 2
+			}
+		}
+		class Ball {
+			constructor(x = origin.x, y = origin.y) {
+				this.x = x;
+				this.y = y;
+				this.angle = Math.PI * 2 * Math.random();
+				if(longPressed == true) {
+					this.multiplier = randBetween(14 + multiplier, 15 + multiplier)
+				} else {
+					this.multiplier = randBetween(6, 12)
+				}
+				this.vx = (this.multiplier + Math.random() * 0.5) * Math.cos(this.angle);
+				this.vy = (this.multiplier + Math.random() * 0.5) * Math.sin(this.angle);
+				this.r = randBetween(8, 12) + 3 * Math.random();
+				this.color = colours[Math.floor(Math.random() * colours.length)]
+			}
+			update() {
+				this.x += this.vx - normal.x;
+				this.y += this.vy - normal.y;
+				normal.x = -2 / window.innerWidth * Math.sin(this.angle);
+				normal.y = -2 / window.innerHeight * Math.cos(this.angle);
+				this.r -= 0.3;
+				this.vx *= 0.9;
+				this.vy *= 0.9
+			}
+		}
+
+		function pushBalls(count = 1, x = origin.x, y = origin.y) {
+			for(let i = 0; i < count; i++) {
+				balls.push(new Ball(x, y))
+			}
+		}
+
+		function randBetween(min, max) {
+			return Math.floor(Math.random() * max) + min
+		}
+
+		function loop() {
+			ctx.fillStyle = "rgba(255, 255, 255, 0)";
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			for(let i = 0; i < balls.length; i++) {
+				let b = balls[i];
+				if(b.r < 0) continue;
+				ctx.fillStyle = b.color;
+				ctx.beginPath();
+				ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2, false);
+				ctx.fill();
+				b.update()
+			}
+			if(longPressed == true) {
+				multiplier += 0.2
+			} else if(!longPressed && multiplier >= 0) {
+				multiplier -= 0.4
+			}
+			removeBall();
+			requestAnimationFrame(loop)
+		}
+
+		function removeBall() {
+			for(let i = 0; i < balls.length; i++) {
+				let b = balls[i];
+				if(b.x + b.r < 0 || b.x - b.r > width || b.y + b.r < 0 || b.y - b.r > height || b.r < 0) {
+					balls.splice(i, 1)
+				}
+			}
+		}
+	}
+	clickEffect();
+	</script>
+	<script>
+	//建站至今已运行时间
+	function NewDate(str) {
+		str = str.split('-');
+		var date = new Date();
+		date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+		date.setUTCHours(0, 0, 0, 0);
+		return date;
+	}
+
+	function momxc() {
+		var birthDay = NewDate("2022-08-09"); //设置建站时间
+		var today = new Date();
+		var timeold = today.getTime() - birthDay.getTime();
+		var sectimeold = timeold / 1000
+		var secondsold = Math.floor(sectimeold);
+		var msPerDay = 24 * 60 * 60 * 1000;
+		var e_daysold = timeold / msPerDay;
+		var daysold = Math.floor(e_daysold);
+		var e_hrsold = (daysold - e_daysold) * -24;
+		var hrsold = Math.floor(e_hrsold);
+		var e_minsold = (hrsold - e_hrsold) * -60;
+		var minsold = Math.floor((hrsold - e_hrsold) * -60);
+		var seconds = Math.floor((minsold - e_minsold) * -60).toString();
+		document.getElementById("momk").innerHTML = "本站已安全运行" + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+		setTimeout(momxc, 1000);
+	}
+	momxc();
+	</script>
+	<script>
+	//蜘蛛网背景
+	! function() {
+		//封装方法，压缩之后减少文件大小
+		function get_attribute(node, attr, default_value) {
+			return node.getAttribute(attr) || default_value;
+		}
+		//封装方法，压缩之后减少文件大小
+		function get_by_tagname(name) {
+			return document.getElementsByTagName(name);
+		}
+		//获取配置参数
+		function get_config_option() {
+			var scripts = get_by_tagname("script"),
+				script_len = scripts.length,
+				script = scripts[script_len - 1]; //当前加载的script
+			return {
+				l: script_len, //长度，用于生成id用
+				z: get_attribute(script, "zIndex", -1), //z-index
+				o: get_attribute(script, "opacity", 0.5), //opacity
+				c: get_attribute(script, "color", "0,0,0"), //color
+				n: get_attribute(script, "count", 99) //count
+			};
+		}
+		//设置canvas的高宽
+		function set_canvas_size() {
+			canvas_width = the_canvas.width = window.innerWidth || document.documentElement.clientWidth || document.documentElement.clientWidth,
+				canvas_height = the_canvas.height = window.innerHeight || document.documentElement.clientHeight || document.documentElement.clientHeight;
+		}
+		//绘制过程
+		function draw_canvas() {
+			context.clearRect(0, 0, canvas_width, canvas_height);
+			//随机的线条和当前位置联合数组
+			var e, i, d, x_dist, y_dist, dist; //临时节点
+			//遍历处理每一个点
+			random_lines.forEach(function(r, idx) {
+				r.x += r.xa,
+					r.y += r.ya, //移动
+					r.xa *= r.x > canvas_width || r.x < 0 ? -1 : 1,
+					r.ya *= r.y > canvas_height || r.y < 0 ? -1 : 1, //碰到边界，反向反弹
+					context.fillRect(r.x - 0.5, r.y - 0.5, 1, 1); //绘制一个宽高为1的点
+				//从下一个点开始
+				for(i = idx + 1; i < all_array.length; i++) {
+					e = all_array[i];
+					//不是当前点
+					if(null !== e.x && null !== e.y) {
+						x_dist = r.x - e.x, //x轴距离 l
+							y_dist = r.y - e.y, //y轴距离 n
+							dist = x_dist * x_dist + y_dist * y_dist; //总距离, m
+						dist < e.max && (e === current_point && dist >= e.max / 2 && (r.x -= 0.03 * x_dist, r.y -= 0.03 * y_dist), //靠近的时候加速
+							d = (e.max - dist) / e.max, context.beginPath(), context.lineWidth = d / 2, context.strokeStyle = "rgba(" + config.c + "," + (d + 0.2) + ")", context.moveTo(r.x, r.y), context.lineTo(e.x, e.y), context.stroke());
+					}
+				}
+			}), frame_func(draw_canvas);
+		}
+		//创建画布，并添加到body中
+		var the_canvas = document.createElement("canvas"), //画布
+			config = get_config_option(), //配置
+			canvas_id = "c_n" + config.l, //canvas id
+			context = the_canvas.getContext("2d"),
+			canvas_width, canvas_height,
+			frame_func = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(func) {
+				window.setTimeout(func, 1000 / 45);
+			},
+			random = Math.random,
+			current_point = {
+				x: null, //当前鼠标x
+				y: null, //当前鼠标y
+				max: 20000
+			},
+			all_array;
+		the_canvas.id = canvas_id;
+		the_canvas.style.cssText = "position:fixed;top:0;left:0;z-index:" + config.z + ";opacity:" + config.o;
+		get_by_tagname("body")[0].appendChild(the_canvas);
+		//初始化画布大小
+		set_canvas_size(), window.onresize = set_canvas_size;
+		//当时鼠标位置存储，离开的时候，释放当前位置信息
+		window.onmousemove = function(e) {
+			e = e || window.event, current_point.x = e.clientX, current_point.y = e.clientY;
+		}, window.onmouseout = function() {
+			current_point.x = null, current_point.y = null;
+		};
+		//随机生成config.n条线位置信息
+		for(var random_lines = [], i = 0; config.n > i; i++) {
+			var x = random() * canvas_width, //随机位置
+				y = random() * canvas_height,
+				xa = 2 * random() - 1, //随机运动方向
+				ya = 2 * random() - 1;
+			random_lines.push({
+				x: x,
+				y: y,
+				xa: xa,
+				ya: ya,
+				max: 12000 //沾附距离
+			});
+		}
+		all_array = random_lines.concat([current_point]);
+		//0.1秒后绘制
+		setTimeout(function() {
+			draw_canvas();
+		}, 100);
+	}();
+	</script>
+	<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
+	<div id="back-to-top"> <a href="#top" title="去顶部">TOP</a> </div>
+	<a id="di_bu"></a> <span class="js-cursor-container"></span> </body>
+
+</html>
