@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-CN" xml:lang="zh-CN"></html>
 
 <head>
-	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="UTF-8" />
 	<title>百站汇</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script>
+	var _hmt = _hmt || [];
+	! function() {
+		var t = document.createElement("script");
+		t.src = "https://hm.baidu.com/hm.js?635582c6d82d9ba6aa8e49599de6d0bb";
+		var e = document.getElementsByTagName("script")[0];
+		e.parentNode.insertBefore(t, e)
+	}();
+	</script>
 	<style>
 	* {
 		margin: 0;
@@ -12,9 +22,10 @@
 		border: 0;
 	}
 	
-	html {
+	html,
+	body {
 		font-size: 12px;
-		font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, Heiti, “黑体”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, sans-serif;
+		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
 		background-color: #D3D3D3;
 	}
 	
@@ -22,30 +33,47 @@
 		margin: 0 auto;
 		max-width: 50%;
 		background-color: rgba(220, 220, 220, 0.8);
+		padding-left: 40px;
+	}
+	</style>
+	<style>
+	.arrow {
+		border: 9px solid transparent;
+		border-bottom-color: #3DA0DB;
+		width: 0px;
+		height: 0px;
+		top: 0px
 	}
 	
-	#back-to-top {
+	.stick {
+		width: 8px;
+		height: 14px;
+		border-radius: 1px;
+		background-color: #3DA0DB;
+		top: 15px;
+	}
+	
+	#back_top div {
+		position: absolute;
+		margin: auto;
+		right: 0px;
+		left: 0px;
+	}
+	
+	#back_top {
+		background-color: #dddddd;
+		height: 38px;
+		width: 38px;
+		border-radius: 3px;
+		display: block;
+		cursor: pointer;
 		position: fixed;
+		right: 50px;
+		bottom: 100px;
 		display: none;
-		bottom: 4.5rem;
-		right: 2.5rem;
 	}
-	
-	#back-to-top a:link {
-		color: #000000;
-		font-size: 2.5rem;
-		font-weight: 800;
-		font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, Heiti, “黑体”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, sans-serif;
-	}
-	
-	#back-to-top a:hover {
-		background-color: #EE82EE;
-		color: #FFFFFF;
-		font-size: 2.5rem;
-		font-weight: 800;
-		text-decoration: none;
-	}
-	
+	</style>
+	<style>
 	#footer {
 		margin-top: 19px;
 		height: auto;
@@ -55,7 +83,7 @@
 		text-align: center;
 		background-color: gray;
 		color: #fff;
-		font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, Heiti, “黑体”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, sans-serif;
+		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
 		font-size: 1.1rem;
 		font-weight: 600;
 		letter-spacing: 0.2rem;
@@ -66,7 +94,7 @@
 		background-color: gray;
 		font-size: 1.1rem;
 		font-weight: 600;
-		font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, Heiti, “黑体”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, sans-serif;
+		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
 	}
 	
 	#footer a:hover {
@@ -86,7 +114,7 @@
 	#momk {
 		font-weight: 700;
 		font-size: 1.1rem;
-		font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, Heiti, “黑体”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, sans-serif;
+		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
 		color: #fff;
 	}
 	
@@ -118,30 +146,30 @@
 	}
 	
 	#title {
-		margin-top: 25px;
-		margin-bottom: 45px;
+		margin-top: 5px;
+		margin-bottom: 25px;
 		text-align: center;
 		font-weight: 600;
 		font-size: 2.9rem;
-		font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, Heiti, “黑体”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, sans-serif;
+		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
 		color: #000000;
 	}
-
+	
 	#mulu strong {
 		margin-top: 0;
 		font-size: 2.5rem;
-		line-height: 5.8rem;
+		line-height: 6rem;
 		color: #00008B;
 	}
 	
 	#mulu li {
-		line-height: 2.9rem;
+		line-height: 3.5rem;
 		list-style-type: none;
 		font-size: 2.2rem;
 	}
 	
 	#web_contents li {
-		line-height: 4.5rem;
+		line-height: 6rem;
 		list-style-type: none;
 		font-size: 2.2rem;
 	}
@@ -153,7 +181,7 @@
 	}
 	
 	#web_contents p {
-		line-height: 3.5rem;
+		line-height: 4rem;
 		font-size: 2.3rem;
 		font-weight: bold;
 		color: red;
@@ -163,14 +191,14 @@
 		color: #000000;
 		font-size: 1.9rem;
 		font-weight: 500;
-		line-height: 3rem;
+		line-height: 6rem;
 	}
 	
 	#fangfa p {
 		font-size: 1.9rem;
 		font-weight: 500;
 		color: rgb(30, 144, 255);
-		line-height: 3rem;
+		line-height: 4rem;
 	}
 	</style>
 	<style>
@@ -246,7 +274,7 @@
 		border-radius: 2px;
 		color: #fff!important;
 		cursor: pointer;
-		font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, Heiti, “黑体”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, sans-serif;
+		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
 		font-size: 14px;
 		padding: 6px 10%
 	}
@@ -258,7 +286,7 @@
 		border-radius: 2px;
 		color: #fff!important;
 		cursor: pointer;
-		font-family: Helvetica, Tahoma, Arial, STXihei, “华文细黑”, Heiti, “黑体”, “Microsoft YaHei”, “微软雅黑”, SimSun, “宋体”, sans-serif;
+		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
 		font-size: 14px;
 		padding: 8px 10%
 	}
@@ -273,7 +301,7 @@
 			<p>1、欢迎您访问和浏览本站，建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本站。</p>
 			<p>2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。</p>
 			<p>3、点击目录中的标题（标题一至标题十），可以直接跳转，浏览你所点击标题下的具体内容。</p>
-			<p>4、滚动本站页面一段时间，右下角会出现TOP按钮，点击它可以返回页面顶部。</p>
+			<p>4、滚动本站页面一段时间，右下角会出现返回顶部的按钮，点击它可以返回页面顶部。</p>
 			<p>5、所有站点均由本人亲自整理、甄别、添加，保证每个站点安全、无劫持、无病毒、可靠可用。</p>
 			<p>6、由于本人能力，建站仓促等原因，本站难免会有不足的地方，请大家理解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！</p> <a style="display: block;background: #98a3ff;color: #FFF;text-align: center;font-weight: bold;font-size: 17px;line-height: 40px;margin: 0 auto;margin-top: 45px;border-radius: 32px;width: 80px;" onClick="closeGlobalAd();" class="btn btn-default" rel='nofollow'>我知道了</a> </div>
 	</div>
@@ -285,7 +313,7 @@
 				<li> <a href="#1">一、磁盘管理软件</a> </li> <br />
 				<li> <a href="#2">二、系统镜像</a> </li> <br />
 				<li> <a href="#3">三、解压缩软件</a> </li> <br />
-				<li> <a href="#4">四、AMD|Inter|NVIDIA相关驱动下载</a> </li> <br />
+				<li> <a href="#4">四、AMD | Inter | NVIDIA 相关驱动下载</a> </li> <br />
 				<li> <a href="#5">五、在线学习</a> </li> <br />
 				<li> <a href="#6">六、系统启动U盘制作工具</a> </li> <br />
 				<li> <a href="#7">七、各品牌电脑服务与支持</a> </li> <br />
@@ -312,7 +340,7 @@
 					<li> <a href="https://www.microsoft.com/zh-cn/software-download/windows11" target="_blank" rel="noopener external noreferrer nofollow">前往Windows11官方下载页面</a> </li>
 					<li> <a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener external noreferrer nofollow">MSDN，我告诉你</a> </li>
 					<li> <a href="https://next.itellyou.cn/" target="_blank" rel="noopener external noreferrer nofollow">下一站，我告诉你</a> </li>
-					<li> <a href="http://www.aichunjing.com/" target="_blank" rel="noopener external noreferrer nofollow">爱纯净-纯净系统下载网站</a> </li>
+					<li> <a href="http://www.aichunjing.com/" target="_blank" rel="noopener external noreferrer nofollow">爱纯净 - 纯净系统下载网站</a> </li>
 				</ul>
 			</div>
 			<div> <b>
@@ -329,12 +357,12 @@
 							<h2 id="4">四、AMD|Inter|NVIDIA相关驱动下载</h2>
 						</b>
 				<ul>
-					<li> <a href="https://www.nvidia.cn/geforce/drivers/" target="_blank" rel="noopener external noreferrer nofollow">官方GeForce驱动程序|NVIDIA</a> </li>
-					<li> <a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener external noreferrer nofollow">官方驱动|NVIDIA</a> </li>
-					<li> <a href="https://www.intel.cn/content/www/cn/zh/support/detect.html" target="_blank" rel="noopener external noreferrer nofollow">英特尔®驱动程序和支持助理</a> </li>
-					<li> <a href="https://www.intel.cn/content/www/cn/zh/download-center/home.html" target="_blank" rel="noopener external noreferrer nofollow">下载英特尔®驱动程序和软件</a> </li>
-					<li> <a href="https://www.amd.com/zh-hans/support" target="_blank" rel="noopener external noreferrer nofollow">AMD驱动程序与支持|AMD</a> </li>
-					<li> <a href="https://www.amd.com/zh-hans" target="_blank" rel="noopener external noreferrer nofollow">AMD官网|AMD</a> </li>
+					<li> <a href="https://www.nvidia.cn/geforce/drivers/" target="_blank" rel="noopener external noreferrer nofollow">官方GeForce驱动程序 | NVIDIA</a> </li>
+					<li> <a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank" rel="noopener external noreferrer nofollow">官方驱动 | NVIDIA</a> </li>
+					<li> <a href="https://www.intel.cn/content/www/cn/zh/support/detect.html" target="_blank" rel="noopener external noreferrer nofollow">英特尔 ®驱动程序和支持助理</a> </li>
+					<li> <a href="https://www.intel.cn/content/www/cn/zh/download-center/home.html" target="_blank" rel="noopener external noreferrer nofollow">下载英特尔 ®驱动程序和软件</a> </li>
+					<li> <a href="https://www.amd.com/zh-hans/support" target="_blank" rel="noopener external noreferrer nofollow">AMD驱动程序与支持 | AMD</a> </li>
+					<li> <a href="https://www.amd.com/zh-hans" target="_blank" rel="noopener external noreferrer nofollow">AMD官网 | AMD</a> </li>
 				</ul>
 			</div>
 			<div> <b>
@@ -366,24 +394,24 @@
 							<h2 id="6">六、系统启动U盘制作工具</h2>
 						</b>
 				<ul>
-					<li> <a href="http://www.udashi.com/download/" target="_blank" rel="noopener external noreferrer nofollow">U大师-启动盘制作工具</a> </li>
-					<li> <a href="https://www.laomaotao.net/" target="_blank" rel="noopener external noreferrer nofollow">老毛桃-启动盘制作工具</a> </li>
-					<li> <a href="http://www.winbaicai.com/" target="_blank" rel="noopener external noreferrer nofollow">大白菜-启动盘制作工具</a> </li>
-					<li> <a href="https://u.diannaodian.com/" target="_blank" rel="noopener external noreferrer nofollow">电脑店-启动盘制作工具</a> </li>
+					<li> <a href="http://www.udashi.com/download/" target="_blank" rel="noopener external noreferrer nofollow">U大师 - 启动盘制作工具</a> </li>
+					<li> <a href="https://www.laomaotao.net/" target="_blank" rel="noopener external noreferrer nofollow">老毛桃 - 启动盘制作工具</a> </li>
+					<li> <a href="http://www.winbaicai.com/" target="_blank" rel="noopener external noreferrer nofollow">大白菜 - 启动盘制作工具</a> </li>
+					<li> <a href="https://u.diannaodian.com/" target="_blank" rel="noopener external noreferrer nofollow">电脑店 - 启动盘制作工具</a> </li>
 					<li> <a href="http://www.xiaobingxitong.com/" target="_blank" rel="noopener external noreferrer nofollow">小兵U盘启动</a> </li>
 					<li> <a href="https://www.sysceo.com/usm.html" target="_blank" rel="noopener external noreferrer nofollow">U盘魔术师</a> </li>
-					<li> <a href="http://www.zhuangjiba.com/" target="_blank" rel="noopener external noreferrer nofollow">装机吧-启动盘制作工具</a> </li>
-					<li> <a href="http://www.uqidong.com/" target="_blank" rel="noopener external noreferrer nofollow">u启动-启动盘制作工具</a> </li>
-					<li> <a href="http://www.udaxia.com/index.html" target="_blank" rel="noopener external noreferrer nofollow">u大侠-启动盘制作工具</a> </li>
-					<li> <a href="http://www.upanok.com/" target="_blank" rel="noopener external noreferrer nofollow">一键U盘-启动盘制作工具</a> </li>
+					<li> <a href="http://www.zhuangjiba.com/" target="_blank" rel="noopener external noreferrer nofollow">装机吧 - 启动盘制作工具</a> </li>
+					<li> <a href="http://www.uqidong.com/" target="_blank" rel="noopener external noreferrer nofollow">u启动 - 启动盘制作工具</a> </li>
+					<li> <a href="http://www.udaxia.com/index.html" target="_blank" rel="noopener external noreferrer nofollow">U大侠 - 启动盘制作工具</a> </li>
+					<li> <a href="http://www.upanok.com/" target="_blank" rel="noopener external noreferrer nofollow">一键U盘 - 启动盘制作工具</a> </li>
 					<li> <a href="https://www.wepe.com.cn/download.html" target="_blank" rel="noopener external noreferrer nofollow">微PE工具箱</a> </li>
-					<li> <a href="https://www.upe.net/" target="_blank" rel="noopener external noreferrer nofollow">优启通-启动盘制作工具</a> </li>
-					<li> <a href="http://www.ujiaoshou.com/" target="_blank" rel="noopener external noreferrer nofollow">U教授-启动盘制作工具</a> </li> <span>
+					<li> <a href="https://www.upe.net/" target="_blank" rel="noopener external noreferrer nofollow">优启通 - 启动盘制作工具</a> </li>
+					<li> <a href="http://www.ujiaoshou.com/" target="_blank" rel="noopener external noreferrer nofollow">U教授 - 启动盘制作工具</a> </li> <span>
 								<li>Rufus-U盘启动系统制作工具：<a href="https://www.oschina.net/p/rufus?hmsr=aladdin1e1" target="_blank" rel="noopener external noreferrer nofollow">链接1</a>&emsp;<a href="https://gitee.com/mirrors/Rufus?utm_source=alading&utm_campaign=repo" target="_blank" rel="noopener external noreferrer nofollow">链接2</a>&emsp;<a href="https://rufus.ie/downloads/" target="_blank" rel="noopener external noreferrer nofollow">链接3</a>
 								</li>
 							</span>
-					<li> <a href="http://www.uqb.cn/" target="_blank" rel="noopener external noreferrer nofollow">U启宝-u盘启动盘制作工具</a> </li>
-					<li> <a href="http://ushendu.dunjiab.cn/" target="_blank" rel="noopener external noreferrer nofollow">U深度-u盘启动盘制作工具</a> </li>
+					<li> <a href="http://www.uqb.cn/" target="_blank" rel="noopener external noreferrer nofollow">U启宝 - u盘启动盘制作工具</a> </li>
+					<li> <a href="http://ushendu.dunjiab.cn/" target="_blank" rel="noopener external noreferrer nofollow">U深度 - u盘启动盘制作工具</a> </li>
 				</ul>
 			</div>
 			<div> <b>
@@ -417,7 +445,7 @@
 							<h2 id="8">八、在线便捷工具</h2>
 						</b>
 				<ul>
-					<li> <a href="https://www.omegaxyz.com/onlinetools/web-running/" target="_blank" rel="noopener external noreferrer nofollow">HTML/JS代码运行器</a> </li>
+					<li> <a href="https://www.omegaxyz.com/onlinetools/web-running/" target="_blank" rel="noopener external noreferrer nofollow">HTML / JS代码运行器</a> </li>
 					<li> <a href="https://www.hipdf.com/cn/" target="_blank" rel="noopener external noreferrer nofollow">HiPDF工具</a> </li>
 					<li> <a href="https://www.bmcx.com/" target="_blank" rel="noopener external noreferrer nofollow">便民查询网</a> </li>
 					<li> <a href="https://www.gaituya.com/?zhljj01" target="_blank" rel="noopener external noreferrer nofollow">改图鸭</a> </li>
@@ -475,13 +503,13 @@
 					<li> <a href="https://tanqingbo.cn/CSBook001/" target="_blank" rel="noopener external noreferrer nofollow">IT码农</a> </li>
 					<li> <a href="http://www.hippter.com/" target="_blank" rel="noopener external noreferrer nofollow">PPT导航网站</a> </li>
 					<li> <a href="https://huajiakeji.com/" target="_blank" rel="noopener external noreferrer nofollow">谷歌插件</a> </li>
-					<li> <a href="https://wallpapers.microsoft.design/" target="_blank" rel="noopener external noreferrer nofollow">微软设计-壁纸</a> </li>
+					<li> <a href="https://wallpapers.microsoft.design/" target="_blank" rel="noopener external noreferrer nofollow">微软设计 - 壁纸</a> </li>
 					<li> <a href="https://storyset.com/" target="_blank" rel="noopener external noreferrer nofollow">插画免费下载站</a> </li>
 					<li> <a href="https://www.sitapix.com/" target="_blank" rel="noopener external noreferrer nofollow">西田图像</a> </li>
 					<li> <a href="https://www.100font.com/" target="_blank" rel="noopener external noreferrer nofollow">免费字体</a> </li>
 					<li> <a href="http://www.pptkj.net/" target="_blank" rel="noopener external noreferrer nofollow">PPT课件网</a> </li>
 					<li> <a href="https://www.pptsupermarket.com/" target="_blank" rel="noopener external noreferrer nofollow">PPT超级市场</a> </li>
-					<li> <a href="https://search.chongbuluo.com/" target="_blank" rel="noopener external noreferrer nofollow">虫部落-搜索大杂烩</a> </li>
+					<li> <a href="https://search.chongbuluo.com/" target="_blank" rel="noopener external noreferrer nofollow">虫部落 - 搜索大杂烩</a> </li>
 					<li> <a href="https://aur.one/" target="_blank" rel="noopener external noreferrer nofollow">一个开始(从搜索开始)</a> </li>
 					<li> <a href="https://www.seeseed.com/" target="_blank" rel="noopener external noreferrer nofollow">SeeSeed（设计者的天堂）</a> </li>
 					<li> <a href="https://design.maliquankai.com/" target="_blank" rel="noopener external noreferrer nofollow">码力全开（设计师、开发者的资源库）</a> </li>
@@ -495,11 +523,11 @@
 					<li> <a href="https://www.runoob.com/" target="_blank" rel="noopener external noreferrer nofollow">菜鸟教程</a> </li>
 					<li> <a href="https://www.ipaddress.com/" target="_blank" rel="noopener external noreferrer nofollow">域名解析（查询IP）</a> </li>
 					<li> <a href="https://www.huorong.cn/" target="_blank" rel="noopener external noreferrer nofollow">火绒安全</a> </li>
-					<li> <a href="https://www.voidtools.com/zh-cn/" target="_blank" rel="noopener external noreferrer nofollow">Everything-快速文件搜索神器</a> </li>
-					<li> <a href="https://geekuninstaller.com/download" target="_blank" rel="noopener external noreferrer nofollow">Geek Uninstall-程序卸载工具</a> </li>
-					<li> <a href="https://www.todesk.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">ToDesk-远程控制</a> </li>
-					<li> <a href="https://www.snipaste.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">Snipaste-截图工具</a> </li>
-					<li> <a href="https://winaero.com/download-universal-watermark-disabler/" target="_blank" rel="noopener external noreferrer nofollow">Universal Watermark Disabler-移除Windows桌面版本号水印</a> </li>
+					<li> <a href="https://www.voidtools.com/zh-cn/" target="_blank" rel="noopener external noreferrer nofollow">Everything - 快速文件搜索神器</a> </li>
+					<li> <a href="https://geekuninstaller.com/download" target="_blank" rel="noopener external noreferrer nofollow">Geek Uninstall - 程序卸载工具</a> </li>
+					<li> <a href="https://www.todesk.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">ToDesk - 远程控制</a> </li>
+					<li> <a href="https://www.snipaste.com/download.html" target="_blank" rel="noopener external noreferrer nofollow">Snipaste - 截图工具</a> </li>
+					<li> <a href="https://winaero.com/download-universal-watermark-disabler/" target="_blank" rel="noopener external noreferrer nofollow">Universal Watermark Disabler - 移除Windows桌面版本号水印</a> </li>
 					<div id="fangfa">
 						<details>
 							<summary>点击此处展开/折叠Universal Watermark Disabler工具使用方法</summary>
@@ -509,11 +537,11 @@
 						</details>
 					</div>
 					<li> <a href="https://pcmanager.microsoft.com/?channel=10000" target="_blank" rel="noopener external noreferrer nofollow">微软电脑管家</a> </li>
-					<li> <a href="https://www.hwinfo.com/" target="_blank" rel="noopener external noreferrer nofollow">HWiNFO-硬件检测软件</a> </li>
-					<li> <a href="https://www.superpi.net/" target="_blank" rel="noopener external noreferrer nofollow">Super PI-cpu测试软件</a> </li>
+					<li> <a href="https://www.hwinfo.com/" target="_blank" rel="noopener external noreferrer nofollow">HWiNFO - 硬件检测软件</a> </li>
+					<li> <a href="https://www.superpi.net/" target="_blank" rel="noopener external noreferrer nofollow">Super PI - cpu测试软件</a> </li>
 					<li> <a href="https://www.neea.edu.cn/" target="_blank" rel="noopener external noreferrer nofollow">中国教育考试网</a> </li>
 					<li> <a href="https://www.getitfree.cn/" target="_blank" rel="noopener external noreferrer nofollow">正版中国</a> </li>
-					<li> <a href="https://github.com/PeterStrick/ViVeTool-GUI" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool GUI-更直观的开启新功能(用于win11测试版)</a> </li>
+					<li> <a href="https://github.com/PeterStrick/ViVeTool-GUI" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool GUI - 更直观的开启新功能(用于win11测试版)</a> </li>
 					<li> <a href="https://github.com/thebookisclosed/ViVe/releases" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool</a> </li>
 					<li> <a href="https://sspai.com/post/74286" target="_blank" rel="noopener external noreferrer nofollow">ViVeTool工具的使用</a> </li>
 					<li> <a href="https://github.com/521xueweihan/GitHub520" target="_blank" rel="noopener external noreferrer nofollow">试图解决GitHub访问慢、图片加载不出来的问题</a> </li>
@@ -563,7 +591,7 @@
 			</div>
 			<!--正文结束-->
 		</div> <span>
-					<p style="font-size:1.8rem;font-weight:700;line-height:3.4rem">注：由于本人工作原因，此工具箱将暂时停更，不再添加新功能，后续主要以修复bug为主，请各位小伙伴知晓与理解。如需下载使用本系统工具箱，<a href="https://lxldwp.lanzoum.com/b01vrjped" target="_blank" rel="noopener external noreferrer nofollow">请点我(访问密码：2001)</a>
+					<p style="font-size:1.8rem;font-weight:700;line-height:3.4rem;text-indent:2em;">注：由于本人工作原因，此工具箱将暂时停更，不再添加新功能，后续主要以修复bug为主，请各位小伙伴知晓与理解。如需下载使用本系统工具箱，<a href="https://lxldwp.lanzoum.com/b01vrjped" target="_blank" rel="noopener external noreferrer nofollow">请点我(访问密码：2001)</a>
 					</p>
 				</span>
 		<!--内容居中结束-->
@@ -571,107 +599,82 @@
 	<div id="footer">
 		<p>本人在本站发布的windows系统工具箱仅作为个人使用，未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，否则后果自负！ <br />本站为个人网站，本站所发布的一切资源均来自与网络，并由本人整理，仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。 <br />如侵犯到您的权益，请您及时联系我(2539223617@qq.com)，我们会及时跟进，处理。 <br />访问浏览和下载本站内容，表明您已知晓并同意上述条款。 <br />本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。 <br />还请您支持并购买正版软件!</p>Copyright&copy 2022百站汇-刘小龙 All rights reserved. <br /> <a href="https://www.12377.cn/" title="举报" target="_blank" rel="noopener external noreferrer nofollow" style="background-color:transparent">网站有害信息举报</a> <br /><span>本站特别鸣谢<a href="https://github.com/" title="Github" target="_blank" rel="noopener external noreferrer nofollow" style="background-color:gray;color:#fff">Github</a>对本站提供支持</span> <br /> 本站建立运行时间：二零二二年八月九日&emsp;|&emsp;<span id="momk"></span> <span id="momk" style="color:red"></span> <br /> <br /> Welcome and thank you for visiting my website! </div>
 	<script>
-	var _hmt = _hmt || [];
-	! function() {
-		var t = document.createElement("script");
-		t.src = "https://hm.baidu.com/hm.js?635582c6d82d9ba6aa8e49599de6d0bb";
-		var e = document.getElementsByTagName("script")[0];
-		e.parentNode.insertBefore(t, e)
-	}();
-	</script>
-		<script>
-			jQuery.cookie = function(name, value, options) {
-				if(typeof value != 'undefined') {
-					options = options || {};
-					if(value === null) {
-						value = '';
-						options.expires = -1;
-					}
-					var expires = '';
-					if(options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
-						var date;
-						if(typeof options.expires == 'number') {
-							date = new Date();
-							var totalTime = 24 * 3600;
-							var hour = date.getHours();
-							var minutes = date.getMinutes();
-							var seconds = date.getSeconds();
-							var pastTime = 3600 * hour + 60 * minutes + seconds;
-							var leftTime = totalTime - pastTime;
-							date.setTime(date.getTime() + (options.expires * leftTime * 1000));
-						} else {
-							date = options.expires;
-						}
-						expires = '; expires=' + date.toUTCString();
-					}
-					var path = options.path ? '; path=' + (options.path) : '';
-					var domain = options.domain ? '; domain=' + (options.domain) : '';
-					var secure = options.secure ? '; secure' : '';
-					document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
-				} else {
-					var cookieValue = null;
-					if(document.cookie && document.cookie != '') {
-						var cookies = document.cookie.split(';');
-						for(var i = 0; i < cookies.length; i++) {
-							var cookie = jQuery.trim(cookies[i]);
-							if(cookie.substring(0, name.length + 1) == (name + '=')) {
-								cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-								break;
-							}
-						}
-					}
-					return cookieValue;
-				}
-			};
-			$(function() {
-				var COOKIE_NAME = "erdangjiade";
-				if($.cookie(COOKIE_NAME)) {
-					$(".layer").hide();
-					$("#globalAd").hide();
-				} else {
-					var erdangjiadeH = $(window).height();
-					var erdangjiadeW = $(window).width();
-					$(".layer").show();
-					$("#globalAd").css({
-						'top': erdangjiadeH / 2 - $("#globalAd").height() / 2,
-						'left': erdangjiadeW / 2 - $("#globalAd").width() / 2
-					});
-					$("#globalAd").slideDown(300, function() {
-						setTimeout("closeGloableAd()", '300000');
-					});
-					$.cookie(COOKIE_NAME, "erdangjiade", {
-						path: '/',
-						expires: 1
-					});
-				}
-			});
-
-			function closeGlobalAd() {
-				$('#globalAd').hide();
-				$('.layer').hide();
-
+	//弹窗公告
+	jQuery.cookie = function(name, value, options) {
+		if(typeof value != 'undefined') {
+			options = options || {};
+			if(value === null) {
+				value = '';
+				options.expires = -1;
 			}
-
-			function redirectUrlToActive() {
-				$('#globalAd').hide();
-				$('.layer').hide();
+			var expires = '';
+			if(options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+				var date;
+				if(typeof options.expires == 'number') {
+					date = new Date();
+					var totalTime = 24 * 3600;
+					var hour = date.getHours();
+					var minutes = date.getMinutes();
+					var seconds = date.getSeconds();
+					var pastTime = 3600 * hour + 60 * minutes + seconds;
+					var leftTime = totalTime - pastTime;
+					date.setTime(date.getTime() + (options.expires * leftTime * 1000));
+				} else {
+					date = options.expires;
+				}
+				expires = '; expires=' + date.toUTCString();
 			}
-		</script>
-	<script>
-	//返回顶部
+			var path = options.path ? '; path=' + (options.path) : '';
+			var domain = options.domain ? '; domain=' + (options.domain) : '';
+			var secure = options.secure ? '; secure' : '';
+			document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+		} else {
+			var cookieValue = null;
+			if(document.cookie && document.cookie != '') {
+				var cookies = document.cookie.split(';');
+				for(var i = 0; i < cookies.length; i++) {
+					var cookie = jQuery.trim(cookies[i]);
+					if(cookie.substring(0, name.length + 1) == (name + '=')) {
+						cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+						break;
+					}
+				}
+			}
+			return cookieValue;
+		}
+	};
 	$(function() {
-		$(function() {
-			$(window).scroll(function() {
-				$(window).scrollTop() > 100 ? $("#back-to-top").fadeIn(1500) : $("#back-to-top").fadeOut(1500)
-			}), $("#back-to-top").click(function() {
-				return $("html").scrollTop() ? ($("html").animate({
-					scrollTop: 0
-				}, 100), !1) : ($("body").animate({
-					scrollTop: 0
-				}, 100), !1)
-			})
-		})
+		var COOKIE_NAME = "erdangjiade";
+		if($.cookie(COOKIE_NAME)) {
+			$(".layer").hide();
+			$("#globalAd").hide();
+		} else {
+			var erdangjiadeH = $(window).height();
+			var erdangjiadeW = $(window).width();
+			$(".layer").show();
+			$("#globalAd").css({
+				'top': erdangjiadeH / 2 - $("#globalAd").height() / 2,
+				'left': erdangjiadeW / 2 - $("#globalAd").width() / 2
+			});
+			$("#globalAd").slideDown(300, function() {
+				setTimeout("closeGloableAd()", '300000');
+			});
+			$.cookie(COOKIE_NAME, "erdangjiade", {
+				path: '/',
+				expires: 1
+			});
+		}
 	});
+
+	function closeGlobalAd() {
+		$('#globalAd').hide();
+		$('.layer').hide();
+	}
+
+	function redirectUrlToActive() {
+		$('#globalAd').hide();
+		$('.layer').hide();
+	}
 	</script>
 	<script>
 	//建站至今已运行时间
@@ -702,7 +705,32 @@
 	}
 	momxc();
 	</script>
-	<div id="back-to-top"> <a href="#top" title="去顶部">TOP</a> </div>
-	<a id="bottom"></a> </body>
+	<script>
+	//返回顶部
+	$(function() {
+		$(window).scroll(function() { //只要窗口滚动,就触发下面代码
+			var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度
+			if(scrollt > 200) { //判断滚动后高度超过200px,就显示
+				$("#back_top").fadeIn(400); //淡入
+			} else {
+				$("#back_top").stop().fadeOut(400); //如果返回或者没有超过,就淡出.必须加上stop()停止之前动画,否则会出现闪动
+			}
+		});
+		$("#back_top").click(function() { //当点击标签的时候,使用animate在1500毫秒的时间内,滚到顶部
+			$("html,body").animate({
+				scrollTop: "0px"
+			}, 1500);
+		});
+	});
+	</script>
+	<!--返回顶部-->
+	<div id="article"></div>
+	<div id="back_top">
+		<div class="arrow"></div>
+		<div class="stick"></div>
+	</div>
+	<!--返回顶部-->
+	<a id="bottom"></a>
+</body>
 
 </html>
