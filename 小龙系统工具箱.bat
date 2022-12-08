@@ -38,39 +38,39 @@
 ::
 ::978f952a14a936cc963da21a135fa983
 
-:: ------------------------------------    分割线：下面是主程序     -----------------------------------------
+:: ------------------------------------    分割线：以下为主程序代码     -----------------------------------------
 
 @echo off
-color 1F
+color 2F
 title 小龙windows系统工具箱
 CHCP 936
 CHCP 936
 timeout /nobreak /t 2 > nul
-:kaishi
+:kai-shi
 cls
 echo.
 echo.                                                      小龙WINDOWS系统工具箱
-echo.******************************************************************************************************************************
+echo.****************************************************************************************************************************************************************
 echo.                                                    关于本脚本程序的重要说明
-echo.******************************************************************************************************************************
+echo.****************************************************************************************************************************************************************
 echo.
-echo.1. 本windows系统工具箱（以下简称‘ 工具箱 ’）由本人编写，测试，发布。
+echo.1. 本windows系统工具箱（以下简称【工具箱】由本人制作，测试，发布。
 echo.
-echo.2. 编写语言：批处理脚本。
+echo.2. 制作语言：批处理脚本。
 echo.
 echo.3. 本工具作者：刘小龙；作者邮箱：2539223617@qq.com。
 echo.
-echo.4. 本工具箱由本人编写并测试，绿色无毒安全，可以放心使用。
+echo.4. 本工具箱由本人制作并测试，绿色无毒安全，可以放心使用。
 echo.
 echo.5. 警告：未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，谢谢配合与合作。
 echo.
-echo.6. 当您在使用本工具箱的功能前，请慎重选择，因为你的疏忽大意，操作失误等个人原因而出现的一切问题，均与本人无关，本人概不负责。
+echo.6. 当您在使用本工具箱的相应功能前，请您慎重选择，因为你的疏忽大意，操作失误等个人原因而出现的一切问题，均与本人无关，且本人概不负责。
 echo.
-echo.7. 温馨提示 : 在下载所需软件，工具，文档（文件）时，请前往官网，原作者，或者可靠可信的网站下载，以免给您带来不便及损失。
+echo.7. 温馨提示 : 在下载所需软件，工具，文档（文件）时，请前往官网，原作者，或者可靠可信的网站下载，以免给您带来不便及不必要的损失。
 echo.
-echo.********************************************************************************************************************************
+echo.****************************************************************************************************************************************************************
 echo.
-echo.                                    使用本工具前，需要同意重要说明，否则无法继续任何操作
+echo.                                    使用本工具前，需要您同意重要说明，否则无法继续操作
 echo.
 echo.                                           同意请按 Y              不同意请按 N
 echo.
@@ -83,7 +83,7 @@ echo.
 echo.输入无效，请重新输入...
 timeout /nobreak /t 1 > nul
 echo.
-goto kaishi
+goto kai-shi
 
 
 :next
@@ -94,33 +94,33 @@ cls
 echo.
 echo. 一 本程序安全吗？是不是恶意程序？
 echo.
-echo. 回答：这是个安全的程序工具，不是病毒也不是恶意程序，每个功能都经过本人实机测试，请放心使用。
+echo. 回答：这是个安全的程序工具，不是病毒也不是恶意程序，每个功能都经过本人实机测试，请您放心使用。
 echo.
 echo. 二 运行本程序会对系统有影响吗？
 echo.
 echo. 回答：本程序所有功能对系统的影响基本可以忽略不计，本人只是把一些功能经过整合做成工具箱的，
 echo.
-echo.       这些功能基本不会修改，改变系统设置和系统文件，所以对系统造成影响极低，望各位周知。
+echo.       这些功能基本不会修改，改变系统设置和系统文件，所以对系统造成影响极低，请大家放心并知晓。
 echo.
 echo. 三 使用本程序需要注意什么？
 echo.    
-echo.    1. 运行本程序时，程序首先会进入到关于本程序的说明，接着自动进入到本面，仔细阅读帮助信息及注意
+echo.    1. 运行本程序时，程序首先会进入到关于本程序的重要说明，接着将进入到本页面，在您仔细阅读帮相关
 echo.
 echo.       事项后，方可进入程序主菜单。
 echo.
-echo.    2. 由于本程序部分功能需要管理员权限才能运行，所以本程序开始会尝试自动获取管理员权限。经本人测试
+echo.    2. 由于本程序部分功能需要管理员权限才能运行，所以本程序开始会尝试自动获取管理员权限。经过本人测试
 echo.
-echo.       基本都能成功获取(注意是基本都能，并不保证是一定可以)，所以运行本工具前，请鼠标右键本工具，选择
+echo.       基本都能成功获取（注意是基本都能，并不保证是一定可以），所以运行本工具前，还请您鼠标右键本工具，选择
 echo.
-echo.       以管理员身份运行。当然，如果不用本工具，请忽略本条。
+echo.       以管理员身份运行。当然，如果不打算使用本工具，请忽略该条。
 echo.
-echo.    3. 在选择执行功能时，请慎重选择并输入功能对应数字，字母，时时刻刻知道你在干嘛，不要因为自己的问题
+echo.    3. 在选择执行相应功能时，请慎重选择并输入该功能对应数字/字母，并且时时刻刻清楚，你此时此刻在干什么，最后不要因为自己的问题
 echo.
 echo.       来找我。
 echo.
-echo.    4. 功能前的序号如果是字母，输入时可以不区分大小写。
+echo.    4. 该功能前的序号如果是字母，输入时可以不区分大小写。
 echo.
-echo.    5. 本程序切勿擅自修改里面的内容，因为你的这种行为发生的意外，不良影响一律与本人无关，本人概不负责。
+echo.    5. 本程序切勿擅自修改里面的内容，因为你的这种行为发生的一切问题及不良影响，一律与本人无关，且本人概不负责。
 echo.
 echo.   
 echo.    ......暂时没想好写啥，想好了再添加，~_~
@@ -130,10 +130,10 @@ echo.                                           Copyright (C) 2022 刘小龙
 echo.
 echo.请您按下键盘任意键继续...                                                                                                                                 
 pause>nul
-goto menu
+goto MENU
 
 
-:menu
+:MENU
 cls
 echo.
 echo. *******************************************************************************************************
@@ -223,7 +223,7 @@ if /i "%id%"=="/" goto END
 echo.
 echo.输入无效,请重新输入...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 
 :0
@@ -235,7 +235,7 @@ start /max %windir%\system32\taskmgr.exe /7
 echo.
 echo.执行完毕,自动返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :1
 cls
@@ -246,7 +246,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.执行完毕,自动返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :2
 cls
@@ -257,7 +257,7 @@ start /max %windir%\system32\msinfo32.exe
 echo.
 echo.执行完毕，自动返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :3
 cls
@@ -268,7 +268,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.执行完毕，自动返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :4
 cls
@@ -280,7 +280,7 @@ start explorer.exe
 echo.
 echo.执行完毕，自动返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :5
 cls
@@ -292,7 +292,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo. 执行完毕，自动返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :6
 echo.
@@ -306,12 +306,12 @@ echo.                     1. 时间显示到秒   2. 时间不显示到秒   3. 返回主页面
 echo.
 echo.**********************************************************************************************
 echo.
-set shijian=
-set /p shijian=【请直接输入功能对应数字，并回车( 1 - 3 )】： 
-if not "%shijian%"=="" set shijian=%shijian:~0,1%
-if /i "%shijian%"=="1" goto xs
-if /i "%shijian%"=="2" goto bxs
-if /i "%shijian%"=="3" goto zy
+set shi-jian=
+set /p shi-jian=【请直接输入功能对应数字，并回车( 1 - 3 )】： 
+if not "%shi-jian%"=="" set shi-jian=%shi-jian:~0,1%
+if /i "%shi-jian%"=="1" goto xs
+if /i "%shi-jian%"=="2" goto bxs
+if /i "%shi-jian%"=="3" goto zy
 echo.
 echo.输入无效，请重新输入...
 timeout /nobreak /t 1 > nul
@@ -347,7 +347,7 @@ goto 6
 
 :zy
 cls
-goto menu
+goto MENU
 
 
 :7
@@ -362,7 +362,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.执行完成，正在返回主菜单，请稍后......
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :8
 cls
@@ -376,7 +376,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.执行完成，正在返回主菜单，请稍后......
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :9
 cls
@@ -390,7 +390,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.执行完毕，正在返回主菜单......
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :A
 cls
@@ -411,7 +411,7 @@ timeout /t 1 /nobreak >nul
 echo.
 echo.执行完毕，自动返回主菜单...
 echo.
-goto menu
+goto MENU
 
 :B
 cls
@@ -451,7 +451,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.正在返回主菜单，请稍后......
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 
 :C
@@ -490,14 +490,14 @@ PowerShell.exe -ExecutionPolicy UnRestricted -File "%yichu%"
 echo.
 echo.请您按下键盘任意键继续...
 pause>nul
-goto menu
+goto MENU
  
 :SS
 echo. 
 echo.您选择了不继续操作，将返回主页面！
 timeout /nobreak /t 1 > nul
 echo.
-goto menu
+goto MENU
 
 
 
@@ -515,7 +515,7 @@ echo.
 echo.执行完毕，自动返回主菜单...
 timeout /nobreak /t 1 > nul
 echo.
-goto menu
+goto MENU
 
 :E
 CLS
@@ -552,7 +552,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.请您按下键盘任意键继续...
 pause>nul
-goto menu
+goto MENU
 
 
 :F
@@ -877,7 +877,7 @@ echo.
 echo.
 echo.请您按下键盘任意键继续...
 pause>nul
-goto menu
+goto MENU
 
 
 :G
@@ -906,7 +906,7 @@ start /max devmgmt.msc
 echo.
 echo.执行完毕,自动返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 
 :I
@@ -925,7 +925,7 @@ cls
 %windir%\system32\cmd.exe
 echo.
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 
 
@@ -941,7 +941,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.执行完毕,自动返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 
 :K
@@ -953,7 +953,7 @@ rundll32.exe shell32.dll,Control_RunDLL ncpa.cpl
 echo.
 echo.执行完毕,自动返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 
 :L
@@ -1003,7 +1003,7 @@ timeout /nobreak /t 1 > nul
 echo.
 echo.请您按下键盘任意键继续...
 pause>nul
-goto menu
+goto MENU
 
 
 :M
@@ -1031,7 +1031,7 @@ set a=
 set /p a=【请你输入对应序号  (  Y  /  N  )】： 
 if not "%a%"=="" set a=%a:~0,1%
 if /i "%a%"=="Y" goto open
-if /i "%a%"=="N" goto menu
+if /i "%a%"=="N" goto MENU
 echo.
 echo.输入无效,请重新输入...
 timeout /nobreak /t 1 > nul
@@ -1058,7 +1058,7 @@ echo.
 echo.请您按下键盘任意键继续...
 pause>nul
 echo.
-goto menu      
+goto MENU      
 
 
 :N
@@ -1083,7 +1083,7 @@ echo.
 echo.请您按下键盘任意键继续...
 pause>nul
 echo.
-goto menu
+goto MENU
 
 
 
@@ -1143,7 +1143,7 @@ cls
 echo.
 echo 返回主菜单中...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 :CQ
 cls
@@ -1231,7 +1231,7 @@ pause>nul
 goto Q
 
 :ex
-goto menu
+goto MENU
 
 
 
@@ -1253,7 +1253,7 @@ echo.已添加。
 echo.
 echo.请您按下键盘任意键继续...
 pause>nul
-goto menu
+goto MENU
 
 
 
@@ -1274,7 +1274,7 @@ PowerShell.exe -ExecutionPolicy UnRestricted -File "%jiaoben%"
 echo.
 echo.请您按下键盘任意键继续...
 pause>nul
-goto menu
+goto MENU
 
 
 
@@ -1343,7 +1343,7 @@ cls
 echo.
 echo.退出并返回主菜单...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 
 
@@ -1419,18 +1419,17 @@ goto Y
 :four
 cls
 echo.
-echo.Returnning to menu...
+echo.Returnning to MENU...
 timeout /nobreak /t 1 > nul
-goto menu
+goto MENU
 
 
-::退出程序
 :END
 cls
 echo.
 echo.退出程序中......
-timeout /nobreak /t 1 > nul
-exit
+timeout /nobreak /t 2 > nul
+EXIT /B 0
 
 
 
