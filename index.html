@@ -1,14 +1,5 @@
-<!--[if IE ]><![endif]-->
 <!doctype html>
-<!--[if IE 7]>
-        <html class="rwd geo-override no-js vis lt-ie10 lt-ie9 lt-ie8 no-rtl headerfooter-menu3" lang="zh"><![endif]-->
-<!--[if IE 8]>
-        <html class="rwd geo-override no-js vis lt-ie10 lt-ie9 no-rtl headerfooter-menu3 " lang="zh"><![endif]-->
-<!--[if IE 9]>
-        <html class="rwd geo-override no-js vis lt-ie10 no-rtl headerfooter-menu3 " lang="zh"><![endif]-->
-<!--[if gt IE 9]><!-->
-<html class="rwd geo-override no-js vis no-rtl headerfooter-menu3 " lang="zh">
-<!--<![endif]-->
+<html lang="zh" oncontextmenu="return false" onselectstart="return false" oncopy="return false">
 
 <head>
 	<meta charset="utf-8" />
@@ -56,6 +47,17 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" integrity="sha512-jGR1T3dQerLCSm/IGEGbndPwzszJBlKQ5Br9vuB0Pw2iyxOy+7AK+lJcCC8eaXyz/9du+bkCy4HXxByhxkHf+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha512-DUC8yqWf7ez3JD1jszxCWSVB0DMP78eOyBpMa5aJki1bIRARykviOuImIczkxlj1KhVSyS16w2FSQetkD4UU2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<style>
+	* {
+		moz-user-select: -moz-none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	</style>
 	<style>
 	*,
 	html,
@@ -281,7 +283,7 @@
 	</style>
 	<style>
 	#zhu-ming-box {
-		margin-top: 15px;
+		margin-top: 25px;
 		width: 690px;
 		height: 173px;
 		border-width: 2px 3px 4px 5px;
@@ -300,14 +302,15 @@
 	<style>
 	#footer {
 		padding: 5px;
-		height: 265px;
+		height: auto;
 		width: 36.2%;
-		position: absolute;
+		position: relative;
+		z-index: 100;
 		bottom: 0px;
 		left: 14px;
 		text-align: center;
 		background: #ddd;
-		margin-top: 2%;
+		margin-top: 25px;
 		margin-left: 242px;
 		border-radius: 30px;
 		font-size: 1.1rem;
@@ -318,108 +321,45 @@
 	}
 	</style>
 	<style>
-	#globalAd a {
-		text-decoration: none!important
-	}
-	
-	#globalAd {
-		max-width: 70%;
-		flex-basis: 100%;
-		margin: 0 auto;
-		background: #fff;
-		border-radius: 45px;
-		box-shadow: 0 0 30px rgba(0, 0, 0, .3);
-		-webkit-box-shadow: 0 0 30px rgba(0, 0, 0, .3);
-		overflow: hidden;
-		position: fixed;
-		display: none;
-		margin: 0 auto;
-		z-index: 1000
-	}
-	
-	.layer {
+	#web-notice {
+		border-width: 2px 3px 4px 5px;
+		border-style: solid dotted double solid;
+		border-radius: 30px;
+		border-color: #FF0000 #00FF00 #0000FF #00FFFF;
 		width: 100%;
-		height: 100%;
-		position: fixed;
-		top: 0;
-		left: 0;
-		filter: alpha(opacity=50);
-		opacity: .5;
-		background: #000;
-		z-index: 1000;
-		display: none
+		height: auto;
+		z-index: 200;
+		margin-bottom: 25px;
+		margin-right: 25px;
+		padding-left: 10px;
+		background: #FFE4E1;
 	}
 	
-	#globalAd #content {
+	#web-notice h2 {
+		margin-top: 25px;
+		padding-left: 10px;
+		font-weight: bold;
 		text-align: left;
-		width: 90%;
-		margin: 0 auto;
-		padding: 0 0 50px
+		font-size: 30px;
 	}
 	
-	#container #content h1 {
-		font-size: 29px;
-		font-weight: 500;
-		margin: 50px 0 0
-	}
-	
-	#globalAd #content p {
-		font-size: 18px;
-		font-weight: 600;
-		line-height: 4.5rem;
-		color: #666
-	}
-	
-	#globalAd #content a {
-		color: #ccc;
-		font-size: 14px;
-		margin: 0 10px;
-		transition: color .3s ease-in-out;
-		-webkit-transition: color .3s ease-in-out
-	}
-	
-	#globalAd #content a:hover {
-		color: #007bff
-	}
-	
-	#globalAd #content .btn {
-		background: none repeat scroll 0 0 #1ba1e2;
-		border: 0;
-		border-radius: 2px;
-		color: #fff!important;
-		cursor: pointer;
-		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
-		font-size: 17px;
-		padding: 6px 10%
-	}
-	
-	#globalAd #content .btn:hover,
-	.yanshibtn:hover {
-		background: none repeat scroll 0 0 #9b59b6;
-		border: 0;
-		border-radius: 2px;
-		color: #fff!important;
-		cursor: pointer;
-		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
-		font-size: 17px;
-		padding: 8px 10%
+	#web-notice p {
+		font-size: 16px;
+		margin-top: 26px;
+		line-height: 40px;
+		color: #1E90FF;
+		padding-bottom: 25px;
 	}
 	</style>
 </head>
 
-<body>
-	<div class="layer"></div>
-	<div id="globalAd">
-		<div id="content">
-			<h1 style="font-weight:700;text-align:center;font-size:30px;margin-top:25px;line-height:70px">百站汇公告</h1>
-			<p>1、欢迎您访问和浏览本站，建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本站。</p>
-			<p>2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。</p>
-			<p>3、鼠标光标移动到左栏任意标题上，右栏会展示出该标题下的具体内容。</p>
-			<p>4、所有站点均由本人亲自整理、甄别、添加，保证每个站点安全、无劫持、无病毒、可靠可用。</p>
-			<p>5、由于本人能力，建站仓促等原因，本站难免会有不足的地方，请大家理解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！</p><a style="display:block;background:#98a3ff;color:#FFF;text-align:center;font-weight:700;font-size:17px;line-height:40px;margin:0 auto;margin-top:45px;border-radius:32px;width:80px" onclick="closeGlobalAd()" class="btn btn-default" rel="nofollow">我知道了</a></div>
-	</div>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" onselect="document.selection.empty()" oncοpy="document.selection.empty()" onbeforecopy="return false" onmouseup="document.selection.empty()">
 	<div id="title">百站汇</div>
 	<div id="ju-zhong">
+		<div id="web-notice">
+			<h2>百站汇公告：</h2>
+			<p> 1、欢迎您访问和浏览本站，<strong style="border-bottom:3px double black;">建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本站</strong>。<br> 2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。<br> 3、鼠标光标移动到<strong style="border-bottom:3px double black;">左栏</strong>任意标题上，<strong style="border-bottom:3px double black;">右栏</strong>会展示出该标题下的相关具体内容，<strong style="border-bottom:3px double black;">并且只有当您的鼠标移动到右栏出现文字链接（文字链接的背景颜色、字体颜色会改变）上时，才可以点击并跳转。</strong><br> 4、<strong style="border-bottom:3px double black;">所有站点均由本人亲自整理、甄别、添加，保证每个站点安全、无劫持、无病毒、可靠可用。</strong><br> 5、由于本人能力，建站仓促等原因，本站难免会有不足的地方，请大家谅解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！ </p>
+		</div>
 		<ol class="a1">
 			<li>磁盘管理软件
 				<ol class="a2">
@@ -673,65 +613,6 @@
 	<div id="footer">
 		<p>本人在本站发布的windows系统工具箱仅作为个人使用，未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，否则后果自负！<br>本站为个人网站，本站所发布的一切资源均来自与网络，并由本人整理，仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。<br>如侵犯到您的权益，请您及时联系我(2539223617@qq.com)，我们会及时跟进，处理。<br>访问浏览和下载本站内容，表明您已知晓并同意上述条款。<br>本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。<br>还请您支持并购买正版软件!<br>Copyright&copy 2022百站汇-刘小龙 All rights reserved.<br><a href="https://www.12377.cn/" title="举报" target="_blank" rel="noopener external noreferrer nofollow" style="background-color:transparent">网站有害信息举报</a><br><span>本站特别感谢Github对本站提供的支持</span><br>本站建立运行时间：二零二二年八月九日&emsp;|&emsp;<span id="momk"></span> <span id="momk" style="color:red"></span><br><br>Welcome and thank you for visiting my website!</p>
 	</div>
-	<script>
-	function closeGlobalAd() {
-		$("#globalAd").hide(), $(".layer").hide()
-	}
-
-	function redirectUrlToActive() {
-		$("#globalAd").hide(), $(".layer").hide()
-	}
-	jQuery.cookie = function(e, o, i) {
-		if("undefined" == typeof o) {
-			var t = null;
-			if(document.cookie && "" != document.cookie)
-				for(var n = document.cookie.split(";"), r = 0; r < n.length; r++) {
-					var l = jQuery.trim(n[r]);
-					if(l.substring(0, e.length + 1) == e + "=") {
-						t = decodeURIComponent(l.substring(e.length + 1));
-						break
-					}
-				}
-			return t
-		}
-		i = i || {}, null === o && (o = "", i.expires = -1);
-		var d = "";
-		if(i.expires && ("number" == typeof i.expires || i.expires.toUTCString)) {
-			var a;
-			if("number" == typeof i.expires) {
-				a = new Date;
-				var s = 86400,
-					c = a.getHours(),
-					u = a.getMinutes(),
-					g = a.getSeconds(),
-					h = 3600 * c + 60 * u + g,
-					p = s - h;
-				a.setTime(a.getTime() + i.expires * p * 1e3)
-			} else a = i.expires;
-			d = "; expires=" + a.toUTCString()
-		}
-		var f = i.path ? "; path=" + i.path : "",
-			$ = i.domain ? "; domain=" + i.domain : "",
-			b = i.secure ? "; secure" : "";
-		document.cookie = [e, "=", encodeURIComponent(o), d, f, $, b].join("")
-	}, $(function() {
-		var e = "erdangjiade";
-		if($.cookie(e)) $(".layer").hide(), $("#globalAd").hide();
-		else {
-			var o = $(window).height(),
-				i = $(window).width();
-			$(".layer").show(), $("#globalAd").css({
-				top: o / 2 - $("#globalAd").height() / 2,
-				left: i / 2 - $("#globalAd").width() / 2
-			}), $("#globalAd").slideDown(300, function() {
-				setTimeout("closeGloableAd()", "300000")
-			}), $.cookie(e, "erdangjiade", {
-				path: "/",
-				expires: 1
-			})
-		}
-	});
-	</script>
 	<script>
 	function NewDate(e) {
 		e = e.split("-");
