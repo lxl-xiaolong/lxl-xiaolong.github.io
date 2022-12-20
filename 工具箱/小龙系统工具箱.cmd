@@ -20,8 +20,8 @@
 ::dAsiuh18IRvcCxnZtBNQ
 ::cRYluBh/LU+EWAjk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZksaFUrRXA==
-::ZQ05rAF9IBncCkqN+0xwdVsHAlTMZSXpZg==
+::cxY6rQJ7JhzQF1fEqQJjZksaFUrbXA==
+::ZQ05rAF9IBncCkqN+0xwdVsHAlTMZSXjZg==
 ::ZQ05rAF9IAHYFVzEqQK1+PTdkv2VNWW+CaIPbzsgaDF4J5rY0Qfo/0EKug==
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
@@ -41,7 +41,7 @@
 :: ------------------------------------    分割线：以下为主程序代码     -----------------------------------------
 
 @echo off
-color 2F
+color 0E
 title 小龙windows系统工具箱
 CHCP 936
 CHCP 936
@@ -138,53 +138,55 @@ cls
 echo.
 echo. *******************************************************************************************************
 echo.                                    
-echo. 当前时间：%time:~0,2%:%time:~3,2%:%time:~6,2%  
+echo.  当前时间：%time:~0,2%:%time:~3,2%:%time:~6,2%  
 echo.
-echo. 当前日期：%date% 
+echo.  当前日期：%date% 
 echo.
-echo. 当前工具箱版本：2022-12-14 16:02版 
+echo.  当前工具箱版本：2022-12-14 16:02版 
 echo.
-echo. windows系统工具箱运行路径：%~dp0
+echo.   windows系统工具箱运行路径：%~dp0
 echo.                                                                                                             
 echo. *******************************************************************************************************
 echo.
 echo. *************************************    请您输入要执行操作前的数字或字母序号，并回车    ************************************
 echo. 
-echo. *********************************************** 若要退出，请键入" / "，并回车 *****************************************************
+echo. *********************************************** 若要退出，请键入" / "，并回车 ******************************************************
 echo.
-echo. -----------------------------------------------------------------------------------------------------------------------------------
+echo. ------------------------------------------------------------------------------------------------------------------------------------
 echo.
-echo. 程序功能:
+echo.  程序功能区:
 echo.
-echo            0 任务管理器			A 百度关键词搜索			K 网络连接									
+echo               0 任务管理器                        A 百度关键词搜索	                    K 网络连接									
 echo.           
-echo            1 磁盘清理			B 检查系统完整性			L 查看电脑以前已连接WI-FI名称及密码
+echo               1 磁盘清理                          B 检查系统完整性	                    L 查看电脑以前已连接WI-FI名称及密码
 echo.											
-echo            2 系统信息			C 移除系统自带应用(谨慎选择)		M 终止进程(危险功能)									
+echo               2 系统信息                          C 移除系统自带应用(谨慎选择)              M 终止进程(危险功能)									
 echo.
-echo            3 windows内存诊断		D 清理DNS缓存				N 删除电脑不需要的电源方案   								
+echo               3 windows内存诊断                   D 清理DNS缓存                             N 删除电脑不需要的电源方案   								
 echo.
-echo            4 重启资源管理器		E 清理图标数据库缓存			P 新版/经典右键菜单栏切换									
+echo               4 重启资源管理器                    E 清理图标数据库缓存                      P 新版/经典右键菜单栏切换									
 echo.	
-echo            5 清空回收站			F 检查网络连通性			Q 解决微软商店打不开的问题									
+echo               5 清空回收站                        F 检查网络连通性                          Q 解决微软商店打不开的问题									
 echo.
-echo            6 任务栏时间显示/不显示到秒	G 尝试解决网络无法连接的问题		R win家庭版添加组策略组件
+echo               6 任务栏时间显示/不显示到秒         G 尝试解决网络无法连接的问题              R win家庭版添加组策略组件
 echo.
-echo            7 计算机管理			H 设备管理器				S 解决无法运行powershell脚本问题		
+echo               7 计算机管理                        H 设备管理器                              S 解决无法运行powershell脚本问题		
 echo.
-echo            8 打开组策略			I 命令提示符				T 卸载/重装微软商店		
+echo               8 打开组策略                        I 命令提示符                              T 卸载/重装微软商店		
 echo.
-echo            9 刷新组策略			J 控制面板				Y 解决任务栏无响应的问题
+echo               9 刷新组策略                        J 控制面板                                Y 解决任务栏无响应的问题
 echo.
-echo            / 退出程序	
+echo               O 电脑设置固定/自动ip地址、子网掩码、网关、dns地址（测试功能）
 echo.
-echo. -----------------------------------------------------------------------------------------------------------------------------------
+echo               / 退出程序	
+echo.
+echo. ------------------------------------------------------------------------------------------------------------------------------------
 echo.
 echo. 注意 ：功能 “ P ” 新版/经典右键菜单栏切换仅适用于 win 11 系统！
 echo.
 echo         功能 “ 6 ” 任务栏时间显示/不显示到秒仅适用于除 win 11 以外的 windows 系统！
 echo.
-echo. ***********************************************************************************************************************************
+echo. ************************************************************************************************************************************
 echo.
 set id=
 set /p id=【请您输入并回车】：
@@ -213,6 +215,7 @@ if /i "%id%"=="K" goto K
 if /i "%id%"=="L" goto L
 if /i "%id%"=="M" goto M
 if /i "%id%"=="N" goto N
+if /i "%id%"=="O" goto O
 if /i "%id%"=="P" goto P
 if /i "%id%"=="Q" goto Q
 if /i "%id%"=="R" goto R
@@ -1093,6 +1096,96 @@ echo.
 echo.请您按下键盘任意键继续...
 pause>nul
 echo.
+goto MENU
+
+
+
+
+:O
+CLS
+ECHO.
+echo 该功能可以给电脑设置固定/自动ip地址，子网掩码，网关，dns地址（测试功能）
+ECHO.
+echo 常用的网络连接名称有：WLAN，以太网，本地连接等。
+ECHO.
+echo 不同电脑设置会有所不同，一般为“本地连接”。你可以在“控制面板”“网络连接”或命令提示符下输入ipconfig /all中看到。
+ECHO.
+echo 开始配置...
+ECHO.
+set /p name=【输入网络连接名称并回车】：
+ECHO.
+set /p addr=【输入IP地址并回车】：
+ECHO.
+set /p source=【输入获取IP的途径并回车】（动态获取，则为dhcp，手动设置，则为static）：
+ECHO.
+set /p mask=【输入子网掩码并回车】：
+ECHO.
+set /p gateway=【输入网关并回车】：
+ECHO.
+set /p gwmetric=【输入网关跃点数并回车】（可以设置为整型数值，也可以设置为“自动”：auto）：
+ECHO.
+set /p dns=【输入首选dns并回车】：
+ECHO.
+set /p dns1=【输入备用dns1并回车】：
+ECHO.
+set /p dns2=【输入备用dns2并回车】：
+ECHO.
+echo 
+cls
+echo.
+echo.
+echo 您已输入：
+ECHO.
+echo           网络连接名称：%name%
+ECHO.
+echo           IP地址：%addr%
+ECHO.
+echo           获取IP的途径：%source%
+ECHO.
+echo           子网掩码：%mask%
+ECHO.
+echo           网关：%gateway%
+ECHO.
+echo           网关跃点数：%gwmetric%
+ECHO.
+echo           首选dns：%dns%
+ECHO.
+echo           备用dns1：%dns1%
+ECHO.
+echo           备用dns2：%dns2%
+ECHO.
+echo.请您按下键盘任意键继续...
+pause>nul
+cls
+echo.
+echo.
+echo 开始配置中...
+ECHO.
+netsh interface IP set address name=%name% source=%source% addr=%addr% mask=%mask% gateway=%gateway% gwmetric=%gwmetric%
+ECHO.
+echo IP地址、子网掩码和网关设置完成.......
+ECHO.
+netsh interface IP set dns name=%name% source=static addr=%dns% register=primary 
+netsh interface IP add dns name=%name% addr=%dns1% index=2
+netsh interface IP add dns name=%name% addr=%dns2% index=3
+ECHO.
+echo dns设置完成.......
+echo.
+echo 正在刷新设置......
+ECHO.
+ipconfig /flushdns
+echo.
+echo.请您按下键盘任意键继续...
+pause>nul
+cls
+ECHO.
+echo.
+echo 显示新的设置...... 
+ECHO.
+ipconfig /all
+echo.
+echo.设置完毕，请您按下键盘任意键继续...
+pause>nul
 goto MENU
 
 
