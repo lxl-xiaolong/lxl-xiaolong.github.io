@@ -6,6 +6,7 @@
 ::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5qaLLe8F7wv0ZsdN
 ::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5qOdbvAAuyU=
 ::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5q2NOuRd+la1FQ==
+::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9aDrF5TQPorGA==
 ::YAwzoRdxOk+EWAjk
 ::fBw5plQjdCyDJGyX8VAjFDdbQgO+GG6pDaET+NT34O2I7EQeW4I=
 ::YAwzuBVtJxjWCl3EqQJgSA==
@@ -20,8 +21,8 @@
 ::dAsiuh18IRvcCxnZtBNQ
 ::cRYluBh/LU+EWAjk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZksaFUrbXA==
-::ZQ05rAF9IBncCkqN+0xwdVsHAlTMZSXjZg==
+::cxY6rQJ7JhzQF1fEqQJjZksaHVTMbAs=
+::ZQ05rAF9IBncCkqN+0xwdVsHAlTMbTv0VtU=
 ::ZQ05rAF9IAHYFVzEqQK1+PTdkv2VNWW+CaIPbzsgaDF4J5rY0Qfo/0EKug==
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
@@ -39,13 +40,43 @@
 ::978f952a14a936cc963da21a135fa983
 
 :: ------------------------------------    分割线：以下为主程序代码     -----------------------------------------
+@echo off
+
+:: BatchGotAdmin
+:-------------------------------------
+REM  --> Check for permissions
+    IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
+>nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
+) ELSE (
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+)
+
+REM --> If error flag set, we do not have admin.
+if '%errorlevel%' NEQ '0' (
+    echo Requesting administrative privileges...
+    goto UACPrompt
+) else ( goto gotAdmin )
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
+    set params = %*:"=""
+    echo UAC.ShellExecute "cmd.exe", "/c ""%~s0"" %params%", "", "runas", 1 >> "%temp%\getadmin.vbs"
+
+    "%temp%\getadmin.vbs"
+    del "%temp%\getadmin.vbs"
+    exit /B
+
+:gotAdmin
+    REM 执行到此处就已经获取了管理员权限，然后该干嘛干嘛
+
 
 @echo off
+setlocal enabledelayedexpansion
 color 0E
 title 小龙windows系统工具箱
 CHCP 936
-CHCP 936
 timeout /nobreak /t 2 > nul
+CD %~dp0
 :kai-shi
 cls
 echo.
@@ -174,9 +205,9 @@ echo               7 计算机管理                        H 设备管理器             
 echo.
 echo               8 打开组策略                        I 命令提示符                              T 卸载/重装微软商店		
 echo.
-echo               9 刷新组策略                        J 控制面板                                Y 解决任务栏无响应的问题
+echo               9 刷新组策略                        J 控制面板                                U 批量测试dns
 echo.
-echo               O 电脑设置固定/自动ip地址、子网掩码、网关、dns地址（测试功能）
+echo               O 电脑设置固定/自动ip地址、子网掩码、网关、dns地址（测试功能）                Y 解决任务栏无响应的问题
 echo.
 echo               / 退出程序	
 echo.
@@ -221,6 +252,7 @@ if /i "%id%"=="Q" goto Q
 if /i "%id%"=="R" goto R
 if /i "%id%"=="S" goto S
 if /i "%id%"=="T" goto T
+if /i "%id%"=="U" goto U
 if /i "%id%"=="Y" goto Y
 if /i "%id%"=="/" goto END
 echo.
@@ -1105,88 +1137,182 @@ goto MENU
 CLS
 ECHO.
 echo 该功能可以给电脑设置固定/自动ip地址，子网掩码，网关，dns地址（测试功能）
+timeout /nobreak /t 1 > nul
+ECHO.
+echo  -------------------------------------------------------------------------------
+echo.
+echo  1. 设置自动ip地址，子网掩码，网关，dns地址，请输入：1
+echo.
+echo  2. 设置固定ip地址，子网掩码，网关，dns地址，请输入：2
+echo.
+echo  3. 返回主菜单，请输入：3
+echo.
+echo  -------------------------------------------------------------------------------
+echo.
+set /p net-set=【请您输入并回车】：
+if not "%net-set%"=="" set net-set=%net-set:~0,1%
+if /i "%net-set%"=="1" goto dhcp
+if /i "%net-set%"=="2" goto static
+if /i "%net-set%"=="3" goto MENU
+echo.
+echo.输入无效，请重新输入...
+timeout /nobreak /t 1 > nul
+echo.
+goto O
+
+:dhcp
+cls
+echo.
+echo 开始配置...
+timeout /nobreak /t 1 > nul
+echo.
 ECHO.
 echo 常用的网络连接名称有：WLAN，以太网，本地连接等。
+timeout /nobreak /t 1 > nul
 ECHO.
 echo 不同电脑设置会有所不同，一般为“本地连接”。你可以在“控制面板”“网络连接”或命令提示符下输入ipconfig /all中看到。
+timeout /nobreak /t 1 > nul
+echo.
+set /p name=【输入网络连接名称并回车】：
+timeout /nobreak /t 1 > nul
 ECHO.
+echo 自动获取IP地址......
+timeout /nobreak /t 1 > nul
+ECHO.
+netsh interface IP set address name="%name%" source=dhcp
+ECHO.
+echo 自动获取DNS服务器......
+timeout /nobreak /t 1 > nul
+ECHO.
+netsh interface IP set dns name="%name%" source=dhcp
+ECHO.
+Echo 设置成功.......
+timeout /nobreak /t 1 > nul
+ECHO.
+echo 正在刷新设置......
+timeout /nobreak /t 1 > nul
+ECHO.
+ipconfig /flushdns
+echo.
+echo.请您按下键盘任意键继续...
+timeout /nobreak /t 1 > nul
+pause>nul
+cls
+ECHO.
+echo.
+echo 显示新的设置......
+timeout /nobreak /t 1 > nul 
+ECHO.
+ipconfig /all
+echo.
+echo.设置完毕，请您按下键盘任意键继续...
+timeout /nobreak /t 1 > nul
+pause>nul
+goto O
+
+:static
+cls
+echo.
 echo 开始配置...
+timeout /nobreak /t 1 > nul
+echo.
+echo 常用的网络连接名称有：WLAN，以太网，本地连接等。
+timeout /nobreak /t 1 > nul
+ECHO.
+echo 不同电脑设置会有所不同，一般为“本地连接”。你可以在“控制面板”“网络连接”或命令提示符下输入ipconfig /all中看到。
+timeout /nobreak /t 1 > nul
+ECHO.
 ECHO.
 set /p name=【输入网络连接名称并回车】：
+timeout /nobreak /t 1 > nul
 ECHO.
 set /p addr=【输入IP地址并回车】：
-ECHO.
-set /p source=【输入获取IP的途径并回车】（动态获取，则为dhcp，手动设置，则为static）：
+timeout /nobreak /t 1 > nul
 ECHO.
 set /p mask=【输入子网掩码并回车】：
+timeout /nobreak /t 1 > nul
 ECHO.
 set /p gateway=【输入网关并回车】：
-ECHO.
-set /p gwmetric=【输入网关跃点数并回车】（可以设置为整型数值，也可以设置为“自动”：auto）：
+timeout /nobreak /t 1 > nul
 ECHO.
 set /p dns=【输入首选dns并回车】：
+timeout /nobreak /t 1 > nul
 ECHO.
 set /p dns1=【输入备用dns1并回车】：
+timeout /nobreak /t 1 > nul
 ECHO.
 set /p dns2=【输入备用dns2并回车】：
+timeout /nobreak /t 1 > nul
 ECHO.
 echo 
 cls
 echo.
 echo.
 echo 您已输入：
+timeout /nobreak /t 1 > nul
 ECHO.
 echo           网络连接名称：%name%
+timeout /nobreak /t 1 > nul
 ECHO.
 echo           IP地址：%addr%
-ECHO.
-echo           获取IP的途径：%source%
+timeout /nobreak /t 1 > nul
 ECHO.
 echo           子网掩码：%mask%
+timeout /nobreak /t 1 > nul
 ECHO.
 echo           网关：%gateway%
-ECHO.
-echo           网关跃点数：%gwmetric%
+timeout /nobreak /t 1 > nul
 ECHO.
 echo           首选dns：%dns%
+timeout /nobreak /t 1 > nul
 ECHO.
 echo           备用dns1：%dns1%
+timeout /nobreak /t 1 > nul
 ECHO.
 echo           备用dns2：%dns2%
+timeout /nobreak /t 1 > nul
 ECHO.
 echo.请您按下键盘任意键继续...
+timeout /nobreak /t 1 > nul
 pause>nul
 cls
 echo.
 echo.
 echo 开始配置中...
+timeout /nobreak /t 1 > nul
 ECHO.
-netsh interface IP set address name=%name% source=%source% addr=%addr% mask=%mask% gateway=%gateway% gwmetric=%gwmetric%
+netsh interface IP set address name="%name%" source=static addr="%addr%" mask="%mask%" gateway="%gateway%" gwmetric=0
 ECHO.
 echo IP地址、子网掩码和网关设置完成.......
+timeout /nobreak /t 1 > nul
 ECHO.
-netsh interface IP set dns name=%name% source=static addr=%dns% register=primary 
-netsh interface IP add dns name=%name% addr=%dns1% index=2
-netsh interface IP add dns name=%name% addr=%dns2% index=3
+netsh interface IP set dns name="%name%" source=static addr="%dns%" register=primary 
+netsh interface IP add dns name="%name%" addr="%dns1%" index=2
+netsh interface IP add dns name="%name%" addr="%dns2%" index=3
 ECHO.
 echo dns设置完成.......
+timeout /nobreak /t 1 > nul
 echo.
 echo 正在刷新设置......
+timeout /nobreak /t 1 > nul
 ECHO.
 ipconfig /flushdns
 echo.
 echo.请您按下键盘任意键继续...
+timeout /nobreak /t 1 > nul
 pause>nul
 cls
 ECHO.
 echo.
-echo 显示新的设置...... 
+echo 显示新的设置......
+timeout /nobreak /t 1 > nul 
 ECHO.
 ipconfig /all
 echo.
 echo.设置完毕，请您按下键盘任意键继续...
+timeout /nobreak /t 1 > nul
 pause>nul
-goto MENU
+goto O
 
 
 
@@ -1388,11 +1514,11 @@ echo.该功能可以卸载/重装微软应用商店。
 echo.
 echo.------------------------------------------------------ 功能区 -------------------------------------------------------
 echo.
-echo.						      1. 卸载商店
+echo.						     1. 卸载商店
 echo.
-echo.						      2. 重装商店
+echo.						     2. 重装商店
 echo.
-echo.						      3. 退出并返回主菜单
+echo.						     3. 退出并返回主菜单
 echo.
 echo.---------------------------------------------------------------------------------------------------------------------
 echo.
@@ -1447,6 +1573,47 @@ echo.
 echo.退出并返回主菜单...
 timeout /nobreak /t 1 > nul
 goto MENU
+
+
+
+
+:U
+cls
+echo.
+echo  本功能可以批量测试dns，以备让您设置最佳的dns地址。
+echo.
+timeout /nobreak /t 1 > nul
+echo  开始测试，测试时间可能较长，请您耐心等待结束...
+timeout /nobreak /t 1 > nul
+echo.
+IF EXIST dns.txt (
+for /F %%I IN (dns.txt) DO PING %%I
+) ELSE (
+ECHO  dns.txt不存在，已重新创建该文件。请您返回主菜单后，重新进入本功能重试！
+timeout /nobreak /t 1 > nul
+echo 114.114.114.114 > dns.txt
+echo 114.114.115.115 >> dns.txt 
+echo 114.114.114.119 >> dns.txt
+echo 114.114.115.119 >> dns.txt
+echo 114.114.114.110 >> dns.txt
+echo 114.114.115.110 >> dns.txt
+echo 223.5.5.5 >> dns.txt
+echo 223.6.6.6 >> dns.txt
+echo 180.76.76.76 >> dns.txt
+echo 119.29.29.29 >> dns.txt
+echo 182.254.116.116 >> dns.txt
+echo 8.8.8.8 >> dns.txt
+echo 8.8.4.4 >> dns.txt
+echo 1.2.4.8 >> dns.txt
+echo 210.2.4.8 >> dns.txt
+)
+echo.
+echo  完成！
+echo.
+echo. 请您按下键盘任意键继续...
+pause>nul
+goto MENU
+
 
 
 
