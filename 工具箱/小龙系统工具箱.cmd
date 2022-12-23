@@ -21,8 +21,8 @@
 ::dAsiuh18IRvcCxnZtBNQ
 ::cRYluBh/LU+EWAjk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZksaHVTMbAs=
-::ZQ05rAF9IBncCkqN+0xwdVsHAlTMbTv0VtU=
+::cxY6rQJ7JhzQF1fEqQJjZksaHVTMbQs=
+::ZQ05rAF9IBncCkqN+0xwdVsHAlTMbTv0V9U=
 ::ZQ05rAF9IAHYFVzEqQK1+PTdkv2VNWW+CaIPbzsgaDF4J5rY0Qfo/0EKug==
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
@@ -71,12 +71,12 @@ if '%errorlevel%' NEQ '0' (
 
 
 @echo off
+CD /D %~DP0
 setlocal enabledelayedexpansion
-color 0E
+COLOR 0A
 title 小龙windows系统工具箱
 CHCP 936
 timeout /nobreak /t 2 > nul
-CD %~dp0
 :kai-shi
 cls
 echo.
@@ -169,13 +169,13 @@ cls
 echo.
 echo. *******************************************************************************************************
 echo.                                    
-echo.  当前时间：%time:~0,2%:%time:~3,2%:%time:~6,2%  
+echo.  当前时间：%time:~0,2%时%time:~3,2%分%time:~6,2%秒  
 echo.
 echo.  当前日期：%date% 
 echo.
-echo.  当前工具箱版本：2022-12-14 16:02版 
+echo.  当前工具箱版本：2022-12-23 15:24版 
 echo.
-echo.   windows系统工具箱运行路径：%~dp0
+echo.   windows系统工具箱运行路径：%~DP0
 echo.                                                                                                             
 echo. *******************************************************************************************************
 echo.
@@ -1389,11 +1389,11 @@ goto P
 :Q
 cls
 echo.
-echo.微软商店打不开试试这个功能！
+echo.  微软商店打不开试试这个功能！
 echo.
-echo.////////////////////////////////////////////////////////////////////
-echo.
-echo.功能区：
+echo.  ////////////////////////////////////////////////////////////////////
+echo. 
+echo.  功能区：
 echo.
 echo.                              1.  打开internet属性调整设置
 echo.
@@ -1403,7 +1403,7 @@ echo.                              3.  重新部署应用商店
 echo.
 echo.                              4.  退出
 echo.
-echo./////////////////////////////////////////////////////////////////////
+echo.  /////////////////////////////////////////////////////////////////////
 echo.
 set rw=
 set /p rw=【请直接输入功能对应数字，并回车 ( 1 - 4 )】： 
