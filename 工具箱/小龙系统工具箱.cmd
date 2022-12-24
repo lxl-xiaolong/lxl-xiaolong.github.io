@@ -40,7 +40,15 @@
 ::978f952a14a936cc963da21a135fa983
 
 :: ------------------------------------    分割线：以下为主程序代码     -----------------------------------------
+
 @echo off
+
+cd /d "%~dp0"
+
+MSG %username% 感谢您使用本人制作的windows系统工具箱！
+MSG %username% 使用中有任何问题，记得联系我！
+MSG %username% 联系方式1（qq邮箱：2539223617@qq.com）
+MSG %username% 联系方式2（微信号：Pisces_Mar14_LXL）
 
 :: BatchGotAdmin
 :-------------------------------------
@@ -69,11 +77,9 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     REM 执行到此处就已经获取了管理员权限，然后该干嘛干嘛
 
-
-@echo off
-CD /D %~DP0
 setlocal enabledelayedexpansion
-COLOR 0A
+
+@COLOR 3E
 title 小龙windows系统工具箱
 CHCP 936
 timeout /nobreak /t 2 > nul
@@ -175,7 +181,7 @@ echo.  当前日期：%date%
 echo.
 echo.  当前工具箱版本：2022-12-23 15:24版 
 echo.
-echo.   windows系统工具箱运行路径：%~DP0
+echo.   windows系统工具箱运行路径：%~dp0
 echo.                                                                                                             
 echo. *******************************************************************************************************
 echo.
