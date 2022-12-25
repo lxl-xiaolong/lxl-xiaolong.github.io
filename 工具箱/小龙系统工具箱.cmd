@@ -6,13 +6,13 @@
 ::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5qaLLe8F7wv0ZsdN
 ::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5qOdbvAAuyU=
 ::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9a3rVoYRtE3fYPX5q2NOuRd+la1FQ==
-::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9aDrF5TQPorGA==
+::fBE1pAF6MU+EWHreyHcjLQlHcCiNMmyGIrAP4/z0/9aDrF5TXew2GA==
 ::YAwzoRdxOk+EWAjk
 ::fBw5plQjdCyDJGyX8VAjFDdbQgO+GG6pDaET+NT34O2I7EQeW4I=
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
 ::Yhs/ulQjdF+5
-::cxAkpRVqdFKZSjk=
+::cxAkpRVqdFKZSDk=
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSTk=
 ::eBoioBt6dFKZSTk=
@@ -21,8 +21,8 @@
 ::dAsiuh18IRvcCxnZtBNQ
 ::cRYluBh/LU+EWAjk
 ::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJjZksaHVTMbQs=
-::ZQ05rAF9IBncCkqN+0xwdVsHAlTMbTv0V9U=
+::cxY6rQJ7JhzQF1fEqQJjZksaHVTMbgs=
+::ZQ05rAF9IBncCkqN+0xwdVsHAlTMbTv0VNU=
 ::ZQ05rAF9IAHYFVzEqQK1+PTdkv2VNWW+CaIPbzsgaDF4J5rY0Qfo/0EKug==
 ::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
 ::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
@@ -43,7 +43,7 @@
 
 @echo off
 
-cd /d "%~dp0"
+CD /D %~DP0
 
 MSG %username% 感谢您使用本人制作的windows系统工具箱！
 MSG %username% 使用中有任何问题，记得联系我！
@@ -77,11 +77,11 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     REM 执行到此处就已经获取了管理员权限，然后该干嘛干嘛
 
-setlocal enabledelayedexpansion
+setlocal enableextensions enabledelayedexpansion
 
 @COLOR 3E
 title 小龙windows系统工具箱
-CHCP 936
+chcp 936>nul
 timeout /nobreak /t 2 > nul
 :kai-shi
 cls
@@ -179,9 +179,9 @@ echo.  当前时间：%time:~0,2%时%time:~3,2%分%time:~6,2%秒
 echo.
 echo.  当前日期：%date% 
 echo.
-echo.  当前工具箱版本：2022-12-23 15:24版 
+echo.  当前工具箱版本：2022-12-25 下午12:15版 
 echo.
-echo.   windows系统工具箱运行路径：%~dp0
+echo.  windows系统工具箱运行路径：%~DP0
 echo.                                                                                                             
 echo. *******************************************************************************************************
 echo.
@@ -213,9 +213,9 @@ echo               8 打开组策略                        I 命令提示符             
 echo.
 echo               9 刷新组策略                        J 控制面板                                U 批量测试dns
 echo.
-echo               O 电脑设置固定/自动ip地址、子网掩码、网关、dns地址（测试功能）                Y 解决任务栏无响应的问题
+echo               O 电脑设置固定/自动ip地址、子网掩码、网关、dns地址（测试功能）                V 安全的清理C（系统）盘 
 echo.
-echo               / 退出程序	
+echo               Y 解决任务栏无响应的问题            / 退出程序	
 echo.
 echo. ------------------------------------------------------------------------------------------------------------------------------------
 echo.
@@ -259,6 +259,7 @@ if /i "%id%"=="R" goto R
 if /i "%id%"=="S" goto S
 if /i "%id%"=="T" goto T
 if /i "%id%"=="U" goto U
+if /i "%id%"=="V" goto V
 if /i "%id%"=="Y" goto Y
 if /i "%id%"=="/" goto END
 echo.
@@ -1016,7 +1017,7 @@ echo.
 echo.
 echo.
 echo.
-echo. 获取已连接WIFI名称及密码中...
+echo. 获取电脑以往已连接WIFI名称及密码中...
 timeout /nobreak /t 1 > nul
 cls
 echo.
@@ -1025,29 +1026,19 @@ echo.
 echo.
 echo ---------------------------------------------------------------------------------
 echo.
-echo.
 netsh wlan show profiles
+echo =====================================
 echo.
+set /p name=Please input your WiFi name（【 所有用户配置文件 】后面的为WI-FI名称 ）：
+netsh wlan show profiles name="%name%" key=clear 
 echo.
-echo ---------------------------------------------------------------------------------
-echo.
-echo 以上是曾经连接过的WI-FI。 /These are WI-FIs that have been connected before.
-echo.
-echo 请请输入其中一个WI-FI的名字（注意大小写）。/Please enter one of the names (case-sensitive).
-echo.
-set/p WI-FI-Name=
-echo.
-echo.
-echo ---------------------------------------------------------------------------------
-echo.
-netsh wlan show profile name="%WI-FI-Name%" key=clear
+echo =====================================
 echo.
 echo ---------------------------------------------------------------------------------
 echo.
 echo.
+echo. " %name% " 的WI-FI密码为 " 关键内容 " 后面的字符串。
 echo.
-echo.
-echo “ 关键内容 ”就是此wifi的密码。/The key is the WiFi password.
 echo.
 echo.已完成
 timeout /nobreak /t 1 > nul
@@ -1592,26 +1583,26 @@ timeout /nobreak /t 1 > nul
 echo  开始测试，测试时间可能较长，请您耐心等待结束...
 timeout /nobreak /t 1 > nul
 echo.
-IF EXIST dns.txt (
-for /F %%I IN (dns.txt) DO PING %%I
+IF EXIST dns.ini (
+for /F %%I IN (dns.ini) DO PING %%I
 ) ELSE (
-ECHO  dns.txt不存在，已重新创建该文件。请您返回主菜单后，重新进入本功能重试！
+ECHO  dns.ini不存在，已重新创建该文件。请您返回主菜单后，重新进入本功能重试！
 timeout /nobreak /t 1 > nul
-echo 114.114.114.114 > dns.txt
-echo 114.114.115.115 >> dns.txt 
-echo 114.114.114.119 >> dns.txt
-echo 114.114.115.119 >> dns.txt
-echo 114.114.114.110 >> dns.txt
-echo 114.114.115.110 >> dns.txt
-echo 223.5.5.5 >> dns.txt
-echo 223.6.6.6 >> dns.txt
-echo 180.76.76.76 >> dns.txt
-echo 119.29.29.29 >> dns.txt
-echo 182.254.116.116 >> dns.txt
-echo 8.8.8.8 >> dns.txt
-echo 8.8.4.4 >> dns.txt
-echo 1.2.4.8 >> dns.txt
-echo 210.2.4.8 >> dns.txt
+echo 114.114.114.114 > dns.ini
+echo 114.114.115.115 >> dns.ini 
+echo 114.114.114.119 >> dns.ini
+echo 114.114.115.119 >> dns.ini
+echo 114.114.114.110 >> dns.ini
+echo 114.114.115.110 >> dns.ini
+echo 223.5.5.5 >> dns.ini
+echo 223.6.6.6 >> dns.ini
+echo 180.76.76.76 >> dns.ini
+echo 119.29.29.29 >> dns.ini
+echo 182.254.116.116 >> dns.ini
+echo 8.8.8.8 >> dns.ini
+echo 8.8.4.4 >> dns.ini
+echo 1.2.4.8 >> dns.ini
+echo 210.2.4.8 >> dns.ini
 )
 echo.
 echo  完成！
@@ -1623,10 +1614,51 @@ goto MENU
 
 
 
+:V
+cls
+echo.
+echo.  本功能可以安全的清理C（系统）盘，比如：C盘temp临时文件、安装软件解压后的临时文件、删除SoftwareDistribution里面download文件资料等。
+timeout /nobreak /t 1 > nul
+echo.
+echo   清理时间可能较长，请耐心等待...
+timeout /nobreak /t 1 > nul
+cls
+echo.
+echo.
+del /f /s /q %systemdrive%\*.tmp
+del /f /s /q %systemdrive%\*._mp
+del /f /s /q %systemdrive%\*.log
+del /f /s /q %systemdrive%\*.gid
+del /f /s /q %systemdrive%\*.chk
+del /f /s /q %systemdrive%\*.old
+del /f /s /q %systemdrive%\recycled\*.*
+del /f /s /q %windir%\*.bak
+del /f /s /q %windir%\prefetch\*.*
+rd /f /s /q %windir%\temp & md %windir%\temp
+del /f /q %userprofile%\cookies\*.*
+del /f /q %userprofile%\recent\*.*
+del /f /s /q "%userprofile%\Local Settings\Temporary Internet Files\*.*"
+del /f /s /q "%userprofile%\Local Settings\Temp\*.*"
+del /f /s /q "%userprofile%\recent\*.*"
+RD %TEMP% /F /S /Q
+MKDIR %TEMP% 
+del /f /s /q "%systemroot%\Softwaredistribution"
+echo.
+echo.
+echo  完成！
+timeout /nobreak /t 1 > nul
+echo.
+echo. 请您按下键盘任意键继续...
+pause>nul
+goto MENU
+
+
+
+
 :Y
 cls
 echo.
-echo.该功能尽可能地帮你解决任务栏卡死，无响应等任务栏问题。
+echo.  该功能尽可能地帮你解决任务栏卡死，无响应等任务栏问题。
 echo.
 echo.------------------------------------------------------ 功能区 -------------------------------------------------------
 echo.
@@ -1677,6 +1709,7 @@ set /p bushu=【请输入工具脚本执行路径/位置，并回车】：
 echo.
 PowerShell.exe -ExecutionPolicy Bypass -File "%bushu%"
 PowerShell.exe -ExecutionPolicy UnRestricted -File "%bushu%"
+echo.
 echo.请您按下键盘任意键继续...
 pause>nul
 goto Y
