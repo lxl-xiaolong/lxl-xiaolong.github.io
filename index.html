@@ -407,6 +407,19 @@
 		line-height: 40px;
 		font-size: 14px;
 	}
+	
+	#fixed {
+		width: 60px;
+		height: 60px;
+		position: fixed;
+		bottom: 50px;
+		right: 40px;
+		border-radius: 30px 30px 30px 30px;
+		text-decoration: none;
+		text-align: center;
+		background-color: salmon;
+		font-size: 23px;
+	}
 	</style>
 </head>
 
@@ -824,6 +837,18 @@
 	};
 	</script> <noscript>
         <iframe scr="*.htm"></iframe＞
-    </noscript> </body>
+    </noscript>
+	<script>
+	//返回顶部
+	$(function() {
+		$("#fixed").click(function() {
+			$("html,body").animate({
+				scrollTop: 0
+			}, 1200);
+		});
+	})
+	</script>
+	<div id="fixed">返回<br>顶部</div>
+</body>
 
 </html>
