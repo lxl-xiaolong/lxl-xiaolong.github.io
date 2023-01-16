@@ -270,21 +270,25 @@
 		font-size: 18px;
 	}
 	
-	#label {
-		display: inline-block;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		width: 100%;
-		height: auto;
-		border-width: 2px 3px 4px 5px;
-		border-style: solid dotted double solid;
-		border-color: #FF0000 #00FF00 #0000FF #00FFFF;
-		background-color: #F0FFFF;
-		z-index: 200;
-	}
-	
 	#fixed {
 		font-size: 2rem;
+		position: fixed;
+		right: 128px;
+		bottom: 500px;
+	}
+	
+	#freshed {
+		font-size: 2rem;
+		position: fixed;
+		right: 128px;
+		bottom: 450px;
+	}
+	
+	.bottom {
+		font-size: 2rem;
+		position: fixed;
+		right: 128px;
+		bottom: 400px;
 	}
 	</style>
 </head>
@@ -561,8 +565,7 @@
 					<ol>
 			</details>
 			<!--内容结束-->
-		</div>
-		<div id="label"> <a href="javascript:;" id="fixed">返回顶部</a> &emsp; <a href="javascript:window.location.reload()">刷新页面</a> </div>
+		</div> <a href="javascript:;" id="fixed">返回顶部</a> <a href="javascript:window.location.reload()" id="freshed">刷新页面</a> <a href="#bottom" class="bottom">转到底部</a>
 		<div id="zhu-ming-box"> <span>
 				<p>
 					另：本人制作的系统工具箱，会根据情况做一些更新（包括bug修复、新功能等），还请大家知晓、理解与支持。如需下载、使用本系统工具箱，<a href="https://lxldwp.lanzoum.com/b01vrjped"target="_blank"rel="noopener external noreferrer nofollow">请点我(访问密码：2001)</a>下载、使用。蟹蟹！
@@ -666,10 +669,12 @@
 		$("#fixed").click(function() {
 			$("html,body").animate({
 				scrollTop: 0
-			}, 1200);
+			}, 1000);
 		});
 	})
 	</script>
+	<!--转到页面底部-->
+	<div id="bottom"></div>
 </body>
 
 </html>
