@@ -132,6 +132,10 @@
 		background-color: rgba(240, 255, 255, 0.2);
 	}
 	
+	#ge-ren-wang-zhan-ji-ben-xin-xi {
+		line-height: 5rem;
+	}
+	
 	#title {
 		margin-top: 5px;
 		margin-bottom: 25px;
@@ -139,7 +143,7 @@
 		font-weight: 600;
 		font-size: 2.9rem;
 		font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
-		color: GoldenRod;
+		color: #00FFFF;
 	}
 	
 	#nei-rong {
@@ -147,16 +151,16 @@
 		margin-bottom: 10px;
 		width: 100%;
 		height: auto;
-		border-width: 2px 3px 4px 5px;
-		border-style: solid dotted double solid;
-		border-color: #FF0000 #00FF00 #0000FF #00FFFF;
+		border-style: solid;
+		border-width: 2px 2px 2px 2px;
+		border-color: #FF0000;
 	}
 	
 	#nei-rong summary {
 		font-size: 2rem;
 		font-weight: bold;
 		color: #000000;
-		line-height: 5rem;
+		line-height: 6rem;
 		background-color: #FFF5EE;
 	}
 	
@@ -164,7 +168,7 @@
 		font-size: 2rem;
 		font-weight: normal;
 		color: #000000;
-		line-height: 5rem;
+		line-height: 6rem;
 		background-color: #F0FFFF;
 	}
 	
@@ -172,7 +176,7 @@
 		font-size: 2rem;
 		font-weight: normal;
 		color: #FF0000;
-		line-height: 5rem;
+		line-height: 6rem;
 		background-color: #F0FFFF;
 	}
 	
@@ -207,9 +211,9 @@
 		margin-top: 10px;
 		width: 100%;
 		height: auto;
-		border-width: 2px 3px 4px 5px;
-		border-style: solid dotted double solid;
-		border-color: #FF0000 #00FF00 #0000FF #00FFFF;
+		border-style: solid;
+		border-width: 2px 2px 2px 2px;
+		border-color: #FF0000;
 		background-color: #F0FFFF;
 	}
 	
@@ -221,9 +225,9 @@
 	}
 	
 	#web-notice {
-		border-width: 2px 3px 4px 5px;
-		border-style: solid dotted double solid;
-		border-color: #FF0000 #00FF00 #0000FF #00FFFF;
+		border-style: solid;
+		border-width: 2px 2px 2px 2px;
+		border-color: #FF0000;
 		width: 100%;
 		height: auto;
 		z-index: 200;
@@ -239,12 +243,13 @@
 		font-weight: bold;
 		text-align: left;
 		font-size: 30px;
+		color: #0000FF;
 	}
 	
 	#web-notice p {
 		font-size: 17px;
 		margin-top: 10px;
-		line-height: 40px;
+		line-height: 5rem;
 		color: #1E90FF;
 		padding-bottom: 10px;
 	}
@@ -260,9 +265,9 @@
 		padding-bottom: 10px;
 		width: 100%;
 		height: auto;
-		border-width: 2px 3px 4px 5px;
-		border-style: solid dotted double solid;
-		border-color: #FF0000 #00FF00 #0000FF #00FFFF;
+		border-style: solid;
+		border-width: 2px 2px 2px 2px;
+		border-color: #FF0000;
 		background-color: #F0FFFF;
 		text-align: center;
 		z-index: 200;
@@ -273,21 +278,21 @@
 	#fixed {
 		font-size: 2rem;
 		position: fixed;
-		right: 128px;
+		right: 120px;
 		bottom: 500px;
 	}
 	
 	#freshed {
 		font-size: 2rem;
 		position: fixed;
-		right: 128px;
+		right: 120px;
 		bottom: 450px;
 	}
 	
 	.bottom {
 		font-size: 2rem;
 		position: fixed;
-		right: 128px;
+		right: 120px;
 		bottom: 400px;
 	}
 	</style>
@@ -297,13 +302,15 @@
 	<div id="title">百站汇</div>
 	<!--内容居中开始-->
 	<div id="ju-zhong">
-		<!--个人网站基本信息-->
-		<div style="color: Blue;font-size: 1.8rem;" id="Main"></div>
-		<p style="color: #FF69B4;font-size: 1.8rem;">本人说："孤独的我看孤独的风景。"</p>
-		<p style="color: Turquoise;font-size: 1.8rem;">本网站建于——2022年08月09日。</p>
-		<p style="color: #141312;font-size: 1.8rem;">本网站已稳定运行——
-			<SPAN id=span_dt_dt style="color: #FF6347;font-size: 1.8rem;"></SPAN> </p>
-		<!--个人网站基本信息-->
+		<div id="ge-ren-wang-zhan-ji-ben-xin-xi">
+			<!--个人网站基本信息-->
+			<div style="color: #0000FF;font-size: 1.8rem;" id="Main"></div>
+			<p style="color: #0000FF;font-size: 1.8rem;">本人说："孤独的我看孤独的风景。"</p>
+			<p style="color: #0000FF;font-size: 1.8rem;">本网站建于——2022年08月09日。</p>
+			<p style="color: #0000FF;font-size: 1.8rem;">本网站已稳定运行——
+				<SPAN id=span_dt_dt style="color: #0000FF;font-size: 1.8rem;"></SPAN> </p>
+			<!--个人网站基本信息-->
+		</div>
 		<div id="web-notice">
 			<h2>百站汇公告：</h2>
 			<p>1、欢迎您访问和浏览本站，<strong style="border-bottom:3px double black;">建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本站</strong>。<br> 2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。<br> 3、<strong style="border-bottom:3px double black;">鼠标点击任意带“黑色填充三角形”标题，可以“展开/收起”该标题下的相关具体内容，并且只有当您的鼠标点击该标题下的文字链接（文字链接的背景颜色、字体颜色会改变）时，才可以跳转。</strong><br> 4、<strong style="border-bottom:3px double black;">所有站点均由本人亲自整理、甄别、添加，保证每个站点安全、无劫持、无病毒、可靠可用。</strong><br> 5、<strong style="border-bottom:3px double black;">本人在本站发布的windows系统工具箱仅作为个人使用，未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，否则后果自负！</strong><br> 6、<strong style="border-bottom:3px double black;">本站为个人网站，本站所发布的一切资源均来自与网络，并由本人整理，仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。</strong><br> 7、<strong style="border-bottom:3px double black;">如侵犯到您的权益，请您及时联系我(2539223617@qq.com)，我们会及时跟进，处理。</strong><br> 8、<strong style="border-bottom:3px double red;color:red;">访问、浏览、下载本站内容，表明您已知晓并同意【百站汇公告】中的第5、6、7、9、10条中的相关条款。</strong><br> 9、<strong style="border-bottom:3px double black;">本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。</strong><br> 10、<strong style="border-bottom:3px double black;">还请您支持并购买正版软件！</strong><br> 11、本站特别感谢<a href="https://github.com/" title="Github" target="_blank" rel="noopener external noreferrer nofollow">Github</a>对本站提供的支持。<br> 12、<a href="https://www.12377.cn/" title="举报" target="_blank" rel="noopener external noreferrer nofollow">网站有害信息举报</a><br> 13、由于本人能力，建站仓促等原因，本站难免会有不足的地方，请大家谅解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！ </p>
@@ -395,7 +402,7 @@
 				</ol>
 			</details>
 			<details>
-				<summary>各品牌电脑服务与支持</summary>
+				<summary>各品牌电脑相关服务与支持</summary>
 				<ol>
 					<li><a href="https://newsupport.lenovo.com.cn/" target="_blank" rel="noopener external noreferrer nofollow">联想</a></li>
 					<li><a href="https://support.hp.com/cn-zh/drivers" target="_blank" rel="noopener external noreferrer nofollow">惠普</a></li>
@@ -621,7 +628,7 @@
 				"left": x,
 				"position": "absolute",
 				"font-weight": "bold",
-				"font-size": "1.5rem",
+				"font-size": "2.2rem",
 				"color": "#ff6651"
 			});
 			$("body").append($i);
@@ -669,7 +676,7 @@
 		$("#fixed").click(function() {
 			$("html,body").animate({
 				scrollTop: 0
-			}, 1000);
+			}, 1500);
 		});
 	})
 	</script>
