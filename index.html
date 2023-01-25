@@ -295,8 +295,10 @@
 			<!--个人网站基本信息-->
 			<div style="color: #0000FF;font-size: 1.8rem;" id="Main"></div>
 			<p style="color: #0000FF;font-size: 1.8rem;">本人说："孤独的我看孤独的风景。"</p>
-			<p style="color: #0000FF;font-size: 1.8rem;">本网站建于——2022年08月09日。</p>
-			<p style="color: #0000FF;font-size: 1.8rem;">本网站已稳定运行——
+			<p style="color: #0000FF;font-size: 1.8rem;">本站作者：刘小龙。</p>
+			<p style="color: #0000FF;font-size: 1.8rem;">本站建于——2022年08月09日。</p>
+			<div style="color: #0000FF;font-size: 1.8rem;" id="LiNum"></div>
+			<p style="color: #0000FF;font-size: 1.8rem;">本站已稳定运行——
 				<SPAN id=span_dt_dt style="color: #0000FF;font-size: 1.8rem;"></SPAN> </p>
 			<!--个人网站基本信息-->
 		</div>
@@ -596,7 +598,7 @@
 					另：本人制作的系统工具箱，会根据情况做一些更新（包括bug修复、新功能等），还请大家知晓、理解与支持。如需下载、使用本系统工具箱，<a href="https://lxldwp.lanzoum.com/b01vrjped"target="_blank"rel="noopener external noreferrer nofollow">请点我(访问密码：2001)</a>下载、使用。蟹蟹！
 				</p>
 			</span> </div>
-		<p id="footer">Copyright &copy; 2022-2023 百站汇(刘小龙)</p>
+		<p id="footer">Copyright &copy; 2022-2023 百站汇</p>
 		<!--内容居中结束-->
 	</div>
 	<SCRIPT language=javascript>
@@ -694,9 +696,16 @@
 		$("#fixed").click(function() {
 			$("html,body").animate({
 				scrollTop: 0
-			}, 1500);
+			}, 1600);
 		});
 	})
+	</script>
+	<script>
+	//link number
+	temp = document.getElementById("nei-rong");
+	lis = temp.getElementsByTagName("li");
+	var linum = lis.length; //显示li元素的个数
+	LiNum.innerHTML = "本站各板块已收录网站链接总计：" + linum + "个。"
 	</script>
 	<!--转到页面底部-->
 	<div id="bottom"></div>
