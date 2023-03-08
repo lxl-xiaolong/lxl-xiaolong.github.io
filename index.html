@@ -30,7 +30,10 @@
 				/* 网页次基础色 */
 				--baseThirdColor: #CCFFFF;
 				/* 网页辅助色 */
+				--baseOtherColor: #FF6666;
+				/* 网页其他颜色 */
 				--baseFontColor: #333333;
+				/* 网页字体色 */
 			}
 
 			* {
@@ -79,6 +82,7 @@
 				float: right;
 				border-radius: 18px;
 				box-shadow: 3px 8px 0 gray;
+				z-index: 9;
 			}
 
 			aside ul li {
@@ -117,7 +121,7 @@
 			}
 
 			aside .tools .tools-item:hover {
-				background-color: var(--baseThirdColor);
+				background-color: var(--baseOtherColor);
 				cursor: pointer;
 			}
 
@@ -147,7 +151,7 @@
 
 			article #content {
 				column-width: 230px;
-				column-gap: 10px;
+				column-gap: 15px;
 				column-rule: 3px dashed var(--baseSecondColor);
 				text-align: center;
 				margin-top: 20px;
@@ -157,7 +161,7 @@
 				width: 100%;
 				padding: 15px 0 15px 0;
 				margin: 15px 0 15px 0;
-				font-size: 24px;
+				font-size: 20px;
 				font-weight: bolder;
 				color: var(--baseFontColor);
 			}
@@ -168,7 +172,7 @@
 				margin: 12px 0 12px 0;
 				font-size: 16px;
 				font-weight: bolder;
-				color: var(--baseFontColor);
+				color: var(--baseOtherColor);
 			}
 
 			article #content ul li {
@@ -177,6 +181,7 @@
 				font-size: 14px;
 				font-weight: normal;
 				text-align: center;
+				letter-spacing: 2px;
 				transition: all 0.5s;
 				transition-timing-function: ease-in-out;
 				transition-delay: 0.1s;
@@ -199,6 +204,7 @@
 		</style>
 	</head>
 	<body>
+		<a name="fixed-top"></a>
 		<header>
 			<h1>百站汇网</h1>
 			<p>本网页致力于分享安全、无劫持、无病毒、可靠可用的资源</p>
@@ -218,15 +224,15 @@
 				<li><a href="#A11">常用软件</a></li>
 			</ul>
 			<div class="tools">
-				<div class="tools-item" id="fixed">
+				<a href="#fixed-top" class="tools-item">
 					<i class="fa fa-angle-double-up fa-3x"></i>
-				</div>
-				<div class="tools-item" onclick="reloadPage()">
+				</a>
+				<a href="javascript:;" onclick="reloadPage()" class="tools-item">
 					<i class="fa fa-refresh fa-3x"></i>
-				</div>
-				<div class="tools-item" id="fixed-bottom">
+				</a>
+				<a href="#fixed-bottom" class="tools-item">
 					<i class="fa fa-angle-double-down fa-3x"></i>
-				</div>
+				</a>
 			</div>
 		</aside>
 		<article>
@@ -951,27 +957,6 @@
 
 		</script>
 		<script>
-			//返回顶部
-			$(function() {
-				$("#fixed").click(function() {
-					$("html,body").animate({
-						scrollTop: 0
-					}, 1600);
-				});
-			});
-
-		</script>
-		<script>
-			//返回底部
-			$('#fixed-bottom').click(function() {
-				$('html,body').stop();
-				$('html,body').animate({
-					scrollTop: $('#footer').offset().top
-				}, 1600);
-			});
-
-		</script>
-		<script>
 			/*-------------------------------------------------*/
 			/* 鼠标点击显示字体特效！
 			/*-------------------------------------------------*/
@@ -1006,13 +991,11 @@
 		</script>
 		<script>
 			function reloadPage() {
-
 				window.location.reload();
-
 			}
 
 		</script>
-		<div id="footer"></div>
+		<a name="fixed-bottom"></a>
 	</body>
 </html>
 
