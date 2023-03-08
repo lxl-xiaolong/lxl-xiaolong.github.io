@@ -28,9 +28,9 @@
 				/* 网页基础色 */
 				--baseSecondColor: #FFFFCC;
 				/* 网页次基础色 */
-				--baseThirdColor: #CCCCFF;
+				--baseThirdColor: #CCFFFF;
 				/* 网页辅助色 */
-				--baseFontColor: #FF9966;
+				--baseFontColor: #333333;
 			}
 
 			* {
@@ -102,17 +102,23 @@
 
 			aside .tools {
 				width: 100%;
-				text-align: center;
+				height: 55px;
+				margin: 15px 15px 15px 15px;
 			}
 
-			aside .tools i {
+			aside .tools .tools-item {
+				float: left;
 				width: 40px;
 				height: 40px;
-				margin: 20px 23px;
+				margin: 0 28px 0 28px;
+				transition: all 0.5s;
+				transition-timing-function: ease-in-out;
+				transition-delay: 0.1s;
 			}
 
-			aside .tools i:hover {
+			aside .tools .tools-item:hover {
 				background-color: var(--baseThirdColor);
+				cursor: pointer;
 			}
 
 			article {
@@ -153,7 +159,7 @@
 				margin: 15px 0 15px 0;
 				font-size: 24px;
 				font-weight: bolder;
-				color: var(--baseColor);
+				color: var(--baseFontColor);
 			}
 
 			article #content .content-item-p {
@@ -212,15 +218,15 @@
 				<li><a href="#A11">常用软件</a></li>
 			</ul>
 			<div class="tools">
-				<a href="javascript:" id="fixed">
+				<div class="tools-item" id="fixed">
 					<i class="fa fa-angle-double-up fa-3x"></i>
-				</a>
-				<a href="javascript:window.location.reload()">
+				</div>
+				<div class="tools-item" onclick="reloadPage()">
 					<i class="fa fa-refresh fa-3x"></i>
-				</a>
-				<a href="javascript:" id="fixed-bottom">
+				</div>
+				<div class="tools-item" id="fixed-bottom">
 					<i class="fa fa-angle-double-down fa-3x"></i>
-				</a>
+				</div>
 			</div>
 		</aside>
 		<article>
@@ -996,6 +1002,14 @@
 					});
 				});
 			});
+
+		</script>
+		<script>
+			function reloadPage() {
+
+				window.location.reload();
+
+			}
 
 		</script>
 		<div id="footer"></div>
