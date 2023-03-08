@@ -1,766 +1,1004 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
 		<title>百站汇网</title>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lxl-xiaolong/liu-xiaolong@main/CSS/style202302262013.css">
 		<link rel="dns-prefetch" href="https://github.githubassets.com">
 		<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
 		<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
 		<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
 		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
 		<link rel="preconnect" href="https://avatars.githubusercontent.com">
+		<link rel="preconnect" href="//dpm.demdex.net/" crossorigin>
+		<link rel="dns-prefetch" href="//dpm.demdex.net/">
+		<link rel="preconnect" href="//starget.intel.cn/">
+		<link rel="dns-prefetch" href="//starget.intel.cn/">
+		<link rel="preconnect" href="//elqtrk.intel.cn/">
+		<link rel="dns-prefetch" href="//elqtrk.intel.cn/">
+		<link rel="dns-prefetch" href="//onsite2.researchintel.com/">
+		<link rel="preconnect" href="//tags.tiqcdn.cn/" crossorigin>
+		<link rel="dns-prefetch" href="//tags.tiqcdn.cn/">
+		<link rel="preconnect" href="//www91.intel.cn/">
+		<link rel="dns-prefetch" href="//www91.intel.cn/">
+		<link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style>
+			:root {
+				--baseColor: #CCFF99;
+				/* 网页基础色 */
+				--baseSecondColor: #FFFFCC;
+				/* 网页次基础色 */
+				--baseThirdColor: #CCCCFF;
+				/* 网页辅助色 */
+				--baseFontColor: #FF9966;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			li {
+				list-style-type: none;
+			}
+
+			.clearfix {
+				content: '';
+				display: table;
+				clear: both;
+			}
+
+			body {
+				font-family: -apple-system, system-ui, Segoe UI, BlinkMacSystemFont, Tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5B8B\4F53", sans-serif;
+				background-color: var(--baseThirdColor);
+			}
+
+			header {
+				padding: 60px;
+				text-align: center;
+				background-color: var(--baseColor);
+				color: var(--baseFontColor);
+			}
+
+			header>h1 {
+				margin: 30px;
+				text-shadow: 1px 2px 1px var(--baseFontColor);
+			}
+
+			aside {
+				position: sticky;
+				top: 0;
+				width: 340px;
+				background-color: var(--baseSecondColor);
+				padding: 15px;
+				float: right;
+				border-radius: 18px;
+				box-shadow: 3px 8px 0 gray;
+			}
+
+			aside ul li {
+				padding: 5px 5px;
+				margin: 5px 5px;
+				transition: all 0.5s;
+				transition-timing-function: ease-in-out;
+				transition-delay: 0.1s;
+			}
+
+			aside ul li:hover {
+				background-color: var(--baseColor);
+				box-shadow: 2px 4px 1px gray;
+				border-radius: 10px;
+			}
+
+			aside ul li a {
+				padding: 5px 5px;
+				margin: 5px 0px;
+			}
+
+			aside .tools {
+				width: 100%;
+				text-align: center;
+			}
+
+			aside .tools i {
+				width: 40px;
+				height: 40px;
+				margin: 20px 23px;
+			}
+
+			aside .tools i:hover {
+				background-color: var(--baseThirdColor);
+			}
+
+			article {
+				width: 75%;
+				padding: 0 15px 15px 0;
+			}
+
+			article section {
+				background-color: var(--baseSecondColor);
+				padding: 20px 20px;
+				border-radius: 18px;
+				box-shadow: 2px 4px 1px gray;
+			}
+
+			article section p {
+				padding: 5px;
+			}
+
+			article section .item {
+				display: inline-block;
+			}
+
+			article section .notice {
+				line-height: 30px;
+			}
+
+			article #content {
+				column-width: 230px;
+				column-gap: 10px;
+				column-rule: 3px dashed var(--baseSecondColor);
+				text-align: center;
+				margin-top: 20px;
+			}
+
+			article #content .content-item {
+				width: 100%;
+				padding: 15px 0 15px 0;
+				margin: 15px 0 15px 0;
+				font-size: 24px;
+				font-weight: bolder;
+				color: var(--baseColor);
+			}
+
+			article #content .content-item-p {
+				width: 100%;
+				padding: 12px 0 12px 0;
+				margin: 12px 0 12px 0;
+				font-size: 16px;
+				font-weight: bolder;
+				color: var(--baseFontColor);
+			}
+
+			article #content ul li {
+				padding: 15px 0 15px 0;
+				margin: 15px 0 15px 0;
+				font-size: 14px;
+				font-weight: normal;
+				text-align: center;
+				transition: all 0.5s;
+				transition-timing-function: ease-in-out;
+				transition-delay: 0.1s;
+			}
+
+			article #content ul li:hover {
+				background-color: var(--baseSecondColor);
+				box-shadow: 2px 4px 1px gray;
+				border-radius: 10px;
+			}
+
+			article #content ul li a {
+				padding: 15px 0 15px 0;
+				margin: 15px 0 15px 0;
+				font-size: 15px;
+				font-weight: normal;
+				text-align: center;
+			}
+
+		</style>
 	</head>
 	<body>
-		<div id="top"></div>
-		<!-- 导航区域 -->
-		<div id="daohang">
-			<img src="data:image/jpeg;base64,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" loading="lazy" alt="百站汇" title="百站汇">
-			<div class="list">
-				<table>
-					<tr>
-						<td><a href="#a">磁盘管理</a></td>
-						<td><a href="#b">系统镜像</a></td>
-						<td><a href="#c">图片转base64编码</a></td>
-						<td><a href="#d">解压缩</a></td>
-						<td><a href="#f">在线学习</a></td>
-						<td><a href="#g">启动U盘制作工具</a></td>
-					</tr>
-					<tr>
-						<td><a href="#i">在线便捷工具</a></td>
-						<td><a href="#j">杂项综合</a></td>
-						<td><a href="#k">常用软件官方下载</a></td>
-						<td><a href="#e">AMD | Inter | NVIDIA驱动下载</a></td>
-						<td><a href="#f">各品牌电脑（或电脑部件）服务与支持</a></td>
-					</tr>
-				</table>
+		<header>
+			<h1>百站汇网</h1>
+			<p>本网页致力于分享安全、无劫持、无病毒、可靠可用的资源</p>
+		</header>
+		<aside>
+			<ul>
+				<li><a href="#A1">磁盘管理</a></li>
+				<li><a href="#A2">系统镜像</a></li>
+				<li><a href="#A3">图片转base64编码</a></li>
+				<li><a href="#A4">解压缩</a></li>
+				<li><a href="#A5">AMD | Inter | NVIDIA驱动下载</a></li>
+				<li><a href="#A6">在线学习</a></li>
+				<li><a href="#A7">启动U盘制作工具</a></li>
+				<li><a href="#A8">各品牌电脑（或电脑部件）服务与支持</a></li>
+				<li><a href="#A9">在线便捷工具</a></li>
+				<li><a href="#A10">杂项综合</a></li>
+				<li><a href="#A11">常用软件</a></li>
+			</ul>
+			<div class="tools">
+				<a href="javascript:;" id="fixed">
+					<i class="fa fa-angle-double-up fa-3x"></i>
+				</a>
+				<a href="javascript:window.location.reload()">
+					<i class="fa fa-refresh fa-3x"></i>
+				</a>
+				<a href="javascript:;" id="fixed-bottom">
+					<i class="fa fa-angle-double-down fa-3x"></i>
+				</a>
 			</div>
-		</div>
-		<!-- 主内容区域 -->
-		<!-- 左侧公告栏 -->
-		<div class="left-gonggao">
-					<div id="Main"></div>
-					<p>孤独的我看孤独的风景。</p>
-					<p>本站作者——刘小龙。</p>
-					<p>本站建于——2022年08月09日。</p>
-					<div id="LiNum"></div>
-					<p>网站已运行：</p><p id="run_time"></p>
-			<p>
-				1、欢迎您访问和浏览本站，建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本站<br>
-				2、在本站中，有一部分网站页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。<br>
-				3、所有站点均由本人亲自整理、甄别、添加，保证每个站点安全、无劫持、无病毒、可靠可用。<br>
-				4、本人在本站发布的windows系统工具箱仅作为个人使用，未经本人许可，同意或者允许，请勿将本工具箱进行破解，修改（包括修改为恶意程序），传播，搬运，倒卖，盗用，否则后果自负！<br>
-				5、本站为个人网站，本站所发布的一切资源均来自与网络，并由本人整理发布，仅限用于学习和研究目的；不得将本站及本站发布的内容用于商业或者非法用途，否则，一切后果请用户自负。<br>
-				6、如侵犯到您的权益，请您及时联系我们(2539223617@qq.com或19891679457)，我们会及时跟进，处理。<br>
-				7、访问、浏览、下载本站内容，表明您已知晓并同意【百站汇网公告】中的第4、5、8、9条中的相关条款。<br>
-				8、本站为非盈利性站点，本站不贩卖软件，所有内容不作为商业行为。<br>
-				9、还请您支持并购买正版软件！<br>
-				10、本站特别感谢<a href="https://github.com/" title="Github" target="_blank"
-					rel="noopener external noreferrer nofollow">Github</a>对本站提供的支持。<br>
-				11、<a href="https://www.12377.cn/" title="举报" target="_blank rel=" noopener external noreferrer
-					nofollow">网站有害信息举报</a><br>
-				12、由于本人能力，建站仓促等原因，本站难免会有不足的地方，请大家谅解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！
-			</p>
-		</div>
+		</aside>
+		<article>
+			<section>
+				<p id="Main"></p>
+				<p>孤独的我看孤独的风景。</p>
+				<p>本网页作者——刘小龙。</p>
+				<p>本网页建于——2022年08月09日。</p>
+				<p id="LiNum"></p>
+				<p class="item">网页已运行——</p>
+				<p class="item" id="run_time"></p>
+				<p class="notice">
+					1、欢迎您访问和浏览本网页，建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本页面<br>
+					2、在本网页中，有一部分页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。<br>
+					3、本网页为个人网页，本网页所发布的一切资源均来自与网络，仅限用于学习和研究目的；不得将本站及本站发布的内容用于商业或者非法用途，否则，一切后果请用户自负。<br>
+					4、如侵犯到您的权益，请您及时联系我们(2539223617@qq.com或19891679457)，我们会及时跟进，处理。<br>
+					5、访问、浏览、下载本页面内容，表明您已知晓并同意【百站汇网公告】中的第3、4、6、7条中的相关条款。<br>
+					6、本网页为非盈利性，不贩卖软件，所有内容不作为商业行为。<br>
+					7、还请您支持并购买正版软件！<br>
+					8、本站特别感谢<a href="https://github.com/" title="Github" target="_blank"
+						rel="noopener external noreferrer nofollow">Github</a>对本网页提供的支持。<br>
+					9、<a href="https://www.12377.cn/" title="举报" target="_blank rel=" noopener external noreferrer
+						nofollow">网站有害信息举报</a><br>
+					10、由于本人能力，仓促等原因，本网页难免会有不足的地方，请大家谅解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！
+				</p>
+			</section>
+			<div id="content">
+				<a name="A1" class="content-item">磁盘管理</a>
+				<ul>
 
-		<div id="content">
-			<div class="fenxiang">
-				<a name="a">磁盘管理</a>
-				<table>
-					<tr>
-						<td><a href="https://www.disktool.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">傲梅磁盘管理软件</a></td>
-						<td><a href="https://www.diskgenius.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">DiskGenius磁盘管理</a></td>
-					</tr>
-				</table>
-				<a name="b">系统镜像</a>
-				<table>
-					<tr>
-						<td><a href="https://www.microsoft.com/zh-cn/software-download/windows10" target="_blank"
-								rel="noopener external noreferrer nofollow">前往Windows10官方下载页面</a></td>
-						<td><a href="https://www.microsoft.com/zh-cn/software-download/windows11" target="_blank"
-								rel="noopener external noreferrer nofollow">前往Windows11官方下载页面</a></td>
-						<td><a href="https://msdn.itellyou.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">MSDN，我告诉你</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://next.itellyou.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">下一站，我告诉你</a></td>
-						<td><a href="http://www.aichunjing.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">爱纯净
-								- 纯净系统下载网站</a></td>
-						<td><a href="https://www.xitongku.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">系统库
-								- 提供原版系统和安装教程的网站</a></td>
-					</tr>
+					<li><a href="https://www.disktool.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">傲梅磁盘管理软件</a></li>
+					<li><a href="https://www.diskgenius.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">DiskGenius磁盘管理</a></li>
+				</ul>
+				<a name="A2" class="content-item">系统镜像</a>
+				<ul>
 
-				</table>
+					<li><a href="https://www.microsoft.com/zh-cn/software-download/windows10" target="_blank"
+							rel="noopener external noreferrer nofollow">前往Windows10官方下载页面</a></li>
+					<li><a href="https://www.microsoft.com/zh-cn/software-download/windows11" target="_blank"
+							rel="noopener external noreferrer nofollow">前往Windows11官方下载页面</a></li>
+					<li><a href="https://msdn.itellyou.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">MSDN，我告诉你</a></li>
 
-				<a name="c">图片转base64编码</a>
-				<table>
-					<td><a href="https://c.runoob.com/front-end/59/" target="_blank"
-							rel="noopener external noreferrer nofollow">链接1</a></td>
-					<td><a href="https://tool.chinaz.com/tools/imgtobase/" target="_blank"
-							rel="noopener external noreferrer nofollow">链接2</a></td>
-					<td><a href="https://www.strerr.com/cn/base64_encode_img.html" target="_blank"
-							rel="noopener external noreferrer nofollow">链接3</a></td>
-					<td><a href="https://imgtobase64.d777.com/" target="_blank"
-							rel="noopener external noreferrer nofollow">链接4</a></td>
-					<td><a href="https://www.sojson.com/image2base64.html" target="_blank"
-							rel="noopener external noreferrer nofollow">链接5</a></td>
-					<td><a href="http://www.jsons.cn/img2base64/?ivk_sa=1024320u" target="_blank"
-							rel="noopener external noreferrer nofollow">链接6</a></td>
-				</table>
-				<a name="d">解压缩</a>
-				<table>
-					<td><a href="https://www.bandisoft.com/bandizip/" target="_blank"
-							rel="noopener external noreferrer nofollow">Bandizip</a></td>
-					<td><a href="https://www.winrar.com.cn/download.htm" target="_blank"
-							rel="noopener external noreferrer nofollow">WinRAR</a></td>
-					<td><a href="https://www.7-zip.org/" target="_blank"
-							rel="noopener external noreferrer nofollow">7-Zip</a></td>
-					<td><a href="https://peazip.github.io/" target="_blank"
-							rel="noopener external noreferrer nofollow">PeaZip</a></td>
-				</table>
-				<a name="e">AMD | Inter | NVIDIA相关驱动下载</a>
-				<table>
-					<tr>
-						<td><a href="https://www.nvidia.cn/geforce/drivers/" target="_blank"
-								rel="noopener external noreferrer nofollow">官方GeForce驱动程序 | NVIDIA</a></td>
-						<td><a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank"
-								rel="noopener external noreferrer nofollow">官方驱动 | NVIDIA</a></td>
-						<td><a href="https://www.intel.cn/content/www/cn/zh/support/detect.html" target="_blank"
-								rel="noopener external noreferrer nofollow">英特尔 驱动程序和支持助理</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.intel.cn/content/www/cn/zh/download-center/home.html" target="_blank"
-								rel="noopener external noreferrer nofollow">下载英特尔 驱动程序和软件</a></td>
-						<td><a href="https://www.amd.com/zh-hans/support" target="_blank"
-								rel="noopener external noreferrer nofollow">AMD驱动程序与支持 | AMD</a></td>
-						<td><a href="https://www.amd.com/zh-hans" target="_blank"
-								rel="noopener external noreferrer nofollow">AMD官网 | AMD</a></td>
-					</tr>
-				</table>
-				<a name="f">在线学习</a>
-				<table>
-					<tr>
-						<td><a href="https://le.ouchn.cn/home" target="_blank"
-								rel="noopener external noreferrer nofollow">终身教育平台</a></td>
-						<td><a href="https://www.icourse163.org/" target="_blank"
-								rel="noopener external noreferrer nofollow">中国大学MOOC(慕课)</a></td>
-						<td><a href="https://www.51zxw.net/" target="_blank"
-								rel="noopener external noreferrer nofollow">我要自学网</a></td>
-						<td><a href="http://www.dxzy163.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">大学资源网</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.bilibili.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">哔哩哔哩</a></td>
-						<td><a href="https://www.examcoo.com/index/ku" target="_blank"
-								rel="noopener external noreferrer nofollow">考试酷</a></td>
-						<td><a href="https://dict.eudic.net/ting" target="_blank"
-								rel="noopener external noreferrer nofollow">每日英语听力</a></td>
-						<td><a href="https://ebook.hep.com.cn/ebooks/index.html#/" target="_blank"
-								rel="noopener external noreferrer nofollow">高教书苑</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://open.163.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">网易公开课</a></td>
-						<td><a href="https://www.yxgapp.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">译学馆</a></td>
-						<td><a href="https://www.hjenglish.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">沪江英语网</a></td>
-						<td><a href="https://www.xuetangx.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">学堂在线</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.cnki.net/" target="_blank"
-								rel="noopener external noreferrer nofollow">中国知网</a></td>
-						<td><a href="https://ke.qq.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">腾讯课堂</a></td>
-						<td><a href="https://www.imooc.com/course/list" target="_blank"
-								rel="noopener external noreferrer nofollow">慕课网</a></td>
-						<td><a href="http://v.dxsbb.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">大学生自学网</a></td>
-					<tr>
-						<td><a href="http://www.howzhi.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">好知网</a></td>
-						<td><a href="https://www.coursera.org/" target="_blank"
-								rel="noopener external noreferrer nofollow">Coursera--网络学习平台</a></td>
-						<td><a href="https://www.edx.org/" target="_blank"
-								rel="noopener external noreferrer nofollow">edX--在线学习平台</a></td>
-					</tr>
-				</table>
-				<a name="g">系统启动U盘制作工具</a>
-				<table>
-					<tr>
-						<td><a href="http://www.udashi.com/download/" target="_blank"
-								rel="noopener external noreferrer nofollow">U大师 - 启动盘制作工具</a></td>
-						<td><a href="https://www.laomaotao.net/" target="_blank"
-								rel="noopener external noreferrer nofollow">老毛桃 - 启动盘制作工具</a></td>
-						<td><a href="http://www.winbaicai.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">大白菜 - 启动盘制作工具</a></td>
-						<td><a href="https://u.diannaodian.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">电脑店 - 启动盘制作工具</a></td>
-					</tr>
-					<tr>
-						<td><a href="http://www.xiaobingxitong.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">小兵U盘启动</a></td>
-						<td><a href="https://www.sysceo.com/usm.html" target="_blank"
-								rel="noopener external noreferrer nofollow">U盘魔术师</a></td>
-						<td><a href="http://www.zhuangjiba.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">装机吧 - 启动盘制作工具</a></td>
-						<td><a href="http://www.uqidong.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">u启动 - 启动盘制作工具</a></td>
-					</tr>
-					<tr>
-						<td><a href="http://www.udaxia.com/index.html" target="_blank"
-								rel="noopener external noreferrer nofollow">U大侠 - 启动盘制作工具</a></td>
-						<td><a href="http://www.upanok.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">一键U盘 - 启动盘制作工具</a></td>
-						<td><a href="https://www.wepe.com.cn/download.html" target="_blank"
-								rel="noopener external noreferrer nofollow">微PE工具箱</a></td>
-						<td><a href="https://www.upe.net/" target="_blank"
-								rel="noopener external noreferrer nofollow">优启通 -
-								启动盘制作工具</a></td>
-					</tr>
-					<tr>
-						<td><a href="http://www.ujiaoshou.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">U教授 - 启动盘制作工具</a></td>
-						<td><a href="https://www.oschina.net/p/rufus?hmsr=aladdin1e1" target="_blank"
-								rel="noopener external noreferrer nofollow">Rufus - U盘启动系统制作工具链接1</a></td>
-						<td><a href="https://gitee.com/mirrors/Rufus?utm_source=alading&utm_campaign=repo"
-								target="_blank" rel="noopener external noreferrer nofollow">Rufus - U盘启动系统制作工具链接2</a>
-						</td>
-					</tr>
-					<tr>
-						<td><a href="https://rufus.ie/downloads/" target="_blank"
-								rel="noopener external noreferrer nofollow">Rufus - U盘启动系统制作工具链接3</a></td>
-						<td><a href="http://www.uqb.cn/" target="_blank" rel="noopener external noreferrer nofollow">U启宝
-								- U盘启动盘制作工具</a></td>
-						<td><a href="http://ushendu.dunjiab.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">U深度 - U盘启动盘制作工具</a></td>
-					</tr>
-				</table>
-				<a name="h">各品牌电脑（或电脑部件）相关服务与支持</a>
-				<table>
-					<tr>
-						<td><a href="https://newsupport.lenovo.com.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">联想</a></td>
-						<td><a href="https://support.hp.com/cn-zh/drivers" target="_blank"
-								rel="noopener external noreferrer nofollow">惠普</a></td>
-						<td><a href="https://consumer.huawei.com/cn/support/" target="_blank"
-								rel="noopener external noreferrer nofollow">华为</a></td>
-						<td><a href="https://www.asus.com.cn/support/Download-Center/" target="_blank"
-								rel="noopener external noreferrer nofollow">华硕</a></td>
-						<td><a href="https://www.dell.com/support/home/zh-cn?app=drivers" target="_blank"
-								rel="noopener external noreferrer nofollow">戴尔</a></td>
-						<td><a href="https://www.dell.com/support/home/zh-cn" target="_blank"
-								rel="noopener external noreferrer nofollow">戴尔</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://newthink.lenovo.com.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">Thinkpad</a></td>
-						<td><a href="https://support.apple.com/zh-cn" target="_blank"
-								rel="noopener external noreferrer nofollow">苹果</a></td>
-						<td><a href="https://www.ipason.com/portal/download_center.html" target="_blank"
-								rel="noopener external noreferrer nofollow">攀升</a></td>
-						<td><a href="https://www.acer.com.cn/support.html?type=1" target="_blank"
-								rel="noopener external noreferrer nofollow">宏基</a></td>
-						<td><a href="https://www.colorful.cn/server.aspx?classid=2825" target="_blank"
-								rel="noopener external noreferrer nofollow">七彩虹</a></td>
-						<td><a href="https://www.hihonor.com/cn/support/" target="_blank"
-								rel="noopener external noreferrer nofollow">荣耀</a></td>
-					</tr>
-					<tr>
-						<td><a href="http://www.hasee.com/after/index" target="_blank"
-								rel="noopener external noreferrer nofollow">神舟</a></td>
-						<td><a href="https://www.leishen.cn/service/download" target="_blank"
-								rel="noopener external noreferrer nofollow">雷神</a></td>
-						<td><a href="https://www.mi.com/service/notebook/drivers" target="_blank"
-								rel="noopener external noreferrer nofollow">小米</a></td>
-						<td><a href="https://www.mechrevo.com/service/" target="_blank"
-								rel="noopener external noreferrer nofollow">机械革命</a></td>
-						<td><a href="https://official.tongfangpc.com/servicelink/driver_download.aspx" target="_blank"
-								rel="noopener external noreferrer nofollow">清华同方</a></td>
-						<td><a href="https://cn.msi.com/support#support_download" target="_blank"
-								rel="noopener external noreferrer nofollow">微星</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.dell.com/support/home/zh-cn?app=drivers" target="_blank"
-								rel="noopener external noreferrer nofollow">外星人（同戴尔）</a></td>
-						<td><a href="https://support.microsoft.com/zh-cn/surface" target="_blank"
-								rel="noopener external noreferrer nofollow">微软</a></td>
-						<td><a href="http://www.yeston.net/" target="_blank"
-								rel="noopener external noreferrer nofollow">盈通</a></td>
-						<td><a href="https://www.gigabyte.cn/Support" target="_blank"
-								rel="noopener external noreferrer nofollow">技嘉</a></td>
-						<td><a href="http://www.szgalaxy.com/__ZH_GB__/Home5/service_download" target="_blank"
-								rel="noopener external noreferrer nofollow">影驰驱动下载</a></td>
-						<td><a href="http://www.dataland.com.cn/drivedown.aspx?nid=8&typeid=185" target="_blank"
-								rel="noopener external noreferrer nofollow">迪兰驱动下载</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://semiconductor.samsung.com/cn/consumer-storage/support/tools/"
-								target="_blank" rel="noopener external noreferrer nofollow">下载 三星（Samsung）工具和软件</a>
-						</td>
-						<td><a href="https://cn.pradeon.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">磐镭官网</a></td>
-						<td><a href="http://www.maxsun.com.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">铭瑄</a></td>
-						<td><a href="http://webuat.zotac.com/cn/sitemap" target="_blank"
-								rel="noopener external noreferrer nofollow">索泰</a></td>
-						<td><a href="http://www.szgainward.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">耕升</a></td>
-						<td><a href="http://www.gunnir.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">蓝戟</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.asrock.com/index.cn.asp" target="_blank"
-								rel="noopener external noreferrer nofollow">华擎</a></td>
-						<td><a href="http://www.onda.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">昂达</a>
-						</td>
-						<td><a href="http://www.biostar.com.cn/app/en-us/" target="_blank"
-								rel="noopener external noreferrer nofollow">映泰</a></td>
-						<td><a href="https://nzxt.com/en-GB" target="_blank"
-								rel="noopener external noreferrer nofollow">NZXT</a></td>
-						<td><a href="https://www.mthreads.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">摩尔线程</a></td>
-						<td><a href="https://www.kingston.com.cn/cn" target="_blank"
-								rel="noopener external noreferrer nofollow">金士顿</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.ymtc.com/cn/techsupport.html" target="_blank"
-								rel="noopener external noreferrer nofollow">长江存储</a></td>
-						<td><a href="https://www.kioxia.com.cn/zh-cn/top.html" target="_blank"
-								rel="noopener external noreferrer nofollow">铠侠</a></td>
-						<td><a href="https://www.adata.com.cn/cn" target="_blank"
-								rel="noopener external noreferrer nofollow">威刚</a></td>
-						<td><a href="https://www.crucial.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">英睿达</a></td>
-						<td><a href="http://www.gskill.com/cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">芝奇</a></td>
-						<td><a href="http://www.gloway.com.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">光威</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.kingbank.com/cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">金百达</a></td>
-						<td><a href="https://www.corsair.com/zh/zh/" target="_blank"
-								rel="noopener external noreferrer nofollow">美商海盗船</a></td>
-						<td><a href="http://www.powev.com.cn/asgard/" target="_blank"
-								rel="noopener external noreferrer nofollow">阿斯加特</a></td>
-						<td><a href="http://www.kimtigo.com.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">Kimtigo金泰克</a></td>
-						<td><a href="https://support.wdc.com/downloads.aspx?lang=cn" target="_blank"
-								rel="noopener external noreferrer nofollow">西部数据软件与下载</a></td>
-					</tr>
-				</table>
-				<a name="i">在线便捷工具</a>
-				<table>
-					<tr>
-						<td><a href="https://www.omegaxyz.com/onlinetools/web-running/" target="_blank"
-								rel="noopener external noreferrer nofollow">HTML / JS代码运行器</a></td>
-						<td><a href="https://www.hipdf.com/cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">HiPDF工具</a></td>
-						<td><a href="https://www.bmcx.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">便民查询网</a></td>
-						<td><a href="https://www.gaituya.com/?zhljj01" target="_blank"
-								rel="noopener external noreferrer nofollow">改图鸭</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://app.xunjiepdf.com/?zhljj01" target="_blank"
-								rel="noopener external noreferrer nofollow">迅捷PDF转换器</a></td>
-						<td><a href="https://toolb.cn/textspeech" target="_blank"
-								rel="noopener external noreferrer nofollow">在线文本转声音</a></td>
-						<td><a href="https://vocalremover.org/zh/" target="_blank"
-								rel="noopener external noreferrer nofollow">在线音频处理</a></td>
-						<td><a href="https://www.pdfpai.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">PDF派</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://cn.office-converter.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">格式转换大全</a></td>
-						<td><a href="https://gitmind.cn/app/template?lang=zh" target="_blank"
-								rel="noopener external noreferrer nofollow">在线思维导图</a></td>
-						<td><a href="https://www.toolnb.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">小工具合集</a></td>
-						<td><a href="https://www.aconvert.com/cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">文件在线转换</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://tools.pdf24.org/zh/" target="_blank"
-								rel="noopener external noreferrer nofollow">PDF24 Tools</a></td>
-						<td><a href="https://www.remove.bg/zh" target="_blank"
-								rel="noopener external noreferrer nofollow">一键抠图</a></td>
-						<td><a href="https://pdf.yozocloud.cn/p/home" target="_blank"
-								rel="noopener external noreferrer nofollow">永中PDF工具集</a></td>
-					</tr>
-				</table>
-				<a name="j">杂项综合</a>
-				<p>搜索</p>
-				<table>
-					<tr>
-						<td><a href="http://www.jsousuo.com/?1000" target="_blank"
-								rel="noopener external noreferrer nofollow">极简搜索</a></td>
-						<td><a href="https://www.haipc.cn/?ku" target="_blank"
-								rel="noopener external noreferrer nofollow">嗨PC主页
-								- 轻快上网嗨PC</a></td>
-						<td><a href="https://www.lzpan.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">懒盘搜索</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://aur.one/" target="_blank"
-								rel="noopener external noreferrer nofollow">一个开始(从搜索开始)</a></td>
-						<td><a href="https://www.moulem.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">某柠檬</a></td>
-						<td><a href="https://search.chongbuluo.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">虫部落-搜索大杂烩</a></td>
-					</tr>
-				</table>
-				<p>工具、软件相关</p>
-				<table>
-					<tr>
-						<td><a href="https://otp.landian.vip/zh-cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">Office Tool Plus | Office部署工具</a></td>
-						<td><a href="https://iknow.lenovo.com.cn/tool/lists" target="_blank"
-								rel="noopener external noreferrer nofollow">优化工具 ( 部分工具windows系统通用 )</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.itsk.com/portal.php" target="_blank"
-								rel="noopener external noreferrer nofollow">驱动，U启，软件</a></td>
-						<td><a href="https://mp.weixin.qq.com/s/XxgDOaGjt9dct2kLE136Ig" target="_blank"
-								rel="noopener external noreferrer nofollow">软件仓库</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://blog.csdn.net/qq_43843708/article/details/127138116" target="_blank"
-								rel="noopener external noreferrer nofollow">Windows常用运行库合集（VC++、DirectX、.NET）</a>
-						</td>
-						<td><a href="https://www.ghxi.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">果核剥壳</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.iobit.com/en/iobit-unlocker.php" target="_blank"
-								rel="noopener external noreferrer nofollow">IObit Unlocker-帮助用户解锁无法删除文件的小工具</a></td>
-						<td><a href="https://toolgg.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">我的工具箱</a></td>
-						<td><a href="http://www.wetools.com/html-formatter" target="_blank"
-								rel="noopener external noreferrer nofollow">微工具</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://c.runoob.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">菜鸟工具</a></td>
-						<td><a href="http://www.webkaka.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">卡卡网</a></td>
-						<td><a href="https://www.oo-software.com/en/ooappbuster" target="_blank"
-								rel="noopener external noreferrer nofollow">O&O App Buster - win删除己安装的应用程序</a></td>
-					</tr>
-					<tr>
-						<td><span>KMS激活工具（win系统，office）：<a href="https://aichunjing.lanzoui.com/b710887" target="_blank"
-									rel="noopener external noreferrer nofollow">蓝秦云</a></span></td>
-						<td><a href="https://lxldwp.lanzoum.com/b01vrk4qf" target="_blank"
-								rel="noopener external noreferrer nofollow">自用网盘资源（访问密码：2001）</a></td>
-						<td><a href="https://www.toolnb.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">爱资料工具</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://tools.liumingye.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">刘明野的工具箱</a></td>
-						<td><a href="https://cp.anyknew.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">拷贝兔</a></td>
-						<td><a href="https://www.huorong.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">火绒安全</a></td>
-						<td><a href="https://www.voidtools.com/zh-cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">Everything-快速文件搜索神器</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://geekuninstaller.com/download" target="_blank"
-								rel="noopener external noreferrer nofollow">Geek Uninstall-程序卸载工具</a></td>
-						<td><a href="https://www.todesk.com/download.html" target="_blank"
-								rel="noopener external noreferrer nofollow">ToDesk-远程控制</a></td>
-						<td><a href="https://www.snipaste.com/download.html" target="_blank"
-								rel="noopener external noreferrer nofollow">Snipaste-截图工具</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://winaero.com/download-universal-watermark-disabler/" target="_blank"
-								rel="noopener external noreferrer nofollow">Universal Watermark
-								Disabler-移除Win桌面版本号水印</a></td>
-						<td><a href="https://pcmanager.microsoft.com/?channel=10000" target="_blank"
-								rel="noopener external noreferrer nofollow">微软电脑管家</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.hwinfo.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">HWiNFO-硬件检测软件</a></td>
-						<td><a href="https://www.superpi.net/" target="_blank"
-								rel="noopener external noreferrer nofollow">Super PI - cpu测试软件</a></td>
-						<td><a href="https://github.com/PeterStrick/ViVeTool-GUI" target="_blank"
-								rel="noopener external noreferrer nofollow">ViVeTool GUI - 更直观的开启新功能(用于win11测试版)</a>
-						</td>
-					</tr>
-					<tr>
-						<td><a href="https://github.com/thebookisclosed/ViVe/releases" target="_blank"
-								rel="noopener external noreferrer nofollow">ViVeTool</a></td>
-						<td><a href="https://sspai.com/post/74286" target="_blank"
-								rel="noopener external noreferrer nofollow">ViVeTool工具的使用</a></td>
-						<td><a href="https://github.com/521xueweihan/GitHub520" target="_blank"
-								rel="noopener external noreferrer nofollow">试图解决GitHub访问慢、图片加载不出来的问题</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://github.com/microsoft/PowerToys/releases" target="_blank"
-								rel="noopener external noreferrer nofollow">微软PowerToys</a></td>
-						<td><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank"
-								rel="noopener external noreferrer nofollow">VirtualBox虚拟机</a></td>
-						<td><a href="https://gh.api.99988866.xyz/" target="_blank"
-								rel="noopener external noreferrer nofollow">GitHub文件加速下载</a></td>
-						<td><a href="https://ghproxy.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">DoGet-GitHub文件加速下载</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://huajiakeji.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">谷歌插件</a></td>
-						<td><a href="http://www.jsons.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">在线工具导航</a></td>
-						<td><a href="https://www.sojson.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">在线工具</a></td>
-						<td><a href="http://www.tbtool.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">图吧工具箱</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.wandongli.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">万动力
-								- Logo在线设计神器</a></td>
-						<td><a href="https://www.aconvert.com/cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">在线转换器</a></td>
-						<td><a href="https://www.jsdelivr.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">A free CDN for open source projects</a>
-						</td>
-						<td><a href="http://www.bootstrapmb.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">bootstrapmb.com - 模板库</a></td>
-					</tr>
-				</table>
-				<p>音乐相关</p>
-				<table>
-					<td><a href="http://www.yt66.cn/" target="_blank"
-							rel="noopener external noreferrer nofollow">乐团音乐网</a></td>
-					<td><a href="https://thewind.xyz/" target="_blank"
-							rel="noopener external noreferrer nofollow">音乐搜索</a></td>
-					<td><a href="https://music.y444.cn/#/" target="_blank"
-							rel="noopener external noreferrer nofollow">下歌吧</a></td>
-					<td><a href="https://www.dtshot.com/" target="_blank"
-							rel="noopener external noreferrer nofollow">无损音乐吧</a></td>
-					<td><a href="https://www.xlebbs.com/" target="_blank"
-							rel="noopener external noreferrer nofollow">xlebbs-音乐论坛</a></td>
-					<td><a href="https://www.cdbao.net/" target="_blank"
-							rel="noopener external noreferrer nofollow">CD包音乐网（需要登陆才能下载）</a></td>
-					<td><a href="https://tools.liumingye.cn/music/#/" target="_blank"
-							rel="noopener external noreferrer nofollow">My Free MP3</a></td>
-				</table>
-				<p>设计、图片、图书、办公、教程及其他</p>
-				<table>
-					<tr>
-						<td><a href="http://www.nlc.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">中国国家图书馆</a></td>
-						<td><a href="https://hao.uisdc.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">优设导航</a></td>
-						<td><a href="https://tupian.sioe.cn/b/bing-home-image/" target="_blank"
-								rel="noopener external noreferrer nofollow">Windows开机照片</a></td>
-						<td><a href="https://unsplash.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">Unsplash（图片素材）</a></td>
-					</tr>
-					<tr>
-						<td><a href="http://www.bewindoweb.com/dwg.php" target="_blank"
-								rel="noopener external noreferrer nofollow">网站书签</a></td>
-						<td><a href="https://tanqingbo.cn/CSBook001/" target="_blank"
-								rel="noopener external noreferrer nofollow">IT码农</a></td>
-						<td><a href="http://www.hippter.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">PPT导航网站</a></td>
-						<td><a href="https://www.bangongziyuan.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">办公资源</a></td>
-					</tr>
-					<tr>
-						<td><a href="http://www.wofficebox.com/about.html" target="_blank"
-								rel="noopener external noreferrer nofollow">万彩办公大师</a></td>
-						<td><a href="https://wallpapers.microsoft.design/" target="_blank"
-								rel="noopener external noreferrer nofollow">微软设计-壁纸</a></td>
-						<td><a href="https://storyset.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">插画免费下载站</a></td>
-						<td><a href="https://www.sitapix.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">西田图像</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.100font.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">免费字体</a></td>
-						<td><a href="http://www.pptkj.net/" target="_blank"
-								rel="noopener external noreferrer nofollow">PPT课件网</a></td>
-						<td><a href="https://www.pptsupermarket.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">PPT超级市场</a></td>
-						<td><a href="https://www.seeseed.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">SeeSeed（设计者的天堂）</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://design.maliquankai.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">码力全开（设计师、开发者的资源库）</a></td>
-						<td><a href="https://www.aigei.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">爱给网（全能素材大师）</a></td>
-						<td><a href="https://www.book118.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">E书联盟</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.runoob.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">菜鸟教程</a></td>
-						<td><a href="https://www.ipaddress.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">域名解析（查询IP）</a></td>
-						<td><a href="https://www.neea.edu.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">中国教育考试网</a></td>
-						<td><a href="https://www.getitfree.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">正版中国</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://www.chsi.com.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">学信网</a></td>
+					<li><a href="https://next.itellyou.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">下一站，我告诉你</a></li>
+					<li><a href="http://www.aichunjing.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">爱纯净
+							- 纯净系统下载网站</a></li>
+					<li><a href="https://www.xitongku.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">系统库
+							- 提供原版系统和安装教程的网站</a></li>
+
+				</ul>
+
+				<a name="A3" class="content-item">图片转base64编码</a>
+				<ul>
+					<li><a href="https://c.runoob.com/front-end/59/" target="_blank"
+							rel="noopener external noreferrer nofollow">链接1</a></li>
+					<li><a href="https://tool.chinaz.com/tools/imgtobase/" target="_blank"
+							rel="noopener external noreferrer nofollow">链接2</a></li>
+					<li><a href="https://www.serr.com/cn/base64_encode_img.html" target="_blank"
+							rel="noopener external noreferrer nofollow">链接3</a></li>
+					<li><a href="https://imgtobase64.d777.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">链接4</a></li>
+					<li><a href="https://www.sojson.com/image2base64.html" target="_blank"
+							rel="noopener external noreferrer nofollow">链接5</a></li>
+					<li><a href="http://www.jsons.cn/img2base64/?ivk_sa=1024320u" target="_blank"
+							rel="noopener external noreferrer nofollow">链接6</a></li>
+				</ul>
+				<a name="A4" class="content-item">解压缩</a>
+				<ul>
+					<li><a href="https://www.bandisoft.com/bandizip/" target="_blank"
+							rel="noopener external noreferrer nofollow">Bandizip</a></li>
+					<li><a href="https://www.winrar.com.cn/download.htm" target="_blank"
+							rel="noopener external noreferrer nofollow">WinRAR</a></li>
+					<li><a href="https://www.7-zip.org/" target="_blank"
+							rel="noopener external noreferrer nofollow">7-Zip</a></li>
+					<li><a href="https://peazip.github.io/" target="_blank"
+							rel="noopener external noreferrer nofollow">PeaZip</a></li>
+				</ul>
+				<a name="A5" class="content-item">AMD | Inter | NVIDIA相关驱动下载</a>
+				<ul>
+
+					<li><a href="https://www.nvidia.cn/geforce/drivers/" target="_blank"
+							rel="noopener external noreferrer nofollow">官方GeForce驱动程序 | NVIDIA</a></li>
+					<li><a href="https://www.nvidia.cn/Download/index.aspx?lang=cn" target="_blank"
+							rel="noopener external noreferrer nofollow">官方驱动 | NVIDIA</a></li>
+					<li><a href="https://www.intel.cn/content/www/cn/zh/support/detect.html" target="_blank"
+							rel="noopener external noreferrer nofollow">英特尔 驱动程序和支持助理</a></li>
+
+					<li><a href="https://www.intel.cn/content/www/cn/zh/download-center/home.html" target="_blank"
+							rel="noopener external noreferrer nofollow">下载英特尔 驱动程序和软件</a></li>
+					<li><a href="https://www.amd.com/zh-hans/support" target="_blank"
+							rel="noopener external noreferrer nofollow">AMD驱动程序与支持 | AMD</a></li>
+					<li><a href="https://www.amd.com/zh-hans" target="_blank"
+							rel="noopener external noreferrer nofollow">AMD官网 | AMD</a></li>
+				</ul>
+				<a name="A6" class="content-item">在线学习</a>
+				<ul>
+
+					<li><a href="https://le.ouchn.cn/home" target="_blank"
+							rel="noopener external noreferrer nofollow">终身教育平台</a></li>
+					<li><a href="https://www.icourse163.org/" target="_blank"
+							rel="noopener external noreferrer nofollow">中国大学MOOC(慕课)</a></li>
+					<li><a href="https://www.51zxw.net/" target="_blank"
+							rel="noopener external noreferrer nofollow">我要自学网</a></li>
+					<li><a href="http://www.dxzy163.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">大学资源网</a></li>
+
+					<li><a href="https://www.bilibili.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">哔哩哔哩</a></li>
+					<li><a href="https://www.examcoo.com/index/ku" target="_blank"
+							rel="noopener external noreferrer nofollow">考试酷</a></li>
+					<li><a href="https://dict.eudic.net/ting" target="_blank"
+							rel="noopener external noreferrer nofollow">每日英语听力</a></li>
+					<li><a href="https://ebook.hep.com.cn/ebooks/index.html#/" target="_blank"
+							rel="noopener external noreferrer nofollow">高教书苑</a></li>
+
+					<li><a href="https://open.163.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">网易公开课</a></li>
+					<li><a href="https://www.yxgapp.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">译学馆</a></li>
+					<li><a href="https://www.hjenglish.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">沪江英语网</a></li>
+					<li><a href="https://www.xuetangx.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">学堂在线</a></li>
+
+					<li><a href="https://www.cnki.net/" target="_blank"
+							rel="noopener external noreferrer nofollow">中国知网</a>
+					</li>
+					<li><a href="https://ke.qq.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">腾讯课堂</a>
+					</li>
+					<li><a href="https://www.imooc.com/course/list" target="_blank"
+							rel="noopener external noreferrer nofollow">慕课网</a></li>
+					<li><a href="http://v.dxsbb.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">大学生自学网</a>
+					</li>
+
+					<li><a href="http://www.howzhi.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">好知网</a>
+					</li>
+					<li><a href="https://www.coursera.org/" target="_blank"
+							rel="noopener external noreferrer nofollow">Coursera--网络学习平台</a></li>
+					<li><a href="https://www.edx.org/" target="_blank"
+							rel="noopener external noreferrer nofollow">edX--在线学习平台</a></li>
+				</ul>
+				<a name="A7" class="content-item">系统启动U盘制作工具</a>
+				<ul>
+
+					<li><a href="http://www.udashi.com/download/" target="_blank"
+							rel="noopener external noreferrer nofollow">U大师 - 启动盘制作工具</a></li>
+					<li><a href="https://www.laomaotao.net/" target="_blank"
+							rel="noopener external noreferrer nofollow">老毛桃
+							- 启动盘制作工具</a></li>
+					<li><a href="http://www.winbaicai.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">大白菜
+							- 启动盘制作工具</a></li>
+					<li><a href="https://u.diannaodian.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">电脑店
+							- 启动盘制作工具</a></li>
+
+					<li><a href="http://www.xiaobingxitong.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">小兵U盘启动</a></li>
+					<li><a href="https://www.sysceo.com/usm.html" target="_blank"
+							rel="noopener external noreferrer nofollow">U盘魔术师</a></li>
+					<li><a href="http://www.zhuangjiba.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">装机吧
+							- 启动盘制作工具</a></li>
+					<li><a href="http://www.uqidong.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">u启动 -
+							启动盘制作工具</a></li>
+
+					<li><a href="http://www.udaxia.com/index.html" target="_blank"
+							rel="noopener external noreferrer nofollow">U大侠 - 启动盘制作工具</a></li>
+					<li><a href="http://www.upanok.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">一键U盘 -
+							启动盘制作工具</a></li>
+					<li><a href="https://www.wepe.com.cn/download.html" target="_blank"
+							rel="noopener external noreferrer nofollow">微PE工具箱</a></li>
+					<li><a href="https://www.upe.net/" target="_blank" rel="noopener external noreferrer nofollow">优启通 -
+							启动盘制作工具</a></li>
+
+					<li><a href="http://www.ujiaoshou.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">U教授
+							- 启动盘制作工具</a></li>
+					<li><a href="https://www.oschina.net/p/rufus?hmsr=aladdin1e1" target="_blank"
+							rel="noopener external noreferrer nofollow">Rufus - U盘启动系统制作工具链接1</a></li>
+					<li><a href="https://gitee.com/mirrors/Rufus?utm_source=alading&utm_campaign=repo" target="_blank"
+							rel="noopener external noreferrer nofollow">Rufus - U盘启动系统制作工具链接2</a>
+					</li>
+
+					<li><a href="https://rufus.ie/downloads/" target="_blank"
+							rel="noopener external noreferrer nofollow">Rufus - U盘启动系统制作工具链接3</a></li>
+					<li><a href="http://www.uqb.cn/" target="_blank" rel="noopener external noreferrer nofollow">U启宝
+							- U盘启动盘制作工具</a></li>
+					<li><a href="http://ushendu.dunjiab.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">U深度
+							- U盘启动盘制作工具</a></li>
+				</ul>
+				<a name="A8" class="content-item">各品牌电脑（或电脑部件）相关服务与支持</a>
+				<ul>
+
+					<li><a href="https://newsupport.lenovo.com.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">联想</a></li>
+					<li><a href="https://support.hp.com/cn-zh/drivers" target="_blank"
+							rel="noopener external noreferrer nofollow">惠普</a></li>
+					<li><a href="https://consumer.huawei.com/cn/support/" target="_blank"
+							rel="noopener external noreferrer nofollow">华为</a></li>
+					<li><a href="https://www.asus.com.cn/support/Download-Center/" target="_blank"
+							rel="noopener external noreferrer nofollow">华硕</a></li>
+					<li><a href="https://www.dell.com/support/home/zh-cn?app=drivers" target="_blank"
+							rel="noopener external noreferrer nofollow">戴尔</a></li>
+					<li><a href="https://www.dell.com/support/home/zh-cn" target="_blank"
+							rel="noopener external noreferrer nofollow">戴尔</a></li>
+
+					<li><a href="https://newthink.lenovo.com.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">Thinkpad</a></li>
+					<li><a href="https://support.apple.com/zh-cn" target="_blank"
+							rel="noopener external noreferrer nofollow">苹果</a></li>
+					<li><a href="https://www.ipason.com/portal/download_center.html" target="_blank"
+							rel="noopener external noreferrer nofollow">攀升</a></li>
+					<li><a href="https://www.acer.com.cn/support.html?type=1" target="_blank"
+							rel="noopener external noreferrer nofollow">宏基</a></li>
+					<li><a href="https://www.colorful.cn/server.aspx?classid=2825" target="_blank"
+							rel="noopener external noreferrer nofollow">七彩虹</a></li>
+					<li><a href="https://www.hihonor.com/cn/support/" target="_blank"
+							rel="noopener external noreferrer nofollow">荣耀</a></li>
+
+					<li><a href="http://www.hasee.com/after/index" target="_blank"
+							rel="noopener external noreferrer nofollow">神舟</a></li>
+					<li><a href="https://www.leishen.cn/service/download" target="_blank"
+							rel="noopener external noreferrer nofollow">雷神</a></li>
+					<li><a href="https://www.mi.com/service/notebook/drivers" target="_blank"
+							rel="noopener external noreferrer nofollow">小米</a></li>
+					<li><a href="https://www.mechrevo.com/service/" target="_blank"
+							rel="noopener external noreferrer nofollow">机械革命</a></li>
+					<li><a href="https://official.tongfangpc.com/servicelink/driver_download.aspx" target="_blank"
+							rel="noopener external noreferrer nofollow">清华同方</a></li>
+					<li><a href="https://cn.msi.com/support#support_download" target="_blank"
+							rel="noopener external noreferrer nofollow">微星</a></li>
+
+					<li><a href="https://www.dell.com/support/home/zh-cn?app=drivers" target="_blank"
+							rel="noopener external noreferrer nofollow">外星人（同戴尔）</a></li>
+					<li><a href="https://support.microsoft.com/zh-cn/surface" target="_blank"
+							rel="noopener external noreferrer nofollow">微软</a></li>
+					<li><a href="http://www.yeston.net/" target="_blank"
+							rel="noopener external noreferrer nofollow">盈通</a>
+					</li>
+					<li><a href="https://www.gigabyte.cn/Support" target="_blank"
+							rel="noopener external noreferrer nofollow">技嘉</a></li>
+					<li><a href="http://www.szgalaxy.com/__ZH_GB__/Home5/service_download" target="_blank"
+							rel="noopener external noreferrer nofollow">影驰驱动下载</a></li>
+					<li><a href="http://www.dataland.com.cn/drivedown.aspx?nid=8&typeid=185" target="_blank"
+							rel="noopener external noreferrer nofollow">迪兰驱动下载</a></li>
+
+					<li><a href="https://semiconductor.samsung.com/cn/consumer-storage/support/tools/" target="_blank"
+							rel="noopener external noreferrer nofollow">下载 三星（Samsung）工具和软件</a>
+					</li>
+					<li><a href="https://cn.pradeon.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">磐镭官网</a></li>
+					<li><a href="http://www.maxsun.com.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">铭瑄</a></li>
+					<li><a href="http://webuat.zotac.com/cn/sitemap" target="_blank"
+							rel="noopener external noreferrer nofollow">索泰</a></li>
+					<li><a href="http://www.szgainward.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">耕升</a></li>
+					<li><a href="http://www.gunnir.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">蓝戟</a>
+					</li>
+
+					<li><a href="https://www.asrock.com/index.cn.asp" target="_blank"
+							rel="noopener external noreferrer nofollow">华擎</a></li>
+					<li><a href="http://www.onda.cn/" target="_blank" rel="noopener external noreferrer nofollow">昂达</a>
+					</li>
+					<li><a href="http://www.biostar.com.cn/app/en-us/" target="_blank"
+							rel="noopener external noreferrer nofollow">映泰</a></li>
+					<li><a href="https://nzxt.com/en-GB" target="_blank"
+							rel="noopener external noreferrer nofollow">NZXT</a></li>
+					<li><a href="https://www.mthreads.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">摩尔线程</a></li>
+					<li><a href="https://www.kingston.com.cn/cn" target="_blank"
+							rel="noopener external noreferrer nofollow">金士顿</a></li>
+
+					<li><a href="https://www.ymtc.com/cn/techsupport.html" target="_blank"
+							rel="noopener external noreferrer nofollow">长江存储</a></li>
+					<li><a href="https://www.kioxia.com.cn/zh-cn/top.html" target="_blank"
+							rel="noopener external noreferrer nofollow">铠侠</a></li>
+					<li><a href="https://www.adata.com.cn/cn" target="_blank"
+							rel="noopener external noreferrer nofollow">威刚</a></li>
+					<li><a href="https://www.crucial.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">英睿达</a></li>
+					<li><a href="http://www.gskill.com/cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">芝奇</a></li>
+					<li><a href="http://www.gloway.com.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">光威</a></li>
+
+					<li><a href="https://www.kingbank.com/cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">金百达</a></li>
+					<li><a href="https://www.corsair.com/zh/zh/" target="_blank"
+							rel="noopener external noreferrer nofollow">美商海盗船</a></li>
+					<li><a href="http://www.powev.com.cn/asgard/" target="_blank"
+							rel="noopener external noreferrer nofollow">阿斯加特</a></li>
+					<li><a href="http://www.kimtigo.com.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">Kimtigo金泰克</a></li>
+					<li><a href="https://support.wdc.com/downloads.aspx?lang=cn" target="_blank"
+							rel="noopener external noreferrer nofollow">西部数据软件与下载</a></li>
+				</ul>
+				<a name="A9" class="content-item">在线便捷工具</a>
+				<ul>
+
+					<li><a href="https://www.omegaxyz.com/onlinetools/web-running/" target="_blank"
+							rel="noopener external noreferrer nofollow">HTML / JS代码运行器</a></li>
+					<li><a href="https://www.hipdf.com/cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">HiPDF工具</a></li>
+					<li><a href="https://www.bmcx.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">便民查询网</a></li>
+					<li><a href="https://www.gaituya.com/?zhljj01" target="_blank"
+							rel="noopener external noreferrer nofollow">改图鸭</a></li>
+
+					<li><a href="https://app.xunjiepdf.com/?zhljj01" target="_blank"
+							rel="noopener external noreferrer nofollow">迅捷PDF转换器</a></li>
+					<li><a href="https://toolb.cn/textspeech" target="_blank"
+							rel="noopener external noreferrer nofollow">在线文本转声音</a></li>
+					<li><a href="https://vocalremover.org/zh/" target="_blank"
+							rel="noopener external noreferrer nofollow">在线音频处理</a></li>
+					<li><a href="https://www.pdfpai.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">PDF派</a></li>
+
+					<li><a href="https://cn.office-converter.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">格式转换大全</a></li>
+					<li><a href="https://gitmind.cn/app/template?lang=zh" target="_blank"
+							rel="noopener external noreferrer nofollow">在线思维导图</a></li>
+					<li><a href="https://www.toolnb.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">小工具合集</a></li>
+					<li><a href="https://www.aconvert.com/cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">文件在线转换</a></li>
+
+					<li><a href="https://tools.pdf24.org/zh/" target="_blank"
+							rel="noopener external noreferrer nofollow">PDF24 Tools</a></li>
+					<li><a href="https://www.remove.bg/zh" target="_blank"
+							rel="noopener external noreferrer nofollow">一键抠图</a></li>
+					<li><a href="https://pdf.yozocloud.cn/p/home" target="_blank"
+							rel="noopener external noreferrer nofollow">永中PDF工具集</a></li>
+				</ul>
+				<a name="A10" class="content-item">杂项综合</a>
+				<p class="content-item-p">搜索</p>
+				<ul>
+
+					<li><a href="http://www.jsousuo.com/?1000" target="_blank"
+							rel="noopener external noreferrer nofollow">极简搜索</a></li>
+					<li><a href="https://www.haipc.cn/?ku" target="_blank"
+							rel="noopener external noreferrer nofollow">嗨PC主页
+							- 轻快上网嗨PC</a></li>
+					<li><a href="https://www.lzpan.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">懒盘搜索</a></li>
+
+					<li><a href="https://aur.one/" target="_blank"
+							rel="noopener external noreferrer nofollow">一个开始(从搜索开始)</a></li>
+					<li><a href="https://www.moulem.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">某柠檬</a></li>
+					<li><a href="https://search.chongbuluo.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">虫部落-搜索大杂烩</a></li>
+				</ul>
+				<p class="content-item-p">工具、软件相关</p>
+				<ul>
+
+					<li><a href="https://otp.landian.vip/zh-cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">Office Tool Plus | Office部署工具</a></li>
+					<li><a href="https://iknow.lenovo.com.cn/tool/lists" target="_blank"
+							rel="noopener external noreferrer nofollow">优化工具 ( 部分工具windows系统通用 )</a></li>
+
+					<li><a href="https://www.itsk.com/portal.php" target="_blank"
+							rel="noopener external noreferrer nofollow">驱动，U启，软件</a></li>
+					<li><a href="https://mp.weixin.qq.com/s/XxgDOaGjt9dct2kLE136Ig" target="_blank"
+							rel="noopener external noreferrer nofollow">软件仓库</a></li>
+
+					<li><a href="https://blog.csdn.net/qq_43843708/article/details/127138116" target="_blank"
+							rel="noopener external noreferrer nofollow">Windows常用运行库合集（VC++、DirectX、.NET）</a>
+					</li>
+					<li><a href="https://www.ghxi.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">果核剥壳</a>
+					</li>
+
+					<li><a href="https://www.iobit.com/en/iobit-unlocker.php" target="_blank"
+							rel="noopener external noreferrer nofollow">IObit Unlocker-帮助用户解锁无法删除文件的小工具</a></li>
+					<li><a href="https://toolgg.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">我的工具箱</a>
+					</li>
+					<li><a href="http://www.wetools.com/html-formatter" target="_blank"
+							rel="noopener external noreferrer nofollow">微工具</a></li>
+
+					<li><a href="https://c.runoob.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">菜鸟工具</a>
+					</li>
+					<li><a href="http://www.webkaka.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">卡卡网</a></li>
+					<li><a href="https://www.oo-software.com/en/ooappbuster" target="_blank"
+							rel="noopener external noreferrer nofollow">O&O App Buster - win删除己安装的应用程序</a></li>
+
+					<li><span>KMS激活工具（win系统，office）：<a href="https://aichunjing.lanzoui.com/b710887" target="_blank"
+								rel="noopener external noreferrer nofollow">蓝秦云</a></span></li>
+					<li><a href="https://lxldwp.lanzoum.com/b01vrk4qf" target="_blank"
+							rel="noopener external noreferrer nofollow">自用网盘资源（访问密码：2001）</a></li>
+					<li><a href="https://www.toolnb.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">爱资料工具</a></li>
+
+					<li><a href="https://tools.liumingye.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">刘明野的工具箱</a></li>
+					<li><a href="https://cp.anyknew.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">拷贝兔</a></li>
+					<li><a href="https://www.huorong.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">火绒安全</a></li>
+					<li><a href="https://www.voidtools.com/zh-cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">Everything-快速文件搜索神器</a></li>
+
+					<li><a href="https://geekuninstaller.com/download" target="_blank"
+							rel="noopener external noreferrer nofollow">Geek Uninstall-程序卸载工具</a></li>
+					<li><a href="https://www.todesk.com/download.html" target="_blank"
+							rel="noopener external noreferrer nofollow">ToDesk-远程控制</a></li>
+					<li><a href="https://www.snipaste.com/download.html" target="_blank"
+							rel="noopener external noreferrer nofollow">Snipaste-截图工具</a></li>
+
+					<li><a href="https://winaero.com/download-universal-watermark-disabler/" target="_blank"
+							rel="noopener external noreferrer nofollow">Universal Watermark
+							Disabler-移除Win桌面版本号水印</a></li>
+					<li><a href="https://pcmanager.microsoft.com/?channel=10000" target="_blank"
+							rel="noopener external noreferrer nofollow">微软电脑管家</a></li>
+
+					<li><a href="https://www.hwinfo.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">HWiNFO-硬件检测软件</a></li>
+					<li><a href="https://www.superpi.net/" target="_blank"
+							rel="noopener external noreferrer nofollow">Super
+							PI - cpu测试软件</a></li>
+					<li><a href="https://github.com/PeterSick/ViVeTool-GUI" target="_blank"
+							rel="noopener external noreferrer nofollow">ViVeTool GUI - 更直观的开启新功能(用于win11测试版)</a>
+					</li>
+
+					<li><a href="https://github.com/thebookisclosed/ViVe/releases" target="_blank"
+							rel="noopener external noreferrer nofollow">ViVeTool</a></li>
+					<li><a href="https://sspai.com/post/74286" target="_blank"
+							rel="noopener external noreferrer nofollow">ViVeTool工具的使用</a></li>
+					<li><a href="https://github.com/521xueweihan/GitHub520" target="_blank"
+							rel="noopener external noreferrer nofollow">试图解决GitHub访问慢、图片加载不出来的问题</a></li>
+
+					<li><a href="https://github.com/microsoft/PowerToys/releases" target="_blank"
+							rel="noopener external noreferrer nofollow">微软PowerToys</a></li>
+					<li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank"
+							rel="noopener external noreferrer nofollow">VirtualBox虚拟机</a></li>
+					<li><a href="https://gh.api.99988866.xyz/" target="_blank"
+							rel="noopener external noreferrer nofollow">GitHub文件加速下载</a></li>
+					<li><a href="https://ghproxy.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">DoGet-GitHub文件加速下载</a></li>
+
+					<li><a href="https://huajiakeji.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">谷歌插件</a></li>
+					<li><a href="http://www.jsons.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">在线工具导航</a></li>
+					<li><a href="https://www.sojson.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">在线工具</a></li>
+					<li><a href="http://www.tbtool.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">图吧工具箱</a></li>
+
+					<li><a href="https://www.wandongli.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">万动力
+							- Logo在线设计神器</a></li>
+					<li><a href="https://www.aconvert.com/cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">在线转换器</a></li>
+					<li><a href="https://statically.io/" target="_blank" rel="noopener external noreferrer nofollow">
+							statically</a>
+					</li>
+					<li><a href="http://www.bootsapmb.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">bootsapmb.com - 模板库</a></li>
+				</ul>
+				<p class="content-item-p">音乐相关</p>
+				<ul>
+					<li><a href="http://www.yt66.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">乐团音乐网</a>
+					</li>
+					<li><a href="https://thewind.xyz/" target="_blank"
+							rel="noopener external noreferrer nofollow">音乐搜索</a>
+					</li>
+					<li><a href="https://music.y444.cn/#/" target="_blank"
+							rel="noopener external noreferrer nofollow">下歌吧</a></li>
+					<li><a href="https://www.dtshot.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">无损音乐吧</a></li>
+					<li><a href="https://www.xlebbs.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">xlebbs-音乐论坛</a></li>
+					<li><a href="https://www.cdbao.net/" target="_blank"
+							rel="noopener external noreferrer nofollow">CD包音乐网（需要登陆才能下载）</a></li>
+					<li><a href="https://tools.liumingye.cn/music/#/" target="_blank"
+							rel="noopener external noreferrer nofollow">My Free MP3</a></li>
+				</ul>
+				<p class="content-item-p">设计、图片、图书、办公、教程及其他</p>
+				<ul>
+
+					<li><a href="http://www.nlc.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">中国国家图书馆</a>
+					</li>
+					<li><a href="https://hao.uisdc.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">优设导航</a></li>
+					<li><a href="https://tupian.sioe.cn/b/bing-home-image/" target="_blank"
+							rel="noopener external noreferrer nofollow">Windows开机照片</a></li>
+					<li><a href="https://unsplash.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">Unsplash（图片素材）</a></li>
+
+					<li><a href="http://www.bewindoweb.com/dwg.php" target="_blank"
+							rel="noopener external noreferrer nofollow">网站书签</a></li>
+					<li><a href="https://tanqingbo.cn/CSBook001/" target="_blank"
+							rel="noopener external noreferrer nofollow">IT码农</a></li>
+					<li><a href="http://www.hippter.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">PPT导航网站</a></li>
+					<li><a href="https://www.bangongziyuan.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">办公资源</a></li>
+
+					<li><a href="http://www.wofficebox.com/about.html" target="_blank"
+							rel="noopener external noreferrer nofollow">万彩办公大师</a></li>
+					<li><a href="https://wallpapers.microsoft.design/" target="_blank"
+							rel="noopener external noreferrer nofollow">微软设计-壁纸</a></li>
+					<li><a href="https://storyset.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">插画免费下载站</a></li>
+					<li><a href="https://www.sitapix.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">西田图像</a></li>
+
+					<li><a href="https://www.100font.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">免费字体</a></li>
+					<li><a href="http://www.pptkj.net/" target="_blank"
+							rel="noopener external noreferrer nofollow">PPT课件网</a></li>
+					<li><a href="https://www.pptsupermarket.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">PPT超级市场</a></li>
+					<li><a href="https://www.seeseed.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">SeeSeed（设计者的天堂）</a></li>
+
+					<li><a href="https://design.maliquankai.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">码力全开（设计师、开发者的资源库）</a></li>
+					<li><a href="https://www.aigei.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">爱给网（全能素材大师）</a></li>
+					<li><a href="https://www.book118.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">E书联盟</a></li>
+
+					<li><a href="https://www.runoob.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">菜鸟教程</a></li>
+					<li><a href="https://www.ipaddress.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">域名解析（查询IP）</a></li>
+					<li><a href="https://www.neea.edu.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">中国教育考试网</a></li>
+					<li><a href="https://www.getitfree.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">正版中国</a></li>
+
+					<li><a href="https://www.chsi.com.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">学信网</a></li>
 
 
-						<td><a href="https://www.12306.cn/index/" target="_blank"
-								rel="noopener external noreferrer nofollow">12306</a></td>
-						<td><a href="https://bbs.pediy.com/thread-218986.htm" target="_blank"
-								rel="noopener external noreferrer nofollow">绕过PowerShell执行策略的15种方法</a></td>
-						<td><a href="https://www.laomaotao.net/quickquery/" target="_blank"
-								rel="noopener external noreferrer nofollow">U盘启动快捷键</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://jingyan.baidu.com/article/a3aad71af1bf97f0fa00960e.html" target="_blank"
-								rel="noopener external noreferrer nofollow">小白怎么选择台式机硬件（本人原创）</a>
-						</td>
-						<td><a href="https://jingyan.baidu.com/article/9113f81b1076f66a3314c726.html" target="_blank"
-								rel="noopener external noreferrer nofollow">什么样的笔记本电脑好用（本人原创）</a>
-						</td>
-						<td><a href="https://jingyan.baidu.com/article/75ab0bcbbf373497864db2c9.html" target="_blank"
-								rel="noopener external noreferrer nofollow">让windows
-								11的开始菜单不在卡（本人原创）</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://zhutix.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">致美化</a></td>
-						<td><a href="https://www.yiihuu.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">翼狐网</a></td>
-						<td><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5" target="_blank"
-								rel="noopener external noreferrer nofollow">wikiHow（可信赖的万事指南）</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://blog.csdn.net/y814696634/article/details/108713655" target="_blank"
-								rel="noopener external noreferrer nofollow">html5 原生页面添加时间戳解决缓存问题 及 清除缓存的几种方式</a>
-						</td>
-					</tr>
-				</table>
-				<a name="k">常用软件官方下载</a>
-				<table>
-					<tr>
-						<td><a href="https://im.qq.com/download" target="_blank"
-								rel="noopener external noreferrer nofollow">QQ</a></td>
-						<td><a href="https://weixin.qq.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">微信</a></td>
-						<td><a href="https://office.qq.com/download.html" target="_blank"
-								rel="noopener external noreferrer nofollow">TIM</a></td>
-						<td><a href="https://v.qq.com/biu/download" target="_blank"
-								rel="noopener external noreferrer nofollow">腾讯视频</a></td>
-						<td><a href="https://dl-static.iqiyi.com/hz/IQIYIsetup_z43@xt001.exe" target="_blank"
-								rel="noopener external noreferrer nofollow">爱奇艺视频</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://youku.com/product/index?spm=a2ha1.14919748_WEBHOME_GRAY.uerCenter.5!5~5~5~A"
-								target="_blank" rel="noopener external noreferrer nofollow">优酷视频</a></td>
-						<td><a href="https://www.douyu.com/client?tab=client" target="_blank"
-								rel="noopener external noreferrer nofollow">斗鱼直播</a></td>
-						<td><a href="https://www.huya.com/download/" target="_blank"
-								rel="noopener external noreferrer nofollow">虎牙直播</a></td>
-						<td><a href="https://pcconf.api.mgtv.com/getPcDownloadUrl?lastp=ch_home" target="_blank"
-								rel="noopener external noreferrer nofollow">芒果TV</a></td>
-						<td><a href="https://music.91q.com/download" target="_blank"
-								rel="noopener external noreferrer nofollow">千千音乐</a></td>
-						<td><a href="https://download.kugou.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">酷狗音乐</a></td>
-					</tr>
-					<tr>
-						<td><a href="http://www.kuwo.cn/down" target="_blank"
-								rel="noopener external noreferrer nofollow">酷我音乐</a></td>
-						<td><a href="https://y.qq.com/download/index.html" target="_blank"
-								rel="noopener external noreferrer nofollow">QQ音乐</a></td>
-						<td><a href="https://music.163.com/#/download" target="_blank"
-								rel="noopener external noreferrer nofollow">网易云音乐</a></td>
-						<td><a href="https://www.wegame.com.cn/client/" target="_blank"
-								rel="noopener external noreferrer nofollow">Wegame</a></td>
-						<td><a href="https://store.steampowered.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">Steam</a></td>
-						<td><a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank"
-								rel="noopener external noreferrer nofollow">谷歌浏览器</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://browser.360.cn/se/" target="_blank"
-								rel="noopener external noreferrer nofollow">360安全浏览器</a></td>
-						<td><a href="https://browser.qq.com/?adtag=SEM170314031" target="_blank"
-								rel="noopener external noreferrer nofollow">QQ浏览器</a></td>
-						<td><a href="http://www.firefox.com.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">火狐浏览器</a></td>
-						<td><a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ" target="_blank"
-								rel="noopener external noreferrer nofollow">微软浏览器</a></td>
-					</tr>
-					<tr>
-						<td><a href="https://ie.sogou.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">搜狗高速浏览器</a></td>
-						<td><a href="https://browser.360.cn/ee/index.html" target="_blank"
-								rel="noopener external noreferrer nofollow">360极速浏览器</a></td>
-						<td><a href="http://www.theworld.cn/" target="_blank"
-								rel="noopener external noreferrer nofollow">世界之窗浏览器</a></td>
-						<td><a href="https://www.opera.com/" target="_blank"
-								rel="noopener external noreferrer nofollow">Opera浏览器</a></td>
-					</tr>
-				</table>
+					<li><a href="https://www.12306.cn/index/" target="_blank"
+							rel="noopener external noreferrer nofollow">12306</a></li>
+					<li><a href="https://bbs.pediy.com/thread-218986.htm" target="_blank"
+							rel="noopener external noreferrer nofollow">绕过PowerShell执行策略的15种方法</a></li>
+					<li><a href="https://www.laomaotao.net/quickquery/" target="_blank"
+							rel="noopener external noreferrer nofollow">U盘启动快捷键</a></li>
+
+					<li><a href="https://jingyan.baidu.com/article/a3aad71af1bf97f0fa00960e.html" target="_blank"
+							rel="noopener external noreferrer nofollow">小白怎么选择台式机硬件（本人原创）</a>
+					</li>
+					<li><a href="https://jingyan.baidu.com/article/9113f81b1076f66a3314c726.html" target="_blank"
+							rel="noopener external noreferrer nofollow">什么样的笔记本电脑好用（本人原创）</a>
+					</li>
+					<li><a href="https://jingyan.baidu.com/article/75ab0bcbbf373497864db2c9.html" target="_blank"
+							rel="noopener external noreferrer nofollow">让windows
+							11的开始菜单不在卡（本人原创）</a></li>
+
+					<li><a href="https://zhutix.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">致美化</a>
+					</li>
+					<li><a href="https://www.yiihuu.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">翼狐网</a></li>
+					<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5" target="_blank"
+							rel="noopener external noreferrer nofollow">wikiHow（可信赖的万事指南）</a></li>
+
+					<li><a href="https://blog.csdn.net/y814696634/article/details/108713655" target="_blank"
+							rel="noopener external noreferrer nofollow">html5 原生页面添加时间戳解决缓存问题 及 清除缓存的几种方式</a>
+					</li>
+				</ul>
+				<a name="A11" class="content-item">常用软件官方下载</a>
+				<ul>
+
+					<li><a href="https://im.qq.com/download" target="_blank"
+							rel="noopener external noreferrer nofollow">QQ</a></li>
+					<li><a href="https://weixin.qq.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">微信</a>
+					</li>
+					<li><a href="https://office.qq.com/download.html" target="_blank"
+							rel="noopener external noreferrer nofollow">TIM</a></li>
+					<li><a href="https://v.qq.com/biu/download" target="_blank"
+							rel="noopener external noreferrer nofollow">腾讯视频</a></li>
+					<li><a href="https://dl-static.iqiyi.com/hz/IQIYIsetup_z43@xt001.exe" target="_blank"
+							rel="noopener external noreferrer nofollow">爱奇艺视频</a></li>
+
+					<li><a href="https://youku.com/product/index?spm=a2ha1.14919748_WEBHOME_GRAY.uerCenter.5!5~5~5~A"
+							target="_blank" rel="noopener external noreferrer nofollow">优酷视频</a></li>
+					<li><a href="https://www.douyu.com/client?tab=client" target="_blank"
+							rel="noopener external noreferrer nofollow">斗鱼直播</a></li>
+					<li><a href="https://www.huya.com/download/" target="_blank"
+							rel="noopener external noreferrer nofollow">虎牙直播</a></li>
+					<li><a href="https://pcconf.api.mgtv.com/getPcDownloadUrl?lastp=ch_home" target="_blank"
+							rel="noopener external noreferrer nofollow">芒果TV</a></li>
+					<li><a href="https://music.91q.com/download" target="_blank"
+							rel="noopener external noreferrer nofollow">千千音乐</a></li>
+					<li><a href="https://download.kugou.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">酷狗音乐</a></li>
+
+					<li><a href="http://www.kuwo.cn/down" target="_blank"
+							rel="noopener external noreferrer nofollow">酷我音乐</a></li>
+					<li><a href="https://y.qq.com/download/index.html" target="_blank"
+							rel="noopener external noreferrer nofollow">QQ音乐</a></li>
+					<li><a href="https://music.163.com/#/download" target="_blank"
+							rel="noopener external noreferrer nofollow">网易云音乐</a></li>
+					<li><a href="https://www.wegame.com.cn/client/" target="_blank"
+							rel="noopener external noreferrer nofollow">Wegame</a></li>
+					<li><a href="https://store.steampowered.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">Steam</a></li>
+					<li><a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank"
+							rel="noopener external noreferrer nofollow">谷歌浏览器</a></li>
+
+					<li><a href="https://browser.360.cn/se/" target="_blank"
+							rel="noopener external noreferrer nofollow">360安全浏览器</a></li>
+					<li><a href="https://browser.qq.com/?adtag=SEM170314031" target="_blank"
+							rel="noopener external noreferrer nofollow">QQ浏览器</a></li>
+					<li><a href="http://www.firefox.com.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">火狐浏览器</a></li>
+					<li><a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ" target="_blank"
+							rel="noopener external noreferrer nofollow">微软浏览器</a></li>
+
+					<li><a href="https://ie.sogou.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">搜狗高速浏览器</a></li>
+					<li><a href="https://browser.360.cn/ee/index.html" target="_blank"
+							rel="noopener external noreferrer nofollow">360极速浏览器</a></li>
+					<li><a href="http://www.theworld.cn/" target="_blank"
+							rel="noopener external noreferrer nofollow">世界之窗浏览器</a></li>
+					<li><a href="https://www.opera.com/" target="_blank"
+							rel="noopener external noreferrer nofollow">Opera浏览器</a></li>
+				</ul>
 			</div>
-			<a href="#top" id="fixed"><img class="top" src="data:image/png;base64,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" alt="顶部"></a>
-			<a href="javascript:window.location.reload()"><img class="fresh" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAYAAACLz2ctAAAAAXNSR0IArs4c6QAAD0BJREFUeF7tnV1sXEcVx//nbuK0aZqmBamigEhbiT6ARGyLthIVdex2txW0SR+KkIrUDUgVgqJ4FyHUF3BeUB5a2xUfEhEoWwl4oA84qipqt3Y3UBHREtt94QEJ4aqovFTgVk6bj+49aPaunex67Xvmzv3azdnH5MycM//5ee7MnLlzCfpTBTJUgDL0ra5VASiACkGmCiiAmcqvzhVAZSBTBRTATOVX5wqgMpCpAgpgpvKrcwVQGchUAQUwU/nVuRhArhYvAbRDJYtJAeanaGrueEy19Ww1CmCWXefzN2h67rdZhpC1bwUwyx5gNOA1vkLPvDKbZRhZ+lYAs1S/6ZvPgxpfpmfm38g8lAwCUAAzEH2TS+ZVUOMumpz/Rx7CSTMGBTBNtbf1xe8AuJsm597OTUgpBKIApiCyhYt/gnEnTc3+16JMT5sqgPnrviWsDdxDJ174IH+hxR+RAhi/pu41Mi/g3zcU6fnnG+6V5bsGOYCV4kUQ7cx3c/opOn6eJue+1k8t6taW+AHce2EnTdQ/6nfhmhso1fvHAO+V0LYy/gxgFwh3htq2G/ycJmeftCzTU+YKoEN3WQD4EgYaX8fFwl9BuMPKZZ+n7BRAKxrajW0ApKnZB3m89Al4/DeAbrFy28cpu/gBXHt3gE6cvWQlcI8a83jpPnh4WRD+LE3OPhA8tsc+CzYjIe0TlAtM+jhlpwCKKdhsGAXAJk/fH/siuPAngK6Ru+/PlJ0CKCdgk2VUAAMI7yvBL7wIQkEcQh+m7OIHcO/bu2ji7xfFovawoQuATQjHi4/Bo9/YSdBfKTsF0K7326xdAQzmhMWnAPqJZRh9k7KTA1gtXQAwECqUjoDdJNpYhHT7T66Wfgbgu6Hathv0RcoufgAvedfQT/9oYO37Xxwj4LpIXC3+HqBHrUTrg5SdAmjV4+3GsQL46KMFfOq9ORCN2oXU2yk7BdCut2OfA15ZIT/x0G7sufgagEHLsHo2ZacAWvZ0GzARNqLD3HGldBMIrwO4Pcy2/a+hN9+yix/AvReupYn6eSvxetQ4zkdwG9jV4qfBeANEN1tJ04MpOwXQqoeTmwN2hsGV0udAOAPgenGIPZiyUwDFvbvZMKkRcGNlPH7/l+B5C6Ltr43weitlJwewUjoPwq7Q/uL3d9PUmQ9D7frAIGkAjURcKT4EohkAnliyHkrZKYDiXk1/BNwYCavFbwL0a7tQeyNlpwDa9Wqi2zDbhcKV0o9AOGYZbu5TdvEDuDZw3dXyRlcaj+C21XGl+CsQfcsSwlyn7BRAy95Meh9w21EQIFRLZj74sFXYOU7ZKYBWPZneNsxWYfETwzux5+NmZXyPXej5TNnFD6DHe+jpuXN24vSmddqP4I1FyXdG9uCagTMAfd5Sudyl7OQAVkssaqzOAbvJtO1xLJGuHUZ8dOxmeIW/gOg2q/KMx2hq9ndWZRI0lgMo3QfUETAVAJt7hONjt4EKr4PoY2JGcvaapw2A50DYHdrQ8xeup1/U10Lt+sDA4hGcn9YqgPnpC9dIFEBXBc2yXvjjSklHwM55mPw4llDlFMx0BExB5JRc6AjoLrSOgA4aKoAO4rWKKoAOGiqADuIpgO7iKYDuGuoI6KChAuggno6A7uIpgO4a6gjooKEC6CCejoDu4uWpBq7efxzwfhgak+4DhkqkBhEUUADXRbuKcsEROEmsiAKoACYGl6RiBVABlHCSmI0CqAAmBpekYgVQAZRwkpiNAqgAJgaXpGIFUAGUcJKYjQKoACYGl6RiBVABlHCSmI0CqAAmBpekYgVQAZRwkphN/wNYLa4BdF2ogpqKC5UoCQOulJ4E8fHQPurZwwgKYBLcxF4nH33gDnj8BaD5cexhEN/d9lHEngVQX8uMHZY0KuTvPbgLA427wDDfHzkIxgxNzU2l4VviQw+kSlRSm8QUUAATk1YrliigAEpUUpvEFFAAE5NWK5YooABKVFKbxBRQABOTViuWKKAASlRSm8QUUAATk1YrliigAEpUUpvEFFAAE5NWK5YooABKVMrQZqk8so+JTG63+SP2DgC8D6BVJn/58r/zm4O1+mqGoUZyrQBGki2ZQuuwEdMIg0YAPgDQPrk3XmHQsgdeBvHy4MlXT8nLZmOpAGaj+4ZXAx2ocIgZZQAj8YbDqwzMeER1cONUHkdIBTDeHhfXtlS+b8QHHyXgsLiQoyGDax78Y4O1+opjVbEVVwBjk1JWkQGPwT+Of7ST+TdWeQJRAZT3m5PlUnnkAKNgzuHF/JiNHlYLxEqWj2YFMHr/WZUMAPSmAbrXqmDixrxKoInB2vyzibvq4kABTFn14BHs1wD6TMquw9zVCY1H0h4NFcCwbkno/5fKo2UfNE3ADQm5iFCtGQ39g4O1+sb+YoRKrIoogFZyxWtstmB8eOMAjecJRAIfGawt1OJtbffaFMA0VA7xsVQe2c8oTAB4PAfhNENIC0IFMMEeXzoy9rjPPDJcWzgicbN5ocJvAVQncB3wWnt3H62aR6SxBXY0syQ+/BEC7W9lTjbSdhKf29mkAaEC6NpLHeWXjhw85DMdDjaYgzQaoXGjzeQ+gAsrNmXWwzCjqQ/P+C8Dl3PIUZuZNIQKYNSeuaKcAcaH93ir0zflbgl0cLD2Sj0GV1ZVtDa9xwEcsirYYUxoDCa1MFEAI/ZMa6RppdLM42/rH4Mrw7WF6YiunIu1Hu1m6yfi47m5Or41yogcFrwCGKZQ+0i3Hygc4ubjDeYxKfox+Nnh2oIZiTL9nS2PThDIpAGj/OpDtfmDUQpuV0YBDFF0/bSKz2jN66J0AZ8eqi3kIgXnMhomMZIrgFvwFCwmvHJcp1WGavNiraMgblOmee4QXt3+kRz/o1gsCl9FlxMtlsfMJmyse3KEhplD5eYYVHQI8dxQbd5MQWL5KYBbjYBBznYirsMDBDwyWJufiaXXYqokKoRx/jEpgKFzwNEyAwZEp8MDDD42XFsw2Y5c/YLVfGHZMhUY2yioAApxMCtIx5ztqaHafGqnn4XNapotlccOM/AHmzJxjYIKoIXqrUfWEpppL+vf8lBtftC6VEoFzpZHpwl0VOourhFdAZQq3hwpmocG/mVRpM00TyvhzjYEJ3MKK/JHMa8M1RZujarFejkF0ELBs+XRcQJFvt42q5SctIm2G9VxpOgUQGnvAFgsjy3ZZEA6q046sW/RlK6mtqNgHBkeBVDYa8H8r/A/oXlXszg6zMW/pKzdHqj7Y1gBlPSK5UqRgfe6z6Xyk5Lbqtm2K2Lbo2abnwrCDriaMiHdJLGbH/Fpgl9meOYEyhVvwfHqUG3hRqHkmZmdLY+tShcjrvNaHQGF3bxYHjW5U9ErlVduUbTegjOvYzaPQrmOGMJwncwWy2MmYyM6Q+i6HaMACrvKZgHSbVQwb8GZjArBK2dxOFXYzKaZzWjvOq9VAIU9s1geY6Epttrvax7tAvYndbpYGl+Ynd080G1eqwCG9Ubr/+MAUOgqc7PWUf5XZYEogDKdHK2uLgBttpzyBqDHe+jpuXOO/Z2r4nZ7gPzmUG1BfFw/Vw29Ipi0/uAsHsHFD0B0bahgawPX0YkXPgi16zEDeYe4jQh5kMXuDw5bznklbZEDWC1+2Pbd2a1q5/d309SZDyXOe8nGAsCe2OvbTvt8zgEVQOdVcK/8weUTwErpPAi7QkXce+FamqifD7XrMYPF8uiK9FR0HKdEkpbH7Eua6z667UkGe5Z0UhaD25TD4hFcugBgQBZUj1gxXqKp2Qcl0dpkQvL4/kdnG9ePljUvMUfD3JK68cKUzYGEFDMhxYsg2inprJ6xYfyHpmZvkcRr0ylAvG+OSeKztel8zDJ4unWB+apN1sf1XWGLEbB4CaAdtg3Nvf3AuZvo+Guhx6zsDqO6H1NKWrfuK13z3i+mGSR+eSq9wwjVPgWQuEjPzL0c1uGtS8bNgVTRrxfmgTbz2q0a7fqagXwErJQ+AqEgUr+njPgHNDn3tCRkm2NKrkl6STyuNjbz2u6+3BYgpk45gNVSA4Dn2ujclWd+gabmHpbEZTcPjP8aC0mMNjY2p1661es6/7MDsFL0QSQG1kaIjG0vYu3dPXTi7KWwOOxOiTQ/CJPLl9HX22m33bJZnTjeDRYDxdWSeCM2rCNz9/8+vkrTsy9K4rJ5DAP5HgVt57Xt+rg/fu1GwH4GEPxLmpz7tgxA2xe4MTNcm39EUncWNvIUY2d0vEJEE4Mn559ziVtHwKZ6/A5Nzn1SImSUl9PjmCtJYotis1geXba/pq3NU51Ax6Ke8hYDGKVx/VrGbjESqJDXbZkobem+INmcUZH0vwIoUanDJsoo2JoPpvoVIknTXFfCnT4IPAH4z0rvk1YAJb3Uxcb2Mp+givQ/hRXWPLuTL2G1Ndv4psmmSL+0pABKNO1i07opy8yfLO8NzBeEtodPu8vFbwWHGvxp21tgFcCIAJpitvuCl11l+4nUzibbbS21xvLg9ocZQsNAF/njhgqgA4CmqOMk3nwi9YjtqOEY8qbi0pRc68qRGQNeXNcNK4Ax9KbbVkZwAsVm4h5DyG1VCBYipwg8A/gz0sWFNEYFUKrUNnYR71nuqJFXW/OoY2mPiN1TcsFiIgnormy4AhgDgMF80HwvrlCXXuqzvVteMTAS8czQyVdPS0I0fwSgwr0+8wEPWLUZUS+n5JqLCXMw1Yx0qXxSQgGU9K7QJl4Ir3TK5n0UA+WqB25O+H1gf/CJ1ubWx/7N91bbpcpM7C6LCaFEm8wUwKjKbVEuOQgjB7pMoErUVFlkr8KCCqBQKBszl++x2fixtM3FirszZgXQshel5q0NXvPJL9E9e9J6Xe0YXPPgm7fgVl3riqO8AhiHitvUYV5mAmginsVJXMFmv/Wz3hIFMK4+3aae1uEF88HqXI2GAK8QfHNAIpUVbzeJFMAUAFx3EaTu2IyIoqt+Ew7tOUJjIkv4TPsUwIR7uVv1rXujY/sSp10TggvUswZPH8F2vZaIdesolLk72nyN/YZEnDQrTX+DWdoWHQGlSiVsZ2D04RsQD9sf8eoWHJ9mYNmDX8tig1kqlwIoVSpFu+Ay8x0HfPgHCHQgyHQ0f/vW398ITqYEWZHgRysErgP+cp6B65RRAUwRLHW1WQEFUKnIVAEFMFP51bkCqAxkqoACmKn86lwBVAYyVUABzFR+da4AKgOZKqAAZiq/OlcAlYFMFfg/cbD1GZhYGsMAAAAASUVORK5CYII=" alt="刷新"></a>
-			<a href="#bottom"><img class="bottom" src="data:image/png;base64,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" alt="底部"></a>
-		</div>
-		<div id="bottom"></div>
-	</body>
-	<script>
-		var _hmt = _hmt || [];
-		(function() {
-			var hm = document.createElement("script");
-			hm.src = "https://hm.baidu.com/hm.js?635582c6d82d9ba6aa8e49599de6d0bb";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(hm, s);
-		})();
-	</script>
-	<script charset="utf-8"" defer type=" text/javascript" src="https://cdn.jsdelivr.net/gh/lxl-xiaolong/liu-xiaolong@main/js/jQuery%20v3.6.3.js"></script>
-	<script>
-		function runTime() {
-		var d = new Date(),
-		str = '';
-		BirthDay = new Date('2022-08-09');
-		today = new Date();
-		timeold = (today.getTime() - BirthDay.getTime());
-		sectimeold = timeold / 1000
-		secondsold = Math.floor(sectimeold);
-		msPerDay = 24 * 60 * 60 * 1000
-		msPerYear = 365 * 24 * 60 * 60 * 1000
-		e_daysold = timeold / msPerDay
-		e_yearsold = timeold / msPerYear
-		daysold = Math.floor(e_daysold);
-		yearsold = Math.floor(e_yearsold);
-		//str = yearsold + "年";
-		str += daysold + "天";
-		str += d.getHours() + '时';
-		str += d.getMinutes() + '分';
-		str += d.getSeconds() + '秒';
-		return str;
-		}
+		</article>
+		<!-- 脚本部分 -->
+		<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?635582c6d82d9ba6aa8e49599de6d0bb";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
 
-		setInterval(function() {
-		$('#run_time').html(runTime())
-		}, 1000);
 		</script>
-		<script charset="utf-8" defer type="text/javascript" src="https://cdn.jsdelivr.net/gh/lxl-xiaolong/liu-xiaolong@main/js/date20230207.js"></script>
-		<script charset="utf-8" defer type="text/javascript" src="https://cdn.jsdelivr.net/gh/lxl-xiaolong/liu-xiaolong@main/js/link%20number20230226.js"></script>
+		<script>
+			function runTime() {
+				var d = new Date(),
+					str = '';
+				BirthDay = new Date('2022-08-09');
+				today = new Date();
+				timeold = (today.getTime() - BirthDay.getTime());
+				sectimeold = timeold / 1000
+				secondsold = Math.floor(sectimeold);
+				msPerDay = 24 * 60 * 60 * 1000
+				msPerYear = 365 * 24 * 60 * 60 * 1000
+				e_daysold = timeold / msPerDay
+				e_yearsold = timeold / msPerYear
+				daysold = Math.floor(e_daysold);
+				yearsold = Math.floor(e_yearsold);
+				//str = yearsold + "年";
+				str += daysold + "天";
+				str += d.getHours() + '时';
+				str += d.getMinutes() + '分';
+				str += d.getSeconds() + '秒';
+				return str;
+			}
+
+			setInterval(function() {
+				$('#run_time').html(runTime())
+			}, 1000);
+
+		</script>
+		<script>
+			//link number
+			temp = document.getElementById("content");
+			lis = temp.getElementsByTagName("li");
+			var linum = lis.length; //显示li元素的个数
+			LiNum.innerHTML = "本站各板块已收录网站链接总计：" + linum + "个。"
+
+		</script>
+		<script>
+			window.onload = function() {
+				window.requestAnimationFrame(getDate)
+			}
+
+			function getDate() {
+				window.setTimeout(function() {
+					window.requestAnimationFrame(getDate)
+				}, 1000 / 2)
+				var d = new Date();
+				var year = d.getFullYear() //获取年
+				var month = d.getMonth() + 1; //获取月，从 Date 对象返回月份 (0 ~ 11)，故在此处+1
+				var day = d.getDay() //获取日
+				var days = d.getDate() //获取日期
+				var hour = d.getHours() //获取小时
+				var minute = d.getMinutes() //获取分钟
+				var second = d.getSeconds() //获取秒
+				if (month < 10) month = "0" + month
+				if (days < 10) days = "0" + days
+				if (hour < 10) hour = "0" + hour
+				if (minute < 10) minute = "0" + minute
+				if (second < 10) second = "0" + second
+				var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")
+				var Tools = document.getElementById("Main")
+				var da = "" + year + " 年 " + month + " 月 " + days + " 日 " + " | " + week[day] + " | " + " " + hour + " : " +
+					minute + " : " + second + " "
+				Tools.innerHTML = da
+			}
+
+		</script>
+		<script>
+			//返回顶部
+			$(function() {
+				$("#fixed").click(function() {
+					$("html,body").animate({
+						scrollTop: 0
+					}, 1600);
+				});
+			});
+
+		</script>
+		<script>
+			//返回底部
+			$('#fixed-bottom').click(function() {
+				$('html,body').stop();
+				$('html,body').animate({
+					scrollTop: $('#footer').offset().top
+				}, 1600);
+			});
+
+		</script>
+		<script>
+			/*-------------------------------------------------*/
+			/* 鼠标点击显示字体特效！
+			/*-------------------------------------------------*/
+			var a_idx = 0;
+			jQuery(document).ready(function($) {
+				$("body").click(function(e) {
+					var a = new Array("欢迎您", "么么哒", "你真好", "棒棒哒", "真可爱", "你最美", "喜欢你", "真聪明", "爱你哦", "好厉害",
+						"你真帅", "祝福你");
+					var $i = $("<span/>").text(a[a_idx]);
+					a_idx = (a_idx + 1) % a.length;
+					var x = e.pageX,
+						y = e.pageY;
+					$i.css({
+						"z-index": 99999,
+						"top": y - 20,
+						"left": x,
+						"position": "absolute",
+						"font-weight": "bold",
+						"font-size": "15px",
+						"color": "red"
+					});
+					$("body").append($i);
+					$i.animate({
+						"top": y - 180,
+						"opacity": 0
+					}, 1500, function() {
+						$i.remove();
+					});
+				});
+			});
+
+		</script>
+		<div id="footer"></div>
+	</body>
 </html>
+
