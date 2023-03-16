@@ -38,15 +38,15 @@
 						5、访问、浏览、下载本页面内容，表明您已知晓并同意【百站汇网公告】中的第3、4、6、7条中的相关条款。<br>
 						6、本网页为非盈利性，不贩卖软件，所有内容不作为商业行为。<br>
 						7、还请您支持并购买正版软件！<br>
-						8、本站特别感谢<a href="https://github.com/" title="Github" target="_blank"
+						8、本站特别感谢<a href="https://github.com/" id="Github" target="_blank"
 							rel="noopener external noreferrer nofollow">Github</a>对本网页提供的支持。<br>
-						9、<a href="https://www.12377.cn/" title="举报" target="_blank rel=" noopener external noreferrer
+						9、<a href="https://www.12377.cn/" id="report" target="_blank rel=" noopener external noreferrer
 							nofollow">网站有害信息举报</a><br>
 						10、由于本人能力，仓促等原因，本网页难免会有不足的地方，请大家谅解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！
 					</div>
 				</div>
 				<!-- 选项卡区 -->
-				<div class="layui-tab layui-tab-brief">
+				<div class="layui-tab layui-tab-card">
 					<ul class="layui-tab-title">
 						<li class="layui-this">磁盘管理</li>
 						<li class="laui-nav-item">系统镜像</li>
@@ -425,7 +425,7 @@
 							</ul>
 						</div>
 						<div class="layui-tab-item">
-							<p class="content-item-p">搜索</p>
+							<p class="layui-bg-cyan">搜索</p>
 							<ul>
 
 								<li><a href="http://www.jsousuo.com/?1000" target="_blank"
@@ -445,7 +445,7 @@
 										rel="noopener external noreferrer nofollow">虫部落-搜索大杂烩</a>
 								</li>
 							</ul>
-							<p class="content-item-p">工具、软件相关</p>
+							<p class="layui-bg-cyan">工具、软件相关</p>
 							<ul>
 
 								<li><a href="https://otp.landian.vip/zh-cn/" target="_blank"
@@ -579,7 +579,7 @@
 										rel="noopener external noreferrer nofollow">bootsapmb.com -
 										模板库</a></li>
 							</ul>
-							<p class="content-item-p">音乐相关</p>
+							<p class="layui-bg-cyan">音乐相关</p>
 							<ul>
 								<li><a href="http://www.yt66.cn/" target="_blank"
 										rel="noopener external noreferrer nofollow">乐团音乐网</a>
@@ -601,7 +601,7 @@
 										rel="noopener external noreferrer nofollow">My Free MP3</a>
 								</li>
 							</ul>
-							<p class="content-item-p">设计、图片、图书、办公、教程及其他</p>
+							<p class="layui-bg-cyan">设计、图片、图书、办公、教程及其他</p>
 							<ul>
 
 								<li><a href="http://www.nlc.cn/" target="_blank"
@@ -904,14 +904,25 @@
 
 			</script>
 			<script>
-				layui.use(['util', 'element'], function() {
+				layui.use(['util', 'element', 'layer'], function() {
 					var element = layui.element;
+					varlayer = layui.layer;
 					var util = layui.util;
 					util.fixbar({
 						top: true,
 						bgcolor: '#f97584',
 						showHeight: 100,
 						css: { right: 50, bottom: 50 },
+					});
+					/* 鼠标悬浮，显示提示层。 */
+					var$ = layui.jquery;
+					$("#Github").hover(function() {
+						layer.tips("GitHub：Let’s build from here · GitHub", "#Github", { tips: 3, time: 1000 });
+					});
+					/* 鼠标悬浮，显示提示层。 */
+					var$ = layui.jquery;
+					$("#report").hover(function() {
+						layer.tips("违法和不良信息举报", "#report", { tips: 3, time: 1000 });
 					});
 				});
 
