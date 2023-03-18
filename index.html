@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>百站汇网</title>
+		<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://unpkg.com/layui@2.8.0-rc.13/dist/css/layui.css">
 		<link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.8.0-rc.9/css/layui.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.13/css/layui.css"
@@ -31,23 +32,35 @@
 	<body class="layui-bg-gray">
 		<!-- 主体区 -->
 		<div class="layui-container">
-			<h1 style="text-align: center;">百站汇网</h1>
+			<h1 class="h1 text-center fs-2 fw-bolder lh-lg">百站汇网</h1>
 			<blockquote class="layui-elem-quote">本网页致力于分享安全、无劫持、无病毒、可靠可用的各类资源（链接）。</blockquote>
 			<div class="layui-container">
-				<!-- 卡片面板区 -->
-				<div class="layui-card">
-					<div class="layui-card-header"><i class="layui-icon layui-icon-about"
-							style="font-size: 30px; color: #FF6666;"></i>&nbsp;一些信息</div>
-					<div class="layui-card-body">
-						<p id="Main"></p>
-						<p>本网页作者——刘小龙。</p>
-						<p>本网页建于——2022年08月09日。</p>
-						<p id="LiNum"></p>
-						本网页勉强运行——<span id=span_dt_dt style="color: #2F889A;"></span>
+				<!-- 折叠面板区（Start） -->
+				<div class="accordion accordion-flush" id="accordionFlushExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="flush-headingOne">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#flush-collapseOne" aria-expanded="false"
+								aria-controls="flush-collapseOne">
+								<i class="layui-icon layui-icon-about"
+									style="font-size: 30px; color: #FF6666;"></i>&nbsp;关于本网页：
+							</button>
+						</h2>
+						<div id="flush-collapseOne" class="accordion-collapse collapse"
+							aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+							<div class="accordion-body">
+								<p id="Main"></p>
+								<p>本网页作者——刘小龙。</p>
+								<p>本网页建于——2022年08月09日。</p>
+								<p id="LiNum"></p>
+								本网页勉强已运行——<span id=span_dt_dt style="color: #2F889A;"></span>
+							</div>
+						</div>
 					</div>
 				</div>
+				<!-- 折叠面板区（End） -->
 				<!-- Tab简洁风格-选项卡区 -->
-				<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+				<div class="layui-tab layui-tab-card">
 					<ul class="layui-tab-title">
 						<li class="layui-this">磁盘管理</li>
 						<li>系统镜像</li>
@@ -56,7 +69,7 @@
 						<li>AMD | Inter | NVIDIA驱动下载</li>
 						<li>在线学习</li>
 						<li>启动U盘制作工具</li>
-						<li>服务与支持(电脑)</li>
+						<li>服务与支持（ 电脑相关 ）</li>
 						<li>在线便捷工具</li>
 						<li>杂项综合</li>
 						<li>常用软件</li>
@@ -579,6 +592,9 @@
 								<li><a href="http://www.bootsapmb.com/" target="_blank"
 										rel="noopener external noreferrer nofollow">bootsapmb.com -
 										模板库</a></li>
+								<li><a href="https://www.bootcdn.cn/" target="_blank"
+										rel="noopener external noreferrer nofollow">BootCDN-稳定、快速、免费的前端开源项目 CDN 加速服务</a>
+								</li>
 							</ul>
 							<p class="layui-bg-cyan">音乐相关</p>
 							<ul>
@@ -777,11 +793,12 @@
 			<div class="layui-footer">
 				<div style="text-align: center;">
 					Copyright &copy; 2022~2023 百站汇网(刘小龙)<br />
-					Powered By LayUI。<br />
-					本网页感谢Github（Github Pages）提供的支持。
+					Powered By LayUI &amp; Bootstrap<br />
+					本网页感谢Github（Github Pages）提供的支持
 				</div>
 			</div>
 			<!-- 脚本 -->
+			<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.js"></script>
 			<script src="https://unpkg.com/layui@2.8.0-rc.13/dist/layui.js"></script>
 			<script src="https://www.layuicdn.com/layui-v2.8.0-rc.9/layui.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.13/layui.js"
