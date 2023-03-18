@@ -3,15 +3,35 @@
 	<head>
 		<meta charset="utf-8">
 		<title>百站汇网</title>
+		<link rel="stylesheet" href="https://unpkg.com/layui@2.8.0-rc.13/dist/css/layui.css">
 		<link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.8.0-rc.9/css/layui.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.13/css/layui.min.css"
-			integrity="sha512-JXPUrfooM4Wb4AQzIaQg0ge92ja2meamNzDzrYgfYVGVJEDW9IqcCXhknl3Ojv+wc5P9tFOWB9EJsAnlLPUa9g=="
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.13/css/layui.css"
+			integrity="sha512-3F4D7TLXV6LPCN7KumU2asmGavEM8KvCkEEpxyEgjS3EW9xMne642/GmuvPw3vwZEw5YDBDAsRejQAte2Nnj4Q=="
 			crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="//dpm.demdex.net/" crossorigin>
+		<link rel="dns-prefetch" href="//dpm.demdex.net/">
+		<link rel="preconnect" href="//starget.intel.cn/">
+		<link rel="dns-prefetch" href="//starget.intel.cn/">
+		<link rel="preconnect" href="//elqtrk.intel.cn/">
+		<link rel="dns-prefetch" href="//elqtrk.intel.cn/">
+		<link rel="dns-prefetch" href="//onsite2.researchintel.com/">
+		<link rel="preconnect" href="//tags.tiqcdn.cn/" crossorigin>
+		<link rel="dns-prefetch" href="//tags.tiqcdn.cn/">
+		<link rel="preconnect" href="//www91.intel.cn/">
+		<link rel="dns-prefetch" href="//www91.intel.cn/">
+		<link rel="dns-prefetch" href="https://github.githubassets.com">
+		<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+		<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+		<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
+		<link rel="preconnect" href="https://avatars.githubusercontent.com">
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	</head>
 	<body class="layui-bg-gray">
 		<!-- 主体区 -->
 		<div class="layui-container">
-			<h1 style="text-align: center;">百站汇网</h1>
+			<h1 class="layui-" style="text-align: center;">百站汇网</h1>
 			<blockquote class="layui-elem-quote">本网页致力于分享安全、无劫持、无病毒、可靠可用的各类资源（链接）。</blockquote>
 			<div class="layui-container">
 				<!-- 卡片面板区 -->
@@ -20,45 +40,26 @@
 							style="font-size: 30px; color: #FF6666;"></i>&nbsp;一些信息</div>
 					<div class="layui-card-body">
 						<p id="Main"></p>
-						<p>孤独的我看孤独的风景。</p>
 						<p>本网页作者——刘小龙。</p>
 						<p>本网页建于——2022年08月09日。</p>
 						<p id="LiNum"></p>
 						本网页勉强运行——<span id=span_dt_dt style="color: #2F889A;"></span>
 					</div>
 				</div>
-				<div class="layui-card">
-					<div class="layui-card-header"><i class="layui-icon layui-icon-tips"
-							style="font-size: 30px; color: #FF6666;"></i>&nbsp;百站汇网公告</div>
-					<div class="layui-card-body">
-						1、欢迎您访问和浏览本网页，建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本页面<br>
-						2、在本网页中，有一部分页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。<br>
-						3、本网页为个人网页，本网页所发布的一切资源均来自与网络，仅限用于学习和研究目的；不得将本站及本站发布的内容用于商业或者非法用途，否则，一切后果请用户自负。<br>
-						4、如侵犯到您的权益，请您及时联系我们(2539223617@qq.com或19891679457)，我们会及时跟进，处理。<br>
-						5、访问、浏览、下载本页面内容，表明您已知晓并同意【百站汇网公告】中的第3、4、6、7条中的相关条款。<br>
-						6、本网页为非盈利性，不贩卖软件，所有内容不作为商业行为。<br>
-						7、还请您支持并购买正版软件！<br>
-						8、本站特别感谢<a href="https://github.com/" id="Github" target="_blank"
-							rel="noopener external noreferrer nofollow">Github</a>对本网页提供的支持。<br>
-						9、<a href="https://www.12377.cn/" id="report" target="_blank rel=" noopener external noreferrer
-							nofollow">网站有害信息举报</a><br>
-						10、由于本人能力，仓促等原因，本网页难免会有不足的地方，请大家谅解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！
-					</div>
-				</div>
-				<!-- 选项卡区 -->
-				<div class="layui-tab layui-tab-card">
+				<!-- Tab简洁风格-选项卡区 -->
+				<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
 					<ul class="layui-tab-title">
 						<li class="layui-this">磁盘管理</li>
-						<li class="laui-nav-item">系统镜像</li>
-						<li class="laui-nav-item">图片转base64编码</li>
-						<li class="laui-nav-item">解压缩</li>
-						<li class="laui-nav-item">AMD | Inter | NVIDIA驱动下载</li>
-						<li class="laui-nav-item">在线学习</li>
-						<li class="laui-nav-item">启动U盘制作工具</li>
-						<li class="laui-nav-item">各品牌电脑（或电脑部件）服务与支持</li>
-						<li class="laui-nav-item">在线便捷工具</li>
-						<li class="laui-nav-item">杂项综合</li>
-						<li class="laui-nav-item">常用软件</li>
+						<li>系统镜像</li>
+						<li>图片转base64编码</li>
+						<li>解压缩</li>
+						<li>AMD | Inter | NVIDIA驱动下载</li>
+						<li>在线学习</li>
+						<li>启动U盘制作工具</li>
+						<li>服务与支持(电脑)</li>
+						<li>在线便捷工具</li>
+						<li>杂项综合</li>
+						<li>常用软件</li>
 					</ul>
 					<div id="content" class="layui-tab-content">
 						<div class="layui-tab-item layui-show">
@@ -571,9 +572,9 @@
 										- Logo在线设计神器</a></li>
 								<li><a href="https://www.aconvert.com/cn/" target="_blank"
 										rel="noopener external noreferrer nofollow">在线转换器</a></li>
-								<li><a href="https://statically.io/" target="_blank"
+								<li><a href="https://www.jsdelivr.com/" target="_blank"
 										rel="noopener external noreferrer nofollow">
-										statically</a>
+										A free CDN for open source projects</a>
 								</li>
 								<li><a href="http://www.bootsapmb.com/" target="_blank"
 										rel="noopener external noreferrer nofollow">bootsapmb.com -
@@ -704,7 +705,7 @@
 						</div>
 						<div class="layui-tab-item">
 							<ul>
-
+								<p class="layui-bg-cyan">聊天社交</p>
 								<li><a href="https://im.qq.com/download" target="_blank"
 										rel="noopener external noreferrer nofollow">QQ</a></li>
 								<li><a href="https://weixin.qq.com/" target="_blank"
@@ -712,6 +713,7 @@
 								</li>
 								<li><a href="https://office.qq.com/download.html" target="_blank"
 										rel="noopener external noreferrer nofollow">TIM</a></li>
+								<p class="layui-bg-cyan">影音视频</p>
 								<li><a href="https://v.qq.com/biu/download" target="_blank"
 										rel="noopener external noreferrer nofollow">腾讯视频</a></li>
 								<li><a href="https://dl-static.iqiyi.com/hz/IQIYIsetup_z43@xt001.exe" target="_blank"
@@ -725,6 +727,7 @@
 										rel="noopener external noreferrer nofollow">虎牙直播</a></li>
 								<li><a href="https://pcconf.api.mgtv.com/getPcDownloadUrl?lastp=ch_home" target="_blank"
 										rel="noopener external noreferrer nofollow">芒果TV</a></li>
+								<p class="layui-bg-cyan">音乐</p>
 								<li><a href="https://music.91q.com/download" target="_blank"
 										rel="noopener external noreferrer nofollow">千千音乐</a></li>
 								<li><a href="https://download.kugou.com/" target="_blank"
@@ -736,10 +739,12 @@
 										rel="noopener external noreferrer nofollow">QQ音乐</a></li>
 								<li><a href="https://music.163.com/#/download" target="_blank"
 										rel="noopener external noreferrer nofollow">网易云音乐</a></li>
+								<p class="layui-bg-cyan">游戏</p>
 								<li><a href="https://www.wegame.com.cn/client/" target="_blank"
 										rel="noopener external noreferrer nofollow">Wegame</a></li>
 								<li><a href="https://store.steampowered.com/" target="_blank"
 										rel="noopener external noreferrer nofollow">Steam</a></li>
+								<p class="layui-bg-cyan">浏览器</p>
 								<li><a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank"
 										rel="noopener external noreferrer nofollow">谷歌浏览器</a></li>
 
@@ -767,22 +772,24 @@
 						</div>
 					</div>
 				</div>
-				<blockquote class="layui-elem-quote">哎呀，到底啦&nbsp;<i class="layui-icon layui-icon-face-smile"
-						style="font-size: 30px; color: #FF6666;"></i>。
-				</blockquote>
+				<blockquote class="layui-elem-quote">孤独的我看孤独的风景。</blockquote>
 			</div>
 			<div class="layui-footer">
 				<div style="text-align: center;">
-					Powered By LayUI
+					Copyright &copy; 2022~2023 百站汇网(刘小龙)<br />
+					Powered By LayUI。<br />
+					本网页感谢Github（Github Pages）提供的支持。
 				</div>
 			</div>
+			<!-- 脚本 -->
+			<script src="https://unpkg.com/layui@2.8.0-rc.13/dist/layui.js"></script>
 			<script src="https://www.layuicdn.com/layui-v2.8.0-rc.9/layui.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.13/layui.min.js"
-				integrity="sha512-p2U6km5qBq8QcpHvd9zB/qCcYvEwP/1WP28kXlYETV4DFvZqjpKjScL8JChNX+xk6xyAHZnTcJkpSYl5BSgKaw=="
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.8.0-rc.13/layui.js"
+				integrity="sha512-iISua7azi1bYow+O/oQEHx3E0qlbO5I93GyhI02FMd/71vde9unfZqaiH46wSQhil5SUPnPC+CKF8py7e3UgtA=="
 				crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-			<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.4.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-				integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+			<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.4.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"
+				integrity="sha512-6DC1eE3AWg1bgitkoaRM1lhY98PxbMIbhgYCGV107aZlyzzvaWCW1nJW2vDuYQm06hXrW0As6OGKcIaAVWnHJw=="
 				crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<script>
 				var _hmt = _hmt || [];
@@ -792,7 +799,6 @@
 					var s = document.getElementsByTagName("script")[0];
 					s.parentNode.insertBefore(hm, s);
 				})();
-
 			</script>
 			<script>
 				function show_date_time() {
@@ -816,7 +822,6 @@
 						'</font> 秒';
 				}
 				show_date_time();
-
 			</script>
 			<script>
 				//link number
@@ -824,7 +829,6 @@
 				lis = temp.getElementsByTagName("li");
 				var linum = lis.length; //显示li元素的个数
 				LiNum.innerHTML = "本网页各板块已收录链接总计：" + linum + "个。"
-
 			</script>
 			<script>
 				window.onload = function() {
@@ -850,11 +854,10 @@
 					if (second < 10) second = "0" + second
 					var week = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六")
 					var Tools = document.getElementById("Main")
-					var da = "" + year + " 年 " + month + " 月 " + days + " 日 " + " - " + week[day] + " - " + " " + hour + " : " +
-						minute + " : " + second + " "
+					var da = "" + year + " 年 " + month + " 月 " + days + " 日 " + " | " + week[day] + " | " + " " + hour + " 时 " +
+						minute + " 分 " + second + " 秒 " + " "
 					Tools.innerHTML = da
 				}
-
 			</script>
 			<script>
 				(function() {
@@ -901,32 +904,45 @@
 
 					}
 				}());
-
 			</script>
 			<script>
-				layui.use(['util', 'element', 'layer'], function() {
+				//注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+				layui.use('element', function() {
 					var element = layui.element;
-					varlayer = layui.layer;
+
+					//…
+				});
+			</script>
+			<script>
+				layui.use(['util'], function() {
 					var util = layui.util;
 					util.fixbar({
 						top: true,
 						bgcolor: '#f97584',
 						showHeight: 100,
-						css: { right: 50, bottom: 50 },
-					});
-					/* 鼠标悬浮，显示提示层。 */
-					var$ = layui.jquery;
-					$("#Github").hover(function() {
-						layer.tips("GitHub：Let’s build from here · GitHub", "#Github", { tips: 3, time: 1000 });
-					});
-					/* 鼠标悬浮，显示提示层。 */
-					var$ = layui.jquery;
-					$("#report").hover(function() {
-						layer.tips("违法和不良信息举报", "#report", { tips: 3, time: 1000 });
+						css: {
+							right: 50,
+							bottom: 50,
+						},
 					});
 				});
-
+			</script>
+			<script>
+				layui.use(['layer'], function() {
+					varlayer = layui.layer; /* 使用open编写警告框 */
+					layer.open({
+						type: 1,
+						content: '一、欢迎您访问和浏览本网页，建议您使用IE11、Edge、Chrome、Firefox、360等主流浏览器浏览本页面。<br>二、在本网页中，有一部分页面并非中文页面，此时，您可以鼠标右键您所浏览的页面，在弹出的菜单选择点击“翻译为中文（简体）”即可将非中文页面显示为中文页面。<br>三、本网页为个人网页，本网页所发布的一切资源均来自与网络，仅限用于学习和研究目的；不得将本站及本站发布的内容用于商业或者非法用途，否则，一切后果请用户自负。<br>四、如侵犯到您的权益，请您及时联系我们(2539223617@qq.com或19891679457)，我们会及时跟进，处理。<br>五、访问、浏览、下载本页面内容，表明您已知晓并同意【百站汇网公告】中的第3、4、6、7条中的相关条款。<br>六、本网页为非盈利性，不贩卖软件，所有内容不作为商业行为。<br>七、还请您支持并购买正版软件。<br>八、本站特别感谢Github对本网页提供的支持。<br>九、由于本人能力，仓促等原因，本网页难免会有不足的地方，请大家谅解与支持；并且希望您给我们提出宝贵意见和建议，谢谢！',
+						title: ["百站汇网公告", "font-size:18px;color:red;font-weight:bolder;"],
+						icon: 6,
+						btn: '我知道了',
+						shade: 0.5,
+						shadeClose: true,
+						resize: false,
+						maxmin: true,
+						maxWidth: 600,
+					});
+				});
 			</script>
 	</body>
 </html>
-
