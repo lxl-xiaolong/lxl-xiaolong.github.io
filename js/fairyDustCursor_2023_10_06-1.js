@@ -1,5 +1,4 @@
-
-        (function fairyDustCursor() {
+(function fairyDustCursor() {
  
             var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
             var width = window.innerWidth;
@@ -12,7 +11,7 @@
                 loop();
             }
  
-            // Bind events that are needed
+           
             function bindEvents() {
                 document.addEventListener('mousemove', onMouseMove);
                 window.addEventListener('resize', onWindowResize);
@@ -38,12 +37,12 @@
  
             function updateParticles() {
  
-                // Updated
+                
                 for (var i = 0; i < particles.length; i++) {
                     particles[i].update();
                 }
  
-                // Remove dead particles
+               
                 for (var i = particles.length - 1; i >= 0; i--) {
                     if (particles[i].lifeSpan < 0) {
                         particles[i].die();
@@ -58,9 +57,7 @@
                 updateParticles();
             }
  
-            /**
-             * Particles
-             */
+          
  
             function Particle() {
  
@@ -78,7 +75,7 @@
                     "will-change": "transform"
                 };
  
-                // Init, and set properties
+              
                 this.init = function (x, y, color) {
  
                     this.velocity = {
@@ -111,11 +108,7 @@
  
             }
  
-            /**
-             * Utils
-             */
- 
-            // Applies css `properties` to an element.
+           
             function applyProperties(target, properties) {
                 for (var key in properties) {
                     target.style[key] = properties[key];
@@ -123,4 +116,4 @@
             }
  
             if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
-        })();
+        })();  
