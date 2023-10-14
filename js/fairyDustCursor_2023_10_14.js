@@ -1,4 +1,4 @@
-(function fairyDustCursor() {
+        (function fairyDustCursor() {
  
             var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
             var width = window.innerWidth;
@@ -116,4 +116,4 @@
             }
  
             if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
-        })();  
+        })();    
