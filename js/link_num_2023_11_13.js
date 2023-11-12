@@ -1,4 +1,3 @@
-//link number
 (function() {
   const CONTENT_ID = "content";
   const LINUM_ID = "LiNum";
