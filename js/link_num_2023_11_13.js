@@ -12,7 +12,7 @@
       const linum = lis.length;
 
       // 使用 textContent 替代 innerHTML
-      LiNumElement.textContent = `本网页各板块已收录链接总计：${linum}个。`;
+      LiNumElement.textContent = `本页面各板块已收录链接总计：${linum}个。`;
     } else {
       console.error(`未找到必要的元素。请确保存在具有ID为${CONTENT_ID}和${LINUM_ID}的元素。`);
     }
