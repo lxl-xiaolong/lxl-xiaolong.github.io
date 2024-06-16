@@ -117,7 +117,7 @@
                     // Dynamically generate the category list
                     var categoryList = document.getElementById('category-list');
                     data.categories.forEach(category => {
-                        var categoryId = category.name.toLowerCase().replace(' ', '-');
+                                               var categoryId = category.name.toLowerCase().replace(' ', '-');
                         var li = document.createElement('li');
                         li.textContent = category.name;
                         li.onclick = function() {
@@ -168,3 +168,4 @@
     </script>
 </body>
 </html>
+
