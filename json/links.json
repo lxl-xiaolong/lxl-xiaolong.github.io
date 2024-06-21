@@ -101,7 +101,11 @@
                         {
                             "name": "Visual Studio",
                             "url": "https://visualstudio.microsoft.com/zh-hans/downloads/"
-                        }
+                        },
+                         {
+                            "name": "Git",
+                            "url": "https://git-scm.com/"
+                        }                          
                     ]
                 },
                 {
