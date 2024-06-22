@@ -990,13 +990,41 @@
                             "url": "https://thewind.xyz/"
                         },
                         {
-                            "name": "下歌吧（无法访问！）",
-                            "url": "https://music.y444.cn/"
+                            "name": "音乐客",
+                            "url": "https://www.yinyueke.net/"
                         },
+						{
+						    "name": "音乐下载器",
+						    "url": "https://music.wandhi.com/"
+						},
+						{
+						    "name": "听音乐",
+						    "url": "https://lvyueyang.github.io/web-music/"
+						},
+						{
+						    "name": "FREESOUND飞声无版权音乐库",
+						    "url": "https://www.freesound.cn/"
+						},
+						{
+						    "name": "biu-二次元音乐",
+						    "url": "https://biu.moe/#/Index/home"
+						},
+						{
+						    "name": "无损库 - 高品质无损音乐下载",
+						    "url": "https://wusunk.com/"
+						},
                         {
                             "name": "无损音乐吧",
                             "url": "https://www.dtshot.com/"
                         },
+						{
+						    "name": "无版权音乐，免费商用 - 音乐资源库 - FiftySounds",
+						    "url": "https://www.fiftysounds.com/zh/"
+						},
+						{
+						    "name": "果汁音乐",
+						    "url": "http://guozhivip.com/yinyue/"
+						},
                         {
                             "name": "xlebbs-音乐论坛",
                             "url": "https://www.xlebbs.com/"
@@ -1007,7 +1035,7 @@
                         },
                         {
                             "name": "My Free MP3",
-                            "url": "https://www.cdbao.net/"
+                            "url": "https://tool.liumingye.cn/music/?page=homePage#/"
                         }
                     ]
                 },
