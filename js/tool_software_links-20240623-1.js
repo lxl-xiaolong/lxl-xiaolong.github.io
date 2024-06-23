@@ -1,4 +1,4 @@
-        var jsonUrl = 'https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links-20240622-1.json';
+        var jsonUrl = 'https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links-20240623-1.json';
 
         // jQuery function to get JSON data and generate HTML
         function getJsonAndGenerateHtml() {
