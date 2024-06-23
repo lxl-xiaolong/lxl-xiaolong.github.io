@@ -31,15 +31,15 @@
                     ]
                 },
                 {
-                    "name": "系统镜像",
+                    "name": "Windows iso镜像下载网站",
                     "links": [
                         {
-                            "name": "下载 Windows 10（微软官方）",
-                            "url": "https://www.microsoft.com/zh-cn/software-download/windows10"
+                            "name": "微软官网（11，10，8，7）",
+                            "url": "https://www.microsoft.com/zh-cn/software-download"
                         },
                         {
-                            "name": "下载 Windows 11（微软官方）",
-                            "url": "https://www.microsoft.com/zh-cn/software-download/windows11"
+                            "name": "系统库(xitongku)",
+                            "url": "https://www.xitongku.com/index.html"
                         },
                         {
                             "name": "MSDN，我告诉你（老站）",
@@ -52,6 +52,18 @@
                         {
                             "name": "爱纯净 - 纯净系统下载网站",
                             "url": "http://www.aichunjing.com/"
+                        },
+                        {
+                            "name": "系统之家1",
+                            "url": "https://www.xitongzhijia.com.cn/"
+                        },
+                        {
+                            "name": "系统之家2",
+                            "url": "https://xitong.jjxnwl.com/"
+                        },
+                        {
+                            "name": "系统家园",
+                            "url": "https://www.somode.com/"
                         }
                     ]
                 },
