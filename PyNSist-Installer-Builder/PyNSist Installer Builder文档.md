@@ -30,5 +30,5 @@ Python 版本应填写为数字和小数点的组合，例如 3.11.9。
 
 如果您在使用过程中遇到任何问题或有任何建议，请通过以下方式联系我们：
 
-**邮箱：**2539223617@qq.com
-**GitHub：**https://github.com/your_username/PyNSist-Installer-Builder
+**邮箱：2539223617@qq.com**
+**GitHub：[lxl-xiaolong.github.io/PyNSist-Installer-Builder at master · lxl-xiaolong/lxl-xiaolong.github.io](https://github.com/lxl-xiaolong/lxl-xiaolong.github.io/tree/master/PyNSist-Installer-Builder)**
