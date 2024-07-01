@@ -4,14 +4,21 @@ import subprocess
 import os
 import re
 
-def browse_file():
-    file_path = filedialog.askopenfilename()
+def browse_script():
+    file_path = filedialog.askopenfilename(filetypes=[("Python scripts", "*.py")])
     if file_path:
         # 只保留xxx.py形式的文件名
         script_name = os.path.splitext(os.path.basename(file_path))[0]
         # 设置entry_script的值
         entry_script.delete(0, tk.END)
         entry_script.insert(0, script_name)
+
+def browse_file(entry):
+    file_paths = filedialog.askopenfilenames()
+    if file_paths:
+        # 将选择的文件路径插入到指定的entry中
+        entry.delete(1.0, tk.END)
+        entry.insert(tk.END, '\n'.join(file_paths))
 
 def browse_dir():
     dir_path = filedialog.askdirectory()
@@ -116,11 +123,13 @@ label_script = tk.Label(frame, text="Python脚本:")
 label_script.grid(row=2, column=0, sticky="e")
 entry_script = tk.Entry(frame)
 entry_script.grid(row=2, column=1)
-button_browse_script = tk.Button(frame, text="浏览", command=browse_file)
+button_browse_script = tk.Button(frame, text="浏览", command=browse_script)
 button_browse_script.grid(row=2, column=2)
 
 label_python_version = tk.Label(frame, text="Python版本:")
 label_python_version.grid(row=3, column=0, sticky="e")
+# ... [previous code] ...
+
 entry_python_version = tk.Entry(frame)
 entry_python_version.grid(row=3, column=1)
 entry_python_version.insert(0, "3.11.9")  # 设置默认值为3.11.9
@@ -136,7 +145,7 @@ label_files = tk.Label(frame, text="其他文件:")
 label_files.grid(row=5, column=0, sticky="e")
 entry_files = tk.Text(frame, height=5)
 entry_files.grid(row=5, column=1, pady=10)
-button_browse_files = tk.Button(frame, text="上传其他文件", command=browse_file)
+button_browse_files = tk.Button(frame, text="上传其他文件", command=lambda: browse_file(entry_files))
 button_browse_files.grid(row=5, column=2)
 
 button_create = tk.Button(frame, text="创建安装程序", command=create_installer)
