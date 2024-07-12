@@ -1,0 +1,1449 @@
+{
+  "categories": [
+    {
+      "name": "杀毒软件",
+                    "links": [
+                        {
+                            "name": "360安全卫士",
+                            "url": "https://www.360.cn/"
+                        },
+                        {
+                            "name": "火绒安全",
+                            "url": "https://www.huorong.cn/"
+                        },
+                        {
+                            "name": "微软电脑管家",
+                            "url": "https://pcmanager.microsoft.com/?channel=10000"
+                        }
+                    ]
+                },
+                {
+                    "name": "磁盘管理工具",
+                    "links": [
+                        {
+                            "name": "傲梅分区助手",
+                            "url": "https://www.disktool.cn/"
+                        },
+                        {
+                            "name": "DiskGenius",
+                            "url": "https://www.diskgenius.cn/"
+                        }
+                    ]
+                },
+                {
+                    "name": "Windows iso镜像下载网站",
+                    "links": [
+                        {
+                            "name": "微软官网（11，10，8，7）",
+                            "url": "https://www.microsoft.com/zh-cn/software-download"
+                        },
+                        {
+                            "name": "系统库(xitongku)",
+                            "url": "https://www.xitongku.com/index.html"
+                        },
+                        {
+                            "name": "MSDN，我告诉你（老站）",
+                            "url": "https://msdn.itellyou.cn/"
+                        },
+                        {
+                            "name": "ITELLYOU（新站）",
+                            "url": "https://next.itellyou.cn/"
+                        },
+                        {
+                            "name": "爱纯净 - 纯净系统下载网站",
+                            "url": "http://www.aichunjing.com/"
+                        },
+                        {
+                            "name": "系统之家1",
+                            "url": "https://www.xitongzhijia.com.cn/"
+                        },
+                        {
+                            "name": "系统之家2",
+                            "url": "https://xitong.jjxnwl.com/"
+                        },
+                        {
+                            "name": "系统家园",
+                            "url": "https://www.somode.com/"
+                        }
+                    ]
+                },
+                {
+                    "name": "开发相关",
+                    "links": [
+                        {
+                            "name": "HBuilderX",
+                            "url": "https://www.dcloud.io/hbuilderx.html"
+                        },
+                        {
+                            "name": "Notepad++（softonic链接）",
+                            "url": "https://notepad-plus.it.softonic.com/"
+                        },
+                        {
+                            "name": "JDK",
+                            "url": "https://www.oracle.com/cn/java/technologies/downloads/"
+                        },
+                        {
+                            "name": "IntelliJ IDEA",
+                            "url": "https://www.jetbrains.com/idea/"
+                        },
+                        {
+                            "name": "SQLyog（webyog→sqlyog-community（Softonic））",
+                            "url": "https://sqlyog.en.softonic.com/"
+                        },
+                        {
+                            "name": "MvnRepository（Maven仓库）",
+                            "url": "https://mvnrepository.com/"
+                        },
+                        {
+                            "name": "bugmenot",
+                            "url": "https://bugmenot.com/view/oracle.com"
+                        },
+                        {
+                            "name": "Python",
+                            "url": "https://www.python.org/"
+                        },
+                        {
+                            "name": "Rust（en-US）",
+                            "url": "https://www.rust-lang.org/"
+                        },
+                        {
+                            "name": "Rust（zh-CN）",
+                            "url": "https://www.rust-lang.org/zh-CN/"
+                        },
+                        {
+                            "name": "Visual Studio",
+                            "url": "https://visualstudio.microsoft.com/zh-hans/downloads/"
+                        },
+                         {
+                            "name": "Git",
+                            "url": "https://git-scm.com/"
+                        }                          
+                    ]
+                },
+                {
+                    "name": "图片转base64编码",
+                    "links": [
+                        {
+                            "name": "链接1",
+                            "url": "https://c.runoob.com/front-end/59/"
+                        },
+                        {
+                            "name": "链接2",
+                            "url": "https://tool.chinaz.com/tools/imgtobase/"
+                        },
+                        {
+                            "name": "链接3",
+                            "url": "https://www.serr.com/cn/base64_encode_img.html"
+                        },
+                        {
+                            "name": "链接4",
+                            "url": "https://imgtobase64.d777.com/"
+                        },
+                        {
+                            "name": "链接5",
+                            "url": "https://www.sojson.com/image2base64.html"
+                        },
+                        {
+                            "name": "链接6",
+                            "url": "http://www.jsons.cn/img2base64/?ivk_sa=1024320u"
+                        }
+                    ]
+                },
+                {
+                    "name": "解压缩",
+                    "links": [
+                        {
+                            "name": "Bandizip",
+                            "url": "https://www.bandisoft.com/bandizip/"
+                        },
+                        {
+                            "name": "WinRAR",
+                            "url": "https://www.winrar.com.cn/download.htm"
+                        },
+                        {
+                            "name": "7-Zip",
+                            "url": "https://www.7-zip.org/"
+                        },
+                        {
+                            "name": "PeaZip",
+                            "url": "https://peazip.github.io/"
+                        }
+                    ]
+                },
+                {
+                    "name": "AMD | Inter | NVIDIA驱动下载",
+                    "links": [
+                        {
+                            "name": "官方GeForce驱动程序 | NVIDIA",
+                            "url": "https://www.nvidia.cn/geforce/drivers/"
+                        },
+                        {
+                            "name": "官方驱动 | NVIDIA",
+                            "url": "https://www.nvidia.cn/Download/index.aspx?lang=cn"
+                        },
+                        {
+                            "name": "英特尔 驱动程序和支持助理",
+                            "url": "https://www.intel.cn/content/www/cn/zh/support/detect.html"
+                        },
+                        {
+                            "name": "下载英特尔 驱动程序和软件",
+                            "url": "https://www.intel.cn/content/www/cn/zh/download-center/home.html"
+                        },
+                        {
+                            "name": "AMD驱动程序与支持 | AMD",
+                            "url": "https://www.amd.com/zh-hans/support"
+                        },
+                        {
+                            "name": "AMD官网 | AMD",
+                            "url": "https://www.amd.com/zh-cn.html"
+                        }
+                    ]
+                },
+                {
+                    "name": "在线学习",
+                    "links": [
+                        {
+                            "name": "终身教育平台",
+                            "url": "https://le.ouchn.cn/home"
+                        },
+                        {
+                            "name": "中国大学MOOC(慕课)",
+                            "url": "https://www.icourse163.org/"
+                        },
+                        {
+                            "name": "我要自学网",
+                            "url": "https://www.51zxw.net/"
+                        },
+                        {
+                            "name": "大学资源网",
+                            "url": "http://www.dxzy163.com/"
+                        },
+                        {
+                            "name": "哔哩哔哩",
+                            "url": "https://www.bilibili.com/"
+                        },
+                        {
+                            "name": "考试酷",
+                            "url": "https://www.examcoo.com/index/ku"
+                        },
+                        {
+                            "name": "每日英语听力",
+                            "url": "https://dict.eudic.net/ting"
+                        },
+                        {
+                            "name": "高教书苑",
+                            "url": "https://ebook.hep.com.cn/ebooks/index.html#/"
+                        },
+                        {
+                            "name": "网易公开课",
+                            "url": "https://open.163.com/"
+                        },
+                        {
+                            "name": "译学馆",
+                            "url": "https://www.yxgapp.com/"
+                        },
+                        {
+                            "name": "沪江英语网",
+                            "url": "https://www.hjenglish.com/"
+                        },
+                        {
+                            "name": "学堂在线",
+                            "url": "https://www.xuetangx.com/"
+                        },
+                        {
+                            "name": "中国知网",
+                            "url": "https://www.cnki.net/"
+                        },
+                        {
+                            "name": "腾讯课堂",
+                            "url": "https://ke.qq.com/"
+                        },
+                        {
+                            "name": "慕课网",
+                            "url": "https://www.imooc.com/course/list"
+                        },
+                        {
+                            "name": "大学生自学网",
+                            "url": "http://v.dxsbb.com/"
+                        },
+                        {
+                            "name": "好知网",
+                            "url": "http://www.howzhi.com/"
+                        }
+                    ]
+                },
+                {
+                    "name": "系统启动U盘制作工具",
+                    "links": [
+                        {
+                            "name": "U大师 - 启动盘制作工具",
+                            "url": "http://www.udashi.com/download/"
+                        },
+                        {
+                            "name": "老毛桃 - 启动盘制作工具",
+                            "url": "https://www.laomaotao.net/"
+                        },
+                        {
+                            "name": "大白菜 - 启动盘制作工具",
+                            "url": "http://www.winbaicai.com/"
+                        },
+                        {
+                            "name": "电脑店 - 启动盘制作工具",
+                            "url": "https://u.diannaodian.com/"
+                        },
+                        {
+                            "name": "小兵U盘启动",
+                            "url": "http://www.xiaobingxitong.com/"
+                        },
+                        {
+                            "name": "U盘魔术师",
+                            "url": "https://www.sysceo.com/usm.html"
+                        },
+                        {
+                            "name": "装机吧 - 启动盘制作工具",
+                            "url": "http://www.zhuangjiba.com/"
+                        },
+                        {
+                            "name": "u启动 - 启动盘制作工具",
+                            "url": "http://www.uqidong.com/"
+                        },
+                        {
+                            "name": "U大侠 - 启动盘制作工具",
+                            "url": "http://www.udaxia.com/index.html"
+                        },
+                        {
+                            "name": "一键U盘 - 启动盘制作工具",
+                            "url": "http://www.upanok.com/"
+                        },
+                        {
+                            "name": "微PE工具箱",
+                            "url": "https://www.wepe.com.cn/download.html"
+                        },
+                        {
+                            "name": "优启通 - 启动盘制作工具",
+                            "url": "https://www.upe.net/"
+                        },
+                        {
+                            "name": "U教授 - 启动盘制作工具",
+                            "url": "http://www.ujiaoshou.com/"
+                        },
+                        {
+                            "name": "Rufus - U盘启动系统制作工具链接1",
+                            "url": "https://www.oschina.net/p/rufus?hmsr=aladdin1e1"
+                        },
+                        {
+                            "name": "Rufus - U盘启动系统制作工具链接2",
+                            "url": "https://gitee.com/mirrors/Rufus?utm_source=alading&utm_campaign=repo"
+                        },
+                        {
+                            "name": "Rufus - U盘启动系统制作工具链接3",
+                            "url": "https://rufus.ie/downloads/"
+                        },
+                        {
+                            "name": "U启宝 - U盘启动盘制作工具",
+                            "url": "http://www.uqb.cn/"
+                        },
+                        {
+                            "name": "U深度 - U盘启动盘制作工具",
+                            "url": "http://ushendu.dunjiab.cn/"
+                        }
+                    ]
+                },
+                {
+                    "name": "服务与支持（电脑相关）",
+                    "links": [
+                        {
+                            "name": "雷神",
+                            "url": "https://www.thunderobot.com/"
+                        },
+                        {
+                            "name": "雷神下载中心",
+                            "url": "https://www.thunderobot.com/service/download"
+                        },
+                        {
+                            "name": "雷神商城",
+                            "url": "https://www.thunderobot.com/shop"
+                        },
+                        {
+                            "name": "未来人类",
+                            "url": "http://www.terransforce.com/"
+                        },
+                        {
+                            "name": "未来人类驱动程序下载",
+                            "url": "http://www.terransforce.com/?service.html"
+                        },
+                        {
+                            "name": "雷蛇",
+                            "url": "https://cn.razerzone.com/"
+                        },
+                        {
+                            "name": "联想",
+                            "url": "https://newsupport.lenovo.com.cn/"
+                        },
+                        {
+                            "name": "惠普",
+                            "url": "https://support.hp.com/cn-zh/drivers"
+                        },
+                        {
+                            "name": "华为",
+                            "url": "https://consumer.huawei.com/cn/support/"
+                        },
+                        {
+                            "name": "华硕",
+                            "url": "https://www.asus.com.cn/support/Download-Center/"
+                        },
+                        {
+                            "name": "戴尔",
+                            "url": "https://www.dell.com/support/home/zh-cn?app=drivers"
+                        },
+                        {
+                            "name": "thinkpad",
+                            "url": "https://newthink.lenovo.com.cn/"
+                        },
+                        {
+                            "name": "苹果",
+                            "url": "https://support.apple.com/zh-cn"
+                        },
+                        {
+                            "name": "攀升",
+                            "url": "https://www.ipason.com/portal/download_center.html"
+                        },
+                        {
+                            "name": "宏基",
+                            "url": "https://www.acer.com.cn/support.html?type=1"
+                        },
+                        {
+                            "name": "七彩虹",
+                            "url": "https://www.colorful.cn/server.aspx?classid=2825"
+                        },
+                        {
+                            "name": "荣耀",
+                            "url": "https://www.hihonor.com/cn/support/"
+                        },
+                        {
+                            "name": "神舟",
+                            "url": "http://www.hasee.com/after/index"
+                        },
+                        {
+                            "name": "雷神",
+                            "url": "https://www.leishen.cn/service/download"
+                        },
+                        {
+                            "name": "小米",
+                            "url": "https://www.mi.com/service/notebook/drivers"
+                        },
+                        {
+                            "name": "机械革命",
+                            "url": "https://www.mechrevo.com/service/"
+                        },
+                        {
+                            "name": "清华同方",
+                            "url": "https://official.tongfangpc.com/servicelink/driver_download.aspx"
+                        },
+                        {
+                            "name": "微星",
+                            "url": "https://cn.msi.com/support#support_download"
+                        },
+                        {
+                            "name": "外星人（同戴尔）",
+                            "url": "https://www.dell.com/support/home/zh-cn?app=drivers"
+                        },
+                        {
+                            "name": "微软",
+                            "url": "https://support.microsoft.com/zh-cn/surface"
+                        },
+                        {
+                            "name": "盈通",
+                            "url": "http://www.yeston.net/"
+                        },
+                        {
+                            "name": "技嘉",
+                            "url": "https://www.gigabyte.cn/Support"
+                        },
+                        {
+                            "name": "影驰驱动下载",
+                            "url": "https://www.szgalaxy.com/home"
+                        },
+                        {
+                            "name": "迪兰驱动下载",
+                            "url": "http://www.dataland.com.cn/drivedown.aspx?nid=8&typeid=185"
+                        },
+                        {
+                            "name": "下载 三星（Samsung）工具和软件",
+                            "url": "https://semiconductor.samsung.com/cn/consumer-storage/support/tools/"
+                        },
+                        {
+                            "name": "磐镭官网",
+                            "url": "https://cn.pradeon.com/"
+                        },
+                        {
+                            "name": "铭瑄",
+                            "url": "http://www.maxsun.com.cn/"
+                        },
+                        {
+                            "name": "索泰",
+                            "url": "http://www.maxsun.com.cn/"
+                        },
+                        {
+                            "name": "耕升",
+                            "url": "http://www.szgainward.cn/"
+                        },
+                        {
+                            "name": "蓝戟",
+                            "url": "http://www.gunnir.cn/"
+                        },
+                        {
+                            "name": "华擎",
+                            "url": "https://www.asrock.com/index.cn.asp"
+                        },
+                        {
+                            "name": "昂达",
+                            "url": "http://www.onda.cn/"
+                        },
+                        {
+                            "name": "映泰",
+                            "url": "http://www.biostar.com.cn/app/en-us/"
+                        },
+                        {
+                            "name": "NZXT",
+                            "url": "https://nzxt.com/en-GB"
+                        },
+                        {
+                            "name": "摩尔线程",
+                            "url": "https://www.mthreads.com/"
+                        },
+                        {
+                            "name": "金士顿",
+                            "url": "https://www.kingston.com.cn/cn"
+                        },
+                        {
+                            "name": "长江存储",
+                            "url": "https://www.ymtc.com/cn/techsupport.html"
+                        },
+                        {
+                            "name": "铠侠",
+                            "url": "https://www.kioxia.com.cn/zh-cn/top.html"
+                        },
+                        {
+                            "name": "威刚",
+                            "url": "https://www.adata.com.cn/cn"
+                        },
+                        {
+                            "name": "英睿达",
+                            "url": "https://www.crucial.cn/"
+                        },
+                        {
+                            "name": "芝奇",
+                            "url": "http://www.gskill.com/cn/"
+                        },
+                        {
+                            "name": "光威",
+                            "url": "http://www.gloway.com.cn/"
+                        },
+                        {
+                            "name": "金百达",
+                            "url": "https://www.kingbank.com/cn/"
+                        },
+                        {
+                            "name": "美商海盗船",
+                            "url": "https://www.corsair.com/zh/zh/"
+                        },
+                        {
+                            "name": "阿斯加特",
+                            "url": "http://www.powev.com.cn/asgard/"
+                        },
+                        {
+                            "name": "Kimtigo金泰克",
+                            "url": "http://www.kimtigo.com.cn/"
+                        },
+                        {
+                            "name": "西部数据软件与下载",
+                            "url": "https://support.wdc.com/downloads.aspx?lang=cn"
+                        },
+                        {
+                            "name": "十铨",
+                            "url": "https://www.teamgroupinc.com/cn/"
+                        },
+                        {
+                            "name": "十铨服务与支持",
+                            "url": "https://support.teamgroupinc.com/cn/"
+                        }
+                    ]
+                },
+                {
+                    "name": "在线便捷工具",
+                    "links": [
+                        {
+                            "name": "HTML / JS代码运行器",
+                            "url": "https://www.omegaxyz.com/onlinetools/web-running/"
+                        },
+                        {
+                            "name": "HiPDF工具",
+                            "url": "https://www.hipdf.com/cn/"
+                        },
+                        {
+                            "name": "便民查询网",
+                            "url": "https://www.bmcx.com/"
+                        },
+                        {
+                            "name": "改图鸭",
+                            "url": "https://www.gaituya.com/?zhljj01"
+                        },
+                        {
+                            "name": "迅捷PDF转换器",
+                            "url": "https://app.xunjiepdf.com/?zhljj01"
+                        },
+                        {
+                            "name": "在线文本转声音",
+                            "url": "https://toolb.cn/textspeech"
+                        },
+                        {
+                            "name": "在线音频处理",
+                            "url": "https://vocalremover.org/zh/"
+                        },
+                        {
+                            "name": "PDF派",
+                            "url": "https://www.pdfpai.com/"
+                        },
+                        {
+                            "name": "格式转换大全",
+                            "url": "https://cn.office-converter.com/"
+                        },
+                        {
+                            "name": "在线思维导图",
+                            "url": "https://gitmind.cn/app/template?lang=zh"
+                        },
+                        {
+                            "name": "小工具合集",
+                            "url": "https://www.toolnb.com/"
+                        },
+                        {
+                            "name": "文件在线转换",
+                            "url": "https://www.aconvert.com/cn/"
+                        },
+                        {
+                            "name": "PDF24 Tools",
+                            "url": "https://tools.pdf24.org/zh/"
+                        },
+                        {
+                            "name": "一键抠图",
+                            "url": "https://www.remove.bg/zh"
+                        },
+                        {
+                            "name": "永中PDF工具集",
+                            "url": "https://pdf.yozocloud.cn/p/home"
+                        },
+                        {
+                            "name": "在线文件转换器",
+                            "url": "https://cdkm.com/cn/"
+                        }
+                    ]
+                },
+                {
+                    "name": "资源搜索",
+                    "links": [
+                        {
+                            "name": "极简搜索",
+                            "url": "http://www.jsousuo.com/?1000"
+                        },
+                        {
+                            "name": "嗨PC主页 - 轻快上网嗨PC",
+                            "url": "http://www.jsousuo.com/?1000"
+                        },
+                        {
+                            "name": "懒盘搜索",
+                            "url": "https://www.lzpan.com/"
+                        },
+                        {
+                            "name": "一个开始(从搜索开始)",
+                            "url": "https://aur.one/"
+                        },
+                        {
+                            "name": "某柠檬",
+                            "url": "https://www.moulem.com/"
+                        },
+                        {
+                            "name": "虫部落-搜索大杂烩",
+                            "url": "https://search.chongbuluo.com/"
+                        },
+                        {
+                            "name": "果汁导航",
+                            "url": "http://guozhivip.com/"
+                        },
+                        {
+                            "name": "爱达杂货铺",
+                            "url": "https://adzhp.xyz/"
+                        }
+                    ]
+                },
+                {
+                    "name": "必应",
+                    "links": [
+                        {
+                            "name": "主地址",
+                            "url": "https://cn.bing.com/"
+                        },
+                        {
+                            "name": "备用地址1",
+                            "url": "https://www4.bing.com/"
+                        },
+                        {
+                            "name": "备用地址2",
+                            "url": "https://s.cn.bing.net"
+                        }
+                    ]
+                },
+                {
+                    "name": "实用工具",
+                    "links": [
+                        {
+                            "name": "Cursors-4U.com",
+                            "url": "https://www.cursors-4u.com/"
+                        },
+                        {
+                            "name": "Custom Cursor",
+                            "url": "https://custom-cursor.com/"
+                        },
+                        {
+                            "name": "Basedash - Connect your database.Get an admin panel.",
+                            "url": "https://www.basedash.com/"
+                        },
+                        {
+                            "name": "基准测试和性能测试",
+                            "url": "https://benchmarks.ul.com/zh-hans/"
+                        },
+                        {
+                            "name": "Complete Internet Repair - softonic.com",
+                            "url": "https://complete-internet-repair.en.softonic.com/"
+                        },
+                        {
+                            "name": "Office Tool Plus | Office部署工具",
+                            "url": "https://otp.landian.vip/zh-cn/"
+                        },
+                        {
+                            "name": "优化工具 ( 部分工具windows系统通用 )",
+                            "url": "https://iknow.lenovo.com.cn/tool/lists"
+                        },
+                        {
+                            "name": "驱动，U启，软件",
+                            "url": "https://www.itsk.com/portal.php"
+                        },
+                        {
+                            "name": "软件仓库",
+                            "url": "https://mp.weixin.qq.com/s/arW1On6XiQQsQ_t8B3sGqw"
+                        },
+                        {
+                            "name": "Windows常用运行库合集（VC++、DirectX、.NET）",
+                            "url": "https://blog.csdn.net/qq_43843708/article/details/127138116"
+                        },
+                        {
+                            "name": "果核剥壳",
+                            "url": "https://www.ghxi.com/"
+                        },
+                        {
+                            "name": "IObit Unlocker-帮助用户解锁无法删除文件的小工具",
+                            "url": "https://www.iobit.com/en/iobit-unlocker.php"
+                        },
+                        {
+                            "name": "我的工具箱",
+                            "url": "https://toolgg.com/"
+                        },
+                        {
+                            "name": "微工具",
+                            "url": "http://www.wetools.com/html-formatter"
+                        },
+                        {
+                            "name": "菜鸟工具",
+                            "url": "https://c.runoob.com/"
+                        },
+                        {
+                            "name": "卡卡网",
+                            "url": "http://www.webkaka.com/"
+                        },
+                        {
+                            "name": "O&O App Buster - win删除已安装的应用程序",
+                            "url": "https://www.oo-software.com/en/ooappbuster"
+                        },
+                        {
+                            "name": "KMS激活工具（win系统，office）蓝秦云",
+                            "url": "https://aichunjing.lanzoui.com/b710887"
+                        },
+                        {
+                            "name": "爱资料工具",
+                            "url": "https://www.toolnb.com/"
+                        },
+                        {
+                            "name": "刘明野的工具箱",
+                            "url": "https://tools.liumingye.cn/"
+                        },
+                        {
+                            "name": "拷贝兔",
+                            "url": "https://cp.anyknew.com/"
+                        },
+                        {
+                            "name": "Everything-快速文件搜索神器",
+                            "url": "https://www.voidtools.com/zh-cn/"
+                        },
+                        {
+                            "name": "Geek Uninstall-程序卸载工具",
+                            "url": "https://geekuninstaller.com/download"
+                        },
+                        {
+                            "name": "ToDesk-远程控制",
+                            "url": "https://www.todesk.com/download.html"
+                        },
+                        {
+                            "name": "Snipaste-截图工具",
+                            "url": "https://www.snipaste.com/download.html"
+                        },
+                        {
+                            "name": "Universal Watermark Disabler-移除Win桌面版本号水印",
+                            "url": "https://winaero.com/download-universal-watermark-disabler/"
+                        },
+                        {
+                            "name": "HWiNFO-硬件检测软件",
+                            "url": "https://www.hwinfo.com/"
+                        },
+                        {
+                            "name": "Super PI - cpu测试软件",
+                            "url": "https://www.superpi.net/"
+                        },
+                        {
+                            "name": "ViVeTool GUI - 更直观的开启新功能(用于win11测试版)",
+                            "url": "https://github.com/PeterSick/ViVeTool-GUI"
+                        },
+                        {
+                            "name": "ViVeTool",
+                            "url": "https://github.com/thebookisclosed/ViVe/releases"
+                        },
+                        {
+                            "name": "ViVeTool工具的使用",
+                            "url": "https://sspai.com/post/74286"
+                        },
+                        {
+                            "name": "试图解决GitHub访问慢、图片加载不出来的问题",
+                            "url": "https://github.com/521xueweihan/GitHub520"
+                        },
+                        {
+                            "name": "微软PowerToys",
+                            "url": "https://github.com/microsoft/PowerToys/releases"
+                        },
+                        {
+                            "name": "VirtualBox虚拟机",
+                            "url": "https://www.virtualbox.org/wiki/Downloads"
+                        },
+                        {
+                            "name": "GitHub文件加速下载",
+                            "url": "https://gh.api.99988866.xyz/"
+                        },
+                        {
+                            "name": "DoGet-GitHub文件加速下载",
+                            "url": "https://ghproxy.com/"
+                        },
+                        {
+                            "name": "谷歌插件",
+                            "url": "https://huajiakeji.com/"
+                        },
+                        {
+                            "name": "在线工具导航",
+                            "url": "http://www.jsons.cn/"
+                        },
+                        {
+                            "name": "在线工具",
+                            "url": "https://www.sojson.com/"
+                        },
+                        {
+                            "name": "图吧工具箱",
+                            "url": "http://www.tbtool.cn/"
+                        },
+                        {
+                            "name": "万动力 - Logo在线设计神器",
+                            "url": "https://www.wandongli.com/"
+                        },
+                        {
+                            "name": "在线转换器",
+                            "url": "https://www.aconvert.com/cn/"
+                        },
+                        {
+                            "name": "A free CDN for open source projects",
+                            "url": "https://www.jsdelivr.com/"
+                        },
+                        {
+                            "name": "Migrating from GitHub to jsDelivr",
+                            "url": "https://www.jsdelivr.com/github"
+                        },
+                        {
+                            "name": "bootsapmb.com - 模板库",
+                            "url": "http://www.bootstrapmb.com/"
+                        },
+                        {
+                            "name": "BootCDN-稳定、快速、免费的前端开源项目 CDN 加速服务",
+                            "url": "https://www.bootcdn.cn/"
+                        },
+                        {
+                            "name": "Quicker-快捷工具",
+                            "url": "https://getquicker.net/"
+                        },
+                        {
+                            "name": "Listary-Windows搜索工具",
+                            "url": "https://www.listarypro.com/"
+                        },
+                        {
+                            "name": "Iris-蓝光过滤和眼睛保护软件",
+                            "url": "https://iristech.co/"
+                        },
+                        {
+                            "name": "Potplayer",
+                            "url": "http://www.potplayercn.com/"
+                        },
+                        {
+                            "name": "程序员工具",
+                            "url": "https://www.toolfk.com/"
+                        },
+                        {
+                            "name": "APSGO软购",
+                            "url": "https://apsgo.com/"
+                        },
+                        {
+                            "name": "SMS-ACTIVATE.ORG - 虚拟号码服务",
+                            "url": "https://sms-activate.org/"
+                        },
+                        {
+                            "name": "Prometheus",
+                            "url": "https://prometheus.io/"
+                        },
+                        {
+                            "name": "ZABBIX",
+                            "url": "https://www.zabbix.com/"
+                        },
+                        {
+                            "name": "IPAddress.com - IP地址工具",
+                            "url": "https://www.ipaddress.com/"
+                        },
+                        {
+                            "name": "Win11右键恢复完整右键菜单",
+                            "url": "https://blog.csdn.net/u012153104/article/details/130195590"
+                        },
+                        {
+                            "name": "Jsdelivr｜Github加速节点合集",
+                            "url": "https://geekerline.com/newsflashes/58872.html"
+                        },
+                        {
+                            "name": "jsdelivr：github/npm CDN国内加速节点",
+                            "url": "https://iui.su/3635/"
+                        },
+                        {
+                            "name": "OSChina - 国内新兴的IT门户网站",
+                            "url": "https://www.oschina.net/"
+                        },
+                        {
+                            "name": "在线NGINX 配置生成",
+                            "url": "https://nginx.zhangchen915.com/"
+                        },
+                        {
+                            "name": "免费的LOGO在线设计制作工具",
+                            "url": "http://www.uugai.com/"
+                        },
+                        {
+                            "name": "Win10 Xbox Game Bar 开启FPS时提示没有权限的解决方案",
+                            "url": "https://www.zhihu.com/tardis/zm/art/352360263?source_id=1005"
+                        },
+                        {
+                            "name": "Xbox Game Bar 实时显示帧数方法| Win10开启自带FPS显示",
+                            "url": "https://blog.csdn.net/weixin_44854668/article/details/130785943"
+                        },
+                        {
+                            "name": "Crystal Dew World - 固态硬盘测试工具",
+                            "url": "https://crystalmark.info/en/"
+                        },
+                        {
+                            "name": "CrystalDiskInfo",
+                            "url": "https://crystalmark.info/en/download/"
+                        },
+                        {
+                            "name": "CrystalDiskMark",
+                            "url": "https://crystalmark.info/en/download/"
+                        },
+                        {
+                            "name": "TxBENCH 0.98 汉化版（吾爱破解论坛）",
+                            "url": "https://www.52pojie.cn/thread-1658820-1-1.html"
+                        },
+                        {
+                            "name": "HD Tune",
+                            "url": "http://www.hdtune.com/"
+                        },
+                        {
+                            "name": "SSD utils",
+                            "url": "http://vlo.name:3000/ssdtool/"
+                        },
+                        {
+                            "name": "MY WIKI",
+                            "url": "https://tisensen.cn/doku.php/index"
+                        },
+                        {
+                            "name": "iTXTech FlashDetector",
+                            "url": "https://github.com/iTXTech/FlashDetector"
+                        },
+                        {
+                            "name": "Flash中心",
+                            "url": "https://www.flash.cn/"
+                        }
+                    ]
+                },
+                {
+                    "name": "音乐资源",
+                    "links": [
+                        {
+                            "name": "乐团音乐网",
+                            "url": "http://www.yt66.cn/"
+                        },
+                        {
+                            "name": "音乐搜索",
+                            "url": "https://thewind.xyz/"
+                        },
+                        {
+                            "name": "音乐客",
+                            "url": "https://www.yinyueke.net/"
+                        },
+						{
+						    "name": "音乐下载器",
+						    "url": "https://music.wandhi.com/"
+						},
+						{
+						    "name": "听音乐",
+						    "url": "https://lvyueyang.github.io/web-music/"
+						},
+						{
+						    "name": "FREESOUND飞声无版权音乐库",
+						    "url": "https://www.freesound.cn/"
+						},
+						{
+						    "name": "biu-二次元音乐",
+						    "url": "https://biu.moe/#/Index/home"
+						},
+						{
+						    "name": "无损库 - 高品质无损音乐下载",
+						    "url": "https://wusunk.com/"
+						},
+                        {
+                            "name": "无损音乐吧",
+                            "url": "https://www.dtshot.com/"
+                        },
+						{
+						    "name": "无版权音乐，免费商用 - 音乐资源库 - FiftySounds",
+						    "url": "https://www.fiftysounds.com/zh/"
+						},
+						{
+						    "name": "果汁音乐",
+						    "url": "http://guozhivip.com/yinyue/"
+						},
+                        {
+                            "name": "xlebbs-音乐论坛",
+                            "url": "https://www.xlebbs.com/"
+                        },
+                        {
+                            "name": "CD包音乐网（需要登录才能下载）",
+                            "url": "https://www.cdbao.net/"
+                        },
+                        {
+                            "name": "My Free MP3",
+                            "url": "https://tool.liumingye.cn/music/?page=homePage#/"
+                        }
+                    ]
+                },
+                {
+                    "name": "设计、图片、图书、办公、教程及其他",
+                    "links": [
+                        {
+                            "name": "中国国家图书馆",
+                            "url": "http://www.nlc.cn/"
+                        },
+                        {
+                            "name": "DelftStack",
+                            "url": "https://www.delftstack.com/zh/"
+                        },
+                        {
+                            "name": "优设导航",
+                            "url": "https://hao.uisdc.com/"
+                        },
+                        {
+                            "name": "Windows开机照片",
+                            "url": "https://tupian.sioe.cn/b/bing-home-image/"
+                        },
+                        {
+                            "name": "Unsplash（图片素材）",
+                            "url": "https://unsplash.com/"
+                        },
+                        {
+                            "name": "网站书签",
+                            "url": "http://www.bewindoweb.com/dwg.php"
+                        },
+                        {
+                            "name": "IT码农",
+                            "url": "https://tanqingbo.cn/CSBook001/"
+                        },
+                        {
+                            "name": "PPT导航网站",
+                            "url": "http://www.hippter.com/"
+                        },
+                        {
+                            "name": "办公资源",
+                            "url": "https://www.bangongziyuan.com/"
+                        },
+                        {
+                            "name": "万彩办公大师",
+                            "url": "http://www.wofficebox.com/"
+                        },
+                        {
+                            "name": "微软设计-壁纸",
+                            "url": "https://wallpapers.microsoft.design/"
+                        },
+                        {
+                            "name": "插画免费下载站",
+                            "url": "https://storyset.com/"
+                        },
+                        {
+                            "name": "西田图像",
+                            "url": "https://www.sitapix.com/"
+                        },
+                        {
+                            "name": "免费字体",
+                            "url": "https://www.100font.com/"
+                        },
+                        {
+                            "name": "PPT课件网",
+                            "url": "http://www.pptkj.net/"
+                        },
+                        {
+                            "name": "PPT超级市场",
+                            "url": "https://www.pptsupermarket.com/"
+                        },
+                        {
+                            "name": "SeeSeed（设计者的天堂）",
+                            "url": "https://www.seeseed.com/"
+                        },
+                        {
+                            "name": "码力全开（设计师、开发者的资源库）",
+                            "url": "https://design.maliquankai.com/"
+                        },
+                        {
+                            "name": "爱给网（全能素材大师）",
+                            "url": "https://www.aigei.com/"
+                        },
+                        {
+                            "name": "E书联盟",
+                            "url": "https://www.book118.com/"
+                        },
+                        {
+                            "name": "菜鸟教程",
+                            "url": "https://www.runoob.com/"
+                        },
+                        {
+                            "name": "中国教育考试网",
+                            "url": "https://www.neea.edu.cn/"
+                        },
+                        {
+                            "name": "正版中国",
+                            "url": "https://www.getitfree.cn/"
+                        },
+                        {
+                            "name": "学信网",
+                            "url": "https://www.chsi.com.cn/"
+                        },
+                        {
+                            "name": "12306",
+                            "url": "https://www.12306.cn/"
+                        },
+                        {
+                            "name": "绕过PowerShell执行策略的15种方法",
+                            "url": "https://bbs.pediy.com/thread-218986.htm"
+                        },
+                        {
+                            "name": "U盘启动快捷键",
+                            "url": "https://www.laomaotao.net/quickquery/"
+                        },
+                        {
+                            "name": "小白怎么选择台式机硬件",
+                            "url": "https://jingyan.baidu.com/article/a3aad71af1bf97f0fa00960e.html"
+                        },
+                        {
+                            "name": "什么样的笔记本电脑好用",
+                            "url": "https://jingyan.baidu.com/article/9113f81b1076f66a3314c726.html"
+                        },
+                        {
+                            "name": "让 Windows 11 的开始菜单不再卡",
+                            "url": "https://jingyan.baidu.com/article/75ab0bcbbf373497864db2c9.html"
+                        },
+                        {
+                            "name": "致美化",
+                            "url": "https://zhutix.com/"
+                        },
+                        {
+                            "name": "翼狐网",
+                            "url": "https://www.yiihuu.com/"
+                        },
+                        {
+                            "name": "wikiHow（可信赖的万事指南）",
+                            "url": "https://zh.wikihow.com/%E9%A6%96%E9%A1%B5"
+                        },
+                        {
+                            "name": "html5原生页面添加时间戳解决缓存问题及清除缓存的几种方式",
+                            "url": "https://blog.csdn.net/y814696634/article/details/108713655"
+                        }
+                    ]
+                },
+                {
+                    "name": "聊天社交",
+                    "links": [
+                        {
+                            "name": "QQ",
+                            "url": "https://im.qq.com/index/"
+                        },
+                        {
+                            "name": "微信",
+                            "url": "https://weixin.qq.com/"
+                        },
+                        {
+                            "name": "TIM",
+                            "url": "https://office.qq.com/download.html"
+                        }
+                    ]
+                },
+                {
+                    "name": "视频直播",
+                    "links": [
+                        {
+                            "name": "腾讯视频",
+                            "url": "https://v.qq.com/biu/download"
+                        },
+                        {
+                            "name": "爱奇艺视频",
+                            "url": "https://www.iqiyi.com/appstore.html?vfrm=pcw_home&vfrmblk=712211_download&vfrmrst="
+                        },
+                        {
+                            "name": "优酷视频",
+                            "url": "https://youku.com/product/index?spm=a2ha1.14919748_WEBHOME_GRAY.uerCenter.5!5~5~5~A"
+                        },
+                        {
+                            "name": "斗鱼直播",
+                            "url": "https://www.douyu.com/client?tab=client"
+                        },
+                        {
+                            "name": "虎牙直播",
+                            "url": "https://www.huya.com/download/"
+                        },
+                        {
+                            "name": "芒果TV",
+                            "url": "https://www.mgtv.com/app/"
+                        },
+                        {
+                            "name": "哔哩哔哩",
+                            "url": "https://app.bilibili.com/"
+                        }
+                    ]
+                },
+                {
+                    "name": "音乐动听",
+                    "links": [
+                        {
+                            "name": "千千音乐",
+                            "url": "https://music.91q.com/download"
+                        },
+                        {
+                            "name": "酷狗音乐",
+                            "url": "https://download.kugou.com/"
+                        },
+                        {
+                            "name": "酷我音乐",
+                            "url": "http://www.kuwo.cn/down"
+                        },
+                        {
+                            "name": "QQ音乐",
+                            "url": "https://y.qq.com/download/index.html"
+                        },
+                        {
+                            "name": "网易云音乐",
+                            "url": "https://music.163.com/#/download"
+                        }
+                    ]
+                },
+                {
+                    "name": "游戏",
+                    "links": [
+                        {
+                            "name": "Wegame",
+                            "url": "https://www.wegame.com.cn/client/"
+                        },
+                        {
+                            "name": "Steam",
+                            "url": "https://store.steampowered.com/"
+                        }
+                    ]
+                },
+                {
+                    "name": "浏览器",
+                    "links": [
+                        {
+                            "name": "谷歌浏览器",
+                            "url": "https://www.google.cn/intl/zh-CN/chrome/"
+                        },
+                        {
+                            "name": "360安全浏览器",
+                            "url": "https://browser.360.cn/se/"
+                        },
+                        {
+                            "name": "QQ浏览器",
+                            "url": "https://browser.qq.com/?adtag=SEM170314031"
+                        },
+                        {
+                            "name": "火狐浏览器",
+                            "url": "http://www.firefox.com.cn/"
+                        },
+                        {
+                            "name": "微软浏览器",
+                            "url": "https://www.microsoft.com/zh-cn/edge?form=MA13FJ"
+                        },
+                        {
+                            "name": "搜狗高速浏览器",
+                            "url": "https://ie.sogou.com/"
+                        },
+                        {
+                            "name": "360极速浏览器",
+                            "url": "https://browser.360.cn/ee/index.html"
+                        },
+                        {
+                            "name": "Opera浏览器",
+                            "url": "https://www.opera.com/"
+                        }
+                    ]
+                },
+                {
+                    "name": "软件镜像站",
+                    "links": [
+                        {
+                            "name": "网易开源镜像站",
+                            "url": "http://mirrors.163.com/"
+                        },
+                        {
+                            "name": "阿里云",
+                            "url": "https://developer.aliyun.com/mirror/"
+                        },
+                        {
+                            "name": "搜狐",
+                            "url": "http://mirrors.sohu.com/"
+                        },
+                        {
+                            "name": "腾讯",
+                            "url": "https://mirrors.cloud.tencent.com/"
+                        },
+                        {
+                            "name": "清华源",
+                            "url": "https://mirrors.tuna.tsinghua.edu.cn/"
+                        },
+                        {
+                            "name": "华为源",
+                            "url": "https://mirrors.huaweicloud.com/home"
+                        },
+                        {
+                            "name": "中科大源",
+                            "url": "http://mirrors.ustc.edu.cn/"
+                        },
+                        {
+                            "name": "北京外国语大学源",
+                            "url": "https://mirrors.bfsu.edu.cn/"
+                        },
+                        {
+                            "name": "移动云",
+                            "url": "http://mirrors.cmecloud.cn/"
+                        },
+                        {
+                            "name": "开源社/Azure中国",
+                            "url": "http://mirror.azure.cn/"
+                        },
+                        {
+                            "name": "OpenTuna/AWS中国",
+                            "url": "https://opentuna.cn/"
+                        },
+                        {
+                            "name": "Capital Online Mirror Site",
+                            "url": "http://mirrors.yun-idc.com/"
+                        },
+                        {
+                            "name": "校园网联合镜像站",
+                            "url": "https://mirrors.cernet.edu.cn/"
+                        }
+                    ]
+                },
+                {
+                    "name": "代码托管平台",
+                    "links": [
+                        {
+                            "name": "GitHub",
+                            "url": "https://github.com/"
+                        },
+                        {
+                            "name": "码云",
+                            "url": "https://gitee.com/"
+                        },
+                        {
+                            "name": "GitLab",
+                            "url": "https://about.gitlab.com/"
+                        },
+                        {
+                            "name": "BitBucket",
+                            "url": "https://bitbucket.org/"
+                        },
+                        {
+                            "name": "CODING - 一站式软件研发管理平台",
+                            "url": "https://coding.net/"
+                        },
+                        {
+                            "name": "Sourceforge",
+                            "url": "https://sourceforge.net/"
+                        },
+                        {
+                            "name": "云效代码管理 Codeup",
+                            "url": "https://www.aliyun.com/product/yunxiao/codeup"
+                        },
+                        {
+                            "name": "代码托管 iCode",
+                            "url": "https://cloud.baidu.com/product/icode.html"
+                        },
+                        {
+                            "name": "代码托管 CodeArts Repo",
+                            "url": "https://www.huaweicloud.com/intl/zh-cn/product/codehub.html"
+                        },
+                        {
+                            "name": "GitCode——开源代码托管平台",
+                            "url": "https://gitcode.net/explore"
+                        }
+                    ]
+                },
+                {
+                    "name": "蓝秦云资源",
+                    "links": [
+                        {
+                            "name": "英特尔驱动",
+                            "url": "https://lxldwp.lanzoum.com/b01xamazc"
+                        },
+                        {
+                            "name": "工具软件",
+                            "url": "https://lxldwp.lanzoum.com/b01xam4of"
+                        },
+                        {
+                            "name": "浏览器",
+                            "url": "https://lxldwp.lanzoum.com/b01xam3qb"
+                        }
+                    ]
+                },
+                {
+                    "name": "本人制作并发布的windows系统工具",
+                    "links": [
+                        {
+                            "name": "蓝秦云（访问密码：2001）",
+                            "url": "https://lxldwp.lanzoum.com/b01vrjped"
+                        }
+      ]
+    }
+  ]
+}
