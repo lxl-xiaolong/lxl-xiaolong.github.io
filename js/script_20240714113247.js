@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loading = document.getElementById('loading');
     loading.style.display = 'block';
 
-    fetch('https://https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240714113319.json')
+    fetch('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240714113319.json')
         .then(response => response.json())
         .then(data => {
             loading.style.display = 'none';
