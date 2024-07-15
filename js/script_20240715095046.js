@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fetch and display categories
     function fetchCategories() {
         showLoading();
-        fetch('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240715093631.json')
+        fetch('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240715095033.json')
             .then(response => response.json())
             .then(data => {
                 data.forEach(category => {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         suggestions.innerHTML = '';
-        fetch('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links.json')
+        fetch('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240715095033.json')
             .then(response => response.json())
             .then(data => {
                 let found = false;
