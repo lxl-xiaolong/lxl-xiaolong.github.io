@@ -1,25 +1,154 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>糖糖Π的导航</title>
-    <link rel="stylesheet" href="https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/css/style_20240719114727.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖糖Π的导航</title>
+<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<style>
+  body { background-color: #f8f9fa; color: #212529; }
+  header { background: linear-gradient(to right, #4b79a1, #283e51); color: white; text-align: center; padding: 20px 0; }
+  header h1 { margin: 0; }
+  header h2 { margin: 0; font-style: italic; font-size: 18px; text-align: right; }
+  #hitokoto { margin: 20px 0; }
+  #hitokoto a { color: white; font-size: 18px; text-decoration: none; }
+  .search-container { width: 50%; margin: 20px auto; }
+  .search-container input[type="text"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+  .search-container input[type="text"]:focus { border-color: #4b79a1; box-shadow: 0 0 5px rgba(75, 121, 161, 0.5); }
+  .suggestions { background-color: #f8f9fa; color: #212529; border: 1px solid #ccc; border-top: none; display: none; }
+  .suggestions a { color: #212529; text-decoration: none; display: block; padding: 10px; }
+  .suggestions a:hover { background-color: #e9ecef; }
+  .suggestions li { list-style: none; }
+  main { background-color: #f8f9fa; color: #212529; text-align: center; padding: 20px; }
+  main h3 { margin: 20px 0; color: randomColor(); }
+  main table { width: 50%; margin: 0 auto; border-collapse: collapse; }
+  main table a { color: #212529; text-decoration: none; font-size: 18px; }
+  main table a:hover { text-decoration: underline; }
+  footer { text-align: center; padding: 20px 0; }
+  .loading { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5) url('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/loading.gif') no-repeat center center; display: none; }
+</style>
 </head>
 <body>
-    <header>
-        <div id="time"></div>
-        <h1>糖糖Π的导航</h1>
-        <p>——热衷于分享安全，无毒，无后门，可靠可用的各类资源。</p>
-        <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>
-        <input type="text" id="searchBox" placeholder="搜索...">
-        <div id="suggestions"></div>
-    </header>
-    <main id="mainContent"></main>
-    <footer>
-        <p>Copyright © 2024 刘小龙</p>
-    </footer>
-    <div id="loading"></div>
-    <script src="https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/script_20240719110310.js"></script>
+
+<div class="loading"></div>
+
+<header>
+  <div id="date-time"></div>
+  <h1>糖糖Π的导航</h1>
+  <h2>——热衷于分享安全，无毒，无后门，可靠可用的各类资源。</h2>
+  <p id="hitokoto"><a href="#" id="hitokoto_text">:D 获取中...</a></p>
+  <div class="search-container">
+    <input type="text" id="search-box" placeholder="搜索...">
+    <div class="suggestions" id="suggestions-box"></div>
+  </div>
+</header>
+
+<main id="main-content">
+  <!-- Links will be loaded here -->
+</main>
+
+<footer>
+  <p>Copyright © 2024 刘小龙</p>
+</footer>
+
+<script>
+  function randomColor() {
+    return '#' + Math.floor(Math.random()*16777215).toString(16);
+  }
+
+  function updateDateTime() {
+    const now = new Date();
+    const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const weekDays = ["日", "一", "二", "三", "四", "五", "六"];
+    const dateString = now.toLocaleDateString('zh-CN', dateOptions).replace(/\//g, '年').replace('月', '月') + '日';
+    const timeString = now.toLocaleTimeString('zh-CN', timeOptions).replace(/:/g, '时').replace('分', '分') + '秒';
+    const weekDay = weekDays[now.getDay()];
+    $('#date-time').text(`${dateString} ${timeString} 星期${weekDay}`);
+  }
+
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
+
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.querySelector('#hitokoto_text')
+      hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error);
+
+  function loadLinks() {
+    $.getJSON('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links.json', function(data) {
+      const mainContent = $('#main-content');
+      data.forEach(category => {
+        const categoryDiv = $('<div>').addClass('category').css('color', randomColor());
+        const h3 = $('<h3>').text(category.name);
+        categoryDiv.append(h3);
+        const linksTable = $('<table>').addClass('table').attr('border', '0');
+        let row = $('<tr>');
+        category.links.forEach((link, index) => {
+          const a = $('<a>').attr('href', link.url).attr('target', '_blank').text(link.name);
+          const td = $('<td>').append(a);
+          row.append(td);
+          if ((index + 1) % 4 === 0) {
+            linksTable.append(row);
+            row = $('<tr>');
+          }
+        });
+        if (category.links.length % 4 !== 0) {
+          linksTable.append(row);
+        }
+        categoryDiv.append(linksTable);
+        mainContent.append(categoryDiv);
+      });
+    }).fail(function() {
+      console.error("Error loading JSON data");
+    }).always(function() {
+      $('.loading').fadeOut();
+    });
+  }
+
+  $(document).ready(function() {
+    $('.loading').show();
+    loadLinks();
+    $('#search-box').on('input', function() {
+      const searchQuery = $(this).val().toLowerCase();
+      const suggestionsBox = $('#suggestions-box');
+      suggestionsBox.empty();
+      if (searchQuery.length > 0) {
+        $.getJSON('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links.json', function(data) {
+          let suggestions = [];
+          data.forEach(category => {
+            category.links.forEach(link => {
+              if (link.name.toLowerCase().includes(searchQuery)) {
+                suggestions.push(link);
+              }
+            });
+          });
+          if (suggestions.length > 0) {
+            suggestions.forEach(suggestion => {
+              const a = $('<a>').attr('href', suggestion.url).attr('target', '_blank').text(suggestion.name);
+              suggestionsBox.append($('<li>').append(a));
+            });
+          } else {
+            suggestionsBox.append($('<li>').text('没有找到与之相匹配的结果！'));
+          }
+          suggestionsBox.show();
+        });
+      } else {
+        suggestionsBox.hide();
+      }
+    });
+
+    $(document).on('click', function(e) {
+      if (!$(e.target).closest('#search-box').length) {
+        $('#suggestions-box').hide();
+      }
+    });
+  });
+</script>
 </body>
 </html>
