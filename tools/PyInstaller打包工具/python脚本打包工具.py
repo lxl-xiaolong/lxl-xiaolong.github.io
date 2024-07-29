@@ -1,131 +1,143 @@
 import sys
 import os
-import subprocess
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QFileDialog, QTextEdit, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget, QFileDialog, QRadioButton, QButtonGroup, QTextEdit
 from PyQt5.QtCore import QThread, pyqtSignal
+import subprocess
 
 class PackThread(QThread):
     output_signal = pyqtSignal(str)
 
-    def __init__(self, py_file, distpath, workpath, specpath):
+    def __init__(self, command):
         super().__init__()
-        self.py_file = py_file
-        self.distpath = distpath
-        self.workpath = workpath
-        self.specpath = specpath
+        self.command = command
 
     def run(self):
-        # 发送开始打包信号
-        self.output_signal.emit('开始打包Python脚本...')
+        process = subprocess.Popen(self.command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        for line in process.stdout:
+            self.output_signal.emit(line)
 
-        # 构造命令
-        cmd = f'pyinstaller --noconfirm --onefile --windowed "{self.py_file}" --distpath "{self.distpath}" --workpath "{self.workpath}" --specpath "{self.specpath}"'
-
-        # 打包Python脚本
-        process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True, text=True)
-
-        while process.poll() is None:
-            output = process.stdout.readline()
-            self.output_signal.emit(output.strip())
-
-        self.output_signal.emit('打包完成！')
-
-class PyInstallerGUI(QMainWindow):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
-        self.pack_thread = None
 
     def initUI(self):
-        self.setGeometry(100, 100, 600, 400)
         self.setWindowTitle('Python脚本打包工具')
+        self.setGeometry(100, 100, 600, 400)
 
-        # 布局
         layout = QVBoxLayout()
 
-        # 选择Python脚本
-        self.py_file_label = QLabel('Python脚本：')
-        self.py_file_lineedit = QLineEdit()
-        self.py_file_button = QPushButton('选择文件')
-        self.py_file_button.clicked.connect(self.select_py_file)
-        layout.addWidget(self.py_file_label)
-        layout.addWidget(self.py_file_lineedit)
-        layout.addWidget(self.py_file_button)
-
-        # 输出路径
+        self.script_label = QLabel('脚本路径：')
         self.distpath_label = QLabel('输出路径：')
-        self.distpath_lineedit = QLineEdit('output')
-        self.distpath_button = QPushButton('选择文件夹')
-        self.distpath_button.clicked.connect(self.select_distpath)
-        layout.addWidget(self.distpath_label)
-        layout.addWidget(self.distpath_lineedit)
-        layout.addWidget(self.distpath_button)
-
-        # 工作路径
         self.workpath_label = QLabel('工作路径：')
-        self.workpath_lineedit = QLineEdit(f'{os.path.expanduser("~")}/build')
-        layout.addWidget(self.workpath_label)
-        layout.addWidget(self.workpath_lineedit)
+        self.specpath_label = QLabel('Spec路径：')
 
-        # spec文件路径
-        self.specpath_label = QLabel('spec文件路径：')
-        self.specpath_lineedit = QLineEdit(f'{os.path.expanduser("~")}/spec')
-        layout.addWidget(self.specpath_label)
-        layout.addWidget(self.specpath_lineedit)
+        self.script_button = QPushButton('选择Python脚本')
+        self.script_button.clicked.connect(self.select_script)
+        self.distpath_button = QPushButton('选择输出路径')
+        self.distpath_button.clicked.connect(self.select_distpath)
+        self.workpath_button = QPushButton('选择工作路径')
+        self.workpath_button.clicked.connect(self.select_workpath)
+        self.specpath_button = QPushButton('选择spec路径')
+        self.specpath_button.clicked.connect(self.select_specpath)
 
-        # 打包按钮
         self.pack_button = QPushButton('开始打包')
-        self.pack_button.clicked.connect(self.pack_py_file)
+        self.pack_button.clicked.connect(self.start_pack)
+
+        self.onefile_radio = QRadioButton('单文件打包')
+        self.onedir_radio = QRadioButton('单目录打包')
+        self.windowed_radio = QRadioButton('基于窗口运行')
+        self.console_radio = QRadioButton('基于控制台运行')
+
+        self.pack_type_group = QButtonGroup()
+        self.pack_type_group.addButton(self.onefile_radio)
+        self.pack_type_group.addButton(self.onedir_radio)
+
+        self.run_type_group = QButtonGroup()
+        self.run_type_group.addButton(self.windowed_radio)
+        self.run_type_group.addButton(self.console_radio)
+
+        self.output_text = QTextEdit()
+        self.output_text.setReadOnly(True)
+
+        layout.addWidget(self.script_label)
+        layout.addWidget(self.script_button)
+        layout.addWidget(self.distpath_label)
+        layout.addWidget(self.distpath_button)
+        layout.addWidget(self.workpath_label)
+        layout.addWidget(self.workpath_button)
+        layout.addWidget(self.specpath_label)
+        layout.addWidget(self.specpath_button)
+        layout.addWidget(self.onefile_radio)
+        layout.addWidget(self.onedir_radio)
+        layout.addWidget(self.windowed_radio)
+        layout.addWidget(self.console_radio)
         layout.addWidget(self.pack_button)
+        layout.addWidget(self.output_text)
 
-        # 输出文本框
-        self.output_textedit = QTextEdit()
-        self.output_textedit.setReadOnly(True)
-        layout.addWidget(self.output_textedit)
-
-        # 设置中心布局
         central_widget = QWidget()
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
 
-    def select_py_file(self):
-        file_name, _ = QFileDialog.getOpenFileName(self, '选择Python脚本', '', 'Python Files (*.py);;All Files (*)')
-        if file_name:
-            self.py_file_lineedit.setText(file_name)
+    def select_script(self):
+        options = QFileDialog.Options()
+        filename, _ = QFileDialog.getOpenFileName(self, "选择Python脚本", "", "Python Files (*.py);;All Files (*)", options=options)
+        if filename:
+            self.script_label.setText(f'脚本路径：{filename}')
 
     def select_distpath(self):
-        dir_name = QFileDialog.getExistingDirectory(self, '选择输出文件夹', '')
-        if dir_name:
-            self.distpath_lineedit.setText(dir_name)
+        directory = QFileDialog.getExistingDirectory(self, "选择输出路径")
+        if directory:
+            self.distpath_label.setText(f'输出路径：{directory}')
 
-    def pack_py_file(self):
-        py_file = self.py_file_lineedit.text()
-        distpath = self.distpath_lineedit.text()
-        workpath = self.workpath_lineedit.text()
-        specpath = self.specpath_lineedit.text()
+    def select_workpath(self):
+        directory = QFileDialog.getExistingDirectory(self, "选择工作路径")
+        if directory:
+            self.workpath_label.setText(f'工作路径：{directory}')
 
-        if not py_file:
-            self.output_textedit.append('请选择Python脚本！')
+    def select_specpath(self):
+        directory = QFileDialog.getExistingDirectory(self, "选择spec路径")
+        if directory:
+            self.specpath_label.setText(f'Spec路径：{directory}')
+
+    def start_pack(self):
+        script_path = self.script_label.text().split('：')[-1]
+        distpath = self.distpath_label.text().split('：')[-1]
+        workpath = self.workpath_label.text().split('：')[-1]
+        specpath = self.specpath_label.text().split('：')[-1]
+
+        if not script_path:
+            self.append_output('请选择有效的Python脚本。')
             return
 
-        if not os.path.exists(distpath):
-            os.makedirs(distpath)
+        command = ['pyinstaller', '--noconfirm']
+        if self.onefile_radio.isChecked():
+            command.append('--onefile')
+        elif self.onedir_radio.isChecked():
+            command.append('--onedir')
 
-        if not os.path.exists(workpath):
-            os.makedirs(workpath)
+        if self.windowed_radio.isChecked():
+            command.append('--windowed')
+        elif self.console_radio.isChecked():
+            command.append('--console')
 
-        if not os.path.exists(specpath):
-            os.makedirs(specpath)
+        command.append(script_path)
+        if distpath:
+            command.extend(['--distpath', distpath])
+        if workpath:
+            command.extend(['--workpath', workpath])
+        if specpath:
+            command.extend(['--specpath', specpath])
 
-        self.pack_thread = PackThread(py_file, distpath, workpath, specpath)
-        self.pack_thread.output_signal.connect(self.update_output)
+        self.pack_thread = PackThread(command)
+        self.pack_thread.output_signal.connect(self.append_output)
         self.pack_thread.start()
 
-    def update_output(self, output):
-        self.output_textedit.append(output)
+    def append_output(self, text):
+        self.output_text.append(text)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    gui = PyInstallerGUI()
-    gui.show()
+    main_window = MainWindow()
+    main_window.show()
     sys.exit(app.exec_())
