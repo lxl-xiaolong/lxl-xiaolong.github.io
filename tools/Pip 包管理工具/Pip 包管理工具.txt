@@ -1,0 +1,132 @@
+Pip包管理工具程序文档
+1. 概述
+Pip包管理工具是一个使用PyQt5库开发的桌面应用程序，它允许用户通过图形界面管理Python包。应用程序提供了升级pip版本、安装、卸载包以及列出所有已安装包的功能。
+
+2. 程序结构
+2.1 主窗口类 MainWindow
+主窗口类 MainWindow 继承自 QMainWindow，并包含了以下主要方法和属性：
+
+__init__: 构造函数，初始化窗口和UI组件。
+initUI: 初始化用户界面，包括按钮、下拉列表、文本框和文本编辑器。
+load_pip_sources: 加载pip源配置文件，并填充pip源下拉列表。
+upgrade_pip: 升级pip版本。
+install_package: 安装包。
+uninstall_package: 卸载包。
+list_packages: 列出所有已安装包的版本信息。
+run_command: 执行命令，并将输出和错误信息显示在相应的文本编辑器中。
+closeEvent: 关闭窗口时，终止执行命令的线程。
+2.2 命令线程类 CommandThread
+命令线程类 CommandThread 继承自 QThread，用于在后台执行命令，并实时将输出和错误信息传回主线程。
+
+__init__: 构造函数，接收命令。
+run: 在线程中执行命令，并发出输出和错误信号。
+output_signal: 信号，用于将输出传回主线程。
+error_signal: 信号，用于将错误信息传回主线程。
+3. UI组件(文字用中文)
+3.1 按钮 QPushButton
+upgrade_pip_button: 升级pip版本。
+install_package_button: 安装包。
+uninstall_package_button: 卸载包。
+list_packages_button: 列出所有已安装包的版本信息。
+3.2 下拉列表 QComboBox
+pip_source_combo: 选择pip源。
+3.3 文本框 QLineEdit
+install_package_input: 输入要安装的包名。
+uninstall_package_input: 输入要卸载的包名。
+3.4 文本编辑器 QTextEdit
+upgrade_pip_output_text: 显示升级pip版本的输出和错误信息。
+install_output_text: 显示安装包的输出和错误信息。
+uninstall_output_text: 显示卸载包的输出和错误信息。
+list_packages_text: 显示所有已安装包的版本信息的输出。
+4. 功能描述
+4.1 升级pip版本
+用户点击“升级pip版本”按钮。
+程序检查当前pip版本是否为最新版本。
+如果不是最新版本，程序弹出一个确认对话框，询问是否升级。
+如果用户选择升级，程序使用用户选择的pip源执行pip升级命令。
+4.2 安装包
+用户点击“安装包”按钮。
+用户输入要安装的包名，可以输入多个包名，用逗号分隔。
+程序检查输入的包名是否已安装。
+如果包已安装，程序显示警告消息。
+如果包未安装，程序使用用户选择的pip源执行pip安装命令。
+4.3 卸载包
+用户点击“卸载包”按钮。
+用户输入要卸载的包名，可以输入多个包名，用逗号分隔。
+程序弹出一个确认对话框，询问是否卸载包。
+如果用户选择卸载，程序执行pip卸载命令。
+4.4 列出所有已安装包的版本信息
+用户点击“列出所有包的版本信息”按钮。
+程序执行pip list命令，并显示所有已安装包的版本信息。
+5. 注意事项
+在安装或卸载包时，确保输入的包名是正确的。
+在选择pip源时，可以选择默认源或自定义源。
+安装和卸载包可能需要一些时间，请耐心等待。
+为“升级pip版本、安装包、卸载包、列出所有包的版本信息”这些操作定义独立的信号，并将它们连接到各自的文本框，避免“升级pip版本、安装包、卸载包、列出所有包的版本信息”的输出和错误信息会显示在同一个文本框中，而没有按照预期显示在对应的文本框中。
+如果出现错误，请检查命令输出和错误信息，以便解决问题。
+6. 错误处理
+程序通过在输出和错误文本编辑器中显示错误信息来提供基本的错误处理。如果pip命令执行失败，程序会显示错误信息。用户可以根据错误信息进行相应的调整或修复。
+7. 配置文件
+务必实现在程序启动时，读取pip_sources.json文件中的pip源，并填充到下拉列表中。
+pip源：
+[
+            {
+                "name": "阿里云",
+                "url": "http://mirrors.aliyun.com/pypi/simple"
+            },
+            {
+                "name": "清华大学",
+                "url": "https://pypi.tuna.tsinghua.edu.cn/simple"
+            },
+            {
+                "name": "豆瓣",
+                "url": "http://pypi.douban.com/simple"
+            },
+            {
+                "name":"中国科学技术大学"
+                "url":"https://pypi.mirrors.ustc.edu.cn/simple/"
+            },
+            {
+                "name": "百度",
+                "url": "https://mirror.baidu.com/pypi/simple/"
+            },
+            {
+                "name":"腾讯"
+                "url":"http://mirrors.cloud.tencent.com/pypi/simple/"
+            }
+]
+用户可以根据需要添加或修改pip_sources.json文件中的pip源配置。
+pip源从pip_sources.json文件中读取，而不是将pip源内嵌到程序代码中。
+升级pip版本：'python', '-m', 'pip', 'install', '-U', 'pip', '-i'。
+安装包：'python', '-m', 'pip', 'install', '-i'。
+卸载包：'python','-m','pip','uninstall','-y'。
+列出所有包的版本信息：'python','-m','pip','list'。
+'python','-m','pip','list'输出格式：
+E:\Develop\Python\Pip 包管理工具>python -m pip list
+Package                   Version
+------------------------- --------
+altgraph                  0.17.4
+cx_Logging                3.2.0
+importlib_metadata        8.0.0
+lief                      0.14.1
+packaging                 24.1
+pefile                    2023.2.7
+pip                       24.1.2
+pyinstaller               6.9.0
+pyinstaller-hooks-contrib 2024.7
+PyQt5                     5.15.11
+PyQt5-Qt5                 5.15.2
+PyQt5_sip                 12.15.0
+PyQt5-stubs               5.15.6.0
+PySide6                   6.7.2
+PySide6_Addons            6.7.2
+PySide6_Essentials        6.7.2
+pywin32-ctypes            0.2.2
+setuptools                70.3.0
+shiboken6                 6.7.2
+typing_extensions         4.12.2
+wheel                     0.43.0
+zipp                      3.19.2
+避免出现TypeError: invalid result from CommandThread.run()问题。
+避免出现QThread: Destroyed while thread is still running问题。
+请务必实现Pip包管理工具程序文档提出的所有需求，并给出完整的程序代码，不要有任何代码上的省略。
