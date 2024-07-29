@@ -81,7 +81,7 @@
     .catch(console.error);
 
   function loadLinks() {
-    $.getJSON('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links.json', function(data) {
+    $.getJSON('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json', function(data) {
       const mainContent = $('#main-content');
       data.forEach(category => {
         const categoryDiv = $('<div>').addClass('category').css('color', randomColor());
@@ -119,7 +119,7 @@
       const suggestionsBox = $('#suggestions-box');
       suggestionsBox.empty();
       if (searchQuery.length > 0) {
-        $.getJSON('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links.json', function(data) {
+        $.getJSON('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json', function(data) {
           let suggestions = [];
           data.forEach(category => {
             category.links.forEach(link => {
