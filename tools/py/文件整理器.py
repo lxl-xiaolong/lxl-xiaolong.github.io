@@ -2,6 +2,7 @@ import os
 import shutil
 from tkinter import Tk, Button, Listbox, filedialog, Checkbutton, Label, Scrollbar, StringVar, YES, BOTH, END
 
+
 def organize_files(directory, ignore_files):
     # 获取指定目录下的所有文件
     for filename in os.listdir(directory):
@@ -20,12 +21,14 @@ def organize_files(directory, ignore_files):
             # 移动文件到相应文件夹
             shutil.move(os.path.join(directory, filename), os.path.join(folder_path, filename))
 
+
 def select_directory():
     # 打开文件夹选择对话框
     directory = filedialog.askdirectory()
     if directory:
         directory_var.set(directory)
         update_file_list(directory)
+
 
 def update_file_list(directory):
     # 清空列表框
@@ -35,6 +38,7 @@ def update_file_list(directory):
     # 将文件添加到列表框
     for file in files:
         file_list.insert(END, file)
+
 
 def toggle_ignore_file():
     # 获取当前选中的文件
@@ -48,11 +52,13 @@ def toggle_ignore_file():
         else:
             ignore_files.append(file)
 
+
 def start_organizing():
     directory = directory_var.get()
     if directory:
         organize_files(directory, ignore_files)
         status_label.config(text="文件整理完成！")
+
 
 # 创建主窗口
 root = Tk()

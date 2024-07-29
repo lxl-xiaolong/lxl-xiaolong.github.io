@@ -1,6 +1,8 @@
 import sys
 import subprocess
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit, QListWidget, QListWidgetItem
+from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit, QListWidget, \
+    QListWidgetItem
+
 
 class PowerSchemeManager(QWidget):
     def __init__(self):
@@ -67,6 +69,7 @@ class PowerSchemeManager(QWidget):
             self.get_power_schemes()  # 刷新列表
         except subprocess.CalledProcessError as e:
             self.label.setText('电源方案删除失败')
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

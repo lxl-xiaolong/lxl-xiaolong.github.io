@@ -4,11 +4,12 @@ import os
 import re
 import datetime
 
+
 def add_timestamp_to_files(file_paths):
     """Add a timestamp to the end of each file in the list, replacing any existing timestamp."""
     timestamp_pattern = re.compile(r"_(\d{14})\.")
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-    
+
     for file_path in file_paths:
         file_dir, file_name = os.path.split(file_path)
         # Remove existing timestamp if present
@@ -16,6 +17,7 @@ def add_timestamp_to_files(file_paths):
         new_file_name = f"{new_file_name_without_timestamp.split('.')[0]}_{timestamp}.{new_file_name_without_timestamp.split('.')[-1]}"
         new_file_path = os.path.join(file_dir, new_file_name)
         os.rename(file_path, new_file_path)
+
 
 def browse_files():
     """Let the user browse and select files, then add timestamp to the selected files."""
@@ -25,6 +27,7 @@ def browse_files():
         label_result.config(text="时间戳已添加到文件名。")
     else:
         label_result.config(text="没有选择文件。")
+
 
 # Create the main window
 root = tk.Tk()
