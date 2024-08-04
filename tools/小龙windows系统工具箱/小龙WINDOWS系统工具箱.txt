@@ -1,0 +1,82 @@
+小龙WINDOWS系统工具箱
+语言：python
+界面：pyqt5
+config.json路径：resources\\config.json
+config.json：
+{
+    "commands": [
+        {
+            "name": "任务管理器",
+            "command": "start /max %windir%\\system32\\taskmgr.exe /7"
+        },
+        {
+            "name": "磁盘清理",
+            "command": "%windir%\\system32\\cleanmgr.exe"
+        },
+        {
+            "name": "系统信息",
+            "command": "start /max %windir%\\system32\\msinfo32.exe"
+        },
+        {
+            "name": "Windows内存诊断",
+            "command": "%windir%\\system32\\MdSched.exe"
+        },
+        {
+            "name": "重启资源管理器",
+            "command": "start resources\\scripts\\restart_explorer.bat"
+        },
+        {
+            "name": "清空回收站",
+            "command": "cmd.exe /c \"ECHO A|PowerShell.exe -NoProfile -Command Clear-RecycleBin\""
+        },
+        {
+            "name": "任务栏时间显示到秒",
+            "command": "start resources\\scripts\\time-sec.bat"
+        },
+        {
+            "name": "任务栏时间不显示到秒",
+            "command": "start resources\\scripts\\time-nosec.bat"
+        },
+        {
+            "name": "计算机管理",
+            "command": "start /max %windir%\\system32\\compmgmt.msc /s"
+        },
+        {
+            "name": "打开组策略",
+            "command": "start /max gpedit.msc"
+        },
+        {
+            "name": "刷新组策略",
+            "command": "gpupdate /force"
+        },
+        {
+            "name": "电脑设置固定/自动IP地址",
+            "command": "start resources\\exe_files\\Windows-IPDNS配置工具.exe"
+        },
+        {
+            "name": "检查系统完整性",
+            "command": "sfc /SCANNOW"
+        },
+        {
+            "name": "清理DNS缓存",
+            "command": "ipconfig /flushdns"
+        },
+        {
+            "name": "Dism++",
+            "command": "resources\\modules\\Dism\\Dism++x64.exe"
+        }
+    ]
+}
+所有的命令都从config.json文件中读取（使用utf-8），而不是硬编码在Python脚本中。
+界面窗口：宽度：800；高度600。
+界面中的按钮使用网格布局（QGridLayout）来确保按钮按照每行四个排列。
+按钮字体大小设置为“12”，
+代码：
+	font = QFont()
+	font.setPointSize(12)
+添加状态栏用来显示程序运行时的状态信息。
+添加一个QSpacerItem作为垂直拉伸项，并将其放置在布局中的最后一行，以确保版权信息被推到窗口的底部边缘。同时，我确保版权信息标签被添加到了布局中的下一行。
+版权信息：作者：刘小龙\n邮箱：2539223617@qq.com\nBased on Python Pyqt5\n版本：小龙WINDOWS系统工具箱 version 1.0
+注意：请确保在导入QFont之后，添加了from PyQt5.QtCore import Qt这一行代码。从而避免出现NameError: name 'Qt' is not defined的错误。
+务必从PyQt5.QtWidgets中导入QSizePolicy。
+请务必实现我提出的所有需求，并给出完整的代码，不要有任何代码上的省略。

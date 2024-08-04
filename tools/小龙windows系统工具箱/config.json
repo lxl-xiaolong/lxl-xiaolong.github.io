@@ -1,0 +1,64 @@
+{
+    "commands": [
+        {
+            "name": "任务管理器",
+            "command": "start /max %windir%\\system32\\taskmgr.exe /7"
+        },
+        {
+            "name": "磁盘清理",
+            "command": "%windir%\\system32\\cleanmgr.exe"
+        },
+        {
+            "name": "系统信息",
+            "command": "start /max %windir%\\system32\\msinfo32.exe"
+        },
+        {
+            "name": "Windows内存诊断",
+            "command": "%windir%\\system32\\MdSched.exe"
+        },
+        {
+            "name": "重启资源管理器",
+            "command": "start resources\\scripts\\restart_explorer.bat"
+        },
+        {
+            "name": "清空回收站",
+            "command": "cmd.exe /c \"ECHO A|PowerShell.exe -NoProfile -Command Clear-RecycleBin\""
+        },
+        {
+            "name": "任务栏时间显示到秒",
+            "command": "start resources\\scripts\\time-sec.bat"
+        },
+        {
+            "name": "任务栏时间不显示到秒",
+            "command": "start resources\\scripts\\time-nosec.bat"
+        },
+        {
+            "name": "计算机管理",
+            "command": "start /max %windir%\\system32\\compmgmt.msc /s"
+        },
+        {
+            "name": "打开组策略",
+            "command": "start /max gpedit.msc"
+        },
+        {
+            "name": "刷新组策略",
+            "command": "gpupdate /force"
+        },
+        {
+            "name": "电脑设置固定/自动IP地址",
+            "command": "start resources\\exe_files\\Windows-IPDNS配置工具.exe"
+        },
+        {
+            "name": "检查系统完整性",
+            "command": "sfc /SCANNOW"
+        },
+        {
+            "name": "清理DNS缓存",
+            "command": "ipconfig /flushdns"
+        },
+        {
+            "name": "Dism++",
+            "command": "resources\\modules\\Dism\\Dism++x64.exe"
+        }
+    ]
+}
