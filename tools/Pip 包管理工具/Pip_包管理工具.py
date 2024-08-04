@@ -79,56 +79,47 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central_widget)
 
     def load_pip_sources(self):
-        # Assuming pip_sources.json is in the same directory as this script
         import json
-        with open('pip_sources.json', 'r', encoding='utf-8') as file:
+        with open('resources/pip_sources.json', 'r', encoding='utf-8') as file:
             sources = json.load(file)
             for source in sources:
                 self.pip_source_combo.addItem(source['name'], source['url'])
 
-    def run_command(self, command):
+    def run_command(self, command, output_text):
         self.thread = CommandThread(command)
-        self.thread.output_signal.connect(self.append_output)
-        self.thread.error_signal.connect(self.append_error)
+        self.thread.output_signal.connect(output_text.append)
+        self.thread.error_signal.connect(output_text.append)
         self.thread.start()
 
-    def append_output(self, text):
-        self.current_output_text.append(text)
-
-    def append_error(self, text):
-        self.current_output_text.append(text)
-
     def upgrade_pip(self):
-        self.current_output_text = self.upgrade_pip_output_text
-        source_url = self.pip_source_combo.currentData()
+        index = self.pip_source_combo.currentIndex()
+        source_url = self.pip_source_combo.itemData(index)
         command = ['python', '-m', 'pip', 'install', '-U', 'pip', '-i', source_url]
-        self.run_command(command)
+        self.run_command(command, self.upgrade_pip_output_text)
 
     def install_package(self):
-        self.current_output_text = self.install_output_text
         package_name = self.install_package_input.text()
-        source_url = self.pip_source_combo.currentData()
+        index = self.pip_source_combo.currentIndex()
+        source_url = self.pip_source_combo.itemData(index)
         command = ['python', '-m', 'pip', 'install', package_name, '-i', source_url]
-        self.run_command(command)
+        self.run_command(command, self.install_output_text)
 
     def uninstall_package(self):
-        self.current_output_text = self.uninstall_output_text
         package_name = self.uninstall_package_input.text()
         command = ['python', '-m', 'pip', 'uninstall', package_name, '-y']
-        self.run_command(command)
+        self.run_command(command, self.uninstall_output_text)
 
     def list_packages(self):
-        self.current_output_text = self.list_packages_text
         command = ['python', '-m', 'pip', 'list']
-        self.run_command(command)
+        self.run_command(command, self.list_packages_text)
 
     def closeEvent(self, event):
         if hasattr(self, 'thread') and self.thread.isRunning():
             self.thread.terminate()
-        event.accept()
+        super().closeEvent(event)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = MainWindow()
-    window.show()
+    main_window = MainWindow()
+    main_window.show()
     sys.exit(app.exec_())
