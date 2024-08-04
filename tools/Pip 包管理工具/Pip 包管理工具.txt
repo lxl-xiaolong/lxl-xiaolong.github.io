@@ -129,4 +129,4 @@ wheel                     0.43.0
 zipp                      3.19.2
 避免出现TypeError: invalid result from CommandThread.run()问题。
 避免出现QThread: Destroyed while thread is still running问题。
-请务必实现Pip包管理工具程序文档提出的所有需求，并给出完整的程序代码，不要有任何代码上的省略。
+请务必根据Pip包管理工具程序文档提出的所有需求，给出完整的程序代码，不要有任何代码上的省略。
