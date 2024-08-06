@@ -13,7 +13,7 @@ base = 'Win32GUI' if sys.platform=='win32' else None
 
 options = {'build_exe': build_exe_options}
 
-executables = [Executable("app.py", base=base, icon="app.ico")]
+executables = [Executable("app.py", base=base)]
 
 setup(
     name="",

@@ -18,7 +18,7 @@ executables = [Executable("D:/Develop/Python/python脚本打包工具/python脚�
 setup(
     name="python脚本打包工具",
     version="1.0",
-    description="python脚本打包成exe可执行文件。",
+    description="python脚本打包为可执行文件",
     options=options,
     executables=executables
 )
