@@ -59,6 +59,14 @@
         {
             "name": "Dism++",
             "command": "resources\\modules\\Dism\\Dism++x64.exe"
+        },
+        {
+            "name": "清理系统垃圾",
+            "command": "resources\\modules\\clean_system\\清理系统垃圾.exe"
+        },
+        {
+            "name": "一键禁用/删除Windows安全中心",
+            "command": "resources\\exe_files\\DefenderRemover.exe"
         }
     ]
 }
