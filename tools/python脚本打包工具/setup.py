@@ -5,7 +5,7 @@ from cx_Freeze import setup, Executable
 build_exe_options = {
     "packages": [],
     "excludes": [],
-    "include_files": [],
+    "include_files": [('D:/Develop/Python/python脚本打包工具/resources', 'resources')],
     "include_msvcr": True
 }
 
