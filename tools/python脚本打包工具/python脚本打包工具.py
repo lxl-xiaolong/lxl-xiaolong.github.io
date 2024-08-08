@@ -1,111 +1,127 @@
+# -*- coding: utf-8 -*-
+
 import sys
 import os
-import threading
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QLineEdit, QTextEdit, QFileDialog, QStatusBar, QVBoxLayout, QWidget, QMessageBox
+import subprocess
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget,
+                             QLabel, QLineEdit, QFileDialog, QTextEdit, QStatusBar, QMessageBox)
 from PyQt5.QtCore import QThread, pyqtSignal
+from resources.bin.styles import apply_stylesheet
 
 class SetupGenerator(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
+        apply_stylesheet(QApplication.instance())  # 应用样式表
 
     def initUI(self):
         self.setWindowTitle('Python脚本打包工具')
         self.setGeometry(100, 100, 600, 400)
 
-        layout = QVBoxLayout()
+        self.layout = QVBoxLayout()
 
-        # 上传Python脚本按钮
-        self.uploadButton = QPushButton('上传Python脚本', self)
-        self.uploadButton.clicked.connect(self.uploadScript)
-        layout.addWidget(self.uploadButton)
+        self.script_label = QLabel('上传Python脚本:')
+        self.script_path = QLineEdit()
+        self.script_button = QPushButton('选择Python脚本')
+        self.script_button.clicked.connect(self.select_script)
 
-        # 输入字段
-        self.nameLabel = QLabel('名称:', self)
-        self.nameEdit = QLineEdit(self)
-        layout.addWidget(self.nameLabel)
-        layout.addWidget(self.nameEdit)
+        self.includes_label = QLabel('includes字段（用英文逗号隔开）:')
+        self.includes_edit = QLineEdit()
 
-        self.versionLabel = QLabel('版本:', self)
-        self.versionEdit = QLineEdit(self)
-        layout.addWidget(self.versionLabel)
-        layout.addWidget(self.versionEdit)
+        self.excludes_label = QLabel('excludes字段（用英文逗号隔开）:')
+        self.excludes_edit = QLineEdit()
 
-        self.descriptionLabel = QLabel('描述:', self)
-        self.descriptionEdit = QLineEdit(self)
-        layout.addWidget(self.descriptionLabel)
-        layout.addWidget(self.descriptionEdit)
+        self.resources_label = QLabel('选择resources文件夹源路径:')
+        self.resources_path = QLineEdit()
+        self.resources_button = QPushButton('选择resources文件夹')
+        self.resources_button.clicked.connect(self.select_resources)
 
-        self.includesLabel = QLabel('includes:', self)
-        self.includesEdit = QLineEdit(self)
-        layout.addWidget(self.includesLabel)
-        layout.addWidget(self.includesEdit)
+        self.resources_target_label = QLabel('打包后resources文件夹目标路径:')
+        self.resources_target_path = QLineEdit()
 
-        self.excludesLabel = QLabel('excludes:', self)
-        self.excludesEdit = QLineEdit(self)
-        layout.addWidget(self.excludesLabel)
-        layout.addWidget(self.excludesEdit)
+        self.name_label = QLabel('name字段（必填）:')
+        self.name_edit = QLineEdit()
 
-        # 选择资源文件夹按钮
-        self.resourcesButton = QPushButton('选择resources文件夹源路径', self)
-        self.resourcesButton.clicked.connect(self.selectResources)
-        layout.addWidget(self.resourcesButton)
+        self.version_label = QLabel('version字段（必填）:')
+        self.version_edit = QLineEdit()
 
-        self.resourcesTargetLabel = QLabel('打包后resources文件夹目标路径:', self)
-        self.resourcesTargetEdit = QLineEdit(self)
-        layout.addWidget(self.resourcesTargetLabel)
-        layout.addWidget(self.resourcesTargetEdit)
+        self.description_label = QLabel('description字段（必填）:')
+        self.description_edit = QLineEdit()
 
-        # 生成setup.py文件按钮
-        self.generateButton = QPushButton('生成setup.py文件', self)
-        self.generateButton.clicked.connect(self.generateSetupFile)
-        layout.addWidget(self.generateButton)
+        self.generate_button = QPushButton('生成setup.py文件')
+        self.generate_button.clicked.connect(self.generate_setup)
 
-        # 开始打包按钮
-        self.packButton = QPushButton('开始打包', self)
-        self.packButton.clicked.connect(self.startPack)
-        layout.addWidget(self.packButton)
+        self.pack_button = QPushButton('开始打包')
+        self.pack_button.clicked.connect(self.start_pack)
 
-        # 打包输出文本框
-        self.outputTextEdit = QTextEdit(self)
-        self.outputTextEdit.setReadOnly(True)
-        layout.addWidget(self.outputTextEdit)
+        self.output_text = QTextEdit()
+        self.output_text.setReadOnly(True)
 
-        # 状态栏
-        self.statusBar = QStatusBar()
-        self.setStatusBar(self.statusBar)
+        self.status_bar = QStatusBar()
+        self.setStatusBar(self.status_bar)
 
-        container = QWidget()
-        container.setLayout(layout)
-        self.setCentralWidget(container)
+        self.layout.addWidget(self.script_label)
+        self.layout.addWidget(self.script_path)
+        self.layout.addWidget(self.script_button)
+        self.layout.addWidget(self.includes_label)
+        self.layout.addWidget(self.includes_edit)
+        self.layout.addWidget(self.excludes_label)
+        self.layout.addWidget(self.excludes_edit)
+        self.layout.addWidget(self.resources_label)
+        self.layout.addWidget(self.resources_path)
+        self.layout.addWidget(self.resources_button)
+        self.layout.addWidget(self.resources_target_label)
+        self.layout.addWidget(self.resources_target_path)
+        self.layout.addWidget(self.name_label)
+        self.layout.addWidget(self.name_edit)
+        self.layout.addWidget(self.version_label)
+        self.layout.addWidget(self.version_edit)
+        self.layout.addWidget(self.description_label)
+        self.layout.addWidget(self.description_edit)
+        self.layout.addWidget(self.generate_button)
+        self.layout.addWidget(self.pack_button)
+        self.layout.addWidget(self.output_text)
 
-        self.scriptPath = None
-        self.resourcesPath = None
+        central_widget = QWidget()
+        central_widget.setLayout(self.layout)
+        self.setCentralWidget(central_widget)
 
-    def uploadScript(self):
+    def select_script(self):
         options = QFileDialog.Options()
-        fileName, _ = QFileDialog.getOpenFileName(self, "上传Python脚本", "", "Python Files (*.py);;All Files (*)", options=options)
-        if fileName:
-            self.scriptPath = fileName
-            self.statusBar.showMessage(f"脚本上传成功: {fileName}")
+        file_name, _ = QFileDialog.getOpenFileName(self, "选择Python脚本", "", "Python Files (*.py);;All Files (*)", options=options)
+        if file_name:
+            self.script_path.setText(file_name)
 
-    def selectResources(self):
-        folderName = QFileDialog.getExistingDirectory(self, "选择resources文件夹源路径")
-        if folderName:
-            self.resourcesPath = folderName
-            self.statusBar.showMessage(f"资源文件夹选择成功: {folderName}")
+    def select_resources(self):
+        directory = QFileDialog.getExistingDirectory(self, "选择resources文件夹")
+        if directory:
+            self.resources_path.setText(directory)
 
-    def generateSetupFile(self):
-        if not self.scriptPath:
-            QMessageBox.warning(self, '错误', '请先上传Python脚本。')
+    def generate_setup(self):
+        script_path = self.script_path.text()
+        if not script_path:
+            QMessageBox.warning(self, '警告', '请先选择Python脚本。')
             return
 
-        name = self.nameEdit.text()
-        version = self.versionEdit.text()
-        description = self.descriptionEdit.text()
-        includes = self.includesEdit.text().split(',') if self.includesEdit.text() else []
-        excludes = self.excludesEdit.text().split(',') if self.excludesEdit.text() else []
-        include_files = [(self.resourcesPath, self.resourcesTargetEdit.text())] if self.resourcesPath and self.resourcesTargetEdit.text() else []
+        includes = self.includes_edit.text().strip()
+        includes = includes.split(',') if includes else []
+
+        excludes = self.excludes_edit.text().strip()
+        excludes = excludes.split(',') if excludes else []
+
+        resources_path = self.resources_path.text()
+        resources_target_path = self.resources_target_path.text()
+        include_files = []
+        if resources_path and resources_target_path:
+            include_files.append((resources_path, resources_target_path))
+
+        name = self.name_edit.text().strip()
+        version = self.version_edit.text().strip()
+        description = self.description_edit.text().strip()
+
+        if not name or not version or not description:
+            QMessageBox.warning(self, '警告', 'name、version、description字段为必填项。')
+            return
 
         setup_content = f'''# -*- coding: utf-8 -*-
 import sys
@@ -122,7 +138,7 @@ base = 'Win32GUI' if sys.platform=='win32' else None
 
 options = {{'build_exe': build_exe_options}}
 
-executables = [Executable("{self.scriptPath}", base=base)]
+executables = [Executable("{script_path}", base=base)]
 
 setup(
     name="{name}",
@@ -132,44 +148,37 @@ setup(
     executables=executables
 )
 '''
+        setup_file_path = os.path.join(os.path.dirname(script_path), 'setup.py')
+        with open(setup_file_path, 'w', encoding='utf-8') as f:
+            f.write(setup_content)
 
-        setup_path = os.path.join(os.path.dirname(self.scriptPath), 'setup.py')
-        with open(setup_path, 'w', encoding='utf-8') as file:
-            file.write(setup_content)
-        self.statusBar.showMessage(f"setup.py文件生成成功: {setup_path}")
+        QMessageBox.information(self, '成功', 'setup.py文件生成成功。')
 
-    def startPack(self):
-        if not self.scriptPath:
-            QMessageBox.warning(self, '错误', '请先上传Python脚本。')
-            return
+    def start_pack(self):
+        options = QFileDialog.Options()
+        file_name, _ = QFileDialog.getOpenFileName(self, "选择setup.py文件", "", "Python Files (*.py);;All Files (*)", options=options)
+        if file_name:
+            self.pack_thread = PackThread(file_name)
+            self.pack_thread.signal.connect(self.update_output)
+            self.pack_thread.start()
 
-        setup_path = os.path.join(os.path.dirname(self.scriptPath), 'setup.py')
-        if not os.path.exists(setup_path):
-            QMessageBox.warning(self, '错误', '请先生成setup.py文件。')
-            return
-
-        self.packThread = PackThread(setup_path)
-        self.packThread.output.connect(self.appendOutput)
-        self.packThread.start()
-
-    def appendOutput(self, text):
-        self.outputTextEdit.append(text)
+    def update_output(self, text):
+        self.output_text.append(text)
+        self.status_bar.showMessage(text)
 
 class PackThread(QThread):
-    output = pyqtSignal(str)
+    signal = pyqtSignal(str)
 
-    def __init__(self, setup_path):
+    def __init__(self, setup_file):
         super().__init__()
-        self.setup_path = setup_path
+        self.setup_file = setup_file
 
     def run(self):
-        os.chdir(os.path.dirname(self.setup_path))
-        process = os.popen(f'python {self.setup_path} build')
-        while True:
-            line = process.readline()
-            if not line:
-                break
-            self.output.emit(line.strip())
+        self.signal.emit('开始打包...')
+        process = subprocess.Popen(['python', self.setup_file, 'bdist_msi'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        for line in process.stdout:
+            self.signal.emit(line)
+        self.signal.emit('打包完成。')
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

@@ -32,6 +32,7 @@ includes字段：由用户输入一个或多个，用英文逗号隔开，可以
 excludes字段：由用户输入一个或多个，用英文逗号隔开，可以不填。
 include_files字段：
 	添加“选择resources 文件夹源路径”按钮：用户在文件资源管理器中选择resources 文件夹源路径；
+	添加文本框，用来显示用户在文件资源管理器中选择resources 文件夹源路径；
 	添加“打包后 resources 文件夹目标路径”输入框：用户在输入框中输入打包后 resources 文件夹目标路径。
 注意，include_files 应该是一个元组列表，其中每个元组包含两个元素：源路径和目标路径。源路径是相对于 Python 脚本的 resources 文件夹的路径，目标路径是打包后 resources 文件夹应该放置的位置。
 name字段：由用户输入，必填。
@@ -39,7 +40,7 @@ version字段：由用户输入，必填。
 description字段：由用户输入，必填。
 按钮：	上传Python脚本：用户上传python脚本；
 	生成setup.py文件：根据用户输入的信息生成setup.py文件；
-	开始打包：当用户点击“开始打包”按钮时，程序将弹出窗口让用户选择setup.py文件，并在新的线程中执行打包过程，同时将捕获到的打包过程输出实时显示在文本框中（打包命令：python setup.py build）。
+	开始打包：当用户点击“开始打包”按钮时，程序将弹出窗口让用户选择setup.py文件，并在新的线程中执行打包过程，同时将捕获到的打包过程输出实时显示在文本框中（打包命令：python setup.py bdist_msi）。
 注意：生成setup.py文件时，用户上传的python脚本使用完整路径。		
 务必将setup.py文件生成到用户上传python脚本的所在目录。
 务必在打包时，将build目录创建到用户上传python脚本的所在目录。
@@ -47,5 +48,8 @@ description字段：由用户输入，必填。
 读取、写入setup.py文件使用utf-8编码。
 生成setup.py文件时，如果用户没有输入includes = {includes}、excludes = {excludes}、include_files = {include_files}这三个字段，只写入“[]”，而不是“['']”。
 添加必要的错误处理和用户用反馈。
-添加一个状态栏来显示程序运行时的所有状态信息。
+添加一个状态栏来显示程序运行时的所有状态信息，包括打包的相关状态信息（开始打包，打包中，打包完成）。
+使用subprocess.Popen代替os.popen，以便更好地控制进程。
+在resources\bin目录下创建styles.py用于美化程序界面。
+响应式布局：使界面在不同窗口大小下都能保持良好的布局。
 请务必严格根据我提出的所有需求，给出完整的程序代码，不要有任何代码上的省略。
