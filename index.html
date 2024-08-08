@@ -10,49 +10,26 @@
         padding: 0;
         background-color: #f0f0f0;
         color: #333;
-        font-family: Arial, sans-serif;
         text-align: center;
     }
     header {
         background: linear-gradient(to right, #f0f0f0, #e0e0e0);
-        padding: 20px;
-        position: relative;
+        padding: 20px 0;
     }
-    h1, h2 {
-        margin: 0;
-    }
-    h1 {
-        font-size: 36px;
+    h1, h2, h3 {
+        color: #333;
     }
     h2 {
-        font-size: 18px;
         font-style: italic;
+        font-size: 18px;
         text-align: right;
     }
     main {
         background-color: #f0f0f0;
         padding: 20px;
     }
-    h3 {
-        margin: 20px 0;
-        color: #000;
-    }
-    .link {
-        display: inline-block;
-        font-size: 18px;
-        margin: 5px;
-        padding: 5px;
-        text-decoration: none;
-        color: #333;
-        width: 150px;
-        text-align: center;
-    }
-    .link:hover {
-        background-color: #ddd;
-    }
     footer {
-        padding: 20px;
-        text-align: center;
+        padding: 20px 0;
     }
     ul {
         list-style-type: none;
@@ -60,28 +37,38 @@
     }
     a {
         text-decoration: none;
+        color: #333;
     }
-    .search-suggestions {
+    a:hover {
+        text-decoration: underline;
+    }
+    .link {
+        display: inline-block;
+        width: 150px;
+        text-align: left;
+        margin: 5px;
+    }
+    table {
         width: 50%;
         margin: 0 auto;
+    }
+    .search-suggestions {
+        position: absolute;
+        width: 50%;
         background-color: #f0f0f0;
         color: #333;
-        position: absolute;
-        z-index: 1000;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
         display: none;
     }
-    .search-suggestions li {
-        padding: 10px;
-        cursor: pointer;
-    }
-    .search-suggestions li:hover {
-        background-color: #ddd;
-    }
-    .search-box {
-        width: 50%;
-        padding: 10px;
-        margin: 10px auto;
+    .search-suggestions a {
         display: block;
+        padding: 5px;
+        text-decoration: none;
+    }
+    .search-suggestions a:hover {
+        background-color: #e0e0e0;
     }
     .loading {
         display: none;
@@ -90,129 +77,133 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.8) url('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/loading.gif') no-repeat center center;
-        z-index: 9999;
+        background: rgba(255, 255, 255, 0.8) url('https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/loading.gif') no-repeat center center;
     }
 </style>
 </head>
 <body>
+
 <div class="loading"></div>
+
 <header>
     <div id="datetime"></div>
     <h1>糖糖Π的导航</h1>
     <h2>——热衷于分享安全，无毒，无后门，可靠可用的各类资源。</h2>
-    <input type="text" id="search-box" class="search-box" placeholder="搜索资源...">
+    <input type="text" id="search-box" placeholder="搜索" style="width: 50%;">
     <ul id="search-suggestions" class="search-suggestions"></ul>
 </header>
-<main id="main-content"></main>
+
+<main id="main-content">
+    <!-- Links will be loaded here dynamically -->
+</main>
+
 <footer>
     <p>Copyright © 2024 刘小龙</p>
 </footer>
-<script src="https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/jquery_v3_20240731181942.js"></script>
+
+<script src="https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/jquery_v3_20240731181942.js"></script>
+<script src="https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/displayHitokoto_20240731181957.js"></script>
 <script>
-    $(document).ready(function() {
-        function updateDateTime() {
-            var now = new Date();
-            var datetimeStr = now.getFullYear() + '年' +
-                              (now.getMonth() + 1).toString().padStart(2, '0') + '月' +
-                              now.getDate().toString().padStart(2, '0') + '日 ' +
-                              now.getHours().toString().padStart(2, '0') + '时' +
-                              now.getMinutes().toString().padStart(2, '0') + '分' +
-                              now.getSeconds().toString().padStart(2, '0') + '秒 星期' +
-                              '日一二三四五六'.charAt(now.getDay());
-            $('#datetime').text(datetimeStr);
-        }
-        setInterval(updateDateTime, 1000);
-        updateDateTime();
+$(document).ready(function() {
+    function updateDateTime() {
+        var now = new Date();
+        var datetimeStr = now.getFullYear() + '年' + 
+                          (now.getMonth() + 1).toString().padStart(2, '0') + '月' + 
+                          now.getDate().toString().padStart(2, '0') + '日 ' + 
+                          now.getHours().toString().padStart(2, '0') + '时' + 
+                          now.getMinutes().toString().padStart(2, '0') + '分' + 
+                          now.getSeconds().toString().padStart(2, '0') + '秒 星期' + 
+                          ['日', '一', '二', '三', '四', '五', '六'][now.getDay()];
+        $('#datetime').text(datetimeStr);
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
 
-        function fetchJSON(url, callback) {
-            $.getJSON(url, function(data) {
-                callback(data);
-            }).fail(function() {
-                console.error("无法加载JSON数据");
+    function generateRandomColor() {
+        return '#' + Math.floor(Math.random()*16777215).toString(16);
+    }
+
+    function displayLinks(data) {
+        var mainContent = $('#main-content');
+        data.forEach(function(category) {
+            var categoryDiv = $('<div></div>').css('text-align', 'center');
+            var h3 = $('<h3></h3>').text(category.name).css('color', generateRandomColor());
+            categoryDiv.append(h3);
+            var table = $('<table></table>');
+            category.links.forEach(function(link, index) {
+                if (index % 4 === 0) {
+                    table.append($('<tr></tr>'));
+                }
+                var td = $('<td></td>').addClass('link');
+                var a = $('<a></a>').attr('href', link.url).attr('target', '_blank').text(link.name);
+                td.append(a);
+                table.find('tr:last').append(td);
+            });
+            categoryDiv.append(table);
+            mainContent.append(categoryDiv);
+        });
+    }
+
+    function searchLinks(query) {
+        if (!query) {
+            return [];
+        }
+        var results = [];
+        data.forEach(function(category) {
+            category.links.forEach(function(link) {
+                if (link.name.toLowerCase().includes(query.toLowerCase())) {
+                    results.push({ name: link.name, url: link.url });
+                }
+            });
+        });
+        return results;
+    }
+
+    function displaySearchSuggestions(results) {
+        var suggestions = $('#search-suggestions');
+        suggestions.empty();
+        if (results.length === 0) {
+            suggestions.append($('<li></li>').text('没有找到与之相匹配的结果！'));
+        } else {
+            results.forEach(function(result) {
+                var li = $('<li></li>');
+                var a = $('<a></a>').attr('href', result.url).attr('target', '_blank').text(result.name);
+                li.append(a);
+                suggestions.append(li);
             });
         }
+        suggestions.show();
+    }
 
-        function displayCategories(categories) {
-            var mainContent = $('#main-content');
-            categories.forEach(function(category) {
-                var categoryTitle = $('<h3>').text(category.name).css('color', getRandomColor());
-                mainContent.append(categoryTitle);
-                var linksContainer = $('<div>').css('display', 'flex').css('flex-wrap', 'wrap').css('justify-content', 'center');
-                category.links.forEach(function(link, index) {
-                    var linkElement = $('<a>').addClass('link').attr('href', link.url).attr('target', '_blank').text(link.name);
-                    if ((index + 1) % 5 === 0) {
-                        linkElement.css('display', 'block').css('margin-top', '10px');
-                    }
-                    linksContainer.append(linkElement);
-                });
-                mainContent.append(linksContainer);
-            });
-        }
-
-        function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-        function displaySearchSuggestions(suggestions) {
-            var suggestionsContainer = $('#search-suggestions');
-            suggestionsContainer.empty();
-            suggestions.forEach(function(suggestion) {
-                var suggestionItem = $('<li>').text(suggestion.name).click(function() {
-                    window.open(suggestion.url, '_blank');
-                });
-                suggestionsContainer.append(suggestionItem);
-            });
-        }
-
-        function filterSuggestions(input) {
-            var filteredSuggestions = data.filter(function(category) {
-                return category.links.some(function(link) {
-                    return link.name.toLowerCase().includes(input.toLowerCase());
-                });
-            }).map(function(category) {
-                return category.links.filter(function(link) {
-                    return link.name.toLowerCase().includes(input.toLowerCase());
-                });
-            }).flat();
-
-            if (filteredSuggestions.length === 0) {
-                displaySearchSuggestions([{ name: '没有找到与之相匹配的结果！' }]);
-            } else {
-                displaySearchSuggestions(filteredSuggestions);
-            }
-        }
-
-        var data;
-        $('.loading').show();
-        fetchJSON('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json', function(jsonData) {
-            data = jsonData;
-            displayCategories(data);
-            $('.loading').hide();
-        });
-
-        $('#search-box').on('input', function() {
-            var input = $(this).val();
-            if (input.length > 0) {
-                filterSuggestions(input);
-                $('#search-suggestions').show();
-            } else {
-                $('#search-suggestions').hide();
-            }
-        });
-
-        $(document).on('click', function(e) {
-            if (!$(e.target).closest('#search-box').length) {
-                $('#search-suggestions').hide();
-            }
-        });
+    $('#search-box').on('input', function() {
+        var query = $(this).val();
+        var results = searchLinks(query);
+        displaySearchSuggestions(results);
     });
+
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('#search-box').length) {
+            $('#search-suggestions').hide();
+        }
+    });
+
+    $.ajax({
+        url: 'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json',
+        beforeSend: function() {
+            $('.loading').show();
+        },
+        success: function(jsonData) {
+            data = jsonData;
+            displayLinks(data);
+        },
+        complete: function() {
+            $('.loading').hide();
+        },
+        error: function() {
+            alert('加载JSON数据失败！');
+        }
+    });
+});
 </script>
-<script src="https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/displayHitokoto_20240731181957.js"></script>
 </body>
 </html>
