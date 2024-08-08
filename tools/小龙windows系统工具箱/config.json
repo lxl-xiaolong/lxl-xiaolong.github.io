@@ -21,15 +21,15 @@
             "command": "start resources\\scripts\\restart_explorer.bat"
         },
         {
-            "name": "清空回收站",
-            "command": "cmd.exe /c \"ECHO A|PowerShell.exe -NoProfile -Command Clear-RecycleBin\""
+            "name": "Everything 文件搜索",
+            "command": "resources\\modules\\Everything-1.4.1.1026.x64\\everything.exe"
         },
         {
-            "name": "任务栏时间显示到秒",
+            "name": "任务栏时间显示到秒（win10）",
             "command": "start resources\\scripts\\time-sec.bat"
         },
         {
-            "name": "任务栏时间不显示到秒",
+            "name": "任务栏时间不显示到秒（win10）",
             "command": "start resources\\scripts\\time-nosec.bat"
         },
         {
@@ -50,11 +50,11 @@
         },
         {
             "name": "检查系统完整性",
-            "command": "sfc /SCANNOW"
+            "command": "start resources\\scripts\\fix_sysfiles.bat"
         },
         {
             "name": "清理DNS缓存",
-            "command": "ipconfig /flushdns"
+            "command": "start resources\\scripts\\dnscache.bat"
         },
         {
             "name": "Dism++",
@@ -62,11 +62,51 @@
         },
         {
             "name": "清理系统垃圾",
-            "command": "resources\\modules\\clean_system\\清理系统垃圾.exe"
+            "command": "start resources\\scripts\\clean_system.bat"
         },
         {
             "name": "一键禁用/删除Windows安全中心",
             "command": "resources\\exe_files\\DefenderRemover.exe"
+        },
+        {
+            "name": "Office Tool Plus",
+            "command": "resources\\modules\\Office Tool\\Office Tool Plus.exe"
+        },
+        {
+            "name": "微软常用运行库",
+            "command": "resources\\exe_files\\MSVBCRT.AIO.2024.04.01.exe"
+        },
+        {
+            "name": "HEU_KMS_Activator",
+            "command": "resources\\exe_files\\HEU_KMS_Activator_v42.0.4.exe"
+        },
+        {
+            "name": "Geek Uninstaller",
+            "command": "resources\\exe_files\\geek.exe"
+        },
+        {
+            "name": "查看当前电脑连接过的wifi名字和wifi密码",
+            "command": "start resources\\scripts\\list_wifi.bat"
+        },
+        {
+            "name": "清除图标缓存数据库",
+            "command": "start resources\\scripts\\图标缓存清理.bat"
+        },
+        {
+            "name": "DiskGenius磁盘工具",
+            "command": "resources\\modules\\DiskGenius\\DiskGenius.exe"
+        },
+        {
+            "name": "微PE工具箱",
+            "command": "resources\\exe_files\\WePE_64_V2.3.exe"
+        },
+        {
+            "name": "文件解锁工具",
+            "command": "resources\\modules\\IObit Unlocker\\IObitUnlocker.exe"
+        },
+        {
+            "name": "开启Windows 10/11家庭版组策略功能",
+            "command": "start resources\\scripts\\open_gpedit.bat"
         }
     ]
 }
