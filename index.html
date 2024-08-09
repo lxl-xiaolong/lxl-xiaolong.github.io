@@ -6,33 +6,25 @@
 <title>糖糖Π的导航</title>
 <style>
     body, html {
+        height: 100%;
         margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
         color: #333;
+        background-color: #f4f4f4;
         text-align: center;
     }
     header {
-        background: linear-gradient(to right, #f0f0f0, #e0e0e0);
-        padding: 20px 0;
-    }
-    h1, h2, h3 {
-        color: #333;
-    }
-    h2 {
-        font-style: italic;
-        font-size: 18px;
-        text-align: right;
-    }
-    main {
-        background-color: #f0f0f0;
+        background: linear-gradient(to right, #f4f4f4, #e6e6e6);
         padding: 20px;
     }
-    footer {
-        padding: 20px 0;
+    h1, h2 {
+        margin: 0;
+    }
+    h3 {
+        color: #333;
     }
     ul {
-        list-style-type: none;
+        list-style: none;
         padding: 0;
     }
     a {
@@ -40,35 +32,61 @@
         color: #333;
     }
     a:hover {
-        text-decoration: underline;
+        text-decoration: none;
+        color: #007bff;
     }
-    .link {
-        display: inline-block;
-        width: 150px;
-        text-align: left;
-        margin: 5px;
-    }
-    table {
+    .search-container {
+        position: relative;
         width: 50%;
         margin: 0 auto;
     }
     .search-suggestions {
         position: absolute;
-        width: 50%;
-        background-color: #f0f0f0;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border: 1px solid #ddd;
+        border-top: none;
+        background-color: #f4f4f4;
         color: #333;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
         display: none;
+        z-index: 1000;
     }
-    .search-suggestions a {
-        display: block;
+    .search-suggestions li {
+        list-style: none;
         padding: 5px;
-        text-decoration: none;
+        cursor: pointer;
     }
-    .search-suggestions a:hover {
-        background-color: #e0e0e0;
+    .search-suggestions li:hover {
+        background-color: #e6e6e6;
+    }
+    .search-box {
+        width: 100%;
+        padding: 10px;
+        margin: 10px auto;
+        display: block;
+        border: 1px solid #ddd;
+    }
+    .main {
+        padding: 20px;
+    }
+    table {
+        width: 50%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+    td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+        font-size: 18px;
+    }
+    td:hover {
+        background-color: #e6e6e6;
+    }
+    footer {
+        padding: 20px;
+        text-align: center;
     }
     .loading {
         display: none;
@@ -77,133 +95,128 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.8) url('https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/loading.gif') no-repeat center center;
+        background: rgba(255, 255, 255, 0.8) url('https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/loading.gif') no-repeat center center;
+        z-index: 9999;
     }
 </style>
 </head>
 <body>
-
 <div class="loading"></div>
-
 <header>
     <div id="datetime"></div>
     <h1>糖糖Π的导航</h1>
     <h2>——热衷于分享安全，无毒，无后门，可靠可用的各类资源。</h2>
-    <input type="text" id="search-box" placeholder="搜索" style="width: 50%;">
-    <ul id="search-suggestions" class="search-suggestions"></ul>
+    <div class="search-container">
+        <input type="text" class="search-box" id="search-box" placeholder="搜索...">
+        <ul class="search-suggestions" id="search-suggestions"></ul>
+    </div>
 </header>
-
-<main id="main-content">
-    <!-- Links will be loaded here dynamically -->
+<main class="main" id="main-content">
+    <!-- Links will be loaded here -->
 </main>
-
 <footer>
-    <p>Copyright © 2024 刘小龙</p>
+    Copyright © 2024 刘小龙 | 网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a>
 </footer>
-
-<script src="https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/jquery_v3_20240731181942.js"></script>
-<script src="https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/displayHitokoto_20240731181957.js"></script>
+<script src="https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/jquery_v3_20240731181942.js"></script>
+<script src="https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/displayHitokoto_20240731181957.js"></script>
 <script>
-$(document).ready(function() {
-    function updateDateTime() {
-        var now = new Date();
-        var datetimeStr = now.getFullYear() + '年' + 
-                          (now.getMonth() + 1).toString().padStart(2, '0') + '月' + 
-                          now.getDate().toString().padStart(2, '0') + '日 ' + 
-                          now.getHours().toString().padStart(2, '0') + '时' + 
-                          now.getMinutes().toString().padStart(2, '0') + '分' + 
-                          now.getSeconds().toString().padStart(2, '0') + '秒 星期' + 
-                          ['日', '一', '二', '三', '四', '五', '六'][now.getDay()];
-        $('#datetime').text(datetimeStr);
-    }
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
-
-    function generateRandomColor() {
-        return '#' + Math.floor(Math.random()*16777215).toString(16);
-    }
-
-    function displayLinks(data) {
-        var mainContent = $('#main-content');
-        data.forEach(function(category) {
-            var categoryDiv = $('<div></div>').css('text-align', 'center');
-            var h3 = $('<h3></h3>').text(category.name).css('color', generateRandomColor());
-            categoryDiv.append(h3);
-            var table = $('<table></table>');
-            category.links.forEach(function(link, index) {
-                if (index % 4 === 0) {
-                    table.append($('<tr></tr>'));
-                }
-                var td = $('<td></td>').addClass('link');
-                var a = $('<a></a>').attr('href', link.url).attr('target', '_blank').text(link.name);
-                td.append(a);
-                table.find('tr:last').append(td);
-            });
-            categoryDiv.append(table);
-            mainContent.append(categoryDiv);
-        });
-    }
-
-    function searchLinks(query) {
-        if (!query) {
-            return [];
+    $(document).ready(function() {
+        function updateDateTime() {
+            var now = new Date();
+            var datetimeStr = now.getFullYear() + '年' + 
+                              ('0' + (now.getMonth() + 1)).slice(-2) + '月' + 
+                              ('0' + now.getDate()).slice(-2) + '日 ' + 
+                              ('0' + now.getHours()).slice(-2) + '时' + 
+                              ('0' + now.getMinutes()).slice(-2) + '分' + 
+                              ('0' + now.getSeconds()).slice(-2) + '秒 星期' + 
+                              ['日', '一', '二', '三', '四', '五', '六'][now.getDay()];
+            $('#datetime').text(datetimeStr);
         }
-        var results = [];
-        data.forEach(function(category) {
-            category.links.forEach(function(link) {
-                if (link.name.toLowerCase().includes(query.toLowerCase())) {
-                    results.push({ name: link.name, url: link.url });
-                }
-            });
-        });
-        return results;
-    }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
 
-    function displaySearchSuggestions(results) {
-        var suggestions = $('#search-suggestions');
-        suggestions.empty();
-        if (results.length === 0) {
-            suggestions.append($('<li></li>').text('没有找到与之相匹配的结果！'));
-        } else {
-            results.forEach(function(result) {
-                var li = $('<li></li>');
-                var a = $('<a></a>').attr('href', result.url).attr('target', '_blank').text(result.name);
-                li.append(a);
-                suggestions.append(li);
-            });
+        var jsonData = null;
+        function loadJsonData(callback) {
+            if (jsonData) {
+                callback(jsonData);
+            } else {
+                $.getJSON('https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json', function(data) {
+                    jsonData = data;
+                    callback(data);
+                }).fail(function() {
+                    alert('无法加载链接数据！');
+                    $('.loading').hide();
+                });
+            }
         }
-        suggestions.show();
-    }
 
-    $('#search-box').on('input', function() {
-        var query = $(this).val();
-        var results = searchLinks(query);
-        displaySearchSuggestions(results);
-    });
-
-    $(document).on('click', function(e) {
-        if (!$(e.target).closest('#search-box').length) {
-            $('#search-suggestions').hide();
-        }
-    });
-
-    $.ajax({
-        url: 'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json',
-        beforeSend: function() {
+        function loadLinks() {
             $('.loading').show();
-        },
-        success: function(jsonData) {
-            data = jsonData;
-            displayLinks(data);
-        },
-        complete: function() {
-            $('.loading').hide();
-        },
-        error: function() {
-            alert('加载JSON数据失败！');
+            loadJsonData(function(data) {
+                var mainContent = $('#main-content');
+                data.forEach(function(category) {
+                    var categoryTitle = $('<h3>').text(category.name).css('color', '#' + Math.floor(Math.random()*16777215).toString(16));
+                    mainContent.append(categoryTitle);
+                    var table = $('<table>');
+                    var row = $('<tr>');
+                    category.links.forEach(function(link, index) {
+                        var linkItem = $('<a>').attr('href', link.url).attr('target', '_blank').text(link.name);
+                        var td = $('<td>').append(linkItem);
+                        row.append(td);
+                        if ((index + 1) % 4 === 0) {
+                            table.append(row);
+                            row = $('<tr>');
+                        }
+                    });
+                    if (row.children().length > 0) {
+                        table.append(row);
+                    }
+                    mainContent.append(table);
+                });
+                $('.loading').hide();
+            });
         }
+
+        $('#search-box').on('input', function() {
+            var suggestions = $('#search-suggestions');
+            var searchQuery = $(this).val().toLowerCase();
+            suggestions.empty();
+            if (searchQuery.length > 0) {
+                loadJsonData(function(data) {
+                    var matches = [];
+                    data.forEach(function(category) {
+                        category.links.forEach(function(link) {
+                            if (link.name.toLowerCase().includes(searchQuery)) {
+                                matches.push(link);
+                            }
+                        });
+                    });
+                    if (matches.length > 0) {
+                        matches.forEach(function(match) {
+                            var suggestionItem = $('<li>').text(match.name);
+                            suggestionItem.on('click', function() {
+                                window.open(match.url, '_blank');
+                            });
+                            suggestions.append(suggestionItem);
+                        });
+                    } else {
+                        suggestions.append($('<li>').text('没有找到与之相匹配的结果！'));
+                    }
+                    suggestions.show();
+                });
+            } else {
+                suggestions.hide();
+            }
+        });
+
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('#search-box').length) {
+                $('#search-suggestions').hide();
+            }
+        });
+
+        loadLinks();
     });
-});
 </script>
 </body>
 </html>
