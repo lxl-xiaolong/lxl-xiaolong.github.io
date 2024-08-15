@@ -1,185 +1,209 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>糖糖π的导航</title>
-    <link rel="stylesheet" href="https://testingcf.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        body, ul, li, a {
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            list-style: none;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            background: url('https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/bg.img') no-repeat center center fixed;
-            background-size: cover;
-            color: #333; /* Set default text color */
-        }
-        header, footer {
-            text-align: center;
-            color: #222; /* Darker color for header and footer */
-        }
-        header h1 {
-            font-size: 2em; /* Increase header font size */
-        }
-        .search-box {
-            width: 50%;
-            height: 40px; /* Increase search box height */
-            margin: 20px auto;
-            padding: 10px;
-            font-size: 16px; /* Increase font size */
-            border: 1px solid #ccc; /* Add border to search box */
-            border-radius: 5px; /* Rounded corners for search box */
-        }
-        .loading {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8) url('https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/loading.gif') no-repeat center center;
-        }
-        .category-item, .link-item {
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
-        }
-        .category-item:hover, .link-item:hover {
-            background-color: #f8f8f8;
-            color: #007bff; /* Blue color on hover */
-        }
-        .scrollable {
-            overflow-y: auto;
-            max-height: 400px;
-            border: 1px solid #ddd; /* Add border to scrollable areas */
-            border-radius: 5px;
-            margin: 10px 0;
-            padding: 10px;
-        }
-        .no-results {
-            color: red;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .active {
-            background-color: #007bff;
-            color: white;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖糖π的导航</title>
+<style>
+  body, ul, li, h1, h2, a, input {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    background: url('https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/bg.img') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  header, main, footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+  }
+  .time-date-week {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  h2 {
+    color: #555;
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  #searchBox {
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 auto 20px;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  }
+  #loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8) url('https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/loading.gif') no-repeat center center;
+    z-index: 1000;
+  }
+  .category-list, .link-list {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  .category-list li, .link-list li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+  }
+  .category-list li:hover, .link-list li:hover {
+    background-color: #f9f9f9;
+    color: #000;
+  }
+  .link-list li a {
+    color: #007bff;
+  }
+  .link-list li a:hover {
+    text-decoration: underline;
+  }
+  footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  @media (max-width: 768px) {
+    .category-list, .link-list {
+      height: auto;
+      max-height: 200px;
+    }
+  }
+</style>
 </head>
 <body>
-    <div id="app" v-cloak>
-        <div class="loading" v-if="loading"></div>
-        <header>
-            <h1>{{ date }}</h1>
-            <h1>糖糖π的导航</h1>
-            <h2 style="text-align: right; font-style: italic; font-size: 18px;">——热衷于分享安全，无毒，无后门，可靠可用的各类资源。</h2>
-            <input type="text" class="search-box" v-model="searchQuery" @input="search" placeholder="搜索链接...">
-            <p v-if="showNoResultsMessage" class="no-results">{{ noResultsMessage }}</p>
-        </header>
-        <main class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <ul class="list-group scrollable">
-                        <li class="list-group-item category-item" v-for="(category, index) in categories" :key="index" @click="selectCategory(category)" :class="{ active: selectedCategory === category }">
-                            {{ category.name }}
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-8">
-                    <ul class="list-group scrollable">
-                        <li class="list-group-item link-item" v-for="link in filteredLinks" :key="link.url">
-                            <a :href="link.url" target="_blank">{{ link.name }}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </main>
-        <footer>
-            <p>Copyright © 2024 刘小龙</p>
-            <p>网站基于Bootstrap 5.3.0 & Vue.js 2.6.14</p>
-            <p>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a></p>
-        </footer>
-    </div>
+<div id="loading"></div>
+<header>
+  <h1 id="timeDateWeek"></h1>
+  <h1>糖糖π的导航</h1>
+  <h2>——热衷于分享安全，无毒，无后门，可靠可用的各类资源。</h2>
+  <input type="text" id="searchBox" placeholder="搜索资源...">
+</header>
+<main>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <ul class="category-list" id="categoryList"></ul>
+    <ul class="link-list" id="linkList"></ul>
+  </div>
+</main>
+<footer>
+  <p>Copyright © 2024 刘小龙</p>
+  <p>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a></p>
+</footer>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script>
+  function updateTime() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    const second = now.getSeconds();
+    const week = ['日', '一', '二', '三', '四', '五', '六'][now.getDay()];
+    $('#timeDateWeek').text(`${year}年${month.toString().padStart(2, '0')}月${day.toString().padStart(2, '0')}日🔶${hour.toString().padStart(2, '0')}时${minute.toString().padStart(2, '0')}分${second.toString().padStart(2, '0')}秒🔶星期${week}`);
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
 
-    <script src="https://testingcf.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src="https://testingcf.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/displayHitokoto_20240731181957.js"></script>
+  let categories = [];
+  let selectedCategory = null;
+  let showNoResultsMessage = false;
 
-    <script>
-        const JSON_URL = 'https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json';
+  function displayCategories() {
+    $('#categoryList').empty();
+    categories.forEach(category => {
+      $('#categoryList').append(`<li>${category.name}</li>`);
+    });
+    $('#categoryList li').click(function() {
+      selectedCategory = categories.find(cat => cat.name === $(this).text());
+      displayLinks();
+      showNoResultsMessage = false;
+    });
+  }
 
-        new Vue({
-            el: '#app',
-            data: {
-                categories: [],
-                selectedCategory: null,
-                searchQuery: '',
-                showNoResultsMessage: false,
-                loading: true,
-                date: ''
-            },
-            created() {
-                this.fetchData();
-                this.updateDateTime();
-                setInterval(this.updateDateTime, 1000);
-            },
-            methods: {
-                fetchData() {
-                    this.loading = true;
-                    fetch(JSON_URL)
-                        .then(response => response.json())
-                        .then(data => {
-                            this.categories = data;
-                            this.selectedCategory = data[0];
-                            this.loading = false;
-                        })
-                        .catch(error => {
-                            console.error('Error fetching data:', error);
-                            this.loading = false;
-                        });
-                },
-                selectCategory(category) {
-                    this.selectedCategory = category;
-                    this.showNoResultsMessage = false;
-                },
-                search() {
-                    this.showNoResultsMessage = this.searchQuery && !this.filteredLinks.length;
-                },
-                updateDateTime() {
-                    const now = new Date();
-                    const year = now.getFullYear();
-                    const month = now.getMonth() + 1;
-                    const day = now.getDate();
-                    const hour = now.getHours();
-                    const minute = now.getMinutes();
-                    const second = now.getSeconds();
-                    const weekDay = ['日', '一', '二', '三', '四', '五', '六'][now.getDay()];
-                    this.date = `${year}年${month.toString().padStart(2, '0')}月${day.toString().padStart(2, '0')}日${hour.toString().padStart(2, '0')}时${minute.toString().padStart(2, '0')}分${second.toString().padStart(2, '0')}秒 星期${weekDay}`;
-                }
-            },
-            computed: {
-                filteredLinks() {
-                    if (!this.searchQuery) {
-                        return this.selectedCategory ? this.selectedCategory.links : [];
-                    }
-                    const searchLower = this.searchQuery.toLowerCase();
-                    return this.categories.reduce((acc, category) => {
-                        const links = category.links.filter(link => link.name.toLowerCase().includes(searchLower));
-                        if (links.length) {
-                            acc.push(...links);
-                        }
-                        return acc;
-                    }, []);
-                },
-                noResultsMessage() {
-                    return this.showNoResultsMessage ? '没有找到与之相匹配的结果！' : '';
-                }
-            }
+  function displayLinks() {
+    $('#linkList').empty();
+    if (selectedCategory) {
+      selectedCategory.links.forEach(link => {
+        $('#linkList').append(`<li><a href="${link.url}" target="_blank">${link.name}</a></li>`);
+      });
+    }
+    if (showNoResultsMessage) {
+      $('#linkList').append('<li>没有找到与之相匹配的结果！</li>');
+    }
+  }
+
+  $('#searchBox').on('input', function() {
+    const searchTerm = $(this).val().toLowerCase();
+    if (searchTerm) {
+      const filteredLinks = categories.flatMap(category => category.links.filter(link => link.name.toLowerCase().includes(searchTerm)));
+      if (filteredLinks.length > 0) {
+        $('#linkList').empty();
+        filteredLinks.forEach(link => {
+          $('#linkList').append(`<li><a href="${link.url}" target="_blank">${link.name}</a></li>`);
         });
-    </script>
+        showNoResultsMessage = false;
+      } else {
+        showNoResultsMessage = true;
+        displayLinks();
+      }
+    } else {
+      displayLinks();
+    }
+  });
+
+  $(document).ready(function() {
+    $('#loading').show();
+    $.ajax({
+      url: 'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        categories = data;
+        selectedCategory = categories[0];
+        displayCategories();
+        displayLinks();
+        $('#loading').hide();
+      },
+      error: function() {
+        $('#loading').hide();
+        alert('Failed to load data.');
+      }
+    });
+  });
+</script>
+<script src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/displayHitokoto_20240731181957.js"></script>
 </body>
 </html>
