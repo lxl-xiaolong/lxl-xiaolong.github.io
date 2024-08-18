@@ -14,7 +14,10 @@
 		<link rel="stylesheet" href="https://jsdelivr.pai233.top/npm/font-awesome/css/font-awesome.min.css" />
 		<title>糖糖π的导航</title>
 		<style>
-			/* CSS样式 */
+			:root {
+				--cursor: url(https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/cursor.cur), default;
+			}
+
 			body,
 			ul,
 			li,
@@ -37,7 +40,7 @@
 				margin: 0 auto;
 				padding: 20px;
 				overflow: hidden;
-				cursor: url(https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/cursor.cur), default;
+				cursor: var(--cursor);
 			}
 
 			header,
@@ -84,7 +87,7 @@
 				border-radius: 4px;
 				box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 				transition: border-color 0.3s ease, box-shadow 0.3s ease;
-				cursor: url(https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/cursor.cur), default;
+				cursor: var(--cursor);
 			}
 
 			#searchBox:focus {
@@ -122,13 +125,13 @@
 				border-bottom: 1px solid #eee;
 				cursor: pointer;
 				transition: background-color 0.3s ease;
-				cursor: url(https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/cursor.cur), default;
+				cursor: var(--cursor);
 			}
 
 			.category-list li:hover {
 				background-color: #FFD700;
 				color: #FFFFFF;
-				cursor: url(https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/cursor.cur), default;
+				cursor: var(--cursor);
 			}
 
 			.category-list li.active {
@@ -139,13 +142,13 @@
 			.link-list li:hover {
 				background-color: #FFD700;
 				color: #FFFFFF;
-				cursor: url(https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/cursor.cur), default;
+				cursor: var(--cursor);
 			}
 
 			.link-list li:hover a {
 				color: #FFFFFF;
 				text-decoration: none;
-				cursor: url(https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/cursor.cur), default;
+				cursor: var(--cursor);
 			}
 
 			footer {
@@ -154,7 +157,7 @@
 			}
 
 			footer a {
-				cursor: url(https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/pictures/cursor.cur), default;
+				cursor: var(--cursor);
 			}
 
 			.separator {
@@ -240,6 +243,11 @@
 		<script src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/getRandomColor.js">
 		</script>
 		<script>
+			let categories = [];
+			let selectedCategory = null;
+			let showNoResultsMessage = false;
+			let jsonUrl = 'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json';			
+			
 			function updateTime() {
 				const now = new Date();
 				const year = now.getFullYear();
@@ -255,10 +263,6 @@
 			}
 			setInterval(updateTime, 1000);
 			updateTime();
-
-			let categories = [];
-			let selectedCategory = null;
-			let showNoResultsMessage = false;
 
 			function displayCategories() {
 				$('#categoryList').empty();
@@ -314,7 +318,7 @@
 			$(document).ready(function() {
 				$('#loading').show();
 				$.ajax({
-					url: 'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240729095108.json',
+					url: jsonUrl,
 					type: 'GET',
 					dataType: 'json',
 					success: function(data) {
@@ -358,7 +362,7 @@
 				const seconds = Math.floor((uptime % (1000 * 60)) / 1000);
 
 				// 格式化时间显示，美化输出，添加零前导
-				const uptimeString = `网站已运行时间：${pad(days)} 天${pad(hours)} 时 ${pad(minutes)} 分${pad(seconds)} 秒`;
+				const uptimeString = `网站已运行时间：${pad(days)} 天 ${pad(hours)} 时 ${pad(minutes)} 分 ${pad(seconds)} 秒`;
 
 				// 将运行时间显示在页面上
 				document.getElementById("uptime").textContent = uptimeString;
@@ -371,80 +375,6 @@
 
 			// 每秒调用一次updateUptime函数
 			setInterval(updateUptime, 1000);
-
-			// 鼠标拖尾特效
-			const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-			const tails = [];
-			const positions = [];
-
-			// 创建26个字母拖尾
-			for (let i = 0; i < alphabet.length; i++) {
-				const tail = document.createElement('div');
-				tail.className = 'tail';
-				tail.textContent = alphabet[i];
-				document.body.appendChild(tail);
-				tails.push(tail);
-				positions.push({
-					x: 0,
-					y: 0
-				}); // 初始化位置数组
-			}
-
-			function shuffleArray(array) {
-				// 使用Fisher-Yates洗牌算法打乱数组
-				for (let i = array.length - 1; i > 0; i--) {
-					const j = Math.floor(Math.random() * (i + 1));
-					[array[i], array[j]] = [array[j], array[i]];
-				}
-			}
-
-			function updateTails(x, y) {
-				// 更新最新鼠标位置
-				positions[0] = {
-					x,
-					y
-				};
-
-				// 打乱字母位置
-				shuffleArray(positions);
-
-				// 更新字母拖尾的位置和透明度
-				tails.forEach((tail, index) => {
-					const {
-						x,
-						y
-					} = positions[index];
-					tail.style.left = `${x}px`;
-					tail.style.top = `${y}px`;
-					tail.style.color = getRandomColor();
-					tail.style.opacity = 1 - (index / alphabet.length);
-				});
-			}
-
-			function fadeOutTails() {
-				tails.forEach((tail, index) => {
-					const currentOpacity = parseFloat(tail.style.opacity);
-					tail.style.opacity = Math.max(currentOpacity - 0.05, 0); // 增加每次递减的透明度
-				});
-			}
-
-			let fadeOutInterval;
-
-			document.addEventListener('mousemove', ({
-				clientX,
-				clientY
-			}) => {
-				updateTails(clientX, clientY);
-				// 重置渐隐定时器
-				clearInterval(fadeOutInterval);
-				fadeOutInterval = setInterval(fadeOutTails, 25); // 减少定时器时间间隔
-			});
-
-			// 鼠标停止移动时开始渐隐
-			document.addEventListener('mouseout', () => {
-				clearInterval(fadeOutInterval);
-				fadeOutInterval = setInterval(fadeOutTails, 25); // 减少定时器时间间隔
-			});
 		</script>
 	</body>
 </html>
