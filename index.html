@@ -18,14 +18,14 @@
 			</div>
 		</div>
 		<div class="layui-row" id="linksPanel"></div>
-		<div style="margin-top: 20px; text-align: center;">
+		<div style="margin-top: 20px; text-align: center; margin-bottom: 20px;">
 			<p style=" font-weight: 300;">倘若本站于你有用，欢迎：</p>
 			<button id="tip" type="button" class="layui-btn layui-btn-warm" style="margin-top: 20px;">小额赞赏</button>
 		</div>
-		<div class="layui-text">
-			<p>Copyright © 2024 刘小龙</p>
-			<p>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a></p>
-			<p id="uptime"></p>
+		<div class="layui-text" style="text-align: center;">
+			<span>Copyright © 2024 刘小龙</span><br />
+			<span>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a></span><br />
+			<span id="uptime"></span>
 			<div>
 				<span class="social-value">富强</span>
 				<span class="social-value">民主</span>
@@ -42,6 +42,7 @@
 				<span class="social-value">诚信</span>
 				<span class="social-value">友善</span>
 			</div>
+			<div id="notice-content"></div>
 		</div>
 		<script src="https://cdn.bootcdn.net/ajax/libs/layui/2.9.15/layui.js"></script>
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -61,214 +62,11 @@
 		</script>
 		<script src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/zhi_zhu_wang.js">
 		</script>
-		<script>
-			layui.use(['element', 'layer', 'util'], function() {
-				var element = layui.element;
-				var layer = layui.layer;
-				var util = layui.util;
-				var JSONURL =
-					'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240820184335.json';
-
-				// 加载层
-				var loading = layer.msg('正在加载中，请稍后...', {
-					icon: 16,
-					shade: [0.3, '#808080']
-				});
-
-				// 使用XMLHttpRequest获取JSON数据
-				var xhr = new XMLHttpRequest();
-				xhr.open('GET', JSONURL, true);
-				xhr.onreadystatechange = function() {
-					if (xhr.readyState === 4) {
-						layer.close(loading); // 关闭加载层
-						if (xhr.status === 200) {
-							var data = JSON.parse(xhr.responseText);
-							generatePanels(data);
-							layer.msg('数据加载成功！', {
-								icon: 6
-							});
-						} else {
-							layer.msg('数据加载失败！', {
-								icon: 5
-							});
-						}
-					}
-				};
-				xhr.onerror = function() {
-					layer.close(loading); // 关闭加载层
-					layer.msg('网络错误，请检查您的网络连接！', {
-						icon: 2
-					});
-				};
-				xhr.send();
-
-				// 生成折叠面板
-				function generatePanels(data) {
-					var html = '';
-					var rows = Math.ceil(data.length / 4); // 计算需要的行数
-					for (var i = 0; i < rows; i++) {
-						html += '<div class="layui-row">';
-						for (var j = 0; j < 4; j++) {
-							var index = i * 4 + j;
-							if (index < data.length) {
-								html += generatePanel(data[index]);
-							}
-						}
-						html += '</div>';
-					}
-					document.getElementById('linksPanel').innerHTML = html;
-					element.init(); // 初始化折叠面板
-				}
-
-				// 生成单个折叠面板
-				function generatePanel(category) {
-					var panelHtml = '';
-					panelHtml += '<div class="layui-col-md3 layui-col-xs12">';
-					panelHtml += '<div class="layui-collapse" lay-accordion="">'; // 添加 lay-accordion 属性以启用动画
-					panelHtml += '<div class="layui-colla-item">';
-					panelHtml += '<h2 class="layui-colla-title">' + category.name + '</h2>';
-					panelHtml += '<div class="layui-colla-content">'; // 默认折叠
-					category.links.forEach(function(link) {
-						panelHtml += '<a href="' + link.url + '" target="_blank">' + link.name + '</a><br>';
-					});
-					panelHtml += '</div>';
-					panelHtml += '</div>';
-					panelHtml += '</div>';
-					panelHtml += '</div>';
-					return panelHtml;
-				}
-
-				// 返回顶部
-				layui.use(['util'], function() {
-					var util = layui.util;
-					util.fixbar({
-						top: true,
-						css: {
-							right: 15,
-							bottom: 35
-						},
-						bgcolor: '#16889aa',
-						click: function(type) {
-							// 可以根据需要添加点击事件
-						}
-					});
-				});
-
-				// 搜索功能
-				document.getElementById('searchBtn').addEventListener('click', function() {
-					layer.open({
-						type: 1,
-						anim: 4,
-						skin: 'layui-layer-lan',
-						title: '搜索资源',
-						area: 'auto', // 宽高均为自动调整
-						content: '<div style="margin: 20px;"><input type="text" id="searchInput" placeholder="请输入关键词" class="layui-input" /></div>',
-						btn: ['提交', '取消'],
-						resize: false,
-						closeBtn: 2,
-						move: false,
-						btnAlign: 'c',
-						yes: function(index, layero) {
-							const keyword = document.getElementById('searchInput').value.trim();
-							if (keyword) {
-								fetchResources(keyword, index);
-							} else {
-								layer.msg('请输入关键词', {
-									icon: 0
-								});
-							}
-						}
-					});
-				});
-
-				function fetchResources(keyword, index) {
-					fetch(JSONURL)
-						.then(response => {
-							if (!response.ok) {
-								throw new Error('Network response was not ok');
-							}
-							return response.json();
-						})
-						.then(data => {
-							const searchResults = searchResources(data, keyword);
-							displaySearchResults(searchResults);
-							layer.close(index);
-						})
-						.catch(error => {
-							console.error('Error:', error);
-							layer.msg('获取数据失败，请稍后再试！', {
-								icon: 5
-							});
-						});
-				}
-
-				function searchResources(data, keyword) {
-					return data.reduce((results, category) => {
-						const matchedLinks = category.links.filter(link => link.name.toLowerCase().includes(
-							keyword
-							.toLowerCase()));
-						return results.concat(matchedLinks.map(link => ({
-							category: category.name,
-							name: link.name,
-							url: link.url
-						})));
-					}, []);
-				}
-
-				function displaySearchResults(results) {
-					if (results.length > 0) {
-						const html = results.map(result => `
-            <div class="search-result-item">
-				<a style="display: block; margin-top: 5px; padding: 10px;" href="${result.url}" target="_blank">${result.name}</a>
-            </div>
-        `).join('');
-						layer.open({
-							type: 1,
-							anim: 1,
-							skin: 'layui-layer-molv',
-							title: "搜索结果",
-							area: ['auto', '50%'], // 宽度自动，高度固定
-							content: `<div class="search-results">${html}</div>`,
-							resize: false,
-							closeBtn: 2,
-							move: false,
-							shadeClose: true
-						});
-					} else {
-						layer.msg('没有找到相关资源，请尝试其他关键词！', {
-							icon: 0
-						});
-					}
-				}
-			});
+		<script
+			src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/script_20240824181719.js">
 		</script>
-		<script>
-			// 打赏
-			// layui弹出层模块
-			layui.use('layer', function() {
-				var layer = layui.layer;
-
-				// 绑定按钮点击事件
-				document.getElementById('tip').onclick = function() {
-					// 弹出层内容
-					var content = '<div style="text-align: center;">' +
-						'<img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/weixin.png" alt="微信" style="max-width: 48%; display: inline-block;"/>' +
-						'<img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/zhifubao.jpg" alt="支付宝" style="max-width: 48%; display: inline-block; margin-left: 4%;"/>' +
-						'</div>';
-
-					// 调用layer.open方法
-					layer.open({
-						type: 1, // 页面层
-						title: '打赏（左图微信，右图支付宝）', // 标题
-						content: content, // 内容
-						area: ['60%', '75%'], // 宽高，高度自动根据内容调整
-						closeBtn: 2,
-						skin: 'layui-layer-lan',
-						shadeClose: true, // 点击遮罩关闭
-						move: false
-					});
-				};
-			});
+		<script src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/tip.js">
 		</script>
+		<script src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/js/notice_20240824190553.js"></script>
 	</body>
 </html>
