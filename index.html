@@ -7,17 +7,21 @@
 		<link href="https://cdn.bootcdn.net/ajax/libs/layui/2.9.15/css/layui.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://jsdelivr.pai233.top/npm/font-awesome/css/font-awesome.min.css">
 	</head>
-	<body class="layui-container">
+	<body class="layui-container layui-unselect">
 		<div class="layui-text">
 			<h1 id="timeDateWeek"></h1>
 			<h1>糖糖π的资源站</h1>
 			<h2 style="text-align: right;">——热衷于分享安全，无毒，无后门，可靠可用的各类资源。</h2>
 			<h3 id="hitokoto_text">:D 获取中...</h3>
-			<div class="layui-text" style="text-align: center; margin-top: 20px;">
+			<div class="layui-text" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
 				<button id="searchBtn" type="button" class="layui-btn layui-btn-fluid layui-bg-blue">搜索资源</button>
 			</div>
 		</div>
 		<div class="layui-row" id="linksPanel"></div>
+		<div style="margin-top: 20px; text-align: center;">
+			<p style=" font-weight: 300;">倘若本站于你有用，欢迎：</p>
+			<button id="tip" type="button" class="layui-btn layui-btn-warm" style="margin-top: 20px;">小额赞赏</button>
+		</div>
 		<div class="layui-text">
 			<p>Copyright © 2024 刘小龙</p>
 			<p>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a></p>
@@ -92,7 +96,9 @@
 				};
 				xhr.onerror = function() {
 					layer.close(loading); // 关闭加载层
-					layer.msg('网络错误，请检查您的网络连接！');
+					layer.msg('网络错误，请检查您的网络连接！', {
+						icon: 2
+					});
 				};
 				xhr.send();
 
@@ -155,12 +161,13 @@
 						anim: 4,
 						skin: 'layui-layer-lan',
 						title: '搜索资源',
-						area: 'auto', // 宽度和高度均自适应
+						area: 'auto', // 宽高均为自动调整
 						content: '<div style="margin: 20px;"><input type="text" id="searchInput" placeholder="请输入关键词" class="layui-input" /></div>',
 						btn: ['提交', '取消'],
 						resize: false,
 						closeBtn: 2,
 						move: false,
+						btnAlign: 'c',
 						yes: function(index, layero) {
 							const keyword = document.getElementById('searchInput').value.trim();
 							if (keyword) {
@@ -220,7 +227,7 @@
 							anim: 1,
 							skin: 'layui-layer-molv',
 							title: "搜索结果",
-							area: ['auto', '320px'], // 宽度自动，高度固定
+							area: ['auto', '50%'], // 宽度自动，高度固定
 							content: `<div class="search-results">${html}</div>`,
 							resize: false,
 							closeBtn: 2,
@@ -233,6 +240,34 @@
 						});
 					}
 				}
+			});
+		</script>
+		<script>
+			// 打赏
+			// layui弹出层模块
+			layui.use('layer', function() {
+				var layer = layui.layer;
+
+				// 绑定按钮点击事件
+				document.getElementById('tip').onclick = function() {
+					// 弹出层内容
+					var content = '<div style="text-align: center;">' +
+						'<img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/weixin.png" alt="微信" style="max-width: 48%; display: inline-block;"/>' +
+						'<img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/zhifubao.jpg" alt="支付宝" style="max-width: 48%; display: inline-block; margin-left: 4%;"/>' +
+						'</div>';
+
+					// 调用layer.open方法
+					layer.open({
+						type: 1, // 页面层
+						title: '打赏（左图微信，右图支付宝）', // 标题
+						content: content, // 内容
+						area: ['60%', '75%'], // 宽高，高度自动根据内容调整
+						closeBtn: 2,
+						skin: 'layui-layer-lan',
+						shadeClose: true, // 点击遮罩关闭
+						move: false
+					});
+				};
 			});
 		</script>
 	</body>
