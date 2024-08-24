@@ -68,7 +68,7 @@
 				// 加载层
 				var loading = layer.msg('正在加载中，请稍后...', {
 					icon: 16,
-					shade: [0.1, '#fff']
+					shade: [0.3, '#808080']
 				});
 
 				// 使用XMLHttpRequest获取JSON数据
@@ -153,10 +153,14 @@
 					layer.open({
 						type: 1,
 						anim: 4,
+						skin: 'layui-layer-lan',
 						title: '搜索资源',
-						area: ['400px', '200px'],
+						area: 'auto', // 宽度和高度均自适应
 						content: '<div style="margin: 20px;"><input type="text" id="searchInput" placeholder="请输入关键词" class="layui-input" /></div>',
-						btn: ['确定', '取消'],
+						btn: ['提交', '取消'],
+						resize: false,
+						closeBtn: 2,
+						move: false,
 						yes: function(index, layero) {
 							const keyword = document.getElementById('searchInput').value.trim();
 							if (keyword) {
@@ -208,15 +212,20 @@
 					if (results.length > 0) {
 						const html = results.map(result => `
             <div class="search-result-item">
-				<a style="display: block; margin-top: 10px; padding: 10px;" href="${result.url}" target="_blank">${result.name}</a>
+				<a style="display: block; margin-top: 5px; padding: 10px;" href="${result.url}" target="_blank">${result.name}</a>
             </div>
         `).join('');
 						layer.open({
 							type: 1,
-							anim: 3,
+							anim: 1,
+							skin: 'layui-layer-molv',
 							title: "搜索结果",
-							area: ['800px', '600px'],
-							content: `<div class="search-results">${html}</div>`
+							area: ['auto', '320px'], // 宽度自动，高度固定
+							content: `<div class="search-results">${html}</div>`,
+							resize: false,
+							closeBtn: 2,
+							move: false,
+							shadeClose: true
 						});
 					} else {
 						layer.msg('没有找到相关资源，请尝试其他关键词！', {
