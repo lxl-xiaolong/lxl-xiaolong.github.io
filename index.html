@@ -113,6 +113,8 @@
 		<script src="https://unpkg.com/layui@2.9.16/dist/layui.js"></script>
 
 		<script>
+			// 动态加载多个脚本
+			
 			// 需要立即加载的脚本文件名数组
 			var scriptsToLoad = ['autoload.js', 'getRandomColor.js', 'date.js', 'jia_zhi_guan.js', 'si_dai.js',
 				'wang_zhan_yun_xing_shi_jian.js', 'zhi_zhu_wang.js', 'script_20240825103855.js', 'tip_20240825103912.js',
@@ -160,10 +162,10 @@
 
 				if (huan) {
 					text.innerHTML = txt[xiaBiao].slice(0, ++index);
-					console.log(index);
+					// console.log(index);
 				} else {
 					text.innerHTML = txt[xiaBiao].slice(0, index--);
-					console.log(index);
+					// console.log(index);
 				}
 
 				if (index == txt[xiaBiao].length + 3) {
