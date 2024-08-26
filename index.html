@@ -14,11 +14,11 @@
 				--main-font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 			}
 
-	        *{
-	            margin: 0;
-	            padding: 0;
-	            box-sizing: border-box;
-	        }
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
 			body {
 				cursor: url('https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/cursor.cur'), default;
@@ -27,49 +27,53 @@
 		</style>
 
 	</head>
-	<body class="layui-container layui-unselect">
-		<div class="layui-text">
-			<h1 id="timeDateWeek"></h1>
-			<h1>糖糖π的资源站</h1>
-			<span class="typing layui-font-32 layui-font-blue"></span>
-			<h3 id="hitokoto_text"><img
-					src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/Hitokoto_loading.gif"
-					alt="" /> Hitokoto一言获取中，请稍后...</h3>
-			<div class="layui-text" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-				<button id="searchBtn" type="button" class="layui-btn layui-btn-fluid layui-bg-blue"
-					style="font-size: 16px;">搜索资源</button>
-			</div>
-		</div>
+	<body class="layui-unselect">
 
-		<div class="layui-row" id="linksPanel">
-			<!-- 在这里生成动态链接折叠面板 -->
-		</div>
-
-		<div style="margin-top: 20px; text-align: center; margin-bottom: 20px;">
-			<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗奶茶！</p>
-			<button id="tip" type="button" class="layui-btn layui-btn-warm" style="margin-top: 20px;">☕ ︎赞赏支持</button>
-		</div>
-		<div class="layui-text" style="text-align: center;">
-			<span>Copyright © 2024 刘小龙</span><br />
-			<span>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a></span><br />
-			<span id="uptime"></span>
-			<div>
-				<span class="social-value">富强</span>
-				<span class="social-value">民主</span>
-				<span class="social-value">文明</span>
-				<span class="social-value">和谐</span>
-				<span>|</span>
-				<span class="social-value">自由</span>
-				<span class="social-value">平等</span>
-				<span class="social-value">公正</span>
-				<span class="social-value">法治</span>
-				<span>|</span>
-				<span class="social-value">爱国</span>
-				<span class="social-value">敬业</span>
-				<span class="social-value">诚信</span>
-				<span class="social-value">友善</span>
+		<div class="layui-container">
+			<div class="layui-text">
+				<h1 id="timeDateWeek"></h1>
+				<h1>糖糖π的资源站</h1>
+				<span class="typing layui-font-32 layui-font-blue"></span>
+				<h3 id="hitokoto_text"><img
+						src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/Hitokoto_loading.gif"
+						alt="" /> Hitokoto一言获取中，请稍后...</h3>
+				<div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+					<button id="searchBtn" type="button" class="layui-btn layui-btn-fluid layui-bg-blue"
+						style="font-size: 16px;">搜索资源</button>
+				</div>
 			</div>
-			<div id="notice-content"></div>
+
+			<div class="layui-row" id="linksPanel">
+				<!-- 在这里生成动态链接折叠面板 -->
+			</div>
+
+			<div style="margin-top: 20px; text-align: center; margin-bottom: 10px;">
+				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗奶茶！</p>
+				<button id="tip" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
+					︎赞赏支持</button>
+			</div>
+			<div class="layui-text" style="text-align: center;">
+				<span>Copyright © 2024 刘小龙</span><br />
+				<span>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a></span><br />
+				<span id="uptime"></span>
+				<div>
+					<span class="social-value">富强</span>
+					<span class="social-value">民主</span>
+					<span class="social-value">文明</span>
+					<span class="social-value">和谐</span>
+					<span>|</span>
+					<span class="social-value">自由</span>
+					<span class="social-value">平等</span>
+					<span class="social-value">公正</span>
+					<span class="social-value">法治</span>
+					<span>|</span>
+					<span class="social-value">爱国</span>
+					<span class="social-value">敬业</span>
+					<span class="social-value">诚信</span>
+					<span class="social-value">友善</span>
+				</div>
+				<div id="notice-content"></div>
+			</div>
 		</div>
 
 		<!-- 樱花飘落 -->
@@ -84,11 +88,11 @@
 
 		<script>
 			// 动态加载多个脚本
-			
 			// 需要立即加载的脚本文件名数组
-			var scriptsToLoad = ['autoload.js', 'getRandomColor.js', 'date.js', 'jia_zhi_guan.js', 'si_dai.js',
-				'wang_zhan_yun_xing_shi_jian.js', 'zhi_zhu_wang.js', 'script_20240825103855.js', 'tip_20240825103912.js',
-				'notice_20240824190553.js', 'displayHitokoto_20240825142955.js'
+			var scriptsToLoad = ['autoload.js', 'getRandomColor.js', 'script_20240826203919.js', 'date.js', 'jia_zhi_guan.js',
+				'si_dai.js',
+				'wang_zhan_yun_xing_shi_jian.js', 'zhi_zhu_wang.js', 'tip_20240825103912.js',
+				'notice_20240824190553.js', 'displayHitokoto_20240826203644.js'
 			];
 
 			// 创建一个加载单个脚本的函数，返回一个Promise
@@ -116,24 +120,80 @@
 					.catch(error => console.error(error));
 			});
 		</script>
-		
+
 		<script>
 			//文本打字机效果
-		    var typed = new Typed(".typing", {
+			var typed = new Typed(".typing", {
 				//输出的文字，通过转义字符 ^3000 在字符串中间暂停一段时间
-		        strings: [
+				strings: [
 					'halo，朋友。欢迎访问糖糖π的资源站！^3000',
 					'本站热衷于分享安全，无毒，无后门，可靠可用的各类资源。^3000'
-				], 
-				typeSpeed: 100,//打字的速度
-		        smartBackspace: true, //开启智能退格 默认false
-		        cursorChar: '_',//自定义光标符号
-		        backSpeed: 50,//后退速度
-		        backDelay: 500,//后退延迟
-		        loop:true,//是否循环 默认false
-		        startDelay:1000,//起始时间
-		        fadeOut:true,//淡出效果		
-		  });
+				],
+				typeSpeed: 100, //打字的速度
+				smartBackspace: true, //开启智能退格 默认false
+				cursorChar: '_', //自定义光标符号
+				backSpeed: 50, //后退速度
+				backDelay: 500, //后退延迟
+				loop: true, //是否循环 默认false
+				startDelay: 1000, //起始时间
+				fadeOut: true, //淡出效果		
+			});
+		</script>
+
+		<script>
+			// 固定条
+			layui.use(function() {
+				var util = layui.util;
+				util.fixbar({
+					// 自定义固定条
+					bars: [{
+						type: '去顶部',
+						icon: 'layui-icon-up'
+					}, {
+						type: '帮助',
+						icon: 'layui-icon-help'
+					}, {
+						type: '刷新页面',
+						icon: 'layui-icon-refresh-3'
+					}, {
+						type: '去底部',
+						icon: 'layui-icon-down'
+					}],
+					default: false, // 是否显示默认的 bar 列表 --  v2.8.0 新增
+					css: {
+						right: 50,
+						bottom: 200
+					},
+					bgcolor: '#393D52', // bar 的默认背景色
+					on: {
+						// 任意事件 --  v2.8.0 新增
+						mouseenter: function(type) {
+							layer.tips(type, this, {
+								tips: 4,
+								fixed: true
+							});
+						},
+						mouseleave: function(type) {
+							layer.closeAll('tips');
+						}
+					},
+					// 点击事件
+					click: function(type) {
+						if (type === '去顶部') {
+							document.body.scrollTop = document.documentElement.scrollTop = 0;
+						} else if (type === '帮助') {
+							window.open('http://wpa.qq.com/msgrd?v=3&uin=2539223617&site=qq&menu=yes');
+						} else if (type === '刷新页面') {
+							window.location.reload(true);
+						} else if (type === '去底部') {
+							window.scroll(0, document.documentElement.scrollHeight - window.innerHeight);
+						} else {
+							console.log(this, type);
+							// layer.msg(type);
+						}
+					}
+				});
+			});
 		</script>
 	</body>
 </html>
