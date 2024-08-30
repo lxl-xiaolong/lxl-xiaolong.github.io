@@ -33,14 +33,12 @@
 				display: block;
 				color: #191970;
 				text-decoration: none;
-				margin-bottom: 10px;
 				padding: 10px;
 				transition: color 0.3s ease;
 			}
 
 			.layui-layer-content a:hover {
 				color: #FF0000;
-				translate: 18px;
 			}
 
 			.layui-layer-content .tab-container {
@@ -94,6 +92,12 @@
 				display: block;
 				margin: 0 auto;
 			}
+
+			/* 自定义layer.msg背景颜色 */
+			.custom-msg-bg {
+				background-color: #009688;
+				/* 设置背景颜色 */
+			}
 		</style>
 	</head>
 	<body class="layui-layout-body layui-unselect" oncontextmenu=self.event.returnValue=false
@@ -102,7 +106,7 @@
 			<div class="layui-text">
 				<h1 id="timeDateWeek"></h1>
 				<h1>糖糖π的资源站</h1>
-				<span class="typing layui-font-32 layui-font-blue"></span>
+				<span class="typing layui-font-32 layui-font-black"></span>
 				<h3 id="hitokoto_text"><img
 						src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/Hitokoto_loading.gif"
 						alt="" /> Hitokoto一言获取中，请稍后...</h3>
@@ -157,14 +161,16 @@
 
 
 				// 显示加载层
-				var loadingIndex = layer.load(2, {
-					shade: [0.8, '#393D49']
+				var loadingIndex = layer.msg('玩命加载中...', {
+					icon: 16,
+					shade: [0.5, '#fff']
 				});
 
 
 				// 异步获取数据
 				fetch(
-						'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240827121949.json')
+						'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240827121949.json'
+					)
 					.then(response => response.json())
 					.then(json => {
 						dataCache = json;
@@ -309,8 +315,10 @@
 
 
 			// 固定条
-			layui.use(function() {
+			layui.use(['util', 'layer'], function() {
 				var util = layui.util;
+				var layer = layui.layer;
+
 				util.fixbar({
 					// 自定义固定条
 					bars: [{
@@ -348,12 +356,24 @@
 					click: function(type) {
 						if (type === '去顶部') {
 							document.body.scrollTop = document.documentElement.scrollTop = 0;
+							layer.msg('小主，已经到顶部啦(✿◠‿◠)！', {
+								icon: 1,
+								skin: 'custom-msg-bg' // 应用自定义皮肤
+							});
 						} else if (type === '联系客服') {
 							window.open('http://wpa.qq.com/msgrd?v=3&uin=2539223617&site=qq&menu=yes');
 						} else if (type === '刷新页面') {
 							window.location.reload(true);
+							layer.msg('小主，已经为您刷新了页面(✿◠‿◠)！', {
+								icon: 1,
+								skin: 'custom-msg-bg' // 应用自定义皮肤
+							});
 						} else if (type === '去底部') {
 							window.scroll(0, document.documentElement.scrollHeight - window.innerHeight);
+							layer.msg('小主，已经到底部啦(✿◠‿◠)！', {
+								icon: 1,
+								skin: 'custom-msg-bg' // 应用自定义皮肤
+							});
 						} else {
 							console.log(this, type);
 							// layer.msg(type);
