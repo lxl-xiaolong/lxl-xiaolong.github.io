@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>糖糖π的资源站</title>
+		<link href="https://cdn.bootcdn.net/ajax/libs/layui/2.9.16/css/layui.css" rel="stylesheet">
+		<style>
+			:root {
+				--main-font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				cursor: url('https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/cursor.cur'), default;
+				font-family: var(--main-font-family);
+				background-color: #eee;
+			}
+
+			.layui-layer-content {
+				background-color: #f2f2f2;
+				border-radius: 4px;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+				padding: 20px;
+				font-family: var(--main-font-family);
+			}
+
+			.layui-layer-content a {
+				display: block;
+				color: #191970;
+				text-decoration: none;
+				padding: 10px;
+				transition: color 0.3s ease;
+			}
+
+			.layui-layer-content a:hover {
+				color: #FF0000;
+			}
+
+			.layui-layer-content .tab-container {
+				width: 100%;
+				border-radius: 4px;
+				overflow: hidden;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			.tab-list {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				display: flex;
+				background-color: #f5f5f5;
+			}
+
+			.tab-list li {
+				flex: 1;
+				text-align: center;
+				padding: 12px 20px;
+				border-right: 1px solid #e6e6e6;
+				color: #666;
+				font-weight: bold;
+				cursor: pointer;
+				transition: background-color 0.3s ease;
+			}
+
+			.tab-list li:last-child {
+				border-right: none;
+			}
+
+			.tab-list li.active {
+				background-color: #fff;
+				color: #1e9fff;
+			}
+
+			.tab-content {
+				display: none;
+				padding: 20px;
+				background-color: #fff;
+			}
+
+			.tab-content.active {
+				display: block;
+			}
+
+			.tab-content img {
+				width: 200px;
+				height: 200px;
+				display: block;
+				margin: 0 auto;
+			}
+
+			/* 自定义layer.msg背景颜色 */
+			.custom-msg-bg {
+				background-color: #009688;
+				/* 设置背景颜色 */
+			}
+			
+			/* 表格内容居中 */
+			.layui-table th, .layui-table td {
+			  text-align: center; /* 水平居中 */
+			  vertical-align: middle; /* 垂直居中 */
+			}
+		</style>
+	</head>
+	<body class="layui-layout-body layui-unselect" oncontextmenu=self.event.returnValue=false
+		onselectstart="return false">
+		<div class="layui-container" style="margin-top: 20px;">
+			<div class="layui-text">
+				<h1 id="timeDateWeek"></h1>
+				<h1>糖糖π的资源站</h1>
+				<span class="typing layui-font-24 layui-font-black"></span>
+				<h3 id="hitokoto_text"><img
+						src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/Hitokoto_loading.gif"
+						alt="" /> Hitokoto一言获取中，请稍后...</h3>
+				<button class="layui-btn layui-btn-fluid layui-bg-blue" id="searchResourceBtn"
+					style="margin-top: 10px; margin-bottom: 10px;">搜索资源链接</button>
+				<div id="linkCount" style="margin-bottom: 10px;"></div>
+			</div>
+			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
+			<div style="margin-top: 20px; text-align: center; margin-bottom: 10px;">
+				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗奶茶！</p>
+				<button id="tip" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
+					赞赏支持</button>
+			</div>
+			<div class="layui-text" style="text-align: center;">
+				<span>Copyright © 2024 刘小龙</span><br />
+				<span>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a></span><br />
+				<span id="uptime"></span>
+				<div>
+					<span class="social-value">富强</span>
+					<span class="social-value">民主</span>
+					<span class="social-value">文明</span>
+					<span class="social-value">和谐</span>
+					<span>|</span>
+					<span class="social-value">自由</span>
+					<span class="social-value">平等</span>
+					<span class="social-value">公正</span>
+					<span class="social-value">法治</span>
+					<span>|</span>
+					<span class="social-value">爱国</span>
+					<span class="social-value">敬业</span>
+					<span class="social-value">诚信</span>
+					<span class="social-value">友善</span>
+				</div>
+				<div id="notice-content"></div>
+			</div>
+		</div>
+
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/layui/2.9.16/layui.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+
+		<script>
+			// 动态生成HTML内容
+			layui.use(['table', 'layer', 'jquery'], function() {
+				var table = layui.table;
+				var layer = layui.layer;
+				var $ = layui.jquery;
+
+
+				var dataCache = [];
+				var totalLinks = 0;
+
+
+				// 显示加载层
+				var loadingIndex = layer.msg('玩命加载中...', {
+					icon: 16,
+					shade: [0.5, '#fff']
+				});
+
+
+				// 异步获取数据
+				fetch(
+						'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240827121949.json'
+					)
+					.then(response => response.json())
+					.then(json => {
+						dataCache = json;
+						totalLinks = json.reduce((acc, category) => acc + category.links.length, 0);
+						$('#linkCount').html(`共${json.length} 个分类，${totalLinks} 条链接资源。`);
+						renderTable();
+						layer.close(loadingIndex);
+						layer.msg('数据加载成功！', {
+							icon: 1
+						});
+					})
+					.catch(error => {
+						console.error('Error fetching data:', error);
+						layer.close(loadingIndex);
+						layer.msg('数据加载失败', {
+							icon: 2
+						});
+					});
+
+
+				// 渲染表格
+				function renderTable() {
+					table.render({
+						elem: '#linkTable',
+						cols: [
+							[{
+									field: 'name',
+									title: '分类名称'
+								},
+								{
+									field: 'linkCount',
+									title: '链接数量'
+								},
+								{
+									title: '操作',
+									toolbar: '#linkToolbar'
+								}
+							]
+						],
+						data: dataCache.map(category => ({
+							name: category.name,
+							linkCount: category.links.length
+						})),
+						page: true
+					});
+				}
+
+
+				// 创建链接HTML
+				function createLinksHtml(links) {
+					return links.sort((a, b) => a.name.localeCompare(b.name))
+						.map(link => `<a href="${link.url}" target="_blank">${link.name}</a>`).join('<br>');
+				}
+
+
+				// 监听表格工具条
+				table.on('tool(linkTable)', function(obj) {
+					var category = dataCache.find(d => d.name === obj.data.name);
+					var linksHtml = createLinksHtml(category.links);
+					layer.open({
+						type: 1,
+						shadeClose: true,
+						title: '查看链接',
+						area: ['50%', '50%'],
+						anim: 1,
+						content: `<div class="layui-layer-content">${linksHtml}</div>`
+					});
+				});
+
+
+				// 搜索资源链接
+				$('#searchResourceBtn').on('click', function() {
+					layer.prompt({
+						title: '输入关键词搜索链接',
+						formType: 2,
+						shadeClose: true,
+						anim: 4 // 从左翻滚
+					}, function(keyword, index) {
+						keyword = keyword.trim().toLowerCase();
+						if (!keyword) {
+							layer.msg('请输入关键词', {
+								icon: 0,
+								anim: 6
+							});
+							return;
+						}
+						var results = [];
+						dataCache.forEach(category => {
+							category.links.forEach(link => {
+								if (link.name.toLowerCase().includes(keyword)) {
+									results.push(link);
+								}
+							});
+						});
+						if (results.length === 0) {
+							layer.msg('没有找到相关资源，请尝试其他关键词！', {
+								icon: 0
+							});
+						} else {
+							var sortedResultsHtml = createLinksHtml(results);
+							layer.open({
+								type: 1,
+								title: '搜索结果',
+								area: ['50%', '50%'],
+								shadeClose: true,
+								anim: 2,
+								content: `<div class="layui-layer-content">${sortedResultsHtml}</div>`
+							});
+						}
+						layer.close(index);
+					});
+				});
+			});
+		</script>
+
+
+		<script type="text/html" id="linkToolbar">
+			<a class="layui-btn layui-btn-xs" lay-event="viewLinks">查看链接</a>
+		</script>
+
+
+		<script>
+			// 时间，日期，星期
+			function updateTime() {
+				const now = new Date();
+				const year = now.getFullYear();
+				const month = now.getMonth() + 1;
+				const day = now.getDate();
+				const hour = now.getHours();
+				const minute = now.getMinutes();
+				const second = now.getSeconds();
+				const week = ['日', '一', '二', '三', '四', '五', '六'][now.getDay()];
+				$('#timeDateWeek').text(
+					`${year}年${month.toString().padStart(2, '0')}月${day.toString().padStart(2, '0')}日⠀${hour.toString().padStart(2, '0')}时${minute.toString().padStart(2, '0')}分${second.toString().padStart(2, '0')}秒⠀星期${week}`
+				);
+			}
+			// 每秒更新时间
+			setInterval(updateTime, 1000);
+			// 初始时也更新一次时间
+			updateTime();
+
+
+
+			// 固定条
+			layui.use(['util', 'layer'], function() {
+			  var util = layui.util;
+			  var layer = layui.layer;
+			
+			  util.fixbar({
+			    bars: [{
+			      type: '去顶部',
+			      icon: 'layui-icon-up'
+			    }, {
+			      type: '联系客服',
+			      icon: 'layui-icon-service'
+			    }, {
+			      type: '刷新页面',
+			      icon: 'layui-icon-refresh-3'
+			    }, {
+			      type: '去底部',
+			      icon: 'layui-icon-down'
+			    }],
+			    default: false,
+			    css: {
+			      right: 16,
+			      bottom: 16
+			    },
+			    bgcolor: '#393D52',
+			    on: {
+			      mouseenter: function(type) {
+			        layer.tips(type, this, {
+			          tips: 4,
+			          fixed: true
+			        });
+			      },
+			      mouseleave: function(type) {
+			        layer.closeAll('tips');
+			      }
+			    },
+			    click: function(type) {
+			      switch (type) {
+			        case '去顶部':
+			          window.scrollTo({ top: 0, behavior: 'smooth' });
+			          layer.msg('小主，已经到顶部啦(✿◠‿◠)！', { icon: 1, skin: 'custom-msg-bg' });
+			          break;
+			        case '联系客服':
+			          window.open('http://wpa.qq.com/msgrd?v=3&uin=2539223617&site=qq&menu=yes');
+			          break;
+			        case '刷新页面':
+			          window.location.reload(true);
+			          layer.msg('小主，已经为您刷新了页面(✿◠‿◠)！', { icon: 1, skin: 'custom-msg-bg' });
+			          break;
+			        case '去底部':
+			          window.scrollTo({ top: document.body.scrollHeight - window.innerHeight, behavior: 'smooth' });
+			          layer.msg('小主，已经到底部啦(✿◠‿◠)！', { icon: 1, skin: 'custom-msg-bg' });
+			          break;
+			        default:
+			          console.log(this, type);
+			      }
+			    }
+			  });
+			});
+
+
+
+			//随机颜色
+			function getRandomColor() {
+				var letters = '0123456789ABCDEF';
+				var color = '#';
+				for (var i = 0; i < 6; i++) {
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return color;
+			}
+
+
+
+			// 价值观显示
+			function applyRandomColors() {
+				var values = document.getElementsByClassName('social-value');
+				for (var i = 0; i < values.length; i++) {
+					values[i].style.color = getRandomColor();
+				}
+			}
+
+			// 设置定时器，每秒更新颜色
+			setInterval(applyRandomColors, 1000);
+
+
+
+			// 使用XMLHttpRequest获取JSON文件内容并显示公告
+			layui.use([], function() {
+				// 创建XMLHttpRequest对象
+				var xhr = new XMLHttpRequest();
+				// 配置请求类型、URL以及是否异步处理
+				xhr.open('GET',
+					'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json',
+					true);
+				// 设置请求完成后的回调函数
+				xhr.onload = function() {
+					if (xhr.status >= 200 && xhr.status < 300) {
+						// 解析JSON数据
+						var data = JSON.parse(xhr.responseText);
+						// 创建一个字符串来拼接所有的公告内容
+						var noticeHtml = '';
+						data.forEach(function(item) {
+							noticeHtml += '<div>' + item + '</div>';
+						});
+						// 将公告内容添加到页面中
+						document.getElementById('notice-content').innerHTML = noticeHtml;
+					} else {
+						console.error('An error occurred fetching the JSON data.');
+					}
+				};
+				// 发送请求
+				xhr.send();
+			});
+
+
+
+			//文本打字机效果
+			var typed = new Typed(".typing", {
+				//输出的文字，通过转义字符 ^3000 在字符串中间暂停一段时间
+				strings: ['halo，朋友。欢迎访问糖糖π的资源站！^3000', '本站热衷于分享安全，无毒，无后门，可靠可用的各类资源。^3000'],
+				typeSpeed: 60, //打字的速度
+				smartBackspace: true, //开启智能退格 默认false
+				cursorChar: '_', //自定义光标符号
+				backSpeed: 50, //后退速度
+				backDelay: 500, //后退延迟
+				loop: true, //是否循环 默认false
+				startDelay: 1000, //起始时间
+				fadeOut: true, //淡出效果		
+			});
+
+
+
+			// 设置建站时间
+			const startTime = new Date("2022-08-09T00:00:00");
+			// 更新运行时间的函数
+			function updateUptime() {
+				const now = new Date();
+				const uptime = now - startTime; // 运行时间（毫秒）
+				// 将毫秒转换为天、小时、分钟、秒
+				const days = Math.floor(uptime / (1000 * 60 * 60 * 24));
+				const hours = Math.floor((uptime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				const minutes = Math.floor((uptime % (1000 * 60 * 60)) / (1000 * 60));
+				const seconds = Math.floor((uptime % (1000 * 60)) / 1000);
+				// 格式化时间显示，美化输出，添加零前导
+				const uptimeString = `网站已运行时间：${pad(days)} 天 ${pad(hours)} 时 ${pad(minutes)} 分 ${pad(seconds)} 秒`;
+				// 将运行时间显示在页面上
+				document.getElementById("uptime").textContent = uptimeString;
+			}
+			// 辅助函数，用于添加零前导
+			function pad(number) {
+				return number.toString().padStart(2, '0');
+			}
+			// 每秒调用一次updateUptime函数
+			setInterval(updateUptime, 1000);
+
+
+
+			//Hitokoto一言
+			function fetchHitokoto(url) {
+				return fetch(url).then(response => {
+					if (!response.ok) {
+						throw new Error(`Network response was not ok: ${response.statusText}`);
+					}
+					return response.json();
+				}).catch(error => {
+					console.error(`Failed to fetch from ${url}:`, error);
+					throw error; // Re-throw the error to be handled by the caller
+				});
+			}
+
+			function updateHitokotoElement(data) {
+				const hitokotoElement = document.getElementById('hitokoto_text');
+				if (!hitokotoElement) {
+					console.error('The hitokoto_text element does not exist.');
+					return;
+				}
+				let formattedText = `『${data.hitokoto}』 —— `;
+				if (data.from_who) {
+					formattedText += `${data.from_who}【${data.from}】`;
+				} else {
+					formattedText += `【${data.from}】`;
+				}
+				hitokotoElement.textContent = formattedText;
+			}
+
+			function updateHitokoto() {
+				fetchHitokoto('https://v1.hitokoto.cn').then(updateHitokotoElement).catch(() => {
+					// Try the international endpoint if the first request fails
+					return fetchHitokoto('https://international.v1.hitokoto.cn').then(updateHitokotoElement).catch(
+						() => {
+							document.getElementById('hitokoto_text').textContent = 'Failed to load Hitokoto.';
+						});
+				});
+			}
+			// Set interval to update hitokoto every 10 seconds
+			setInterval(updateHitokoto, 10000);
+		</script>
+
+
+		<script>
+			//打赏
+			layui.use('layer', function() {
+				var layer = layui.layer;
+
+				document.getElementById('tip').onclick = function() {
+					var tabContentHtml = `
+			<p style="text-align: center; margin-bottom: 10px;">感谢您的支持，我会继续努力的！</p>
+		      <div class="tab-container">
+		        <ul class="tab-list">
+		          <li class="active" onclick="switchTab(event, 'tab1')">微信</li>
+		          <li onclick="switchTab(event, 'tab2')">支付宝</li>
+		        </ul>
+		        <div id="tab1" class="tab-content active">
+		          <img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/weixin.png" alt="微信">
+		        </div>
+		        <div id="tab2" class="tab-content">
+		          <img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/zhifubao.jpg" alt="支付宝">
+		        </div>
+		      </div>
+		    `;
+
+					layer.open({
+						type: 1,
+						title: '☕ 给Ta打赏一杯奶茶',
+						content: tabContentHtml,
+						area: ['404px', '404px'],
+						shadeClose: true
+					});
+
+					window.switchTab = function(evt, tabName) {
+						var tabContents = document.getElementsByClassName("tab-content");
+						for (var i = 0; i < tabContents.length; i++) {
+							tabContents[i].style.display = "none";
+						}
+						var tabListItems = document.getElementsByClassName("tab-list")[0].children;
+						for (var i = 0; i < tabListItems.length; i++) {
+							tabListItems[i].className = tabListItems[i].className.replace(" active", "");
+						}
+						document.getElementById(tabName).style.display = "block";
+						evt.currentTarget.className += " active";
+					};
+				};
+			});
+		</script>
+	</body>
+</html>
