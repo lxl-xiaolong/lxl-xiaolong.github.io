@@ -98,6 +98,12 @@
 				background-color: #009688;
 				/* 设置背景颜色 */
 			}
+			
+			/* 表格内容居中 */
+			.layui-table th, .layui-table td {
+			  text-align: center; /* 水平居中 */
+			  vertical-align: middle; /* 垂直居中 */
+			}
 		</style>
 	</head>
 	<body class="layui-layout-body layui-unselect" oncontextmenu=self.event.returnValue=false
@@ -106,7 +112,7 @@
 			<div class="layui-text">
 				<h1 id="timeDateWeek"></h1>
 				<h1>糖糖π的资源站</h1>
-				<span class="typing layui-font-32 layui-font-black"></span>
+				<span class="typing layui-font-24 layui-font-black"></span>
 				<h3 id="hitokoto_text"><img
 						src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/Hitokoto_loading.gif"
 						alt="" /> Hitokoto一言获取中，请稍后...</h3>
@@ -316,70 +322,62 @@
 
 			// 固定条
 			layui.use(['util', 'layer'], function() {
-				var util = layui.util;
-				var layer = layui.layer;
-
-				util.fixbar({
-					// 自定义固定条
-					bars: [{
-						type: '去顶部',
-						icon: 'layui-icon-up'
-					}, {
-						type: '联系客服',
-						icon: 'layui-icon-service'
-					}, {
-						type: '刷新页面',
-						icon: 'layui-icon-refresh-3'
-					}, {
-						type: '去底部',
-						icon: 'layui-icon-down'
-					}],
-					default: false, // 是否显示默认的 bar 列表 --  v2.8.0 新增
-					css: {
-						right: 16,
-						bottom: 16
-					},
-					bgcolor: '#393D52', // bar 的默认背景色
-					on: {
-						// 任意事件 --  v2.8.0 新增
-						mouseenter: function(type) {
-							layer.tips(type, this, {
-								tips: 4,
-								fixed: true
-							});
-						},
-						mouseleave: function(type) {
-							layer.closeAll('tips');
-						}
-					},
-					// 点击事件
-					click: function(type) {
-						if (type === '去顶部') {
-							document.body.scrollTop = document.documentElement.scrollTop = 0;
-							layer.msg('小主，已经到顶部啦(✿◠‿◠)！', {
-								icon: 1,
-								skin: 'custom-msg-bg' // 应用自定义皮肤
-							});
-						} else if (type === '联系客服') {
-							window.open('http://wpa.qq.com/msgrd?v=3&uin=2539223617&site=qq&menu=yes');
-						} else if (type === '刷新页面') {
-							window.location.reload(true);
-							layer.msg('小主，已经为您刷新了页面(✿◠‿◠)！', {
-								icon: 1,
-								skin: 'custom-msg-bg' // 应用自定义皮肤
-							});
-						} else if (type === '去底部') {
-							window.scroll(0, document.documentElement.scrollHeight - window.innerHeight);
-							layer.msg('小主，已经到底部啦(✿◠‿◠)！', {
-								icon: 1,
-								skin: 'custom-msg-bg' // 应用自定义皮肤
-							});
-						} else {
-							console.log(this, type);
-							// layer.msg(type);
-						}
-					}
-				});
+			  var util = layui.util;
+			  var layer = layui.layer;
+			
+			  util.fixbar({
+			    bars: [{
+			      type: '去顶部',
+			      icon: 'layui-icon-up'
+			    }, {
+			      type: '联系客服',
+			      icon: 'layui-icon-service'
+			    }, {
+			      type: '刷新页面',
+			      icon: 'layui-icon-refresh-3'
+			    }, {
+			      type: '去底部',
+			      icon: 'layui-icon-down'
+			    }],
+			    default: false,
+			    css: {
+			      right: 16,
+			      bottom: 16
+			    },
+			    bgcolor: '#393D52',
+			    on: {
+			      mouseenter: function(type) {
+			        layer.tips(type, this, {
+			          tips: 4,
+			          fixed: true
+			        });
+			      },
+			      mouseleave: function(type) {
+			        layer.closeAll('tips');
+			      }
+			    },
+			    click: function(type) {
+			      switch (type) {
+			        case '去顶部':
+			          window.scrollTo({ top: 0, behavior: 'smooth' });
+			          layer.msg('小主，已经到顶部啦(✿◠‿◠)！', { icon: 1, skin: 'custom-msg-bg' });
+			          break;
+			        case '联系客服':
+			          window.open('http://wpa.qq.com/msgrd?v=3&uin=2539223617&site=qq&menu=yes');
+			          break;
+			        case '刷新页面':
+			          window.location.reload(true);
+			          layer.msg('小主，已经为您刷新了页面(✿◠‿◠)！', { icon: 1, skin: 'custom-msg-bg' });
+			          break;
+			        case '去底部':
+			          window.scrollTo({ top: document.body.scrollHeight - window.innerHeight, behavior: 'smooth' });
+			          layer.msg('小主，已经到底部啦(✿◠‿◠)！', { icon: 1, skin: 'custom-msg-bg' });
+			          break;
+			        default:
+			          console.log(this, type);
+			      }
+			    }
+			  });
 			});
 
 
