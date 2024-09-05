@@ -21,27 +21,13 @@
 				background-color: #eee;
 			}
 
-			.layui-layer-content {
-				background-color: #f2f2f2;
-				border-radius: 4px;
-				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-				padding: 20px;
-				font-family: var(--main-font-family);
-			}
-
 			.layui-layer-content a {
 				display: block;
-				color: #191970;
-				text-decoration: none;
-				padding: 10px;
-				transition: color 0.3s ease;
+				padding: 5px 20px 5px 20px;
+				/* 上边 | 右边 | 下边 | 左边 */
 			}
 
-			.layui-layer-content a:hover {
-				color: #FF0000;
-			}
-
-			.layui-layer-content .tab-container {
+			.tab-container {
 				width: 100%;
 				border-radius: 4px;
 				overflow: hidden;
@@ -93,16 +79,14 @@
 				margin: 0 auto;
 			}
 
-			/* 自定义layer.msg背景颜色 */
-			.custom-msg-bg {
-				background-color: #009688;
-				/* 设置背景颜色 */
-			}
-			
 			/* 表格内容居中 */
-			.layui-table th, .layui-table td {
-			  text-align: center; /* 水平居中 */
-			  vertical-align: middle; /* 垂直居中 */
+			.layui-table th,
+			.layui-table td {
+				font-size: 18px;
+				text-align: center;
+				/* 水平居中 */
+				vertical-align: middle;
+				/* 垂直居中 */
 			}
 		</style>
 	</head>
@@ -116,9 +100,11 @@
 				<h3 id="hitokoto_text"><img
 						src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/Hitokoto_loading.gif"
 						alt="" /> Hitokoto一言获取中，请稍后...</h3>
-				<button class="layui-btn layui-btn-fluid layui-bg-blue" id="searchResourceBtn"
-					style="margin-top: 10px; margin-bottom: 10px;">搜索资源链接</button>
-				<div id="linkCount" style="margin-bottom: 10px;"></div>
+				<div style="display: flex; align-items: center;">
+					<button class="layui-btn layui-btn-lg layui-btn-normal" id="searchResourceBtn"
+						style="margin-top: 10px; margin-bottom: 10px; margin-right: 10px;">搜索资源链接</button>
+					<span id="linkCount"></span>
+				</div>
 			</div>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
 			<div style="margin-top: 20px; text-align: center; margin-bottom: 10px;">
@@ -156,14 +142,17 @@
 
 		<script>
 			// 动态生成HTML内容
-			layui.use(['table', 'layer', 'jquery'], function() {
+			layui.use(['util', 'table', 'layer', 'jquery'], function() {
+				var util = layui.util;
 				var table = layui.table;
 				var layer = layui.layer;
 				var $ = layui.jquery;
 
 
+
 				var dataCache = [];
 				var totalLinks = 0;
+
 
 
 				// 显示加载层
@@ -171,6 +160,7 @@
 					icon: 16,
 					shade: [0.5, '#fff']
 				});
+
 
 
 				// 异步获取数据
@@ -181,7 +171,9 @@
 					.then(json => {
 						dataCache = json;
 						totalLinks = json.reduce((acc, category) => acc + category.links.length, 0);
-						$('#linkCount').html(`共${json.length} 个分类，${totalLinks} 条链接资源。`);
+						$('#linkCount').html(
+							`<p style="font-size: 16px;">共 <b style="color: red;">${json.length}</b> 个分类，<b style="color: red;">${totalLinks}</b> 条链接资源。</p>`
+						);
 						renderTable();
 						layer.close(loadingIndex);
 						layer.msg('数据加载成功！', {
@@ -195,6 +187,7 @@
 							icon: 2
 						});
 					});
+
 
 
 				// 渲染表格
@@ -225,11 +218,13 @@
 				}
 
 
+
 				// 创建链接HTML
 				function createLinksHtml(links) {
 					return links.sort((a, b) => a.name.localeCompare(b.name))
 						.map(link => `<a href="${link.url}" target="_blank">${link.name}</a>`).join('<br>');
 				}
+
 
 
 				// 监听表格工具条
@@ -245,6 +240,7 @@
 						content: `<div class="layui-layer-content">${linksHtml}</div>`
 					});
 				});
+
 
 
 				// 搜索资源链接
@@ -289,12 +285,126 @@
 						layer.close(index);
 					});
 				});
+
+
+
+				// 固定条
+				util.fixbar({
+					bars: [{
+						type: '去顶部',
+						icon: 'layui-icon-up'
+					}, {
+						type: '联系客服',
+						icon: 'layui-icon-service'
+					}, {
+						type: '刷新页面',
+						icon: 'layui-icon-refresh-3'
+					}, {
+						type: '去底部',
+						icon: 'layui-icon-down'
+					}],
+					default: false,
+					css: {
+						right: 16,
+						bottom: 16
+					},
+					bgcolor: '#393D52',
+					on: {
+						mouseenter: function(type) {
+							layer.tips(type, this, {
+								tips: 4,
+								fixed: true
+							});
+						},
+						mouseleave: function(type) {
+							layer.closeAll('tips');
+						}
+					},
+					click: function(type) {
+						switch (type) {
+							case '去顶部':
+								window.scrollTo({
+									top: 0,
+									behavior: 'smooth'
+								});
+								layer.msg('小主，已经到顶部啦(✿◠‿◠)！', {
+									icon: 1,
+									skin: 'custom-msg-bg'
+								});
+								break;
+							case '联系客服':
+								window.open('http://wpa.qq.com/msgrd?v=3&uin=2539223617&site=qq&menu=yes');
+								break;
+							case '刷新页面':
+								window.location.reload(true);
+								layer.msg('小主，已经为您刷新了页面(✿◠‿◠)！', {
+									icon: 1,
+									skin: 'custom-msg-bg'
+								});
+								break;
+							case '去底部':
+								window.scrollTo({
+									top: document.body.scrollHeight - window.innerHeight,
+									behavior: 'smooth'
+								});
+								layer.msg('小主，已经到底部啦(✿◠‿◠)！', {
+									icon: 1,
+									skin: 'custom-msg-bg'
+								});
+								break;
+							default:
+								console.log(this, type);
+						}
+					}
+				});
+
+
+
+				// 打赏
+				document.getElementById('tip').onclick = function() {
+					var tabContentHtml = `
+					<p style="text-align: center; margin-bottom: 10px;">感谢您的支持，我会继续努力的！</p>
+					  <div class="tab-container">
+					    <ul class="tab-list">
+					      <li class="active" onclick="switchTab(event, 'tab1')">微信</li>
+					      <li onclick="switchTab(event, 'tab2')">支付宝</li>
+					    </ul>
+					    <div id="tab1" class="tab-content active">
+					      <img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/weixin.png" alt="微信">
+					    </div>
+					    <div id="tab2" class="tab-content">
+					      <img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/zhifubao.jpg" alt="支付宝">
+					    </div>
+					  </div>
+					`;
+
+					layer.open({
+						type: 1,
+						title: '☕ 给Ta打赏一杯奶茶',
+						content: tabContentHtml,
+						area: ['404px', '404px'],
+						shadeClose: true
+					});
+
+					window.switchTab = function(evt, tabName) {
+						var tabContents = document.getElementsByClassName("tab-content");
+						for (var i = 0; i < tabContents.length; i++) {
+							tabContents[i].style.display = "none";
+						}
+						var tabListItems = document.getElementsByClassName("tab-list")[0].children;
+						for (var i = 0; i < tabListItems.length; i++) {
+							tabListItems[i].className = tabListItems[i].className.replace(" active", "");
+						}
+						document.getElementById(tabName).style.display = "block";
+						evt.currentTarget.className += " active";
+					};
+				};
 			});
 		</script>
 
 
 		<script type="text/html" id="linkToolbar">
-			<a class="layui-btn layui-btn-xs" lay-event="viewLinks">查看链接</a>
+			<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="viewLinks">查看链接</a>
 		</script>
 
 
@@ -317,68 +427,6 @@
 			setInterval(updateTime, 1000);
 			// 初始时也更新一次时间
 			updateTime();
-
-
-
-			// 固定条
-			layui.use(['util', 'layer'], function() {
-			  var util = layui.util;
-			  var layer = layui.layer;
-			
-			  util.fixbar({
-			    bars: [{
-			      type: '去顶部',
-			      icon: 'layui-icon-up'
-			    }, {
-			      type: '联系客服',
-			      icon: 'layui-icon-service'
-			    }, {
-			      type: '刷新页面',
-			      icon: 'layui-icon-refresh-3'
-			    }, {
-			      type: '去底部',
-			      icon: 'layui-icon-down'
-			    }],
-			    default: false,
-			    css: {
-			      right: 16,
-			      bottom: 16
-			    },
-			    bgcolor: '#393D52',
-			    on: {
-			      mouseenter: function(type) {
-			        layer.tips(type, this, {
-			          tips: 4,
-			          fixed: true
-			        });
-			      },
-			      mouseleave: function(type) {
-			        layer.closeAll('tips');
-			      }
-			    },
-			    click: function(type) {
-			      switch (type) {
-			        case '去顶部':
-			          window.scrollTo({ top: 0, behavior: 'smooth' });
-			          layer.msg('小主，已经到顶部啦(✿◠‿◠)！', { icon: 1, skin: 'custom-msg-bg' });
-			          break;
-			        case '联系客服':
-			          window.open('http://wpa.qq.com/msgrd?v=3&uin=2539223617&site=qq&menu=yes');
-			          break;
-			        case '刷新页面':
-			          window.location.reload(true);
-			          layer.msg('小主，已经为您刷新了页面(✿◠‿◠)！', { icon: 1, skin: 'custom-msg-bg' });
-			          break;
-			        case '去底部':
-			          window.scrollTo({ top: document.body.scrollHeight - window.innerHeight, behavior: 'smooth' });
-			          layer.msg('小主，已经到底部啦(✿◠‿◠)！', { icon: 1, skin: 'custom-msg-bg' });
-			          break;
-			        default:
-			          console.log(this, type);
-			      }
-			    }
-			  });
-			});
 
 
 
@@ -453,8 +501,8 @@
 
 
 
-			// 设置建站时间
-			const startTime = new Date("2022-08-09T00:00:00");
+			// 网站运行时间
+			const startTime = new Date("2022-08-09T00:00:00"); // 设置建站时间
 			// 更新运行时间的函数
 			function updateUptime() {
 				const now = new Date();
@@ -517,53 +565,6 @@
 			}
 			// Set interval to update hitokoto every 10 seconds
 			setInterval(updateHitokoto, 10000);
-		</script>
-
-
-		<script>
-			//打赏
-			layui.use('layer', function() {
-				var layer = layui.layer;
-
-				document.getElementById('tip').onclick = function() {
-					var tabContentHtml = `
-			<p style="text-align: center; margin-bottom: 10px;">感谢您的支持，我会继续努力的！</p>
-		      <div class="tab-container">
-		        <ul class="tab-list">
-		          <li class="active" onclick="switchTab(event, 'tab1')">微信</li>
-		          <li onclick="switchTab(event, 'tab2')">支付宝</li>
-		        </ul>
-		        <div id="tab1" class="tab-content active">
-		          <img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/weixin.png" alt="微信">
-		        </div>
-		        <div id="tab2" class="tab-content">
-		          <img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/zhifubao.jpg" alt="支付宝">
-		        </div>
-		      </div>
-		    `;
-
-					layer.open({
-						type: 1,
-						title: '☕ 给Ta打赏一杯奶茶',
-						content: tabContentHtml,
-						area: ['404px', '404px'],
-						shadeClose: true
-					});
-
-					window.switchTab = function(evt, tabName) {
-						var tabContents = document.getElementsByClassName("tab-content");
-						for (var i = 0; i < tabContents.length; i++) {
-							tabContents[i].style.display = "none";
-						}
-						var tabListItems = document.getElementsByClassName("tab-list")[0].children;
-						for (var i = 0; i < tabListItems.length; i++) {
-							tabListItems[i].className = tabListItems[i].className.replace(" active", "");
-						}
-						document.getElementById(tabName).style.display = "block";
-						evt.currentTarget.className += " active";
-					};
-				};
-			});
 		</script>
 	</body>
 </html>
