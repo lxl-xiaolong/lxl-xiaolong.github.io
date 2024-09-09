@@ -233,10 +233,10 @@
 					var linksHtml = createLinksHtml(category.links);
 					layer.open({
 						type: 1,
-						shadeClose: true,
 						title: '查看链接',
 						area: ['50%', '50%'],
 						anim: 1,
+						btn: ['关闭窗口'],
 						content: `<div class="layui-layer-content">${linksHtml}</div>`
 					});
 				});
@@ -246,9 +246,8 @@
 				// 搜索资源链接
 				$('#searchResourceBtn').on('click', function() {
 					layer.prompt({
+						type: 1,
 						title: '输入关键词搜索链接',
-						formType: 2,
-						shadeClose: true,
 						anim: 4 // 从左翻滚
 					}, function(keyword, index) {
 						keyword = keyword.trim().toLowerCase();
@@ -277,7 +276,7 @@
 								type: 1,
 								title: '搜索结果',
 								area: ['50%', '50%'],
-								shadeClose: true,
+								btn: ['关闭窗口'],
 								anim: 2,
 								content: `<div class="layui-layer-content">${sortedResultsHtml}</div>`
 							});
@@ -382,8 +381,8 @@
 						type: 1,
 						title: '☕ 给Ta打赏一杯奶茶',
 						content: tabContentHtml,
-						area: ['404px', '404px'],
-						shadeClose: true
+						area: ['410px', '420px'],
+						btn: ['关闭窗口']
 					});
 
 					window.switchTab = function(evt, tabName) {
