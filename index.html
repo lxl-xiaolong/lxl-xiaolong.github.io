@@ -1,15 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" dir="ltr">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		
 		<title>糖糖π的资源站</title>
+		
 		<link rel="dns-prefetch" href="https://github.githubassets.com">
 		<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
 		<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
 		<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
 		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
 		<link rel="preconnect" href="https://avatars.githubusercontent.com">
+		
+		<link rel="dns-prefetch" href="https://cdn-dynmedia-1.microsoft.com"/>
+		<link rel="preconnect" href="https://cdn-dynmedia-1.microsoft.com"/>
+		<link rel="dns-prefetch" href="https://web.vortex.data.microsoft.com"/>
+		<link rel="preconnect" href="https://web.vortex.data.microsoft.com"/>
+		<link rel="dns-prefetch" href="https://img-prod-cms-rt-microsoft-com.akamaized.net"/>
+		<link rel="preconnect" href="https://img-prod-cms-rt-microsoft-com.akamaized.net"/>
+		<link rel="dns-prefetch" href="https://c.s-microsoft.com"/>
+		<link rel="preconnect" href="https://c.s-microsoft.com"/>
+		<link rel="dns-prefetch" href="https://analytics.tiktok.com"/>
+		<link rel="preconnect" href="https://analytics.tiktok.com"/>
+		<link rel="dns-prefetch" href="https://bat.bing.com"/>
+		<link rel="preconnect" href="https://bat.bing.com"/>
+		<link rel="dns-prefetch" href="https://cdnssl.clicktale.net"/>
+		<link rel="preconnect" href="https://cdnssl.clicktale.net"/>
+		<link rel="dns-prefetch" href="https://d.impactradius-event.com"/>
+		<link rel="preconnect" href="https://d.impactradius-event.com"/>
+		<link rel="dns-prefetch" href="https://js.monitor.azure.com"/>
+		<link rel="preconnect" href="https://js.monitor.azure.com"/>
+		<link rel="dns-prefetch" href="https://mem.gfx.ms"/>
+		<link rel="preconnect" href="https://mem.gfx.ms"/>
+		<link rel="dns-prefetch" href="https://wcpstatic.microsoft.com"/>
+		<link rel="preconnect" href="https://wcpstatic.microsoft.com"/>
+		<link rel="dns-prefetch" href="https://www.clarity.ms"/>
+		<link rel="preconnect" href="https://www.clarity.ms"/>
+		<link rel="dns-prefetch" href="https://fpt.microsoft.com"/>
+		<link rel="preconnect" href="https://fpt.microsoft.com"/>
+		<link rel="dns-prefetch" href="https://publisher.liveperson.net"/>
+		<link rel="preconnect" href="https://publisher.liveperson.net"/>
+		<link rel="dns-prefetch" href="https://accdn.lpsnmedia.net"/>
+		<link rel="preconnect" href="https://accdn.lpsnmedia.net"/>
+		<link rel="dns-prefetch" href="https://lpcdn.lpsnmedia.net"/>
+		<link rel="preconnect" href="https://lpcdn.lpsnmedia.net"/>
+		<link rel="dns-prefetch" href="https://lptag.liveperson.net"/>
+		<link rel="preconnect" href="https://lptag.liveperson.net"/>
+		
 		<link href="https://cdn.bootcdn.net/ajax/libs/layui/2.9.16/css/layui.css" rel="stylesheet">
+		
 		<style>
 			:root {
 				--main-font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
@@ -106,13 +147,8 @@
 				<h3 id="hitokoto_text"><img
 						src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/Hitokoto_loading.gif"
 						alt="" /> Hitokoto一言获取中，请稍后...</h3>
-				<div style="display: flex; align-items: center;">
-					<button class="layui-btn layui-btn-lg layui-btn-normal" id="notice-content"
-						style="margin-top: 10px; margin-bottom: 10px; margin-right: 10px;">查阅公告</button>
-					<button class="layui-btn layui-btn-lg layui-btn-normal" id="searchResourceBtn"
-						style="margin-top: 10px; margin-bottom: 10px; margin-right: 10px;">搜索资源链接</button>
-					<span id="linkCount"></span>
-				</div>
+				<span id="linkCount"></span>
+				<p>数据最后维护时间：2024-09-12 19:33:34</p>
 			</div>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
 			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
@@ -173,7 +209,7 @@
 
 				// 异步获取数据
 				fetch(
-						'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240827121949.json'
+						'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240912193334.json'
 					)
 					.then(response => response.json())
 					.then(json => {
@@ -251,55 +287,17 @@
 
 
 
-				// 搜索资源链接
-				$('#searchResourceBtn').on('click', function() {
-					layer.prompt({
-						type: 1,
-						title: '输入关键词搜索链接',
-						anim: 4 // 从左翻滚
-					}, function(keyword, index) {
-						keyword = keyword.trim().toLowerCase();
-						if (!keyword) {
-							layer.msg('请输入关键词', {
-								icon: 0,
-								anim: 6
-							});
-							return;
-						}
-						var results = [];
-						dataCache.forEach(category => {
-							category.links.forEach(link => {
-								if (link.name.toLowerCase().includes(keyword)) {
-									results.push(link);
-								}
-							});
-						});
-						if (results.length === 0) {
-							layer.msg('没有找到相关资源，请尝试其他关键词！', {
-								icon: 0
-							});
-						} else {
-							var sortedResultsHtml = createLinksHtml(results);
-							layer.open({
-								type: 1,
-								title: '搜索结果',
-								area: ['50%', '50%'],
-								btn: ['关闭窗口'],
-								anim: 2,
-								content: `<div class="layui-layer-content">${sortedResultsHtml}</div>`
-							});
-						}
-						layer.close(index);
-					});
-				});
-
-
-
 				// 固定条
 				util.fixbar({
 					bars: [{
 						type: '去顶部',
 						icon: 'layui-icon-up'
+					}, {
+						type: '公告',
+						icon: 'layui-icon-about'
+					}, {
+						type: '搜索',
+						icon: 'layui-icon-search'
 					}, {
 						type: '联系客服',
 						icon: 'layui-icon-service'
@@ -337,6 +335,94 @@
 								layer.msg('小主，已经到顶部啦(✿◠‿◠)！', {
 									icon: 1,
 									skin: 'custom-msg-bg'
+								});
+								break;
+							case '公告':
+								// 使用fetch API获取公告内容
+								fetch(
+										'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
+									)
+									.then(response => {
+										// 确保响应成功
+										if (!response.ok) {
+											throw new Error('Network response was not ok');
+										}
+										return response.json(); // 解析JSON
+									})
+									.then(notices => {
+										// 将公告内容拼接成HTML字符串，并添加序号和行间距
+										let contentHtml = '<ol>';
+										notices.forEach(function(notice, index) {
+											// 创建中文序号
+											let chineseNumber = ['一', '二', '三', '四', '五', '六',
+												'七', '八', '九',
+												'十'
+											];
+											let chineseIndex = chineseNumber[index] + '、';
+											// 添加公告内容，并在每条公告后添加一个额外的<br>标签来创建行间距
+											contentHtml +=
+												`<li>${chineseIndex}${notice}</li><br>`;
+										});
+										contentHtml += '</ol>';
+
+										// 显示公告内容
+										layer.open({
+											type: 1,
+											title: '公告内容',
+											content: `<div style="padding: 20px;">${contentHtml}</div>`,
+											area: ['600px', '400px'],
+											btn: ['关闭窗口']
+										});
+									})
+									.catch(error => {
+										// 处理错误情况
+										console.error(
+											'There has been a problem with your fetch operation:',
+											error);
+										layer.msg('无法加载公告内容，请稍后再试。', {
+											icon: 2
+										});
+									});
+								break;
+							case '搜索':
+								layer.prompt({
+									type: 1,
+									title: '输入关键词搜索链接',
+									anim: 4 // 从左翻滚
+								}, function(keyword, index) {
+									keyword = keyword.trim().toLowerCase();
+									if (!keyword) {
+										layer.msg('请输入关键词', {
+											icon: 0,
+											anim: 6
+										});
+										return;
+									}
+									var results = [];
+									dataCache.forEach(category => {
+										category.links.forEach(link => {
+											if (link.name.toLowerCase().includes(
+													keyword)) {
+												results.push(link);
+											}
+										});
+									});
+									if (results.length === 0) {
+										layer.msg('没有找到相关资源，请尝试其他关键词！', {
+											icon: 0
+										});
+									} else {
+										var sortedResultsHtml = createLinksHtml(results);
+										layer.open({
+											type: 1,
+											title: '搜索结果',
+											area: ['50%', '50%'],
+											btn: ['关闭窗口'],
+											anim: 2,
+											content: `<div class="layui-layer-content">${sortedResultsHtml}</div>`
+										});
+									}
+									layer.close(index);
 								});
 								break;
 							case '联系客服':
@@ -461,56 +547,6 @@
 
 			// 设置定时器，每秒更新颜色
 			setInterval(applyRandomColors, 1000);
-
-
-
-			// 当文档加载完毕时执行
-			document.addEventListener('DOMContentLoaded', function() {
-				// 获取按钮并添加点击事件监听器
-				document.getElementById('notice-content').addEventListener('click', function() {
-					// 使用fetch API获取公告内容
-					fetch(
-							'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
-							)
-						.then(response => {
-							// 确保响应成功
-							if (!response.ok) {
-								throw new Error('Network response was not ok');
-							}
-							return response.json(); // 解析JSON
-						})
-						.then(notices => {
-							// 将公告内容拼接成HTML字符串，并添加序号和行间距
-							let contentHtml = '<ol>';
-							notices.forEach(function(notice, index) {
-								// 创建中文序号
-								let chineseNumber = ['一', '二', '三', '四', '五', '六', '七', '八', '九',
-									'十'
-								];
-								let chineseIndex = chineseNumber[index] + '、';
-								// 添加公告内容，并在每条公告后添加一个额外的<br>标签来创建行间距
-								contentHtml += `<li>${chineseIndex}${notice}</li><br>`;
-							});
-							contentHtml += '</ol>';
-
-							// 显示公告内容
-							layer.open({
-								type: 1,
-								title: '公告内容',
-								content: `<div style="padding: 20px;">${contentHtml}</div>`,
-								area: ['600px', '400px'],
-								btn: ['关闭窗口']
-							});
-						})
-						.catch(error => {
-							// 处理错误情况
-							console.error('There has been a problem with your fetch operation:', error);
-							layer.msg('无法加载公告内容，请稍后再试。', {
-								icon: 2
-							});
-						});
-				});
-			});
 
 
 
