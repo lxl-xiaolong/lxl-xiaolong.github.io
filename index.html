@@ -3,6 +3,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>糖糖π的资源站</title>
+		<link rel="dns-prefetch" href="https://github.githubassets.com">
+		<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+		<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+		<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
+		<link rel="preconnect" href="https://avatars.githubusercontent.com">
 		<link href="https://cdn.bootcdn.net/ajax/libs/layui/2.9.16/css/layui.css" rel="stylesheet">
 		<style>
 			:root {
@@ -92,7 +98,7 @@
 	</head>
 	<body class="layui-layout-body layui-unselect" oncontextmenu=self.event.returnValue=false
 		onselectstart="return false">
-		<div class="layui-container" style="margin-top: 20px;">
+		<div class="layui-container">
 			<div class="layui-text">
 				<h1 id="timeDateWeek"></h1>
 				<h1>糖糖π的资源站</h1>
@@ -101,38 +107,40 @@
 						src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/Hitokoto_loading.gif"
 						alt="" /> Hitokoto一言获取中，请稍后...</h3>
 				<div style="display: flex; align-items: center;">
+					<button class="layui-btn layui-btn-lg layui-btn-normal" id="notice-content"
+						style="margin-top: 10px; margin-bottom: 10px; margin-right: 10px;">查阅公告</button>
 					<button class="layui-btn layui-btn-lg layui-btn-normal" id="searchResourceBtn"
 						style="margin-top: 10px; margin-bottom: 10px; margin-right: 10px;">搜索资源链接</button>
 					<span id="linkCount"></span>
 				</div>
 			</div>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
-			<div style="margin-top: 20px; text-align: center; margin-bottom: 10px;">
+			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
 				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗奶茶！</p>
 				<button id="tip" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
 					赞赏支持</button>
 			</div>
 			<div class="layui-text" style="text-align: center;">
 				<span>Copyright © 2024 刘小龙</span><br />
-				<span>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub</a></span><br />
+				<span>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> & <a target="_blank"
+						href="https://github.com/">GitHub</a></span><br />
 				<span id="uptime"></span>
 				<div>
 					<span class="social-value">富强</span>
 					<span class="social-value">民主</span>
 					<span class="social-value">文明</span>
 					<span class="social-value">和谐</span>
-					<span>|</span>
+					<span>⠀|⠀</span>
 					<span class="social-value">自由</span>
 					<span class="social-value">平等</span>
 					<span class="social-value">公正</span>
 					<span class="social-value">法治</span>
-					<span>|</span>
+					<span>⠀|⠀</span>
 					<span class="social-value">爱国</span>
 					<span class="social-value">敬业</span>
 					<span class="social-value">诚信</span>
 					<span class="social-value">友善</span>
 				</div>
-				<div id="notice-content"></div>
 			</div>
 		</div>
 
@@ -402,9 +410,11 @@
 		</script>
 
 
+
 		<script type="text/html" id="linkToolbar">
 			<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="viewLinks">查看链接</a>
 		</script>
+
 
 
 		<script>
@@ -454,32 +464,52 @@
 
 
 
-			// 使用XMLHttpRequest获取JSON文件内容并显示公告
-			layui.use([], function() {
-				// 创建XMLHttpRequest对象
-				var xhr = new XMLHttpRequest();
-				// 配置请求类型、URL以及是否异步处理
-				xhr.open('GET',
-					'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json',
-					true);
-				// 设置请求完成后的回调函数
-				xhr.onload = function() {
-					if (xhr.status >= 200 && xhr.status < 300) {
-						// 解析JSON数据
-						var data = JSON.parse(xhr.responseText);
-						// 创建一个字符串来拼接所有的公告内容
-						var noticeHtml = '';
-						data.forEach(function(item) {
-							noticeHtml += '<div>' + item + '</div>';
+			// 当文档加载完毕时执行
+			document.addEventListener('DOMContentLoaded', function() {
+				// 获取按钮并添加点击事件监听器
+				document.getElementById('notice-content').addEventListener('click', function() {
+					// 使用fetch API获取公告内容
+					fetch(
+							'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
+							)
+						.then(response => {
+							// 确保响应成功
+							if (!response.ok) {
+								throw new Error('Network response was not ok');
+							}
+							return response.json(); // 解析JSON
+						})
+						.then(notices => {
+							// 将公告内容拼接成HTML字符串，并添加序号和行间距
+							let contentHtml = '<ol>';
+							notices.forEach(function(notice, index) {
+								// 创建中文序号
+								let chineseNumber = ['一', '二', '三', '四', '五', '六', '七', '八', '九',
+									'十'
+								];
+								let chineseIndex = chineseNumber[index] + '、';
+								// 添加公告内容，并在每条公告后添加一个额外的<br>标签来创建行间距
+								contentHtml += `<li>${chineseIndex}${notice}</li><br>`;
+							});
+							contentHtml += '</ol>';
+
+							// 显示公告内容
+							layer.open({
+								type: 1,
+								title: '公告内容',
+								content: `<div style="padding: 20px;">${contentHtml}</div>`,
+								area: ['600px', '400px'],
+								btn: ['关闭窗口']
+							});
+						})
+						.catch(error => {
+							// 处理错误情况
+							console.error('There has been a problem with your fetch operation:', error);
+							layer.msg('无法加载公告内容，请稍后再试。', {
+								icon: 2
+							});
 						});
-						// 将公告内容添加到页面中
-						document.getElementById('notice-content').innerHTML = noticeHtml;
-					} else {
-						console.error('An error occurred fetching the JSON data.');
-					}
-				};
-				// 发送请求
-				xhr.send();
+				});
 			});
 
 
