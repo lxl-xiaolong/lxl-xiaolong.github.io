@@ -72,58 +72,6 @@
 				/* 上边 | 右边 | 下边 | 左边 */
 			}
 
-			.tab-container {
-				width: 100%;
-				border-radius: 4px;
-				overflow: hidden;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			}
-
-			.tab-list {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-				display: flex;
-				background-color: #f5f5f5;
-			}
-
-			.tab-list li {
-				flex: 1;
-				text-align: center;
-				padding: 12px 20px;
-				border-right: 1px solid #e6e6e6;
-				color: #666;
-				font-weight: bold;
-				cursor: pointer;
-				transition: background-color 0.3s ease;
-			}
-
-			.tab-list li:last-child {
-				border-right: none;
-			}
-
-			.tab-list li.active {
-				background-color: #fff;
-				color: #1e9fff;
-			}
-
-			.tab-content {
-				display: none;
-				padding: 20px;
-				background-color: #fff;
-			}
-
-			.tab-content.active {
-				display: block;
-			}
-
-			.tab-content img {
-				width: 200px;
-				height: 200px;
-				display: block;
-				margin: 0 auto;
-			}
-
 			/* 表格内容居中 */
 			.layui-table th,
 			.layui-table td {
@@ -142,16 +90,19 @@
 				<h1 id="timeDateWeek"></h1>
 				<h1>糖糖π的资源站</h1>
 				<span class="typing layui-font-24 layui-font-black"></span>
-				<h3 id="hitokoto_text"><img
-						src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/Hitokoto_loading.gif"
-						alt="" /> Hitokoto一言获取中，请稍后...</h3>
-				<span id="linkCount"></span><span>数据最后维护时间：2024-09-12 19:33:34</span>
+				<h3 id="hitokoto_text">Hitokoto一言获取中，请稍后...</h3>
+				<span id="linkCount"></span><span>数据最后维护时间：2024-09-15 10:42:51</span>
 			</div>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
 			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
-				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗奶茶！</p>
-				<button id="tip" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
-					赞赏支持</button>
+				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗咖啡！</p>
+				<button id="rewardBtn" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
+					￥赞赏</button>
+				<div id="rewardLayer" style="display:none;">
+					<img id="rewardImage"
+						src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/wei-xin-zan-shang.png"
+						alt="赞赏码" style="width: 300px; height: 300px;">
+				</div>
 			</div>
 			<div class="layui-text" style="text-align: center;">
 				<span>Copyright © 2024 刘小龙</span><br />
@@ -206,7 +157,7 @@
 
 				// 异步获取数据
 				fetch(
-						'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240912193334.json'
+						'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240915104251.json'
 					)
 					.then(response => response.json())
 					.then(json => {
@@ -272,9 +223,13 @@
 				table.on('tool(linkTable)', function(obj) {
 					var category = dataCache.find(d => d.name === obj.data.name);
 					var linksHtml = createLinksHtml(category.links);
+
+					var linkTittle = `${category.name}`;
+
 					layer.open({
 						type: 1,
-						title: '查看链接',
+						title: linkTittle,
+						closeBtn: 0, // 不显示关闭按钮
 						area: ['50%', '50%'],
 						anim: 1,
 						btn: ['关闭窗口'],
@@ -365,7 +320,8 @@
 										// 显示公告内容
 										layer.open({
 											type: 1,
-											title: '公告内容',
+											title: "公告",
+											closeBtn: 0, // 不显示关闭按钮
 											content: `<div style="padding: 20px;">${contentHtml}</div>`,
 											area: ['600px', '400px'],
 											btn: ['关闭窗口']
@@ -384,7 +340,8 @@
 							case '搜索':
 								layer.prompt({
 									type: 1,
-									title: '输入关键词搜索链接',
+									title: "请输入搜索关键词",
+									closeBtn: 0, // 不显示关闭按钮
 									anim: 4 // 从左翻滚
 								}, function(keyword, index) {
 									keyword = keyword.trim().toLowerCase();
@@ -412,7 +369,8 @@
 										var sortedResultsHtml = createLinksHtml(results);
 										layer.open({
 											type: 1,
-											title: '搜索结果',
+											title: "搜索结果",
+											closeBtn: 0, // 不显示关闭按钮
 											area: ['50%', '50%'],
 											btn: ['关闭窗口'],
 											anim: 2,
@@ -450,45 +408,18 @@
 
 
 
-				// 打赏
-				document.getElementById('tip').onclick = function() {
-					var tabContentHtml = `
-					<p style="text-align: center; margin-bottom: 10px;">感谢您的支持，我会继续努力的！</p>
-					  <div class="tab-container">
-					    <ul class="tab-list">
-					      <li class="active" onclick="switchTab(event, 'tab1')">微信</li>
-					      <li onclick="switchTab(event, 'tab2')">支付宝</li>
-					    </ul>
-					    <div id="tab1" class="tab-content active">
-					      <img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/weixin.png" alt="微信">
-					    </div>
-					    <div id="tab2" class="tab-content">
-					      <img src="https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/zhifubao.jpg" alt="支付宝">
-					    </div>
-					  </div>
-					`;
-
+				// 点击按钮弹出赞赏码
+				document.getElementById('rewardBtn').onclick = function() {
 					layer.open({
-						type: 1,
-						title: '☕ 给Ta打赏一杯奶茶',
-						content: tabContentHtml,
-						area: ['410px', '420px'],
-						btn: ['关闭窗口']
+						type: 1, // 页层类型
+						anim: 3,
+						title: false, // 不显示标题栏
+						closeBtn: 0, // 不显示关闭按钮
+						shadeClose: true, // 点击遮罩关闭层
+						area: 'auto', // 宽高自动
+						content: $('#rewardLayer') // 弹出层内容
 					});
-
-					window.switchTab = function(evt, tabName) {
-						var tabContents = document.getElementsByClassName("tab-content");
-						for (var i = 0; i < tabContents.length; i++) {
-							tabContents[i].style.display = "none";
-						}
-						var tabListItems = document.getElementsByClassName("tab-list")[0].children;
-						for (var i = 0; i < tabListItems.length; i++) {
-							tabListItems[i].className = tabListItems[i].className.replace(" active", "");
-						}
-						document.getElementById(tabName).style.display = "block";
-						evt.currentTarget.className += " active";
-					};
-				};
+				}
 			});
 		</script>
 
