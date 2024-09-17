@@ -220,7 +220,6 @@
 							linkCount: category.links.length
 						})),
 						page: true,
-						limit: 5 // 默认每页显示的数量
 					});
 				}
 
@@ -581,7 +580,7 @@
 			// 动态生成 系统镜像 内容
 			fetch(
 					'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_20240917121439.json'
-					)
+				)
 				.then(response => {
 					if (!response.ok) {
 						throw new Error('Network response was not ok');
@@ -638,7 +637,6 @@
 							],
 							data: formatData(data),
 							page: true, // 启用分页
-							limit: 5 // 默认每页显示的数量
 						});
 					});
 				})
