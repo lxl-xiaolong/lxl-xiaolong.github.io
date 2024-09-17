@@ -93,7 +93,19 @@
 				<h3 id="hitokoto_text">Hitokoto一言获取中，请稍后...</h3>
 				<span id="linkCount"></span><span>数据最后维护时间：2024-09-15 10:42:51</span>
 			</div>
+
+
+
+			<h3>资源表：</h3>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
+
+
+
+			<h3>系统镜像表：</h3>
+			<div id="tableContainer"></div>
+
+
+
 			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
 				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗咖啡！</p>
 				<button id="rewardBtn" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
@@ -133,7 +145,7 @@
 		<script src="https://cdn.bootcdn.net/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
 
 		<script>
-			// 动态生成HTML内容
+			// 动态生成 资源 内容
 			layui.use(['util', 'table', 'layer', 'jquery'], function() {
 				var util = layui.util;
 				var table = layui.table;
@@ -205,7 +217,8 @@
 							name: category.name,
 							linkCount: category.links.length
 						})),
-						page: true
+						page: true,
+						limit: 5 // 默认每页显示的数量
 					});
 				}
 
@@ -558,6 +571,105 @@
 			}
 			// Set interval to update hitokoto every 10 seconds
 			setInterval(updateHitokoto, 10000);
+		</script>
+
+
+
+		<script>
+			// 动态生成 系统镜像 内容
+			fetch(
+					'https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_20240917121439.json'
+					)
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('Network response was not ok');
+					}
+					return response.json();
+				})
+				.then(data => {
+					// 初始化表格
+					layui.use(['table', 'layer'], function() {
+						var table = layui.table;
+						var layer = layui.layer;
+
+						// 表格渲染
+						table.render({
+							elem: '#tableContainer',
+							cols: [
+								[{
+										field: 'id',
+										title: 'ID'
+									},
+									{
+										field: 'name',
+										title: '名称'
+									},
+									{
+										field: 'fileName',
+										title: '文件名'
+									},
+									{
+										field: 'date',
+										title: '日期'
+									},
+									{
+										field: 'ED2K',
+										title: 'ED2K',
+										templet: function(d) {
+											return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.ED2K}')">复制</button>`;
+										}
+									},
+									{
+										field: 'BT',
+										title: 'BT',
+										templet: function(d) {
+											return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.BT}')">复制</button>`;
+										}
+									}
+								]
+							],
+							data: formatData(data),
+							page: true, // 启用分页
+							limit: 5 // 默认每页显示的数量
+						});
+					});
+				})
+				.catch(error => {
+					layer.msg('加载数据失败：' + error.message, {
+						icon: 2
+					});
+				});
+
+			// 格式化数据以适应表格
+			function formatData(data) {
+				var formattedData = [];
+				data.forEach(function(os) {
+					os.file.forEach(function(file) {
+						formattedData.push({
+							id: os.id,
+							name: os.name,
+							fileName: file.fileName,
+							date: file.date,
+							ED2K: file.ED2K,
+							BT: file.BT
+						});
+					});
+				});
+				return formattedData;
+			}
+
+			// 复制文本到剪贴板
+			function copyText(text) {
+				var textarea = document.createElement("textarea");
+				textarea.value = text;
+				document.body.appendChild(textarea);
+				textarea.select();
+				document.execCommand("copy");
+				document.body.removeChild(textarea);
+				layui.layer.msg('链接已复制到剪贴板', {
+					icon: 1
+				});
+			}
 		</script>
 	</body>
 </html>
