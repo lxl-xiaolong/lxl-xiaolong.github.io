@@ -91,17 +91,19 @@
 				<h1>糖糖π的资源站</h1>
 				<span class="typing layui-font-24 layui-font-black"></span>
 				<h3 id="hitokoto_text">Hitokoto一言获取中，请稍后...</h3>
-				<span id="linkCount"></span><span>数据最后维护时间：2024-09-15 10:42:51</span>
+				<h4>网站数据最后维护时间：2024-09-17 12:14:39</h4>
 			</div>
 
 
 
 			<h3>资源表：</h3>
+			<div id="linkCount"></div>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
 
 
 
 			<h3>系统镜像表：</h3>
+			<p>如何下载？复制ED2K或者BT链接，建议使用专用下载工具下载。下载速度仅与您的宽带环境和工具有关。捐助与否由您自由选择。</p>
 			<div id="tableContainer"></div>
 
 
@@ -616,6 +618,9 @@
 										field: 'ED2K',
 										title: 'ED2K',
 										templet: function(d) {
+											if (d.ED2K === '无') {
+												return '无';
+											}
 											return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.ED2K}')">复制</button>`;
 										}
 									},
@@ -623,6 +628,9 @@
 										field: 'BT',
 										title: 'BT',
 										templet: function(d) {
+											if (d.BT === '无') {
+												return '无';
+											}
 											return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.BT}')">复制</button>`;
 										}
 									}
