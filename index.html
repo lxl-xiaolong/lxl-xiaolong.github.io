@@ -219,7 +219,7 @@
 							name: category.name,
 							linkCount: category.links.length
 						})),
-						page: true,
+						page: true
 					});
 				}
 
@@ -299,8 +299,7 @@
 									behavior: 'smooth'
 								});
 								layer.msg('小主，已经到顶部啦(✿◠‿◠)！', {
-									icon: 1,
-									skin: 'custom-msg-bg'
+									icon: 1
 								});
 								break;
 							case '公告':
@@ -400,8 +399,7 @@
 							case '刷新页面':
 								window.location.reload(true);
 								layer.msg('小主，已经为您刷新了页面(✿◠‿◠)！', {
-									icon: 1,
-									skin: 'custom-msg-bg'
+									icon: 1
 								});
 								break;
 							case '去底部':
@@ -410,8 +408,7 @@
 									behavior: 'smooth'
 								});
 								layer.msg('小主，已经到底部啦(✿◠‿◠)！', {
-									icon: 1,
-									skin: 'custom-msg-bg'
+									icon: 1
 								});
 								break;
 							default:
@@ -503,7 +500,7 @@
 				backDelay: 500, //后退延迟
 				loop: true, //是否循环 默认false
 				startDelay: 1000, //起始时间
-				fadeOut: true, //淡出效果		
+				fadeOut: true //淡出效果		
 			});
 
 
@@ -636,7 +633,7 @@
 								]
 							],
 							data: formatData(data),
-							page: true, // 启用分页
+							page: true
 						});
 					});
 				})
