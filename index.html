@@ -5,55 +5,7 @@
 
 		<title>小龙🐉的资源站</title>
 
-		<link rel="dns-prefetch" href="https://github.githubassets.com">
-		<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
-		<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
-		<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
-		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
-		<link rel="preconnect" href="https://avatars.githubusercontent.com">
-
-		<link rel="dns-prefetch" href="https://cdn-dynmedia-1.microsoft.com" />
-		<link rel="preconnect" href="https://cdn-dynmedia-1.microsoft.com" />
-		<link rel="dns-prefetch" href="https://web.vortex.data.microsoft.com" />
-		<link rel="preconnect" href="https://web.vortex.data.microsoft.com" />
-		<link rel="dns-prefetch" href="https://img-prod-cms-rt-microsoft-com.akamaized.net" />
-		<link rel="preconnect" href="https://img-prod-cms-rt-microsoft-com.akamaized.net" />
-		<link rel="dns-prefetch" href="https://c.s-microsoft.com" />
-		<link rel="preconnect" href="https://c.s-microsoft.com" />
-		<link rel="dns-prefetch" href="https://analytics.tiktok.com" />
-		<link rel="preconnect" href="https://analytics.tiktok.com" />
-		<link rel="dns-prefetch" href="https://bat.bing.com" />
-		<link rel="preconnect" href="https://bat.bing.com" />
-		<link rel="dns-prefetch" href="https://cdnssl.clicktale.net" />
-		<link rel="preconnect" href="https://cdnssl.clicktale.net" />
-		<link rel="dns-prefetch" href="https://d.impactradius-event.com" />
-		<link rel="preconnect" href="https://d.impactradius-event.com" />
-		<link rel="dns-prefetch" href="https://js.monitor.azure.com" />
-		<link rel="preconnect" href="https://js.monitor.azure.com" />
-		<link rel="dns-prefetch" href="https://mem.gfx.ms" />
-		<link rel="preconnect" href="https://mem.gfx.ms" />
-		<link rel="dns-prefetch" href="https://wcpstatic.microsoft.com" />
-		<link rel="preconnect" href="https://wcpstatic.microsoft.com" />
-		<link rel="dns-prefetch" href="https://www.clarity.ms" />
-		<link rel="preconnect" href="https://www.clarity.ms" />
-		<link rel="dns-prefetch" href="https://fpt.microsoft.com" />
-		<link rel="preconnect" href="https://fpt.microsoft.com" />
-		<link rel="dns-prefetch" href="https://publisher.liveperson.net" />
-		<link rel="preconnect" href="https://publisher.liveperson.net" />
-		<link rel="dns-prefetch" href="https://accdn.lpsnmedia.net" />
-		<link rel="preconnect" href="https://accdn.lpsnmedia.net" />
-		<link rel="dns-prefetch" href="https://lpcdn.lpsnmedia.net" />
-		<link rel="preconnect" href="https://lpcdn.lpsnmedia.net" />
-		<link rel="dns-prefetch" href="https://lptag.liveperson.net" />
-		<link rel="preconnect" href="https://lptag.liveperson.net" />
-
-		<link href="https://cdn.bootcdn.net/ajax/libs/layui/2.9.16/css/layui.css" rel="stylesheet">
-
-
-		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/layui/2.9.16/layui.js"></script>
-		<script src="https://cdn.bootcdn.net/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
-		
+		<link href="https://fastly.jsdelivr.net/npm/layui@2.9.18/dist/css/layui.min.css" rel="stylesheet">
 
 		<style>
 			:root {
@@ -67,7 +19,7 @@
 			}
 
 			body {
-				cursor: url('https://jsdelivr.pai233.top/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/cursor.cur'), default;
+				cursor: url('https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/cursor.cur'), default;
 				font-family: var(--main-font-family);
 				background-color: #eee;
 			}
@@ -89,6 +41,7 @@
 			}
 		</style>
 	</head>
+	
 	<body class="layui-layout-body layui-unselect" oncontextmenu=self.event.returnValue=false
 		onselectstart="return false">
 		<div class="layui-container">
@@ -100,20 +53,14 @@
 				<h4>网站数据最后维护时间：2024-09-17 12:14:39</h4>
 			</div>
 
-
-
 			<h3>资源表：</h3>
 			<div id="linkCount"></div>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
 
-
-
 			<h3>系统镜像表：</h3>
 			<p>如何下载？复制ED2K或者BT链接，建议使用专用下载工具下载。下载速度仅与您的宽带环境和工具有关。捐助与否由您自由选择。</p>
 			<div id="tableContainer"></div>
-
-
-
+			
 			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
 				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗咖啡！</p>
 				<button id="rewardBtn" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
@@ -148,9 +95,10 @@
 			</div>
 		</div>
 
-
-
-
+		<script src="https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+		<script src="https://fastly.jsdelivr.net/npm/layui@2.9.18/dist/layui.min.js"></script>
+		<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+		
 		<script>
 			// 动态生成 资源 内容
 			layui.use(['util', 'table', 'layer', 'jquery'], function() {
@@ -497,7 +445,7 @@
 			//文本打字机效果
 			var typed = new Typed(".typing", {
 				//输出的文字，通过转义字符 ^3000 在字符串中间暂停一段时间
-				strings: ['halo，朋友。欢迎访问糖糖π的资源站！^3000', '本站热衷于分享安全，无毒，无后门，可靠可用的各类资源。^3000'],
+				strings: ['halo，朋友。欢迎访问小龙🐉的资源站！^3000', '本站热衷于分享安全，无毒，无后门，可靠可用的各类资源。^3000'],
 				typeSpeed: 60, //打字的速度
 				smartBackspace: true, //开启智能退格 默认false
 				cursorChar: '_', //自定义光标符号
