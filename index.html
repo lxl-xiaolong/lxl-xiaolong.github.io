@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
 		<title>小龙🐉的资源站</title>
 
-		<link href="https://fastly.jsdelivr.net/npm/layui@2.9.18/dist/css/layui.min.css" rel="stylesheet">
+		<link href="https://testingcf.jsdelivr.net/npm/layui@2.9.18/dist/css/layui.min.css" rel="stylesheet">
 
 		<style>
 			:root {
@@ -19,7 +20,7 @@
 			}
 
 			body {
-				cursor: url('https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/cursor.cur'), default;
+				cursor: url('https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/cursor.cur'), default;
 				font-family: var(--main-font-family);
 				background-color: #eee;
 			}
@@ -56,7 +57,7 @@
 			<h3>资源表：</h3>
 			<div id="linkCount"></div>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
-
+			
 			<h3>系统镜像表：</h3>
 			<p>如何下载？复制ED2K或者BT链接，建议使用专用下载工具下载。下载速度仅与您的宽带环境和工具有关。捐助与否由您自由选择。</p>
 			<div id="tableContainer"></div>
@@ -67,7 +68,7 @@
 					￥赞赏</button>
 				<div id="rewardLayer" style="display:none;">
 					<img id="rewardImage"
-						src="https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/wei-xin-zan-shang.png"
+						src="https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/wei-xin-zan-shang.png"
 						alt="赞赏码" style="width: 300px; height: 300px;">
 				</div>
 			</div>
@@ -95,9 +96,9 @@
 			</div>
 		</div>
 
-		<script src="https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-		<script src="https://fastly.jsdelivr.net/npm/layui@2.9.18/dist/layui.min.js"></script>
-		<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+	        <script type="text/html" id="linkToolbar">
+		        <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="viewLinks">查看链接</a>
+		</script>
 		
 		<script>
 			// 动态生成 资源 内容
@@ -124,7 +125,7 @@
 
 				// 异步获取数据
 				fetch(
-						'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240915104251.json'
+						'https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240915104251.json'
 					)
 					.then(response => response.json())
 					.then(json => {
@@ -258,7 +259,7 @@
 							case '公告':
 								// 使用fetch API获取公告内容
 								fetch(
-										'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
+										'https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
 									)
 									.then(response => {
 										// 确保响应成功
@@ -385,12 +386,6 @@
 					});
 				}
 			});
-		</script>
-
-
-
-		<script type="text/html" id="linkToolbar">
-			<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="viewLinks">查看链接</a>
 		</script>
 
 
@@ -529,7 +524,7 @@
 		<script>
 			// 动态生成 系统镜像 内容
 			fetch(
-					'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_20240917121439.json'
+					'https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_20240917121439.json'
 				)
 				.then(response => {
 					if (!response.ok) {
@@ -627,5 +622,8 @@
 				});
 			}
 		</script>
+		<script src="https://testingcf.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+		<script src="https://testingcf.jsdelivr.net/npm/layui@2.9.18/dist/layui.min.js"></script>
+		<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>	
 	</body>
 </html>
