@@ -2,16 +2,19 @@
 <html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 		<title>小龙🐉的资源站</title>
 
+		<link rel="dns-prefetch" href="https://github.githubassets.com">
+		<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
+		<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+		<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
+		<link rel="preconnect" href="https://avatars.githubusercontent.com">
+
 		<link href="https://testingcf.jsdelivr.net/npm/layui@2.9.18/dist/css/layui.min.css" rel="stylesheet">
 
-		<script src="https://testingcf.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-		<script src="https://testingcf.jsdelivr.net/npm/layui@2.9.18/dist/layui.min.js"></script>
-		<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>	
-		
 		<style>
 			:root {
 				--main-font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
@@ -46,7 +49,7 @@
 			}
 		</style>
 	</head>
-	
+
 	<body class="layui-layout-body layui-unselect" oncontextmenu=self.event.returnValue=false
 		onselectstart="return false">
 		<div class="layui-container">
@@ -61,11 +64,11 @@
 			<h3>资源表：</h3>
 			<div id="linkCount"></div>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
-			
+
 			<h3>系统镜像表：</h3>
 			<p>如何下载？复制ED2K或者BT链接，建议使用专用下载工具下载。下载速度仅与您的宽带环境和工具有关。捐助与否由您自由选择。</p>
 			<div id="tableContainer"></div>
-			
+
 			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
 				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗咖啡！</p>
 				<button id="rewardBtn" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
@@ -100,8 +103,10 @@
 			</div>
 		</div>
 
+		<script src="https://testingcf.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+		<script src="https://testingcf.jsdelivr.net/npm/layui@2.9.18/dist/layui.min.js"></script>
+		<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
-		
 		<script>
 			// 动态生成 资源 内容
 			layui.use(['util', 'table', 'layer', 'jquery'], function() {
@@ -392,14 +397,14 @@
 
 
 
-		
+
 		<script type="text/html" id="linkToolbar">
-		        <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="viewLinks">查看链接</a>
-                </script>
+			<a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="viewLinks">查看链接</a>
+		</script>
 
 
 
-		
+
 		<script>
 			// 时间，日期，星期
 			function updateTime() {
@@ -632,7 +637,7 @@
 				});
 			}
 		</script>
-		
-		
+
+
 	</body>
 </html>
