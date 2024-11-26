@@ -13,7 +13,8 @@
 		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
 		<link rel="preconnect" href="https://avatars.githubusercontent.com">
 
-		<link href="https://testingcf.jsdelivr.net/npm/layui@2.9.18/dist/css/layui.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.9.18/css/layui.css" />
+		<script src="https://www.layuicdn.com/layui-v2.9.18/layui.js"></script>
 
 		<style>
 			:root {
@@ -47,6 +48,74 @@
 				vertical-align: middle;
 				/* 垂直居中 */
 			}
+
+
+			/* The Modal (background) */
+			.modal {
+				display: none;
+				/* Hidden by default */
+				position: fixed;
+				/* Stay in place */
+				left: 0;
+				top: 0;
+				width: 100%;
+				/* Full width */
+				height: 100%;
+				/* Full height */
+				background-color: rgba(0, 0, 0, 0.5);
+				/* Black w/ opacity */
+			}
+
+			/* Modal Content */
+			.modal-content {
+				background-color: #fefefe;
+				margin: 15% auto;
+				/* 15% from the top and centered */
+				padding: 20px;
+				border: 1px solid #888;
+				width: 444px;
+				/* Could be more or less, depending on screen size */
+				animation-name: fadeIn;
+				animation-duration: 0.5s;
+				border-radius: 8px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			}
+
+			/* The Close Button */
+			.close {
+				color: #aaa;
+				float: right;
+				font-size: 28px;
+				font-weight: bold;
+			}
+
+			.close:hover,
+			.close:focus {
+				color: black;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			/* Add Animation */
+			@-webkit-keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+
+				to {
+					opacity: 1;
+				}
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+				}
+
+				to {
+					opacity: 1;
+				}
+			}
 		</style>
 	</head>
 
@@ -71,14 +140,20 @@
 
 			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
 				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗咖啡！</p>
+				<!-- 触发按钮 -->
 				<button id="rewardBtn" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
 					￥赞赏</button>
-				<div id="rewardLayer" style="display:none;">
-					<img id="rewardImage"
-						src="https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/wei-xin-zan-shang.png"
-						alt="赞赏码" style="width: 300px; height: 300px;">
+
+				<!-- 赞赏码模态框 -->
+				<div id="rewardModal" class="modal">
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<img src="https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/wei-xin-zan-shang.png"
+							alt="赞赏码" style="width: 400px; height: 400px;">
+					</div>
 				</div>
 			</div>
+
 			<div class="layui-text" style="text-align: center;">
 				<span>Copyright © 2024 刘小龙</span><br />
 				<span>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> & <a target="_blank"
@@ -103,9 +178,46 @@
 			</div>
 		</div>
 
-		<script src="https://testingcf.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-		<script src="https://testingcf.jsdelivr.net/npm/layui@2.9.18/dist/layui.min.js"></script>
-		<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+
+
+
+
+		<script>
+			// Get the modal
+			var modal = document.getElementById("rewardModal");
+
+			// Get the button that opens the modal
+			var btn = document.getElementById("rewardBtn");
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks the button, open the modal 
+			btn.onclick = function() {
+				modal.style.display = "block";
+			}
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+		</script>
+
+
+
+
 
 		<script>
 			// 动态生成 资源 内容
@@ -377,21 +489,6 @@
 						}
 					}
 				});
-
-
-
-				// 点击按钮弹出赞赏码
-				document.getElementById('rewardBtn').onclick = function() {
-					layer.open({
-						type: 1, // 页层类型
-						anim: 3,
-						title: false, // 不显示标题栏
-						closeBtn: 0, // 不显示关闭按钮
-						shadeClose: true, // 点击遮罩关闭层
-						area: 'auto', // 宽高自动
-						content: $('#rewardLayer') // 弹出层内容
-					});
-				}
 			});
 		</script>
 
