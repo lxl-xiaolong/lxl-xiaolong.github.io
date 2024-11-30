@@ -13,7 +13,8 @@
 		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
 		<link rel="preconnect" href="https://avatars.githubusercontent.com">
 
-		<link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+		<script src="https://gcore.jsdelivr.net/npm/layui@2.9.20/dist/layui.min.js"></script>
+		<link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/layui@2.9.20/dist/css/layui.min.css">
 
 		<style>
 			:root {
@@ -27,7 +28,7 @@
 			}
 
 			body {
-				cursor: url('https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/cursor.cur'), default;
+				cursor: url('https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/cursor.cur'), default;
 				font-family: var(--main-font-family);
 				background-color: #eee;
 			}
@@ -111,7 +112,7 @@
 				<h1>小龙🐉的资源站</h1>
 				<span class="typing layui-font-24 layui-font-black"></span>
 				<h3 id="hitokoto_text">Hitokoto一言获取中，请稍后...</h3>
-				<h4>网站数据最后维护时间：2024-09-17 12:14:39</h4>
+				<h4>网站数据最后维护时间：2024年11月30日，16时43分34秒</h4>
 			</div>
 
 			<h3>资源表：</h3>
@@ -123,15 +124,15 @@
 			<div id="tableContainer"></div>
 
 			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
-				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎请Ta喝一杯爱💗咖啡！</p>
+				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎您请Ta喝一杯爱💗奶茶！</p>
 				<!-- 触发按钮 -->
 				<button id="rewardBtn" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
-					￥赞赏</button>
+					￥打赏</button>
 
 				<!-- 赞赏码模态框 -->
 				<div id="rewardModal" class="modal">
 					<div class="modal-content">
-						<img src="https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/wei-xin-zan-shang.png"
+						<img src="https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/tupian/wei-xin-zan-shang.png"
 							alt="赞赏码" style="width: 300px; height: 300px;">
 					</div>
 				</div>
@@ -141,6 +142,8 @@
 				<span>Copyright © 2024 刘小龙</span><br />
 				<span>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> & <a target="_blank"
 						href="https://github.com/">GitHub</a></span><br />
+				<span>本站使用<a href="https://layui.dev/"><strong
+							style="color: red;">Layui（版本：2.9.20）</strong></a>制作</span><br />
 				<span id="uptime"></span>
 				<div>
 					<span class="social-value">富强</span>
@@ -163,9 +166,9 @@
 
 
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://gcore.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 		<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-		<script src="https://www.layuicdn.com/layui/layui.js"></script>
 
 
 
@@ -222,7 +225,7 @@
 
 				// 异步获取数据
 				fetch(
-						'https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_20240915104251.json'
+						'https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links.json'
 					)
 					.then(response => response.json())
 					.then(json => {
@@ -356,7 +359,7 @@
 							case '公告':
 								// 使用fetch API获取公告内容
 								fetch(
-										'https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
+										'https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
 									)
 									.then(response => {
 										// 确保响应成功
@@ -614,7 +617,7 @@
 		<script>
 			// 动态生成 系统镜像 内容
 			fetch(
-					'https://testingcf.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_20240917121439.json'
+					'https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_20240917121439.json'
 				)
 				.then(response => {
 					if (!response.ok) {
