@@ -13,8 +13,9 @@
 		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
 		<link rel="preconnect" href="https://avatars.githubusercontent.com">
 
-		
-		<link rel="stylesheet" href="https://jsd.cdn.zzko.cn/npm/layui@2.9.20/dist/css/layui.min.css">
+
+		<link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.9.4/css/layui.css" />
+
 
 		<style>
 			:root {
@@ -123,7 +124,8 @@
 			<p>如何下载？复制ED2K或者BT链接，建议使用专用下载工具下载。下载速度仅与您的宽带环境和工具有关。</p>
 			<div id="tableContainer"></div>
 
-			<p style="color: red; font-size: 18px; font-weight: bolder;">如您有装电脑、做系统、升级硬件、处理故障的需求，请点击“联系客服”按钮联系客服有偿解决（可登记办理会员享受折扣！），咨询电脑方面的问题也是可以的。另外，赞赏与否由您自由选择。</p>
+			<p style="color: red; font-size: 18px; font-weight: bolder;">
+				如您有装电脑、做系统、升级硬件、处理故障的需求，请点击“联系客服”按钮联系客服有偿解决（可登记办理会员享受折扣！），咨询电脑方面的问题也是可以的。另外，赞赏与否由您自由选择。</p>
 
 			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
 				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎您请Ta喝一杯爱💗奶茶！</p>
@@ -142,10 +144,11 @@
 
 			<div class="layui-text" style="text-align: center;">
 				<span>Copyright © 2024 刘小龙（会飞的小笼包）</span><br />
-				<span>网站托管提供商 <a target="_blank" href="https://pages.github.com/">GitHub Pages</a> & <a target="_blank"
-						href="https://github.com/">GitHub</a></span><br />
-				<span>本站使用<a href="https://layui.dev/"><strong
-							style="color: red;">Layui（版本：2.9.20）</strong></a>制作</span><br />
+				<span>网站托管提供商 <a target="_blank" href="https://github.com/">GitHub（<a target="_blank"
+							href="https://pages.github.com/">GitHub Pages）</a></a></span><br />
+				<span>本站基于<a href="https://layui.dev/"><strong style="color: red;">Layui（版本：2.9.4）</strong></a>编写，并引用<a
+						href="https://www.layuicdn.com/index.html"> LayuiCdn静态库 </a> & <a
+						href="https://cdn.bytedance.com/"> 字节跳动静态资源公共库 </a>中的相关资源，以加速网站访问、浏览。</span><br />
 				<span id="uptime"></span>
 				<div>
 					<span class="social-value">富强</span>
@@ -168,14 +171,9 @@
 
 
 
-		<script src="https://jsd.cdn.zzko.cn/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-		
-		
-		<script src="https://cdn.bootcdn.net/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
-		
-		
-		
-		<script src="https://jsd.cdn.zzko.cn/npm/layui@2.9.20/dist/layui.min.js"></script>
+		<script src="https://www.layuicdn.com/layui-v2.9.4/layui.js"></script>
+		<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.js"></script>
+		<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.js"></script>
 
 
 
@@ -231,7 +229,7 @@
 
 				// 异步获取数据
 				fetch(
-						'https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_v1.1.json'
+						'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_v1.1.json'
 					)
 					.then(response => response.json())
 					.then(json => {
@@ -365,7 +363,7 @@
 							case '公告':
 								// 使用fetch API获取公告内容
 								fetch(
-										'https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
+										'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
 									)
 									.then(response => {
 										// 确保响应成功
@@ -623,7 +621,7 @@
 		<script>
 			// 动态生成 系统镜像 内容
 			fetch(
-					'https://gcore.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_v1.1.json'
+					'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_v1.1.json'
 				)
 				.then(response => {
 					if (!response.ok) {
