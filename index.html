@@ -6,6 +6,9 @@
 
 		<title>小龙🐉的资源站</title>
 
+		<link rel="shortcut icon"
+			href="https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@refs/heads/master/favicon.ico">
+
 		<link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.9.4/css/layui.css" />
 
 
@@ -97,8 +100,7 @@
 		</style>
 	</head>
 
-	<body class="layui-layout-body layui-unselect" oncontextmenu=self.event.returnValue=false
-		onselectstart="return false">
+	<body class="layui-layout-body layui-unselect">
 		<div class="layui-container">
 			<div class="layui-text">
 				<h1 id="timeDateWeek"></h1>
@@ -108,21 +110,83 @@
 				<h4>网站数据最后维护时间：2024年11月30日，16时43分34秒</h4>
 			</div>
 
-			<h3>资源表：</h3>
+			<h3 class="layui-font-purple layui-font-20">资源表：</h3>
 			<div id="linkCount"></div>
 			<table class="layui-hide" id="linkTable" lay-filter="linkTable"></table>
 
-			<h3>系统镜像表：</h3>
+			<h3 class="layui-font-purple layui-font-20">系统镜像表：</h3>
 			<p>如何下载？复制ED2K或者BT链接，建议使用专用下载工具下载。下载速度仅与您的宽带环境和工具有关。</p>
 			<div id="tableContainer"></div>
 
-			<p style="color: red; font-size: 18px; font-weight: bolder;">
+			<h3 class="layui-font-purple layui-font-20">附录（一些在线工具）：</h3>
+			<div class="layui-panel layui-margin-3">
+				<ul class="layui-nav layui-bg-gray">
+					<li class="layui-nav-item"><a href="https://www.ico51.cn/">在线生成透明ICO图标</a></li>
+					<li class="layui-nav-item"><a href="https://tool.lu/">在线工具</a></li>
+					<li class="layui-nav-item"><a href="https://chatglm.cn/main/alltoolsdetail?lang=zh">智谱清言</a>
+					</li>
+					<li class="layui-nav-item"><a href="https://uutool.cn/">UU在线工具</a></li>
+					<li class="layui-nav-item"><a href="https://d1tools.com/">第一在线工具</a></li>
+					<li class="layui-nav-item"><a href="http://www.atoolbox.net/">一个工具箱</a></li>
+					<li class="layui-nav-item"><a href="https://www.67tool.com/">即时工具</a></li>
+					<li class="layui-nav-item"><a href="https://www.ai-dh.com/">AI导航</a></li>
+					<li class="layui-nav-item"><a href="https://toolonline.net/">在线工具集合网站</a></li>
+					<li class="layui-nav-item"><a href="https://www.toolg.cn/">工具狗</a></li>
+					<li class="layui-nav-item"><a href="https://www.jyshare.com/">菜鸟工具</a></li>
+					<li class="layui-nav-item"><a href="https://www.toolhelper.cn/">锤子在线工具网</a></li>
+					<li class="layui-nav-item"><a href="https://toolwa.com/">工具哇 - 在线工具集</a></li>
+					<li class="layui-nav-item"><a href="https://33tool.com/">蜻蜓在线工具</a></li>
+					<li class="layui-nav-item"><a href="https://www.lddgo.net/">在线工具大全</a></li>
+					<li class="layui-nav-item"><a href="https://www.btool.cn/">BTool 在线工具</a></li>
+					<li class="layui-nav-item"><a href="https://tool.cainiaoplus.com/">菜鸟在线工具箱</a></li>
+					<li class="layui-nav-item"><a href="http://tools.bugscaner.com/">在线工具箱</a></li>
+					<li class="layui-nav-item"><a href="https://tool.oschina.net/">在线工具 —— OSCHINA.NET社区</a></li>
+					<li class="layui-nav-item"><a href="https://tools.gzyunke.cn/index.html">在线工具箱 - 云科信息工具集</a>
+					</li>
+					<li class="layui-nav-item"><a href="https://www.toolscat.com/">工具猫</a></li>
+					<li class="layui-nav-item"><a href="https://www.toolnb.com/">爱资料工具-好用的在线工具箱</a></li>
+					<li class="layui-nav-item"><a href="https://tool.imyun.com.cn/">在线工具箱 - 简单实用的免费在线工具 - 云来云往</a>
+					</li>
+					<li class="layui-nav-item"><a href="http://guozhivip.com/tool/">果汁工具 - 免费好用的在线工具大全</a></li>
+					<li class="layui-nav-item"><a href="https://www.bejson.com/">在线JSON校验格式化工具（Be JSON）</a></li>
+					<li class="layui-nav-item"><a href="https://www.toolsou.com/zh/">免费在线工具 - Toolsou</a></li>
+					<li class="layui-nav-item"><a href="https://gettool.org/">GetTool</a></li>
+					<li class="layui-nav-item"><a href="https://www.sojson.com/encrypt/">SO JSON在线工具</a></li>
+					<li class="layui-nav-item"><a href="https://www.gaoding.com/">稿定设计</a></li>
+					<li class="layui-nav-item"><a href="https://lzltool.cn/">LZL在线工具——LZL TOOL</a></li>
+					<li class="layui-nav-item"><a href="https://www.toolcy.io/zh/">在线工具集合 | Toolcy</a></li>
+					<li class="layui-nav-item"><a href="https://www.gaitubao.com/">快速、简单的在线修改图片工具 - 改图宝</a></li>
+					<li class="layui-nav-item"><a href="https://webtoolkit.work/zh/">在线网络工具 - WebToolkit</a></li>
+					<li class="layui-nav-item"><a href="https://remeins.com/">记灵在线工具 - 更专注于发现工具的实用性</a></li>
+					<li class="layui-nav-item"><a href="https://wf.xunbk.com/">老吴项目网_中创网会员各大优质付费教程和创业项目大全</a>
+					<li class="layui-nav-item"><a href="https://www.wetools.com/">在线工具大全 - 微工具</a></li>
+					<li class="layui-nav-item"><a href="https://www.gongjugou.com/">在线工具箱-免费实用工具大全-工具狗</a></li>
+					<li class="layui-nav-item"><a href="https://tool.chinaz.com/">站长工具 - 站长之家</a></li>
+					<li class="layui-nav-item"><a href="https://rivers.chaitin.cn/toolkit">长亭百川云</a></li>
+					<li class="layui-nav-item"><a href="https://photokit.com/?lang=zh">PhotoKit 图片编辑器</a></li>
+					<li class="layui-nav-item"><a href="https://www.56tools.cn/">免费在线实用工具，无需下载一键使用 - 56工具箱</a></li>
+					<li class="layui-nav-item"><a href="https://2pdf.com/zh/">免费在线PDF工具</a></li>
+					<li class="layui-nav-item"><a href="https://tools.kalvinbg.cn/">Kalvin在线工具</a></li>
+					<li class="layui-nav-item"><a href="https://lab.feifanju.com/http/index.html">在线HTTP
+							POST/GET接口测试工具</a></li>
+					<li class="layui-nav-item"><a href="https://cron.ciding.cc/">Cron - 在线Cron表达式生成器</a></li>
+					<li class="layui-nav-item"><a href="https://www.tool55.com/">在线工具网 - TooL55.com</a></li>
+					<li class="layui-nav-item"><a href="http://cencrack.com/?post=18">[官方发布]Cencrack在线工具包</a></li>
+					<li class="layui-nav-item"><a href="https://tools.jb51.net/">脚本之家在线工具</a></li>
+					<li class="layui-nav-item"><a href="https://zxgj.cn/">在线工具网(zxgj.cn) - 工作生活好帮手</a></li>
+					<li class="layui-nav-item"><a href="https://smallpdf.com/cn/pdf-converter">在线PDF转换器</a></li>
+					<li class="layui-nav-item"><a href="https://ai-bot.cn/">AI工具集官网 | 1000+ AI工具集合，国内外AI工具集导航大全</a>
+					</li>
+				</ul>
+			</div>
+
+			<p class="layui-font-red layui-font-20">
 				如您有装电脑、做系统、升级硬件、处理故障的需求，请点击“联系客服”按钮联系客服有偿解决（可登记办理会员享受折扣！），咨询电脑方面的问题也是可以的。另外，赞赏与否由您自由选择。</p>
 
-			<div style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
+			<div style="text-align: center;" class="layui-margin-3">
 				<p style=" font-weight: 300;">为💗发电，用心坚持，欢迎您请Ta喝一杯爱💗奶茶！</p>
 				<!-- 触发按钮 -->
-				<button id="rewardBtn" type="button" class="layui-btn layui-btn-warm" style="margin-top: 10px;">☕
+				<button id="rewardBtn" type="button" class="layui-btn layui-btn-warm layui-margin-2">☕
 					￥打赏</button>
 
 				<!-- 赞赏码模态框 -->
@@ -138,7 +202,8 @@
 				<span>Copyright © 2024 刘小龙（会飞的小笼包）</span><br />
 				<span>网站托管提供商 <a target="_blank" href="https://github.com/">GitHub（<a target="_blank"
 							href="https://pages.github.com/">GitHub Pages）</a></a></span><br />
-				<span>本站基于<a href="https://layui.dev/"><strong style="color: red;">Layui（版本：2.9.4）</strong></a>编写，并引用<a
+				<span>本站基于<a href="https://layui.dev/"><strong
+							class="layui-font-red">Layui（版本：2.9.4）</strong></a>编写，并引用<a
 						href="https://www.layuicdn.com/index.html"> LayuiCdn静态库 </a> & <a
 						href="https://cdn.bytedance.com/"> 字节跳动静态资源公共库 </a>中的相关资源，以加速网站访问、浏览。</span><br />
 				<span id="uptime"></span>
@@ -196,6 +261,8 @@
 
 
 
+
+
 		<script>
 			// 动态生成 资源 内容
 			layui.use(['util', 'table', 'layer', 'jquery'], function() {
@@ -221,44 +288,46 @@
 
 				// 异步获取数据
 				var xhr = new XMLHttpRequest();
-				xhr.open('GET', 'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_v1.1.json', true);
+				xhr.open('GET',
+					'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_v1.1.json',
+					true);
 				xhr.onreadystatechange = function() {
-				    if (xhr.readyState === 4) {
-				        if (xhr.status === 200) {
-				            try {
-				                var json = JSON.parse(xhr.responseText);
-				                dataCache = json;
-				                var totalLinks = json.reduce((acc, category) => acc + category.links.length, 0);
-				                $('#linkCount').html(
-				                    `<p style="font-size: 16px;">共 <b style="color: red;">${json.length}</b> 个分类，<b style="color: red;">${totalLinks}</b> 条链接资源。</p>`
-				                );
-				                renderTable();
-				                layer.close(loadingIndex);
-				                layer.msg('数据加载成功！', {
-				                    icon: 1
-				                });
-				            } catch (error) {
-				                console.error('Error parsing JSON:', error);
-				                layer.close(loadingIndex);
-				                layer.msg('数据加载失败', {
-				                    icon: 2
-				                });
-				            }
-				        } else {
-				            console.error('Error fetching data:', xhr.statusText);
-				            layer.close(loadingIndex);
-				            layer.msg('数据加载失败', {
-				                icon: 2
-				            });
-				        }
-				    }
+					if (xhr.readyState === 4) {
+						if (xhr.status === 200) {
+							try {
+								var json = JSON.parse(xhr.responseText);
+								dataCache = json;
+								var totalLinks = json.reduce((acc, category) => acc + category.links.length, 0);
+								$('#linkCount').html(
+									`<p style="font-size: 16px;">共 <b style="color: red;">${json.length}</b> 个分类，<b style="color: red;">${totalLinks}</b> 条链接资源。</p>`
+								);
+								renderTable();
+								layer.close(loadingIndex);
+								layer.msg('数据加载成功！', {
+									icon: 1
+								});
+							} catch (error) {
+								console.error('Error parsing JSON:', error);
+								layer.close(loadingIndex);
+								layer.msg('数据加载失败', {
+									icon: 2
+								});
+							}
+						} else {
+							console.error('Error fetching data:', xhr.statusText);
+							layer.close(loadingIndex);
+							layer.msg('数据加载失败', {
+								icon: 2
+							});
+						}
+					}
 				};
 				xhr.onerror = function() {
-				    console.error('Network error occurred while fetching data.');
-				    layer.close(loadingIndex);
-				    layer.msg('数据加载失败', {
-				        icon: 2
-				    });
+					console.error('Network error occurred while fetching data.');
+					layer.close(loadingIndex);
+					layer.msg('数据加载失败', {
+						icon: 2
+					});
 				};
 				xhr.send();
 
@@ -374,45 +443,60 @@
 							case '公告':
 								// 使用XMLHttpRequest获取公告内容
 								var xhr = new XMLHttpRequest();
-								xhr.open('GET', 'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json', true);
+								xhr.open('GET',
+									'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json',
+									true);
 								xhr.onreadystatechange = function() {
-								    if (xhr.readyState === 4) {
-								        if (xhr.status === 200) {
-								            try {
-								                var notices = JSON.parse(xhr.responseText);
-								                // 将公告内容拼接成HTML字符串，并添加序号和行间距
-								                let contentHtml = '<ol>';
-								                notices.forEach(function(notice, index) {
-								                    // 创建中文序号
-								                    let chineseNumber = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
-								                    let chineseIndex = chineseNumber[index] + '、';
-								                    // 添加公告内容，并在每条公告后添加一个额外的<br>标签来创建行间距
-								                    contentHtml += `<li>${chineseIndex}${notice}</li><br>`;
-								                });
-								                contentHtml += '</ol>';
-								
-								                // 显示公告内容
-								                layer.open({
-								                    type: 1,
-								                    title: "公告",
-								                    closeBtn: 0, // 不显示关闭按钮
-								                    content: `<div style="padding: 20px;">${contentHtml}</div>`,
-								                    area: ['600px', '400px'],
-								                    btn: ['关闭窗口']
-								                });
-								            } catch (error) {
-								                console.error('There has been a problem with your XHR operation:', error);
-								                layer.msg('无法加载公告内容，请稍后再试。', { icon: 2 });
-								            }
-								        } else {
-								            console.error('Network response was not ok:', xhr.statusText);
-								            layer.msg('无法加载公告内容，请稍后再试。', { icon: 2 });
-								        }
-								    }
+									if (xhr.readyState === 4) {
+										if (xhr.status === 200) {
+											try {
+												var notices = JSON.parse(xhr.responseText);
+												// 将公告内容拼接成HTML字符串，并添加序号和行间距
+												let contentHtml = '<ol>';
+												notices.forEach(function(notice, index) {
+													// 创建中文序号
+													let chineseNumber = ['一', '二', '三', '四', '五',
+														'六', '七', '八', '九', '十'
+													];
+													let chineseIndex = chineseNumber[index] +
+														'、';
+													// 添加公告内容，并在每条公告后添加一个额外的<br>标签来创建行间距
+													contentHtml +=
+														`<li>${chineseIndex}${notice}</li><br>`;
+												});
+												contentHtml += '</ol>';
+
+												// 显示公告内容
+												layer.open({
+													type: 1,
+													title: "公告",
+													closeBtn: 0, // 不显示关闭按钮
+													content: `<div style="padding: 20px;">${contentHtml}</div>`,
+													area: ['600px', '400px'],
+													btn: ['关闭窗口']
+												});
+											} catch (error) {
+												console.error(
+													'There has been a problem with your XHR operation:',
+													error);
+												layer.msg('无法加载公告内容，请稍后再试。', {
+													icon: 2
+												});
+											}
+										} else {
+											console.error('Network response was not ok:', xhr
+												.statusText);
+											layer.msg('无法加载公告内容，请稍后再试。', {
+												icon: 2
+											});
+										}
+									}
 								};
 								xhr.onerror = function() {
-								    console.error('There has been a network error.');
-								    layer.msg('无法加载公告内容，请稍后再试。', { icon: 2 });
+									console.error('There has been a network error.');
+									layer.msg('无法加载公告内容，请稍后再试。', {
+										icon: 2
+									});
 								};
 								xhr.send();
 
@@ -586,58 +670,57 @@
 
 			//Hitokoto一言
 			function xhrHitokoto(url) {
-			    return new Promise((resolve, reject) => {
-			        var xhr = new XMLHttpRequest();
-			        xhr.open('GET', url, true);
-			        xhr.onreadystatechange = function() {
-			            if (xhr.readyState === 4) {
-			                if (xhr.status === 200) {
-			                    try {
-			                        var data = JSON.parse(xhr.responseText);
-			                        resolve(data);
-			                    } catch (error) {
-			                        reject(new Error(`Failed to parse JSON from ${url}:${error.message}`));
-			                    }
-			                } else {
-			                    reject(new Error(`Network response was not ok: ${xhr.statusText}`));
-			                }
-			            }
-			        };
-			        xhr.onerror = function() {
-			            reject(new Error(`Failed to fetch from ${url}: Network error`));
-			        };
-			        xhr.send();
-			    });
+				return new Promise((resolve, reject) => {
+					var xhr = new XMLHttpRequest();
+					xhr.open('GET', url, true);
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState === 4) {
+							if (xhr.status === 200) {
+								try {
+									var data = JSON.parse(xhr.responseText);
+									resolve(data);
+								} catch (error) {
+									reject(new Error(`Failed to parse JSON from ${url}:${error.message}`));
+								}
+							} else {
+								reject(new Error(`Network response was not ok: ${xhr.statusText}`));
+							}
+						}
+					};
+					xhr.onerror = function() {
+						reject(new Error(`Failed to fetch from ${url}: Network error`));
+					};
+					xhr.send();
+				});
 			}
-			
+
 			function updateHitokotoElement(data) {
-			    const hitokotoElement = document.getElementById('hitokoto_text');
-			    if (!hitokotoElement) {
-			        console.error('The hitokoto_text element does not exist.');
-			        return;
-			    }
-			    let formattedText = `『${data.hitokoto}』 —— `;
-			    if (data.from_who) {
-			        formattedText += `${data.from_who}【${data.from}】`;
-			    } else {
-			        formattedText += `【${data.from}】`;
-			    }
-			    hitokotoElement.textContent = formattedText;
+				const hitokotoElement = document.getElementById('hitokoto_text');
+				if (!hitokotoElement) {
+					console.error('The hitokoto_text element does not exist.');
+					return;
+				}
+				let formattedText = `『${data.hitokoto}』 —— `;
+				if (data.from_who) {
+					formattedText += `${data.from_who}【${data.from}】`;
+				} else {
+					formattedText += `【${data.from}】`;
+				}
+				hitokotoElement.textContent = formattedText;
 			}
-			
+
 			function updateHitokoto() {
-			    xhrHitokoto('https://v1.hitokoto.cn').then(updateHitokotoElement).catch(() => {
-			        // Try the international endpoint if the first request fails
-			        return xhrHitokoto('https://international.v1.hitokoto.cn').then(updateHitokotoElement).catch(
-			            () => {
-			                document.getElementById('hitokoto_text').textContent = 'Failed to load Hitokoto.';
-			            });
-			    });
+				xhrHitokoto('https://v1.hitokoto.cn').then(updateHitokotoElement).catch(() => {
+					// Try the international endpoint if the first request fails
+					return xhrHitokoto('https://international.v1.hitokoto.cn').then(updateHitokotoElement).catch(
+						() => {
+							document.getElementById('hitokoto_text').textContent = 'Failed to load Hitokoto.';
+						});
+				});
 			}
-			
+
 			// Set interval to update hitokoto every 10 seconds
 			setInterval(updateHitokoto, 10000);
-
 		</script>
 
 
@@ -645,104 +728,104 @@
 		<script>
 			// 动态生成 系统镜像 内容
 			var xhr = new XMLHttpRequest();
-			xhr.open('GET', 'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_v1.1.json', true);
+			xhr.open('GET',
+				'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_v1.1.json', true);
 			xhr.onreadystatechange = function() {
-			    if (xhr.readyState === 4) {
-			        if (xhr.status === 200) {
-			            // 成功获取数据
-			            var data = JSON.parse(xhr.responseText);
-			            // 初始化表格
-			            layui.use(['table', 'layer'], function() {
-			                var table = layui.table;
-			                var layer = layui.layer;
-			
-			                // 表格渲染
-			                table.render({
-			                    elem: '#tableContainer',
-			                    cols: [
-			                        [{
-			                                field: 'id',
-			                                title: 'ID'
-			                            },
-			                            {
-			                                field: 'name',
-			                                title: '名称'
-			                            },
-			                            {
-			                                field: 'fileName',
-			                                title: '文件名'
-			                            },
-			                            {
-			                                field: 'date',
-			                                title: '日期'
-			                            },
-			                            {
-			                                field: 'ED2K',
-			                                title: 'ED2K',
-			                                templet: function(d) {
-			                                    if (d.ED2K === '无') {
-			                                        return '无';
-			                                    }
-			                                    return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.ED2K}')">复制</button>`;
-			                                }
-			                            },
-			                            {
-			                                field: 'BT',
-			                                title: 'BT',
-			                                templet: function(d) {
-			                                    if (d.BT === '无') {
-			                                        return '无';
-			                                    }
-			                                    return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.BT}')">复制</button>`;
-			                                }
-			                            }
-			                        ]
-			                    ],
-			                    data: formatData(data),
-			                    page: true
-			                });
-			            });
-			        } else {
-			            // 处理错误
-			            layer.msg('加载数据失败：' + xhr.statusText, {
-			                icon: 2
-			            });
-			        }
-			    }
+				if (xhr.readyState === 4) {
+					if (xhr.status === 200) {
+						// 成功获取数据
+						var data = JSON.parse(xhr.responseText);
+						// 初始化表格
+						layui.use(['table', 'layer'], function() {
+							var table = layui.table;
+							var layer = layui.layer;
+
+							// 表格渲染
+							table.render({
+								elem: '#tableContainer',
+								cols: [
+									[{
+											field: 'id',
+											title: 'ID'
+										},
+										{
+											field: 'name',
+											title: '名称'
+										},
+										{
+											field: 'fileName',
+											title: '文件名'
+										},
+										{
+											field: 'date',
+											title: '日期'
+										},
+										{
+											field: 'ED2K',
+											title: 'ED2K',
+											templet: function(d) {
+												if (d.ED2K === '无') {
+													return '无';
+												}
+												return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.ED2K}')">复制</button>`;
+											}
+										},
+										{
+											field: 'BT',
+											title: 'BT',
+											templet: function(d) {
+												if (d.BT === '无') {
+													return '无';
+												}
+												return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.BT}')">复制</button>`;
+											}
+										}
+									]
+								],
+								data: formatData(data),
+								page: true
+							});
+						});
+					} else {
+						// 处理错误
+						layer.msg('加载数据失败：' + xhr.statusText, {
+							icon: 2
+						});
+					}
+				}
 			};
 			xhr.send();
-			
+
 			// 格式化数据以适应表格
 			function formatData(data) {
-			    var formattedData = [];
-			    data.forEach(function(os) {
-			        os.file.forEach(function(file) {
-			            formattedData.push({
-			                id: os.id,
-			                name: os.name,
-			                fileName: file.fileName,
-			                date: file.date,
-			                ED2K: file.ED2K,
-			                BT: file.BT
-			            });
-			        });
-			    });
-			    return formattedData;
-			}
-			
-			// 复制文本到剪贴板
-			function copyText(text) {
-			    var textarea = document.createElement("textarea");
-			    textarea.value = text;
-			    document.body.appendChild(textarea);
-			    textarea.select();
-			    document.execCommand("copy");
-			    document.body.removeChild(textarea);
-			    layui.layer.msg('链接已复制到剪贴板', {
-			        icon: 1
-			    });
+				var formattedData = [];
+				data.forEach(function(os) {
+					os.file.forEach(function(file) {
+						formattedData.push({
+							id: os.id,
+							name: os.name,
+							fileName: file.fileName,
+							date: file.date,
+							ED2K: file.ED2K,
+							BT: file.BT
+						});
+					});
+				});
+				return formattedData;
 			}
 
+			// 复制文本到剪贴板
+			function copyText(text) {
+				var textarea = document.createElement("textarea");
+				textarea.value = text;
+				document.body.appendChild(textarea);
+				textarea.select();
+				document.execCommand("copy");
+				document.body.removeChild(textarea);
+				layui.layer.msg('链接已复制到剪贴板', {
+					icon: 1
+				});
+			}
 		</script>
 
 
