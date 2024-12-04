@@ -6,14 +6,6 @@
 
 		<title>小龙🐉的资源站</title>
 
-		<link rel="dns-prefetch" href="https://github.githubassets.com">
-		<link rel="dns-prefetch" href="https://avatars.githubusercontent.com">
-		<link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
-		<link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
-		<link rel="preconnect" href="https://github.githubassets.com" crossorigin>
-		<link rel="preconnect" href="https://avatars.githubusercontent.com">
-
-
 		<link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.9.4/css/layui.css" />
 
 
@@ -228,29 +220,48 @@
 
 
 				// 异步获取数据
-				fetch(
-						'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_v1.1.json'
-					)
-					.then(response => response.json())
-					.then(json => {
-						dataCache = json;
-						totalLinks = json.reduce((acc, category) => acc + category.links.length, 0);
-						$('#linkCount').html(
-							`<p style="font-size: 16px;">共 <b style="color: red;">${json.length}</b> 个分类，<b style="color: red;">${totalLinks}</b> 条链接资源。</p>`
-						);
-						renderTable();
-						layer.close(loadingIndex);
-						layer.msg('数据加载成功！', {
-							icon: 1
-						});
-					})
-					.catch(error => {
-						console.error('Error fetching data:', error);
-						layer.close(loadingIndex);
-						layer.msg('数据加载失败', {
-							icon: 2
-						});
-					});
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', 'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/links_v1.1.json', true);
+				xhr.onreadystatechange = function() {
+				    if (xhr.readyState === 4) {
+				        if (xhr.status === 200) {
+				            try {
+				                var json = JSON.parse(xhr.responseText);
+				                dataCache = json;
+				                var totalLinks = json.reduce((acc, category) => acc + category.links.length, 0);
+				                $('#linkCount').html(
+				                    `<p style="font-size: 16px;">共 <b style="color: red;">${json.length}</b> 个分类，<b style="color: red;">${totalLinks}</b> 条链接资源。</p>`
+				                );
+				                renderTable();
+				                layer.close(loadingIndex);
+				                layer.msg('数据加载成功！', {
+				                    icon: 1
+				                });
+				            } catch (error) {
+				                console.error('Error parsing JSON:', error);
+				                layer.close(loadingIndex);
+				                layer.msg('数据加载失败', {
+				                    icon: 2
+				                });
+				            }
+				        } else {
+				            console.error('Error fetching data:', xhr.statusText);
+				            layer.close(loadingIndex);
+				            layer.msg('数据加载失败', {
+				                icon: 2
+				            });
+				        }
+				    }
+				};
+				xhr.onerror = function() {
+				    console.error('Network error occurred while fetching data.');
+				    layer.close(loadingIndex);
+				    layer.msg('数据加载失败', {
+				        icon: 2
+				    });
+				};
+				xhr.send();
+
 
 
 
@@ -361,52 +372,50 @@
 								});
 								break;
 							case '公告':
-								// 使用fetch API获取公告内容
-								fetch(
-										'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json'
-									)
-									.then(response => {
-										// 确保响应成功
-										if (!response.ok) {
-											throw new Error('Network response was not ok');
-										}
-										return response.json(); // 解析JSON
-									})
-									.then(notices => {
-										// 将公告内容拼接成HTML字符串，并添加序号和行间距
-										let contentHtml = '<ol>';
-										notices.forEach(function(notice, index) {
-											// 创建中文序号
-											let chineseNumber = ['一', '二', '三', '四', '五', '六',
-												'七', '八', '九',
-												'十'
-											];
-											let chineseIndex = chineseNumber[index] + '、';
-											// 添加公告内容，并在每条公告后添加一个额外的<br>标签来创建行间距
-											contentHtml +=
-												`<li>${chineseIndex}${notice}</li><br>`;
-										});
-										contentHtml += '</ol>';
+								// 使用XMLHttpRequest获取公告内容
+								var xhr = new XMLHttpRequest();
+								xhr.open('GET', 'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/notice.json', true);
+								xhr.onreadystatechange = function() {
+								    if (xhr.readyState === 4) {
+								        if (xhr.status === 200) {
+								            try {
+								                var notices = JSON.parse(xhr.responseText);
+								                // 将公告内容拼接成HTML字符串，并添加序号和行间距
+								                let contentHtml = '<ol>';
+								                notices.forEach(function(notice, index) {
+								                    // 创建中文序号
+								                    let chineseNumber = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+								                    let chineseIndex = chineseNumber[index] + '、';
+								                    // 添加公告内容，并在每条公告后添加一个额外的<br>标签来创建行间距
+								                    contentHtml += `<li>${chineseIndex}${notice}</li><br>`;
+								                });
+								                contentHtml += '</ol>';
+								
+								                // 显示公告内容
+								                layer.open({
+								                    type: 1,
+								                    title: "公告",
+								                    closeBtn: 0, // 不显示关闭按钮
+								                    content: `<div style="padding: 20px;">${contentHtml}</div>`,
+								                    area: ['600px', '400px'],
+								                    btn: ['关闭窗口']
+								                });
+								            } catch (error) {
+								                console.error('There has been a problem with your XHR operation:', error);
+								                layer.msg('无法加载公告内容，请稍后再试。', { icon: 2 });
+								            }
+								        } else {
+								            console.error('Network response was not ok:', xhr.statusText);
+								            layer.msg('无法加载公告内容，请稍后再试。', { icon: 2 });
+								        }
+								    }
+								};
+								xhr.onerror = function() {
+								    console.error('There has been a network error.');
+								    layer.msg('无法加载公告内容，请稍后再试。', { icon: 2 });
+								};
+								xhr.send();
 
-										// 显示公告内容
-										layer.open({
-											type: 1,
-											title: "公告",
-											closeBtn: 0, // 不显示关闭按钮
-											content: `<div style="padding: 20px;">${contentHtml}</div>`,
-											area: ['600px', '400px'],
-											btn: ['关闭窗口']
-										});
-									})
-									.catch(error => {
-										// 处理错误情况
-										console.error(
-											'There has been a problem with your fetch operation:',
-											error);
-										layer.msg('无法加载公告内容，请稍后再试。', {
-											icon: 2
-										});
-									});
 								break;
 							case '搜索':
 								layer.prompt({
@@ -576,148 +585,164 @@
 
 
 			//Hitokoto一言
-			function fetchHitokoto(url) {
-				return fetch(url).then(response => {
-					if (!response.ok) {
-						throw new Error(`Network response was not ok: ${response.statusText}`);
-					}
-					return response.json();
-				}).catch(error => {
-					console.error(`Failed to fetch from ${url}:`, error);
-					throw error; // Re-throw the error to be handled by the caller
-				});
+			function xhrHitokoto(url) {
+			    return new Promise((resolve, reject) => {
+			        var xhr = new XMLHttpRequest();
+			        xhr.open('GET', url, true);
+			        xhr.onreadystatechange = function() {
+			            if (xhr.readyState === 4) {
+			                if (xhr.status === 200) {
+			                    try {
+			                        var data = JSON.parse(xhr.responseText);
+			                        resolve(data);
+			                    } catch (error) {
+			                        reject(new Error(`Failed to parse JSON from ${url}:${error.message}`));
+			                    }
+			                } else {
+			                    reject(new Error(`Network response was not ok: ${xhr.statusText}`));
+			                }
+			            }
+			        };
+			        xhr.onerror = function() {
+			            reject(new Error(`Failed to fetch from ${url}: Network error`));
+			        };
+			        xhr.send();
+			    });
 			}
-
+			
 			function updateHitokotoElement(data) {
-				const hitokotoElement = document.getElementById('hitokoto_text');
-				if (!hitokotoElement) {
-					console.error('The hitokoto_text element does not exist.');
-					return;
-				}
-				let formattedText = `『${data.hitokoto}』 —— `;
-				if (data.from_who) {
-					formattedText += `${data.from_who}【${data.from}】`;
-				} else {
-					formattedText += `【${data.from}】`;
-				}
-				hitokotoElement.textContent = formattedText;
+			    const hitokotoElement = document.getElementById('hitokoto_text');
+			    if (!hitokotoElement) {
+			        console.error('The hitokoto_text element does not exist.');
+			        return;
+			    }
+			    let formattedText = `『${data.hitokoto}』 —— `;
+			    if (data.from_who) {
+			        formattedText += `${data.from_who}【${data.from}】`;
+			    } else {
+			        formattedText += `【${data.from}】`;
+			    }
+			    hitokotoElement.textContent = formattedText;
 			}
-
+			
 			function updateHitokoto() {
-				fetchHitokoto('https://v1.hitokoto.cn').then(updateHitokotoElement).catch(() => {
-					// Try the international endpoint if the first request fails
-					return fetchHitokoto('https://international.v1.hitokoto.cn').then(updateHitokotoElement).catch(
-						() => {
-							document.getElementById('hitokoto_text').textContent = 'Failed to load Hitokoto.';
-						});
-				});
+			    xhrHitokoto('https://v1.hitokoto.cn').then(updateHitokotoElement).catch(() => {
+			        // Try the international endpoint if the first request fails
+			        return xhrHitokoto('https://international.v1.hitokoto.cn').then(updateHitokotoElement).catch(
+			            () => {
+			                document.getElementById('hitokoto_text').textContent = 'Failed to load Hitokoto.';
+			            });
+			    });
 			}
+			
 			// Set interval to update hitokoto every 10 seconds
 			setInterval(updateHitokoto, 10000);
+
 		</script>
 
 
 
 		<script>
 			// 动态生成 系统镜像 内容
-			fetch(
-					'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_v1.1.json'
-				)
-				.then(response => {
-					if (!response.ok) {
-						throw new Error('Network response was not ok');
-					}
-					return response.json();
-				})
-				.then(data => {
-					// 初始化表格
-					layui.use(['table', 'layer'], function() {
-						var table = layui.table;
-						var layer = layui.layer;
-
-						// 表格渲染
-						table.render({
-							elem: '#tableContainer',
-							cols: [
-								[{
-										field: 'id',
-										title: 'ID'
-									},
-									{
-										field: 'name',
-										title: '名称'
-									},
-									{
-										field: 'fileName',
-										title: '文件名'
-									},
-									{
-										field: 'date',
-										title: '日期'
-									},
-									{
-										field: 'ED2K',
-										title: 'ED2K',
-										templet: function(d) {
-											if (d.ED2K === '无') {
-												return '无';
-											}
-											return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.ED2K}')">复制</button>`;
-										}
-									},
-									{
-										field: 'BT',
-										title: 'BT',
-										templet: function(d) {
-											if (d.BT === '无') {
-												return '无';
-											}
-											return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.BT}')">复制</button>`;
-										}
-									}
-								]
-							],
-							data: formatData(data),
-							page: true
-						});
-					});
-				})
-				.catch(error => {
-					layer.msg('加载数据失败：' + error.message, {
-						icon: 2
-					});
-				});
-
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'https://fastly.jsdelivr.net/gh/lxl-xiaolong/lxl-xiaolong.github.io@master/json/windows_iso_v1.1.json', true);
+			xhr.onreadystatechange = function() {
+			    if (xhr.readyState === 4) {
+			        if (xhr.status === 200) {
+			            // 成功获取数据
+			            var data = JSON.parse(xhr.responseText);
+			            // 初始化表格
+			            layui.use(['table', 'layer'], function() {
+			                var table = layui.table;
+			                var layer = layui.layer;
+			
+			                // 表格渲染
+			                table.render({
+			                    elem: '#tableContainer',
+			                    cols: [
+			                        [{
+			                                field: 'id',
+			                                title: 'ID'
+			                            },
+			                            {
+			                                field: 'name',
+			                                title: '名称'
+			                            },
+			                            {
+			                                field: 'fileName',
+			                                title: '文件名'
+			                            },
+			                            {
+			                                field: 'date',
+			                                title: '日期'
+			                            },
+			                            {
+			                                field: 'ED2K',
+			                                title: 'ED2K',
+			                                templet: function(d) {
+			                                    if (d.ED2K === '无') {
+			                                        return '无';
+			                                    }
+			                                    return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.ED2K}')">复制</button>`;
+			                                }
+			                            },
+			                            {
+			                                field: 'BT',
+			                                title: 'BT',
+			                                templet: function(d) {
+			                                    if (d.BT === '无') {
+			                                        return '无';
+			                                    }
+			                                    return `<button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="copyText('${d.BT}')">复制</button>`;
+			                                }
+			                            }
+			                        ]
+			                    ],
+			                    data: formatData(data),
+			                    page: true
+			                });
+			            });
+			        } else {
+			            // 处理错误
+			            layer.msg('加载数据失败：' + xhr.statusText, {
+			                icon: 2
+			            });
+			        }
+			    }
+			};
+			xhr.send();
+			
 			// 格式化数据以适应表格
 			function formatData(data) {
-				var formattedData = [];
-				data.forEach(function(os) {
-					os.file.forEach(function(file) {
-						formattedData.push({
-							id: os.id,
-							name: os.name,
-							fileName: file.fileName,
-							date: file.date,
-							ED2K: file.ED2K,
-							BT: file.BT
-						});
-					});
-				});
-				return formattedData;
+			    var formattedData = [];
+			    data.forEach(function(os) {
+			        os.file.forEach(function(file) {
+			            formattedData.push({
+			                id: os.id,
+			                name: os.name,
+			                fileName: file.fileName,
+			                date: file.date,
+			                ED2K: file.ED2K,
+			                BT: file.BT
+			            });
+			        });
+			    });
+			    return formattedData;
 			}
-
+			
 			// 复制文本到剪贴板
 			function copyText(text) {
-				var textarea = document.createElement("textarea");
-				textarea.value = text;
-				document.body.appendChild(textarea);
-				textarea.select();
-				document.execCommand("copy");
-				document.body.removeChild(textarea);
-				layui.layer.msg('链接已复制到剪贴板', {
-					icon: 1
-				});
+			    var textarea = document.createElement("textarea");
+			    textarea.value = text;
+			    document.body.appendChild(textarea);
+			    textarea.select();
+			    document.execCommand("copy");
+			    document.body.removeChild(textarea);
+			    layui.layer.msg('链接已复制到剪贴板', {
+			        icon: 1
+			    });
 			}
+
 		</script>
 
 
